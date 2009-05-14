@@ -3,3 +3,6 @@ path=(~/bin /opt/local/bin $path)
 
 # Allow MacPorts man pages
 manpath=($manpath /opt/local/man)
+
+export PATH=$PATH:/opt/local/lib/postgresql82/bin
+export PATH=$PATH:~/.gem/ruby/1.8/bin/

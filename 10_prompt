@@ -1,3 +1,11 @@
 setopt prompt_subst
 #PROMPT='%{$reset_color%}%~`git-prompt`%(!.#.>) '
 PROMPT='%{$reset_color%}`git-prompt`%(!.#.>) '
+#
+# Right prompt with clock
+RPS1="  %{$fg_bold[black]%}%D{%d/%m/%y %H:%M:%S}%{${reset_color}%}"
+
+# Others prompts
+PS2="%{$fg_no_bold[yellow]%}%_>%{${reset_color}%} "
+PS3="%{$fg_no_bold[yellow]%}?#%{${reset_color}%} "
+

@@ -1,7 +1,57 @@
-zstyle ':completion:*' completer _expand _complete
+# Possibilité de choisir son prompt. Prompt Gentoo choisi
+# peux être overridé par l'export de PS1
+zstyle ':completion:*:descriptions' format '%U%B%d%b%u'
+zstyle ':completion:*:warnings' format '%BSorry, no matches for: %d%b'
 
 autoload -Uz compinit
 compinit
 
 autoload -Uz colors
 colors
+
+#Autocorrection des commandes :
+setopt correctall
+
+# Watch for login/logout
+watch=all
+
+setopt extendedglob # Ajout de joker style Regexp
+
+function precmd {
+
+  # Color for decorations
+  local deco="%{${fg_bold[black]}%}"
+
+  # Change path color gieven user rights on it
+  if [[ -O "${PWD}" ]]; then # owner
+    local path_color="${fg_no_bold[default]}"
+  elif [[ -w "${PWD}" ]]; then # can write
+    local path_color="${fg_no_bold[blue]}"
+  else # other
+    local path_color="${fg_no_bold[red]}"
+  fi
+
+  # Change hostname color on knowm hosts
+  case ${HOST%%.*} in
+    slick)   local host_color="${fg_bold[cyan]}" ;;
+    guicb-notebook)   local host_color="${fg_bold[cyan]}" ;;
+    Endor)      local host_color="${fg_bold[green]}" ;;
+    Korriban)   local host_color="${fg_bold[yellow]}" ;;
+    Kohlma)     local host_color="${fg_bold[blue]}" ;;
+    Kothis)     local host_color="${fg_bold[red]}" ;;
+    *)          local host_color="${fg_bold[default]}" ;;
+  esac
+
+  # Display return code when not 0
+  local return_code="%(?..${deco}!%{${fg_no_bold[red]}%}%?${deco}! )"
+  # user@host
+  local user_at_host="%{${fg_bold[default]}%}%n${deco}@%{${host_color}%}%m"
+  # Red # for root, plain % for user
+  local sign="%(!.%{${fg_bold[red]}%}.${deco})%#"
+
+  # Set the prompt
+  #PS1="${return_code}${deco}[${user_at_host} ${cwd}${deco}] ${sign}%{${reset_color}%} "
+  PS1="%T%B[%~]%b
+${return_code}${deco}[${user_at_host} ${deco}] ${sign}%{${reset_color}%} " 
+#%B[%n:%l]%b %(0?##%S{%?}%s )%S%m%s%# "
+}
