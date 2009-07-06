@@ -29,3 +29,5 @@ if [[ $OSTYPE[1,6] == "darwin" ]]; then
 		alias -s $s=open
 	done
 fi
+
+export $EDITOR=vim

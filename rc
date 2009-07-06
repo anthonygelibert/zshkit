@@ -39,7 +39,7 @@ function precmd {
     Korriban)   local host_color="${fg_bold[yellow]}" ;;
     Kohlma)     local host_color="${fg_bold[blue]}" ;;
     Kothis)     local host_color="${fg_bold[red]}" ;;
-    *)          local host_color="${fg_bold[default]}" ;;
+    *)          local host_color="${fg_bold[red]}" ;;
   esac
 
   # Display return code when not 0
