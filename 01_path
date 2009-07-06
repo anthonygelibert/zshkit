@@ -6,3 +6,5 @@ manpath=($manpath /opt/local/man)
 
 export PATH=$PATH:/opt/local/lib/postgresql82/bin
 export PATH=$PATH:~/.gem/ruby/1.8/bin/
+export PATH=$PATH:/usr/local/bin/
+export PATH=$PATH:/usr/local/mysql/bin/
