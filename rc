@@ -51,7 +51,9 @@ function precmd {
 
   # Set the prompt
   #PS1="${return_code}${deco}[${user_at_host} ${cwd}${deco}] ${sign}%{${reset_color}%} "
+
   PS1="%T%B[%~]%b
-${return_code}${deco}[${user_at_host} ${deco}] `git-prompt` ${sign}%{${reset_color}%}  " 
+${return_code}${deco}[${user_at_host} ${deco}] `git-prompt` ${sign}%{${reset_color}%} "
+
 #%B[%n:%l]%b %(0?##%S{%?}%s )%S%m%s%# "
 }

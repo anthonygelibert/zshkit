@@ -4,9 +4,11 @@ path=(~/bin /opt/local/bin $path)
 # Allow MacPorts man pages
 manpath=($manpath /opt/local/man)
 
-export PATH=$PATH:/opt/local/lib/postgresql82/bin
+export PATH=$PATH:/opt/local/lib/postgresql84/bin
 export PATH=$PATH:~/.gem/ruby/1.8/bin/
 export PATH=$PATH:/usr/local/bin/
 export PATH=$PATH:/usr/local/mysql/bin/
 export PATH=$PATH:/var/lib/gems/1.8/bin/
 export PATH=$PATH:/opt/local/sbin/
+export PATH=$PATH:/usr/local/sbin
+export PATH=$PATH:/usr/local/texlive/2009/bin/universal-darwin/

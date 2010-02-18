@@ -1,25 +1,47 @@
 alias dev="cd ~/Development"
 alias doc="cd ~/Documents"
 alias down="cd ~/Downloads"
+
 alias sc="script/console"
 alias ss="script/server"
-alias hg="hellanzb.py enqueuenewzbin"
+
 alias pi="sudo port -v install"
-alias mr="mysql5 -u root"
-alias mar="mysqladmin5 -u root"
-alias ms="mysqlshow5 -u root"
+
 alias xmlget="curl -X GET -H 'Accept: application/xml'"
 alias jsonget="curl -X GET -H 'Accept: application/json'"
 alias xmlpost="curl -X POST -H 'Accept: application/xml'"
 alias xmlput="curl -X PUT -H 'Accept: application/xml'"
 alias xmldelete="curl -X DELETE -H 'Accept: application/xml'"
+
 alias shiny="ssh shingara@shingara.fr"
-alias sr="touch tmp/restart.txt"
+alias rsync_podcast="rsync -av --delete --partial --progress --stats shingara@shingara.fr:~/.rubypodder/ ~/Movies/rubypodder/"
+
 alias gup="git fetch origin master && git rebase origin/master"
-alias start_mysql="sudo /usr/local/mysql/bin/mysqld_safe"
-alias rsync_podcast="rsync -av --delete shingara@shingara.fr:~/.rubypodder/ ~/Movies/rubypodder/"
-alias couchdb_start="sudo launchctl load -w /Library/LaunchDaemons/org.apache.couchdb.plist"
+
+#alias start_mysql="sudo /usr/local/mysql/bin/mysqld_safe"
+
 alias tunnel_couchdb="ssh -f -N -L 5985:localhost:5984 shingara.fr"
+
+alias couchdb_start="sudo launchctl load -w /Library/LaunchDaemons/org.apache.couchdb.plist"
 alias couchdb_stop="sudo launchctl unload -w /Library/LaunchDaemons/org.apache.couchdb.plist"
+
 alias rabbitmq_start="sudo launchctl load -w /Library/LaunchDaemons/org.macports.rabbitmq-server.plist"
 alias rabbitmq_stop="sudo launchctl unload -w /Library/LaunchDaemons/org.macports.rabbitmq-server.plist"
+
+#alias mysql_start="sudo launchctl load -w /Library/LaunchDaemons/org.macports.mysql5.plist"
+alias mysql_start="/usr/local/Cellar/mysql/5.1.41/share/mysql/mysql.server start"
+#alias mysql_stop="sudo launchctl unload -w /Library/LaunchDaemons/org.macports.mysql5.plist"
+
+#alias postgresql_start="sudo launchctl load -w /Library/LaunchDaemons/org.macports.postgresql84-server.plist"
+alias postgresql_start="/usr/local/bin/pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.log start"
+#alias postgresql_stop="sudo launchctl unload -w /Library/LaunchDaemons/org.macports.postgresql84-server.plist"
+alias postgresql_stop="/usr/local/bin/pg_ctl -D /usr/local/var/postgres stop -s -m fast"
+
+alias memcached_start="launchctl load -w /usr/local/Cellar/memcached/1.4.4/com.danga.memcached.plist"
+alias memcached_stop="launchctl unload -w /usr/local/Cellar/memcached/1.4.4/com.danga.memcached.plist"
+
+alias redis_start="sudo redis-server /opt/local/etc/redis.conf"
+
+alias mount_passerieux="mount 192.168.83.7:/nethdd/PASSERIEUX ~/passerieux"
+
+alias mongo_start="mongod run --config /usr/local/Cellar/mongodb/1.2.0-x86_64/mongod.conf"
