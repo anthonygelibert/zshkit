@@ -44,4 +44,4 @@ alias redis_start="sudo redis-server /opt/local/etc/redis.conf"
 
 alias mount_passerieux="mount 192.168.83.7:/nethdd/PASSERIEUX ~/passerieux"
 
-alias mongo_start="mongod run --config /usr/local/Cellar/mongodb/1.2.0-x86_64/mongod.conf"
+alias mongo_start="mongod run --config /usr/local/Cellar/mongodb/1.2.3-x86_64/mongod.conf"

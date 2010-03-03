@@ -30,4 +30,4 @@ if [[ $OSTYPE[1,6] == "darwin" ]]; then
 	done
 fi
 
-export $EDITOR=vim
+export EDITOR=vim
