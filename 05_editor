@@ -21,8 +21,8 @@ function not_run_from_ssh () {
 	echo $?
 }
 
-if [[ -x `which mvim` && $(not_run_from_ssh) = 1 ]]; then
-	EDITOR="mvim -f"
+if [[ -x `which vim` ]]; then
+	EDITOR="vim"
 elif [[ -x `which nano` ]]; then
 	EDITOR=nano
 elif [[ -x `which pico` ]]; then
