@@ -57,3 +57,13 @@ if [[ -x `which git` ]]; then
 		nohup gitk --all &
 	}
 fi
+
+alias g='git'
+alias gb='git branch -a -v'
+alias gs='git status'
+alias gd='git diff'
+alias gf='git fetch'
+alias gr='git-rebase'
+alias gsc='git-svn dcommit'
+alias gsr='git-svn rebase'
+alias gsf='git-svn fetch'
