@@ -1,12 +1,11 @@
 bindkey "${key[Home]}" beginning-of-line
-bindkey "^A" beginning-of-line
 bindkey "${key[End]}" end-of-line
 
+bindkey "  " globalias
+bindkey " " magic-space
+
 # vi mode
-#bindkey -v
+bindkey -v
   
 # use incremental search
 bindkey "^R" history-incremental-search-backward
-
-# expand history
-export HISTSIZE=250
