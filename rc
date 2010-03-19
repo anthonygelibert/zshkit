@@ -24,36 +24,21 @@ function prompt_char {
 function precmd
 {
 	# Color for decorations
-	local deco="%{${fg_bold[black]}%}"
-
-  	# Change path color given user rights on it
-  	if [[ -O "${PWD}" ]]; 
-	# owner
-	then 
-    	local path_color="${fg_no_bold[default]}"
-  	elif [[ -w "${PWD}" ]]; 
-	# can write
-	then
-    	local path_color="${fg_no_bold[blue]}"
-  	# other
-	else 
-    	local path_color="${fg_no_bold[red]}"
-  	fi
-
+	local deco="%{$reset_color%}"
+	
 	# Change hostname color on knowm hosts
   	case ${HOST%%.*} in
-    	my-Desktop) local host_color="${fg_bold[cyan]}" ;;
-    	my-Laptop)  local host_color="${fg_bold[cyan]}" ;;
-    	*)          local host_color="${fg_bold[red]}" ;;
+    	my-Desktop) local host_color="${fg[yellow]}" ;;
+    	my-Laptop)  local host_color="${fg[yellow]}" ;;
+    	*)          local host_color="${fg[red]}" ;;
   	esac
 
   	# Display return code when not 0
   	local return_code="%(?..${deco}!%{${fg_no_bold[red]}%}%?${deco}! )"
-  	# user@host
-  	local user_at_host="%{${fg_bold[red]}%}%n${deco}@%{${host_color}%}%m"
-  	# Red # for root, plain % for user
-  	local sign="%(!.%{${fg_bold[red]}%}.${deco})%#"
+  	# user at host
+  	local user_at_host="%{${fg[magenta]}%}%n ${deco}at %{${host_color}%}%m"
+
 	vcs_info
-  	PS1="%T%B${deco}[${path_color}%~${deco}]%b
-${return_code}${deco}$(prompt_char) ${vcs_info_msg_0_}$(hg_prompt_info)$(git_prompt_info)%{${reset_color}%} "
+  	PS1="$user_at_host${deco} in %{$fg[green]%}%~${deco} ${vcs_info_msg_0_}$(hg_prompt_info)$(git_prompt_info)%b
+${return_code}${deco}$(prompt_char) %{${reset_color}%} "
 }
