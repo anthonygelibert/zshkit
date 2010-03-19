@@ -1,0 +1,23 @@
+# Parse the "uname" command to obtain :
+#   - the kernel type (e.g. "Darwin")
+#   - the kernel version (e.g. "10.2.0")
+#   - the kernel features (e.g "root:xnu-1486.2.11~1/RELEASE_X86_64 x86_64")
+local KERNEL_TYPE="`uname -s`"
+local KERNEL_VERSION="`uname -r`"
+local KERNEL_FEATURES="`uname -a | cut -d';' -f2 | sed 's/^ //'`"
+
+# Parste the "uptime" command to obtain :
+#	- the uptime
+#   - the number of users
+#   - the load
+local COMPLETE_UPTIME="`uptime`"
+local UPTIME="`echo $COMPLETE_UPTIME | cut -d',' -f 1 | sed 's/.*up//'`"
+local USERS="`echo $COMPLETE_UPTIME | cut -d',' -f 2 | cut -d' ' -f2`"
+local LOAD="`echo $COMPLETE_UPTIME | awk ' BEGIN {FS = ": "}{print $2}'`"
+clear
+echo "${bldblack}--------------------------------------------------------------------------------"
+echo "${bldwhite}$KERNEL_TYPE Kernel Version $KERNEL_VERSION ($KERNEL_FEATURES)${NC}"
+echo "${ured}UPTIME:${NC}${bldwhite}${UPTIME}${NC}"
+echo "${ured}USERS:${NC}${bldwhite} $USERS${NC}"
+echo "${ured}LOAD AVERAGES:${NC}${bldwhite} ${LOAD}${NC}"
+echo "${bldblack}--------------------------------------------------------------------------------"
