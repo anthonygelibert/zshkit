@@ -5,7 +5,7 @@ bindkey "  " globalias
 bindkey " " magic-space
 
 # vi mode
-bindkey -v
-  
+# bindkey -v
+
 # use incremental search
 bindkey "^R" history-incremental-search-backward
