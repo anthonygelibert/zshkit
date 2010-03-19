@@ -2,10 +2,7 @@ typeset -A key
 
 bindkey "${key[Home]}" beginning-of-line
 bindkey "${key[End]}" end-of-line
- 
-bindkey "  " globalias
-bindkey " " magic-space
- 
+  
 bindkey "^Og" noglob-command-line
 bindkey "^Os" sudo-command-line
  
