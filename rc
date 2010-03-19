@@ -1,5 +1,3 @@
-# Possibilité de choisir son prompt. Prompt Gentoo choisi
-# peux être overridé par l'export de PS1
 zstyle ':completion:*:descriptions' format '%U%B%d%b%u'
 zstyle ':completion:*:warnings' format '%BSorry, no matches for: %d%b'
 
@@ -9,13 +7,8 @@ compinit
 autoload -Uz colors
 colors
 
-#Autocorrection des commandes :
-setopt correctall
-
 # Watch for login/logout
 watch=all
-
-setopt extendedglob # Ajout de joker style Regexp
 
 function precmd {
 
