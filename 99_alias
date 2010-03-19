@@ -1,47 +1,58 @@
-alias dev="cd ~/Development"
-alias doc="cd ~/Documents"
-alias down="cd ~/Downloads"
+# Some MacPorts alias
+alias pins="sudo port -v install"
+alias psearch="port search"
+alias pinfo="port info"
 
-alias sc="script/console"
-alias ss="script/server"
+# Update the list, display the outdated, make the update and uninstall the inactives
+alias updateMP='sudo port selfupdate && sudo port outdated && sudo port upgrade outdated && sudo uninstall inactive'
 
-alias pi="sudo port -v install"
+# Some SSH/Telnet acces
+alias ensisun='ssh gelibera@ensisun.imag.fr'
+alias nas_local='ssh root@diskstation.local'
+alias nas_telnet='telnet diskstation.local'
 
-alias xmlget="curl -X GET -H 'Accept: application/xml'"
-alias jsonget="curl -X GET -H 'Accept: application/json'"
-alias xmlpost="curl -X POST -H 'Accept: application/xml'"
-alias xmlput="curl -X PUT -H 'Accept: application/xml'"
-alias xmldelete="curl -X DELETE -H 'Accept: application/xml'"
+# Some fancy displays
+# Memory hogs using top and ps
+alias mem_hogs_top='top -l 1 -o rsize | head -30'
+alias mem_hogs_ps='ps wwaxm -o pid,stat,vsize,rss,time,command | head -20'
+# CPU hogs using ps
+alias cpu_hogs='ps wwaxr -o pid,stat,%cpu,time,command | head -20'
+# Open sockets using lsof
+alias lsock='sudo lsof -i -P -n'
 
-alias shiny="ssh shingara@shingara.fr"
-alias rsync_podcast="rsync -av --delete --partial --progress --stats shingara@shingara.fr:~/.rubypodder/ ~/Movies/rubypodder/"
+# Some useful information
+# IP configurations 
+alias ip0_info='ipconfig getpacket en0'
+alias ip1_info='ipconfig getpacket en1'
+alias ip2_info='ipconfig getpacket en2'
+# Optical Drive information
+alias od_info='drutil info'
+# Access Point information
+alias ap_info='/System/Library/PrivateFrameworks/Apple80211.framework/Versions/A/Resources/airport -I'
 
-alias gup="git fetch origin master && git rebase origin/master"
 
-#alias start_mysql="sudo /usr/local/mysql/bin/mysqld_safe"
+# Useful terminal command 
+# Eject a volume
+alias eject='hdiutil eject'
+# Apache
+alias apache2ctl='sudo /opt/local/apache2/bin/apachectl'
+# Copy the working dir to the clipboard
+alias cpwd='pwd | xargs echo -n | pbcopy' 
+# Go to felix dir, clean the cache and start 
+alias felix='(cd $FELIX_DIR; rm -rf felix-cache && java -jar bin/felix.jar)'
 
-alias tunnel_couchdb="ssh -f -N -L 5985:localhost:5984 shingara.fr"
 
-alias couchdb_start="sudo launchctl load -w /Library/LaunchDaemons/org.apache.couchdb.plist"
-alias couchdb_stop="sudo launchctl unload -w /Library/LaunchDaemons/org.apache.couchdb.plist"
+local ASM_DEBUG_ALL_JAR="$ASM_DIR/lib/all/asm-debug-all-3.2.jar"
+function asmifier() 
+{
+    if [ $# -eq 1 ]; then
+        java -classpath "$ASM_DEBUG_ALL_JAR" org.objectweb.asm.util.ASMifierClassVisitor $1
+    fi
+}
 
-alias rabbitmq_start="sudo launchctl load -w /Library/LaunchDaemons/org.macports.rabbitmq-server.plist"
-alias rabbitmq_stop="sudo launchctl unload -w /Library/LaunchDaemons/org.macports.rabbitmq-server.plist"
-
-#alias mysql_start="sudo launchctl load -w /Library/LaunchDaemons/org.macports.mysql5.plist"
-alias mysql_start="/usr/local/Cellar/mysql/5.1.41/share/mysql/mysql.server start"
-#alias mysql_stop="sudo launchctl unload -w /Library/LaunchDaemons/org.macports.mysql5.plist"
-
-#alias postgresql_start="sudo launchctl load -w /Library/LaunchDaemons/org.macports.postgresql84-server.plist"
-alias postgresql_start="/usr/local/bin/pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.log start"
-#alias postgresql_stop="sudo launchctl unload -w /Library/LaunchDaemons/org.macports.postgresql84-server.plist"
-alias postgresql_stop="/usr/local/bin/pg_ctl -D /usr/local/var/postgres stop -s -m fast"
-
-alias memcached_start="launchctl load -w /usr/local/Cellar/memcached/1.4.4/com.danga.memcached.plist"
-alias memcached_stop="launchctl unload -w /usr/local/Cellar/memcached/1.4.4/com.danga.memcached.plist"
-
-alias redis_start="sudo redis-server /opt/local/etc/redis.conf"
-
-alias mount_passerieux="mount 192.168.83.7:/nethdd/PASSERIEUX ~/passerieux"
-
-alias mongo_start="mongod run --config /usr/local/Cellar/mongodb/1.2.3-x86_64/mongod.conf"
+function exportkey() 
+{
+    if [ $# -eq 2 ]; then
+        cat $1 | ssh $1 "cat >> ~/.ssh/authorized_keys"
+    fi
+}
