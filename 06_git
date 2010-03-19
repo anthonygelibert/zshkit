@@ -1,8 +1,8 @@
-ZSH_THEME_GIT_PROMPT_PREFIX=" on %{$fg[magenta]%}"
-ZSH_THEME_GIT_PROMPT_SUFFIX="%{$reset_color%}"
-ZSH_THEME_GIT_PROMPT_DIRTY="%{$fg[green]%}!"
-ZSH_THEME_GIT_PROMPT_UNTRACKED="%{$fg[green]%}?"
-ZSH_THEME_GIT_PROMPT_CLEAN=""
+local ZSH_THEME_GIT_PROMPT_PREFIX=" on %{$fg[magenta]%}"
+local ZSH_THEME_GIT_PROMPT_SUFFIX="%{$reset_color%}"
+local ZSH_THEME_GIT_PROMPT_DIRTY="%{$fg[green]%}!"
+local ZSH_THEME_GIT_PROMPT_UNTRACKED="%{$fg[green]%}?"
+local ZSH_THEME_GIT_PROMPT_CLEAN=""
 
 if [[ -x `which git` ]]; then
 	alias g=git
@@ -66,22 +66,22 @@ if [[ -x `which git` ]]; then
 	# get the name of the branch we are on
 	function git_prompt_info() {
 	  ref=$(git symbolic-ref HEAD 2> /dev/null) || return
-	  echo "$ZSH_THEME_GIT_PROMPT_PREFIX${ref#refs/heads/}$(parse_git_dirty)$ZSH_THEME_GIT_PROMPT_SUFFIX"
+	  echo " on %{$fg[magenta]%}${ref#refs/heads/}$(parse_git_dirty)%{$reset_color%}"
 	}
 	
 	parse_git_dirty () {
 	  gitstat=$(git status 2>/dev/null | grep '\(# Untracked\|# Changes\|# Changed but not updated:\)')
 
 	  if [[ $(echo ${gitstat} | grep -c "^# Changes to be committed:$") > 0 ]]; then
-		echo -n "$ZSH_THEME_GIT_PROMPT_DIRTY"
+		echo -n "%{$fg[green]%}!"
 	  fi
 
 	  if [[ $(echo ${gitstat} | grep -c "^\(# Untracked files:\|# Changed but not updated:\)$") > 0 ]]; then
-		echo -n "$ZSH_THEME_GIT_PROMPT_UNTRACKED"
+		echo -n "%{$fg[green]%}?"
 	  fi 
 
 	  if [[ $(echo ${gitstat} | grep -v '^$' | wc -l | tr -d ' ') == 0 ]]; then
-		echo -n "$ZSH_THEME_GIT_PROMPT_CLEAN"
+		echo -n ""
 	  fi
 	}
 fi
