@@ -40,6 +40,8 @@ function precmd
   	# Red # for root, plain % for user
   	local sign="%(!.%{${fg_bold[red]}%}.${deco})%#"
 
+	vcs_info
   	PS1="%T%B${deco}[${path_color}%~${deco}]%b
-${return_code}${deco}[${user_at_host}${deco}] `git-prompt` ${sign}%{${reset_color}%} "
+${return_code}${deco}[${user_at_host}${deco}] ${vcs_info_msg_0_} ${sign}%{${reset_color}%} "
+
 }
