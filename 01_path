@@ -26,13 +26,17 @@ export QTDIR="$QT_DIR/lib"
 
 
 # PATH
-PATH="$ALT_X11_DIR/bin:$MACPORTS_DIR/bin:$MACPORTS_DIR/sbin:$MANUALLY_INSTALLED_DIR/bin:$MANUALLY_INSTALLED_DIR/sbin:$LATEX_BIN_DIR:$APPLE_DEVELOPER_DIR/bin:$APPLE_DEVELOPER_DIR/sbin:$INTEL_DIR/bin/intel64:$INTEL_DIR/bin:$ANDROID_DIR/tools:$TOOLS_DIR:$VISUALVM_DIR/bin:$IDA_DIR:$QT_DIR/bin:/bin:/sbin:/usr/bin:/usr/sbin:$X11_DIR:./:$ADA_DIR/bin"
-MANPATH="$MACPORTS_DIR/man:$MACPORTS_DIR/share/man:$X11_DIR/man:$X11/share/man:$MANUALLY_INSTALLED_DIR/man:$MANUALLY_INSTALLED_DIR/share/man:$INTEL_DIR/man:$APPLE_DEVELOPER_DIR/share/man:$ALT_X11_DIR/man:$ALT_X11_DIR/share/man:$ADA_DIR/man:/usr/share/man"
+export PATH="$ALT_X11_DIR/bin:$MACPORTS_DIR/bin:$MACPORTS_DIR/sbin:$MANUALLY_INSTALLED_DIR/bin:$MANUALLY_INSTALLED_DIR/sbin:$LATEX_BIN_DIR:$APPLE_DEVELOPER_DIR/bin:$APPLE_DEVELOPER_DIR/sbin:$INTEL_DIR/bin/intel64:$INTEL_DIR/bin:$ANDROID_DIR/tools:$TOOLS_DIR:$VISUALVM_DIR/bin:$IDA_DIR:$QT_DIR/bin:/bin:/sbin:/usr/bin:/usr/sbin:$X11_DIR:./:$ADA_DIR/bin"
+export MANPATH="$MACPORTS_DIR/man:$MACPORTS_DIR/share/man:$X11_DIR/man:$X11/share/man:$MANUALLY_INSTALLED_DIR/man:$MANUALLY_INSTALLED_DIR/share/man:$INTEL_DIR/man:$APPLE_DEVELOPER_DIR/share/man:$ALT_X11_DIR/man:$ALT_X11_DIR/share/man:$ADA_DIR/man:/usr/share/man"
 
 # Some usefull paths (cd ~D) 
-D="$HOME/Documents"
-DL="$HOME/Downloads"
-P="$PROJECTS_DIR"
-SB="$SANDBOX_DIR"
-Z="$PROJECTS_DIR/my_zshkit"
+export D="$HOME/Documents"
+export DL="$HOME/Downloads"
+export P="$PROJECTS_DIR"
+export SB="$SANDBOX_DIR"
+export Z="$PROJECTS_DIR/my_zshkit"
+export NBP="$HOME/NetBeansProjects"
+export XC="$HOME/XCode"
+export E="$HOME/Workspace"
+export RP="$NBP/Research_Project"
 
