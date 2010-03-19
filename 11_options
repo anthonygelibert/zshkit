@@ -8,18 +8,21 @@ setopt AUTO_CD 					# If a command is issued that can't be executed as a normal 
 setopt AUTO_LIST				# Automatically list choices on an ambiguous completion.
 setopt AUTO_MENU				# Automatically use menu completion after the second consecutive request for completion, for example by pressing the tab key repeatedly. This option is overridden by MENU_COMPLETE.
 setopt AUTO_PUSHD				# Make cd push the old directory onto the directory stack.
+setopt AUTO_REMOVE_SLASH		# When the last character resulting from a completion is a slash and the next character typed is a word delimiter, a slash, or a character that ends a command (such as a semicolon or an ampersand), remove the slash.
 setopt BANG_HIST				# Perform textual history expansion, csh-style, treating the character `!' specially.
-setopt BASH_AUTO_LIST 			# On an ambiguous completion, automatically list choices when the completion function is called twice in succession.
+unsetopt BASH_AUTO_LIST 		# NO -> On an ambiguous completion, automatically list choices when the completion function is called twice in succession.
 unsetopt BEEP					# NO -> Beep on error in ZLE.
 setopt BG_NICE					# Run all background jobs at a lower priority.
-setopt CDABLE_VARS				# If the argument to a cd command (or an implied cd with the AUTO_CD option set) is not a directory, and does not begin with a slash, try to expand the expression as if it were preceded by a `~' 
-setopt CLOBBER					# Allows `>' redirection to truncate existing files, and `>>' to create files. Otherwise `>!' or `>|' must be used to truncate a file, and `>>!' or `>>|' to create a file.
+setopt CDABLE_VARS				# If the argument to a cd command (or an implied cd with the AUTO_CD option set) is not a directory, and does not begin with a slash, try to expand the expression as if it were preceded by a '~' 
+setopt CHASE_LINKS				# Resolve symbolic links to their true values when changing directory. 
+unsetopt CLOBBER				# NO -> Allows `>' redirection to truncate existing files, and `>>' to create files. Otherwise `>!' or `>|' must be used to truncate a file, and `>>!' or `>>|' to create a file.
 setopt CORRECT					# Try to correct the spelling of commands. 
 setopt CORRECT_ALL				# Try to correct the spelling of all arguments in a line.
 setopt EXTENDED_GLOB			# Treat the `#', `~' and `^' characters as part of patterns for filename generation, etc.
 setopt EXTENDED_HISTORY			# Save each command's beginning timestamp (in seconds since the epoch) and the duration (in seconds) to the history file.
 setopt GLOB						# Perform filename generation
 setopt GLOB_COMPLETE			# When the current word has a glob pattern, do not insert all the words resulting from the expansion but generate matches as for completion and cycle through them like MENU_COMPLETE.
+unsetopt GLOB_DOTS				# NO -> Do not require a leading `.' in a filename to be matched explicitly.
 setopt HASH_CMDS				# Note the location of each command the first time it is executed
 setopt HASH_DIRS				# Whenever a command name is hashed, hash the directory containing it, as well as all directories that occur earlier in the path.
 setopt HASH_LIST_ALL			# Whenever a command completion is attempted, make sure the entire command path is hashed first. This makes the first completion slower.
@@ -33,17 +36,21 @@ setopt HIST_REDUCE_BLANKS		# Remove superfluous blanks from each command line be
 setopt HIST_VERIFY 				# Whenever the user enters a line with history expansion, don't execute the line directly; instead, perform history expansion and reload the line into the editing buffer.
 unsetopt HUP					# NO -> Send the HUP signal to running jobs when the shell exits.
 setopt IGNORE_EOF				# Do not exit on end-of-file. Require the use of exit or logout instead.
+setopt INC_APPEND_HISTORY
 setopt INTERACTIVE_COMMENTS		# Allow comments even in interactive shells.
+unsetopt LIST_AMBIGUOUS			# This option works when AUTO_LIST or BASH_AUTO_LIST is also set. 
 unsetopt LIST_BEEP				# NO -> Beep on an ambiguous completion.
 unsetopt LIST_PACKED			# NO -> Try to make the completion list smaller (occupying less lines) by printing the matches in columns with different widths.
 setopt LIST_TYPES				# When listing files that are possible completions, show the type of each file with a trailing identifying mark.
 unsetopt MENU_COMPLETE 			# On an ambiguous completion, instead of listing possibilities or beeping, insert the first match immediately.
 setopt MONITOR					# Allow job control. 
 setopt MULTIOS					# Perform implicit tees or cats when multiple redirections are attempted
+setopt NULL_GLOB				# If a pattern for filename generation has no matches, delete the pattern from the argument list instead of reporting an error.
 setopt PROMPT_SUBST				# If set, parameter expansion, command substitution and arithmetic expansion are performed in prompts.
 setopt PUSHD_IGNORE_DUPS		# Don't push multiple copies of the same directory onto the directory stack.
 setopt PUSHD_MINUS				# Exchanges the meanings of `+' and `-' when used with a number to specify a directory in the stack.
 setopt PUSHD_SILENT				# Do not print the directory stack after pushd or popd.
 setopt PUSHD_TO_HOME			# Have pushd with no arguments act like `pushd $HOME'.
+unsetopt RM_STAR_SILENT			# Do not query the user before executing `rm *' or `rm path/*'.
 setopt SHARE_HISTORY			# This option both imports new commands from the history file, and also causes your typed commands to be appended to the history file (the latter is like specifying INC_APPEND_HISTORY). 
 
