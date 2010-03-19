@@ -19,4 +19,4 @@ zstyle ':vcs_info:*' unstagedstr "*"  # display '*' if there are unstaged change
 zstyle ':vcs_info:*' stagedstr "↑"    # display '↑' if there are staged changes
 zstyle ':vcs_info:git:*:-all-' command /opt/local/bin/git
 zstyle ':vcs_info:hg:*:-all-' command /opt/local/bin/hg
-zstyle ':vcs_info:*' formats '${GREEN}%s${BLACK}:(${RED}%r${BLACK})${YELLOW}%u%c%f'
+zstyle ':vcs_info:*' formats 'is ${GREEN}%s${BLACK}:${RED}%r%f'
