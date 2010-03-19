@@ -1,3 +1,55 @@
+zstyle ':completion:*' completer _expand _complete
+ 
+zstyle ':completion:*' use-cache on
+zstyle ':completion:*' users resolve
+# use dircolours in completion listings
+zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
+# Enable menu completion
+zstyle ':completion*:default' menu 'select=1'
+ 
+# allow approximate matching
+zstyle ':completion:*' completer _complete _match _approximate
+zstyle ':completion:*:match:*' original only
+zstyle ':completion:*:approximate:*' max-errors 1 numeric
+zstyle ':completion:*' auto-description 'Specify: %d'
+zstyle ':completion:*' verbose true
+zstyle ':completion:*:functions' ignored-patterns '_*'
+zstyle ':completion:*:*:(^rm):*:*files' ignored-patterns \
+'*?.(o|c~|zwc)' '*?~'
+ 
+# only java files for javac
+zstyle ':completion:*:javac:*' files '*.java'
+ 
+# no binary files for vi or textmate
+zstyle ':completion:*:vi:*' ignored-patterns '*.(o|a|so|aux|dvi|log|swp|fig|bbl|blg|bst|idx|ind|out|toc|class|pdf|ps|pyc)'
+zstyle ':completion:*:mate:*' ignored-patterns '*.(o|a|so|aux|dvi|log|swp|fig|bbl|blg|bst|idx|ind|out|toc|class|pdf|ps|pyc)'
+zstyle ':completion:*:vim:*' ignored-patterns '*.(o|a|so|aux|dvi|log|swp|fig|bbl|blg|bst|idx|ind|out|toc|class|pdf|ps|pyc)'
+zstyle ':completion:*:gvim:*' ignored-patterns '*.(o|a|so|aux|dvi|log|swp|fig|bbl|blg|bst|idx|ind|out|toc|class|pdf|ps|pyc)'
+# no binary files for less
+zstyle ':completion:*:less:*' ignored-patterns '*.(o|a|so|dvi|fig|out|class|pdf|ps|pyc)'
+zstyle ':completion:*:zless:*' ignored-patterns '*.(o|a|so|dvi|fig|out|class|pdf|ps|pyc)'
+# pdf for xpdf
+zstyle ':completion:*:xpdf:*' files '*.pdf'
+# tar files
+zstyle ':completion:*:tar:*' files '*.tar|*.tgz|*.tz|*.tar.Z|*.tar.bz2|*.tZ|*.tar.gz'
+# latex to the fullest
+# for printing
+zstyle ':completion:*:xdvi:*' files '*.dvi'
+zstyle ':completion:*:dvips:*' files '*.dvi'
+ 
+# Group relatex matches:
+zstyle ':completion:*' group-name ''
+zstyle ':completion:*:-command-:*:(commands|builtins|reserved-words-aliases)' group-name commands
+# Separate man page sections
+zstyle ':completion:*:manuals' seperate-sections true
+# Separate comand line options and descriptions with #
+zstyle ':completion:*' list-separator '#'
+# Generate descriptions for arguments
+zstyle ':completion:*' auto-description 'specify: %d'
+ 
+# Give long completion options in a list. tab to advance.
+zstyle ':completion:*:default' list-prompt '%S%M matches%s'
+
 zstyle ':completion:*:descriptions' format '%U%B%d%b%u'
 zstyle ':completion:*:warnings' format '%BSorry, no matches for: %d%b'
 
@@ -26,27 +78,18 @@ function precmd {
 
   # Change hostname color on knowm hosts
   case ${HOST%%.*} in
-    slick)   local host_color="${fg_bold[cyan]}" ;;
-    guicb-notebook)   local host_color="${fg_bold[cyan]}" ;;
-    Endor)      local host_color="${fg_bold[green]}" ;;
-    Korriban)   local host_color="${fg_bold[yellow]}" ;;
-    Kohlma)     local host_color="${fg_bold[blue]}" ;;
-    Kothis)     local host_color="${fg_bold[red]}" ;;
+    my-Desktop)   local host_color="${fg_bold[cyan]}" ;;
+    my-Laptop)   local host_color="${fg_bold[cyan]}" ;;
     *)          local host_color="${fg_bold[red]}" ;;
   esac
 
   # Display return code when not 0
   local return_code="%(?..${deco}!%{${fg_no_bold[red]}%}%?${deco}! )"
   # user@host
-  local user_at_host="%{${fg_bold[default]}%}%n${deco}@%{${host_color}%}%m"
+  local user_at_host="%{${fg_bold[red]}%}%n${deco}@%{${host_color}%}%m"
   # Red # for root, plain % for user
   local sign="%(!.%{${fg_bold[red]}%}.${deco})%#"
 
-  # Set the prompt
-  #PS1="${return_code}${deco}[${user_at_host} ${cwd}${deco}] ${sign}%{${reset_color}%} "
-
-  PS1="%T%B[%~]%b
-${return_code}${deco}[${user_at_host} ${deco}] `git-prompt` ${sign}%{${reset_color}%} "
-
-#%B[%n:%l]%b %(0?##%S{%?}%s )%S%m%s%# "
+  PS1="%T%B${deco}[${path_color}%~${deco}]%b
+${return_code}${deco}[${user_at_host}${deco}] `git-prompt` ${sign}%{${reset_color}%} "
 }
