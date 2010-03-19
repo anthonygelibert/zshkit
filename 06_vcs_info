@@ -12,10 +12,11 @@ autoload -Uz vcs_info
 # See the documentation for the format string definition
 # This generates a fancy coloured string with $vcs:($branch)
 zstyle ':vcs_info:*' enable git hg svn cvs p4
+zstyle ':vcs_info:*' get-revision true
 zstyle ':vcs_info:*' check-for-changes true
-zstyle ':vcs_info:*' unstagedstr "¹"  # display ¹ if there are unstaged changes
-zstyle ':vcs_info:*' stagedstr "²"    # display ² if there are staged changes
+zstyle ':vcs_info:*' mac-exports 1
+zstyle ':vcs_info:*' unstagedstr "*"  # display '*' if there are unstaged changes
+zstyle ':vcs_info:*' stagedstr "↑"    # display '↑' if there are staged changes
 zstyle ':vcs_info:git:*:-all-' command /opt/local/bin/git
 zstyle ':vcs_info:hg:*:-all-' command /opt/local/bin/hg
-zstyle ':vcs_info:*' get-revision true
-zstyle ':vcs_info:*' formats '${GREEN}%s${BLACK}:(${RED}%r${BLACK}/${YELLOW}%b${BLACK})%f/%u/%c'
+zstyle ':vcs_info:*' formats '${GREEN}%s${BLACK}:(${RED}%r${BLACK})${YELLOW}%u%c%f'
