@@ -11,13 +11,14 @@ local KERNEL_FEATURES="`uname -a | cut -d';' -f2 | sed 's/^ //'`"
 #   - the number of users
 #   - the load
 local COMPLETE_UPTIME="`uptime`"
-local UPTIME="`echo $COMPLETE_UPTIME | cut -d',' -f 1 | sed 's/.*up//'`"
-local USERS="`echo $COMPLETE_UPTIME | cut -d',' -f 2 | cut -d' ' -f2`"
+local UPTIME="`echo $COMPLETE_UPTIME | grep -o 'up.*users' | grep -o ' .*, ' | sed 's_, $__'`"
+local USERS="`echo $COMPLETE_UPTIME | grep -o ', .* users' | sed 's_.*, __' | sed 's_ users__'`"
 local LOAD="`echo $COMPLETE_UPTIME | awk ' BEGIN {FS = ": "}{print $2}'`"
+
 clear
 echo "${bldblack}--------------------------------------------------------------------------------"
 echo "${bldwhite}$KERNEL_TYPE Kernel Version $KERNEL_VERSION ($KERNEL_FEATURES)${NC}"
 echo "${ured}UPTIME:${NC}${bldwhite}${UPTIME}${NC}"
-echo "${ured}USERS:${NC}${bldwhite} $USERS${NC}"
-echo "${ured}LOAD AVERAGES:${NC}${bldwhite} ${LOAD}${NC}"
+echo "${ured}USERS:${NC} ${bldwhite}${USERS}${NC}"
+echo "${ured}LOAD:${NC} ${bldwhite}${LOAD}${NC}"
 echo "${bldblack}--------------------------------------------------------------------------------"
