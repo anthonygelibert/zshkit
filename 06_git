@@ -9,9 +9,6 @@ then
 	alias gd='git diff'
 	alias gf='git fetch'
 	alias gr='git-rebase'
-	alias gsc='git-svn dcommit'
-	alias gsr='git-svn rebase'
-	alias gsf='git-svn fetch'
 	alias gst='git status'
 
 	function git-branch-name()
