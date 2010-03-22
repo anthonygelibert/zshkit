@@ -23,8 +23,8 @@ function prompt_char {
 
 function precmd
 {
-	# Color for decorations
-	local deco="%{$reset_color%}"
+	# No coloration
+	local nc="%{$reset_color%}"
 	
 	# Change hostname color on knowm hosts
   	case ${HOST%%.*} in
@@ -34,11 +34,13 @@ function precmd
   	esac
 
   	# Display return code when not 0
-  	local return_code="%(?..${deco}!%{${fg_no_bold[red]}%}%?${deco}! )"
+  	local return_code="%(?..${nc}!%{${fg_no_bold[red]}%}%?${nc}! )"
   	# user at host
-  	local user_at_host="%{${fg[magenta]}%}%n ${deco}at %{${host_color}%}%m"
+  	local user_at_host="%{${fg[magenta]}%}%n ${nc}at %{${host_color}%}%m"
+	# in path
+	local in_path=" in %{$fg[green]%}%~"
 
-	vcs_info
-  	PS1="$user_at_host${deco} in %{$fg[green]%}%~${deco} ${vcs_info_msg_0_}$(hg_prompt_info)$(git_prompt_info)%b
-${return_code}${deco}$(prompt_char) %{${reset_color}%} "
+	vcs_info;
+  	PS1="${user_at_host}${nc}${in_path}${nc} ${vcs_info_msg_0_}$(hg_prompt_info)$(git_prompt_info)%b
+${return_code}${nc}$(prompt_char)  "
 }
