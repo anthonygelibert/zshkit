@@ -4,7 +4,7 @@ alias psearch="port search"
 alias pinfo="port info"
 
 # Update the list, display the outdated, make the update and uninstall the inactives
-alias updateMP='sudo port selfupdate && sudo port outdated && sudo port upgrade outdated && sudo uninstall inactive'
+alias updateMP='sudo port selfupdate && sudo port outdated && sudo port upgrade outdated && sudo port uninstall inactive'
 
 # Some SSH/Telnet acces
 alias ensisun='ssh gelibera@ensisun.imag.fr'
