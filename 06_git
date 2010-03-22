@@ -2,46 +2,46 @@
 ### Git
 ###########
 
-if [[ -x `which git` ]]; 
+if [[ -x `which git` ]];
 then
 	alias g='git'
 	alias gb='git branch -a -v'
-	alias gs='git status'
 	alias gd='git diff'
 	alias gf='git fetch'
 	alias gr='git-rebase'
 	alias gsc='git-svn dcommit'
 	alias gsr='git-svn rebase'
 	alias gsf='git-svn fetch'
-	
-	function git-branch-name() 
+	alias gst='git status'
+
+	function git-branch-name()
 	{
 		git branch 2> /dev/null | grep '^\*' | sed 's/^\*\ //'
 	}
-	
-	function git-dirty() 
+
+	function git-dirty()
 	{
 		git status 2> /dev/null | grep "nothing to commit (working directory clean)"
 		echo $?
 	}
-	
-	function gsrb() 
+
+	function gsrb()
 	{
-		branch=$(git-branch-name) 
+		branch=$(git-branch-name)
 		git checkout master
 		git svn rebase
 		git checkout "${branch}"
 		git rebase master
 	}
-	
-  	function git-need-to-push() 
+
+  	function git-need-to-push()
 	{
   		if pushtime=$(echo $1 | grep 'Your branch is ahead' 2> /dev/null); then
     		echo "↑ "
   		fi
   	}
 
-	function git-prompt() 
+	function git-prompt()
 	{
 		gstatus=$(git status 2> /dev/null)
 		branch=$(echo $gstatus | head -1 | sed 's/^# On branch //')
@@ -53,12 +53,12 @@ then
 			[ x$branch != x ] && echo " %{$dirty_color%}$branch%{$reset_color%} $push_status"
 		fi
 	}
-	
+
 	function git-scoreboard()
 	{
 		git log | grep '^Author' | sort | uniq -ci | sort -r
 	}
-	
+
 	function git-track()
 	{
 		branch=$(git-branch-name)
@@ -66,36 +66,36 @@ then
 		git config branch.$branch.merge refs/heads/$branch
 		echo "tracking origin/$tracking"
 	}
-	
-	function github-init() 
+
+	function github-init()
 	{
 		git config branch.$(git-branch-name).remote origin
 		git config branch.$(git-branch-name).merge refs/heads/$(git-branch-name)
 	}
-	
-	function github-url() 
+
+	function github-url()
 	{
 		git config remote.origin.url | sed -En 's/git(@|:\/\/)github.com(:|\/)(.+)\/(.+).git/https:\/\/github.com\/\3\/\4/p'
 	}
-	
+
 	# Seems to be the best OS X jump-to-github alias from http://tinyurl.com/2mtncf
 	function github-go()
 	{
 		open $(github-url)
 	}
-	
-	function nhgk() 
+
+	function nhgk()
 	{
 		nohup gitk --all &
 	}
-	
+
 	# get the name of the branch we are on
-	function git_prompt_info() 
+	function git_prompt_info()
 	{
 		ref=$(git symbolic-ref HEAD 2> /dev/null) || return
 		echo " on %{$fg[magenta]%}${ref#refs/heads/}$(parse_git_dirty)%{$reset_color%}"
 	}
-	
+
 	function parse_git_dirty()
 	{
 		gitstat=$(git status 2>/dev/null | grep '\(# Untracked\|# Changes\|# Changed but not updated:\)')
@@ -106,7 +106,7 @@ then
 
 	  	if [[ $(echo ${gitstat} | grep -c "^\(# Untracked files:\|# Changed but not updated:\)$") > 0 ]]; then
 			echo -n "%{$fg[green]%}?"
-	  	fi 
+	  	fi
 
 	  	if [[ $(echo ${gitstat} | grep -v '^$' | wc -l | tr -d ' ') == 0 ]]; then
 			echo -n ""
