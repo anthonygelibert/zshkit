@@ -55,21 +55,7 @@ then
 	{
 		git log | grep '^Author' | sort | uniq -ci | sort -r
 	}
-
-	function git-track()
-	{
-		branch=$(git-branch-name)
-		git config branch.$branch.remote origin
-		git config branch.$branch.merge refs/heads/$branch
-		echo "tracking origin/$tracking"
-	}
-
-	function github-init()
-	{
-		git config branch.$(git-branch-name).remote origin
-		git config branch.$(git-branch-name).merge refs/heads/$(git-branch-name)
-	}
-
+	
 	function github-url()
 	{
 		git config remote.origin.url | sed -En 's/git(@|:\/\/)github.com(:|\/)(.+)\/(.+).git/https:\/\/github.com\/\3\/\4/p'
@@ -79,11 +65,6 @@ then
 	function github-go()
 	{
 		open $(github-url)
-	}
-
-	function nhgk()
-	{
-		nohup gitk --all &
 	}
 
 	# get the name of the branch we are on
@@ -105,6 +86,10 @@ then
 			echo -n "%{$fg[green]%}?"
 	  	fi
 
+		if [[ $(echo ${gitstat} | grep 'Your branch is ahead') > 0 ]]; then
+			echo -n "%{$fg[green]%}↑"
+	  	fi
+	
 	  	if [[ $(echo ${gitstat} | grep -v '^$' | wc -l | tr -d ' ') == 0 ]]; then
 			echo -n ""
 	  	fi
