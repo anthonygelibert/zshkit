@@ -7,6 +7,15 @@ mesg y
 # Watch for login/logout
 watch=all
 
+# Change hostname color on knowm hosts
+# I put this here, because host doesn't change during a session
+case ${HOST%%.*} in
+	my-Desktop) local host_color="${fg[yellow]}" ;;
+	my-Laptop)  local host_color="${fg[yellow]}" ;;
+	ensi-vpn-*) local host_color="${fg_bold[yellow]}" ;;
+	*)          local host_color="${fg[red]}" ;;
+esac
+
 function prompt_char {
     git branch >/dev/null 2>/dev/null && echo '±' && return
     hg root >/dev/null 2>/dev/null && echo '☿' && return
@@ -18,14 +27,6 @@ function precmd
 	# No coloration
 	local nc="%{$reset_color%}"
 	
-	# Change hostname color on knowm hosts
-  	case ${HOST%%.*} in
-    	my-Desktop) local host_color="${fg[yellow]}" ;;
-    	my-Laptop)  local host_color="${fg[yellow]}" ;;
-		ensi-vpn-*) local host_color="${fg_bold[yellow]}" ;;
-    	*)          local host_color="${fg[red]}" ;;
-  	esac
-
   	# Display return code when not 0
   	local return_code="%(?..${nc}!%{${fg_no_bold[red]}%}%?${nc}! )"
   	# user at host
