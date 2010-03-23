@@ -7,14 +7,6 @@ mesg y
 # Watch for login/logout
 watch=all
 
-function hg_prompt_info {
-    hg prompt --angle-brackets "\
-< on %{$fg[magenta]%}<branch>%{$reset_color%}>\
-< at %{$fg[yellow]%}<tags|%{$reset_color%}, %{$fg[yellow]%}>%{$reset_color%}>\
-%{$fg[green]%}<status|modified|unknown><update>%{$reset_color%}<
-patches: <patches|join( → )|pre_applied(%{$fg[yellow]%})|post_applied(%{$reset_color%})|pre_unapplied(%{$fg_bold[black]%})|post_unapplied(%{$reset_color%})>>" 2>/dev/null
-}
-
 function prompt_char {
     git branch >/dev/null 2>/dev/null && echo '±' && return
     hg root >/dev/null 2>/dev/null && echo '☿' && return
@@ -30,6 +22,7 @@ function precmd
   	case ${HOST%%.*} in
     	my-Desktop) local host_color="${fg[yellow]}" ;;
     	my-Laptop)  local host_color="${fg[yellow]}" ;;
+		ensi-vpn-*) local host_color="${fg_bold[yellow]}" ;;
     	*)          local host_color="${fg[red]}" ;;
   	esac
 
@@ -41,6 +34,7 @@ function precmd
 	local in_path=" in %{$fg[green]%}%~"
 
 	vcs_info;
-  	PS1="${user_at_host}${nc}${in_path}${nc} ${vcs_info_msg_0_}$(hg_prompt_info)$(git_prompt_info)%b
+  	PS1="${user_at_host}${nc}${in_path}${nc} ${vcs_info_msg_0_}%b
 ${return_code}${nc}$(prompt_char)  "
+
 }
