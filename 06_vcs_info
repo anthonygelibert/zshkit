@@ -1,22 +1,15 @@
 local BLACK="%F{0}"
 local RED="%F{1}"
 local GREEN="%F{2}"
-local YELLOW="%F{3}"
-local BLUE="%F{4}"
-local MAGENTA="%F{5}"
-local CYAN="%F{6}"
-local WHITE="%F{7}"
 
 autoload -Uz vcs_info
 
 # See the documentation for the format string definition
 # This generates a fancy coloured string with $vcs:($branch)
-zstyle ':vcs_info:*' enable git hg svn cvs p4
-zstyle ':vcs_info:*' get-revision true
-zstyle ':vcs_info:*' check-for-changes true
+zstyle ':vcs_info:*' enable git hg svn
 zstyle ':vcs_info:*' mac-exports 1
-zstyle ':vcs_info:*' unstagedstr "*"  # display '*' if there are unstaged changes
-zstyle ':vcs_info:*' stagedstr "↑"    # display '↑' if there are staged changes
 zstyle ':vcs_info:git:*:-all-' command /opt/local/bin/git
 zstyle ':vcs_info:hg:*:-all-' command /opt/local/bin/hg
-zstyle ':vcs_info:*' formats 'is ${GREEN}%s${BLACK}:${RED}%r%f'
+
+zstyle ':vcs_info:hg:*' formats 'is ${GREEN}%s${BLACK}:${RED}%r%f$(hg_prompt_info)'
+zstyle ':vcs_info:git:*' formats 'is ${GREEN}%s${BLACK}:${RED}%r%f$(git_prompt_info)'
