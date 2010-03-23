@@ -1,6 +1,6 @@
 # Some MacPorts alias
 alias pins="sudo port -v install"
-alias psearch="port search"
+alias psrc="port search"
 alias pinfo="port info"
 
 # Update the list, display the outdated, make the update and uninstall the inactives
@@ -21,7 +21,7 @@ alias cpu_hogs='ps wwaxr -o pid,stat,%cpu,time,command | head -20'
 alias lsock='sudo lsof -i -P -n'
 
 # Some useful information
-# IP configurations 
+# IP configurations
 alias ip0_info='ipconfig getpacket en0'
 alias ip1_info='ipconfig getpacket en1'
 alias ip2_info='ipconfig getpacket en2'
@@ -31,28 +31,28 @@ alias od_info='drutil info'
 alias ap_info='/System/Library/PrivateFrameworks/Apple80211.framework/Versions/A/Resources/airport -I'
 
 
-# Useful terminal command 
+# Useful terminal command
 # Eject a volume
 alias eject='hdiutil eject'
 # Apache
 alias apache2ctl='sudo /opt/local/apache2/bin/apachectl'
 # Copy the working dir to the clipboard
-alias cpwd='pwd | xargs echo -n | pbcopy' 
-# Go to felix dir, clean the cache and start 
+alias cpwd='pwd | xargs echo -n | pbcopy'
+# Go to felix dir, clean the cache and start
 alias felix='(cd $FELIX_DIR; rm -rf felix-cache && java -jar bin/felix.jar)'
 
 
 local ASM_DEBUG_ALL_JAR="$ASM_DIR/lib/all/asm-debug-all-3.2.jar"
-function asmifier() 
+function asmifier()
 {
     if [ $# -eq 1 ]; then
         java -classpath "$ASM_DEBUG_ALL_JAR" org.objectweb.asm.util.ASMifierClassVisitor $1
     fi
 }
 
-function exportkey() 
+function exportkey()
 {
     if [ $# -eq 2 ]; then
-        cat $1 | ssh $1 "cat >> ~/.ssh/authorized_keys"
+        cat $1 | ssh $2 "cat >> ~/.ssh/authorized_keys"
     fi
 }
