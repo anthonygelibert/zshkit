@@ -11,46 +11,6 @@ then
 	alias gr='git-rebase'
 	alias gst='git status'
 
-	function git-branch-name()
-	{
-		git branch 2> /dev/null | grep '^\*' | sed 's/^\*\ //'
-	}
-
-	function git-dirty()
-	{
-		git status 2> /dev/null | grep "nothing to commit (working directory clean)"
-		echo $?
-	}
-
-	function gsrb()
-	{
-		branch=$(git-branch-name)
-		git checkout master
-		git svn rebase
-		git checkout "${branch}"
-		git rebase master
-	}
-
-  	function git-need-to-push()
-	{
-  		if pushtime=$(echo $1 | grep 'Your branch is ahead' 2> /dev/null); then
-    		echo "↑ "
-  		fi
-  	}
-
-	function git-prompt()
-	{
-		gstatus=$(git status 2> /dev/null)
-		branch=$(echo $gstatus | head -1 | sed 's/^# On branch //')
-		dirty=$(echo $gstatus | sed 's/^#.*$//' | tail -2 | grep 'nothing to commit (working directory clean)'; echo $?)
-		if [[ x$branch != x ]]; then
-			dirty_color=$fg[green]
-      		push_status=$(git-need-to-push $gstatus 2> /dev/null)
-			if [[ $dirty = 1 ]] { dirty_color=$fg[red] }
-			[ x$branch != x ] && echo " %{$dirty_color%}$branch%{$reset_color%} $push_status"
-		fi
-	}
-
 	function git-scoreboard()
 	{
 		git log | grep '^Author' | sort | uniq -ci | sort -r
@@ -76,7 +36,7 @@ then
 
 	function parse_git_dirty()
 	{
-		gitstat=$(git status 2>/dev/null | grep '\(# Untracked\|# Changes\|# Changed but not updated:\)')
+		gitstat=$(git status 2>/dev/null | grep '\(# Untracked\|# Changes\|# Changed but not updated:\|# Your branch is ahead\)')
 
 	  	if [[ $(echo ${gitstat} | grep -c "^# Changes to be committed:$") > 0 ]]; then
 			echo -n "%{$fg[green]%}!"
@@ -86,7 +46,7 @@ then
 			echo -n "%{$fg[green]%}?"
 	  	fi
 
-		if [[ $(echo ${gitstat} | grep -c "^# Your branch is ahead$") > 0 ]]; then
+		if [[ $(echo ${gitstat} | grep -c "^# Your branch is ahead") > 0 ]]; then
 			echo -n "%{$fg[green]%}↑"
 	  	fi
 	
