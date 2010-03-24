@@ -1,0 +1,11 @@
+# Some SSH/Telnet acces
+alias ensisun='ssh gelibera@ensisun.imag.fr'
+alias nas_local='ssh root@diskstation.local'
+alias nas_telnet='telnet diskstation.local'
+
+function exportkey()
+{
+    if [ $# -eq 2 ]; then
+        cat $1 | ssh $2 "cat >> ~/.ssh/authorized_keys"
+    fi
+}
