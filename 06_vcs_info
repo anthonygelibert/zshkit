@@ -4,16 +4,18 @@ local GREEN="%F{2}"
 
 autoload -Uz vcs_info
 
-# See the documentation for the format string definition
-# This generates a fancy coloured string with $vcs:($branch)
+# Enable git, mercurial and svn
 zstyle ':vcs_info:*' enable git hg svn
+# Export only one string
 zstyle ':vcs_info:*' mac-exports 1
 
+# Paths to git, hg and svn 
 zstyle ':vcs_info:git:*:-all-' command /opt/local/bin/git
 zstyle ':vcs_info:hg:*:-all-' command /opt/local/bin/hg
 zstyle ':vcs_info:svn:*:-all-' command /opt/local/bin/svn
 
-zstyle ':vcs_info:svn:*' formats 'is ${GREEN}%s${BLACK}:${RED}%r%f'
-zstyle ':vcs_info:hg:*' formats 'is ${GREEN}%s${BLACK}:${RED}%r%f$(hg_prompt_info)'
+# Formats for git, hg and svn
 zstyle ':vcs_info:git:*' formats 'is ${GREEN}%s${BLACK}:${RED}%r%f$(git_prompt_info)'
+zstyle ':vcs_info:hg:*' formats 'is ${GREEN}%s${BLACK}:${RED}%r%f$(hg_prompt_info)'
+zstyle ':vcs_info:svn:*' formats 'is ${GREEN}%s${BLACK}:${RED}%r%f'
 
