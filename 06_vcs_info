@@ -8,8 +8,12 @@ autoload -Uz vcs_info
 # This generates a fancy coloured string with $vcs:($branch)
 zstyle ':vcs_info:*' enable git hg svn
 zstyle ':vcs_info:*' mac-exports 1
+
 zstyle ':vcs_info:git:*:-all-' command /opt/local/bin/git
 zstyle ':vcs_info:hg:*:-all-' command /opt/local/bin/hg
+zstyle ':vcs_info:svn:*:-all-' command /opt/local/bin/svn
 
+zstyle ':vcs_info:svn:*' formats 'is ${GREEN}%s${BLACK}:${RED}%r%f'
 zstyle ':vcs_info:hg:*' formats 'is ${GREEN}%s${BLACK}:${RED}%r%f$(hg_prompt_info)'
 zstyle ':vcs_info:git:*' formats 'is ${GREEN}%s${BLACK}:${RED}%r%f$(git_prompt_info)'
+
