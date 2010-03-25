@@ -7,6 +7,11 @@ mesg y
 # Watch for login/logout
 watch=all
 
+autoload -Uz zfinit 
+zfinit
+
+autoload -U zmv
+
 # Change hostname color on knowm hosts
 # I put this here, because host doesn't change during a session
 case ${HOST%%.*} in
@@ -36,6 +41,6 @@ function precmd
 
 	vcs_info;
   	PS1="${user_at_host}${nc}${in_path}${nc} ${vcs_info_msg_0_}%b
-${return_code}${nc}$(prompt_char)  "
+${return_code}${nc}$(prompt_char) "
 
 }
