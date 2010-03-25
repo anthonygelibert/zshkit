@@ -21,6 +21,7 @@ alias eject='hdiutil eject'
 alias apache2ctl='sudo /opt/local/apache2/bin/apachectl'
 # Copy the working dir to the clipboard
 alias cpwd='pwd | xargs echo -n | pbcopy'
+
 # Go to felix dir, clean the cache and start
 alias felix='(cd $FELIX_DIR; rm -rf felix-cache && java -jar bin/felix.jar)'
 
