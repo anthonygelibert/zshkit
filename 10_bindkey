@@ -1,4 +1,4 @@
-typeset -A key
+typeset -g -A key
 
 bindkey "${key[Home]}" beginning-of-line
 bindkey "${key[End]}" end-of-line
