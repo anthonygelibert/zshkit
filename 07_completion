@@ -4,6 +4,10 @@ fignore=(DS_Store $fignore)
 autoload -Uz compinit
 compinit
 
+autoload -U zsh-mime-setup 
+autoload -U zsh-mime-handler 
+zsh-mime-setup
+
 zmodload zsh/complist
 
 zstyle ':completion:*' use-cache on
