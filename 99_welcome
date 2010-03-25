@@ -16,10 +16,13 @@ local UPTIME="`echo $COMPLETE_UPTIME | sed 's/.*up//' | sed 's/, [0-9]* users.*/
 local USERS="`echo $COMPLETE_UPTIME | grep -o "[0-9]* users" | sed 's/ users$//'`"
 local LOAD="`echo $COMPLETE_UPTIME | awk ' BEGIN {FS = ": "}{print $2}'`"
 
-clear
-echo "${bldblack}--------------------------------------------------------------------------------"
-echo "${bldwhite}`uname -s` Kernel Version `uname -r` ($KERNEL_FEATURES)${NC}"
-echo "${ured}UPTIME:${NC}${bldwhite}${UPTIME}${NC}"
-echo "${ured}USERS:${NC} ${bldwhite}${USERS}${NC}"
-echo "${ured}LOAD:${NC} ${bldwhite}${LOAD}${NC}"
-echo "${bldblack}--------------------------------------------------------------------------------"
+
+if [ "$TERM" = "xterm-color" ]; then
+	clear
+	echo "${bldblack}--------------------------------------------------------------------------------"
+	echo "${bldwhite}`uname -s` Kernel Version `uname -r` ($KERNEL_FEATURES)${NC}"
+	echo "${ured}UPTIME:${NC}${bldwhite}${UPTIME}${NC}"
+	echo "${ured}USERS:${NC} ${bldwhite}${USERS}${NC}"
+	echo "${ured}LOAD:${NC} ${bldwhite}${LOAD}${NC}"
+	echo "${bldblack}--------------------------------------------------------------------------------"
+fi
