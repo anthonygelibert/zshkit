@@ -6,6 +6,11 @@ alias cpu_hogs='ps wwaxr -o pid,stat,%cpu,time,command | head -20'
 # Open sockets using lsof
 alias lsock='sudo lsof -i -P -n'
 
+# Processus
+alias stop="kill -TSTP"
+alias int="kill -s INT"
+alias quit="kill -s QUIT"
+
 # IP configurations
 alias ip0_info='ipconfig getpacket en0'
 alias ip1_info='ipconfig getpacket en1'
