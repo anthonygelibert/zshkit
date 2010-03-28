@@ -1,0 +1,4 @@
+unalias run-help
+autoload -U run-help
+
+HELPDIR="$HOME/.zsh/help"
