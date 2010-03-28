@@ -3,9 +3,8 @@ typeset -g -A key
 bindkey "${key[Home]}" beginning-of-line
 bindkey "${key[End]}" end-of-line
   
-bindkey "^Og" noglob-command-line
-bindkey "^Os" sudo-command-line
- 
-bindkey "^[^[[D" backward-word 
-bindkey "^[^[[C" forward-word
+# For the delete key of my keyboard
+bindkey "^[[3~" delete-char
 
+# Kill the region for later yanking
+bindkey '\C-w' kill-region
