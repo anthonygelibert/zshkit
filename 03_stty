@@ -1,2 +1,2 @@
-stty speed 115200
+stty speed 115200 > /dev/null
 stty stop undef
