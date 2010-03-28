@@ -27,11 +27,11 @@ function prompt_char {
     echo '○'
 }
 
+# No coloration
+local nc="%{$reset_color%}"
+
 function precmd
-{
-	# No coloration
-	local nc="%{$reset_color%}"
-	
+{	
   	# Display return code when not 0
   	local return_code="%(?..${nc}!%{${fg_no_bold[red]}%}%?${nc}! )"
   	# user at host
