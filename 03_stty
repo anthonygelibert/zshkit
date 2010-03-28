@@ -1,0 +1,2 @@
+stty speed 115200
+stty stop undef
