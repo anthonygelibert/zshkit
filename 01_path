@@ -13,6 +13,7 @@ export PROJECTS_DIR="$HOME/Documents/Projects"
 export SANDBOX_DIR="$HOME/SandBox"
 export TOOLS_DIR="$HOME/Documents/Tools"
 export X11_DIR="/usr/X11"
+export VOLUMES_DIR="/Volumes"
 
 export ANDROID_DIR="$MY_APPLICATIONS_DIR/Android"
 export ASM_DIR="$MY_APPLICATIONS_DIR/ASM-3.2/"
@@ -45,7 +46,7 @@ export RP="$NBP/Research_Project"
 export PATH="$ALT_X11_DIR/bin:$MANUALLY_INSTALLED_DIR/bin:$MANUALLY_INSTALLED_DIR/sbin:$MACPORTS_DIR/bin:$MACPORTS_DIR/sbin:$LATEX_BIN_DIR:$APPLE_DEVELOPER_DIR/bin:$APPLE_DEVELOPER_DIR/sbin:$INTEL_DIR/bin/intel64:$INTEL_DIR/bin:$ANDROID_DIR/tools:$TOOLS_DIR:$VISUALVM_DIR/bin:$IDA_DIR:$QT_DIR/bin:/bin:/sbin:/usr/bin:/usr/sbin:$X11_DIR/bin:$ADA_DIR/bin:."
 export MANPATH="$MACPORTS_DIR/man:$MACPORTS_DIR/share/man:$X11_DIR/man:$X11_DIR/share/man:$MANUALLY_INSTALLED_DIR/man:$MANUALLY_INSTALLED_DIR/share/man:$INTEL_DIR/man:$APPLE_DEVELOPER_DIR/share/man:$ALT_X11_DIR/man:$ALT_X11_DIR/share/man:$ADA_DIR/man:/usr/share/man"
 export FPATH="$HOME/.zsh/func:$FPATH"
-export CDPATH="$TOOLS_DIR:$P:$D:$DL:$SB:$NBP:$RP:$HOME"
+export CDPATH="$TOOLS_DIR:$P:$D:$DL:$SB:$NBP:$RP:$VOLUMES_DIR:$HOME"
 
 
 
