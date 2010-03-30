@@ -31,6 +31,7 @@ export SWAP_DIR="/var/vm/"
 
 # Some usefull paths (cd ~D)
 export D="$HOME/Documents"
+export B="$D/Blog"
 export DL="$HOME/Downloads"
 export P="$PROJECTS_DIR"
 export SB="$SANDBOX_DIR"
@@ -41,7 +42,7 @@ export E="$HOME/Workspace"
 export RP="$NBP/Research_Project"
 
 # PATH
-export PATH="$ALT_X11_DIR/bin:$MANUALLY_INSTALLED_DIR/bin:$MANUALLY_INSTALLED_DIR/sbin:$MACPORTS_DIR/bin:$MACPORTS_DIR/sbin:$LATEX_BIN_DIR:$APPLE_DEVELOPER_DIR/bin:$APPLE_DEVELOPER_DIR/sbin:$INTEL_DIR/bin/intel64:$INTEL_DIR/bin:$ANDROID_DIR/tools:$TOOLS_DIR:$VISUALVM_DIR/bin:$IDA_DIR:$QT_DIR/bin:/bin:/sbin:/usr/bin:/usr/sbin:$X11_DIR/bin:$ADA_DIR/bin:./"
+export PATH="$ALT_X11_DIR/bin:$MANUALLY_INSTALLED_DIR/bin:$MANUALLY_INSTALLED_DIR/sbin:$MACPORTS_DIR/bin:$MACPORTS_DIR/sbin:$LATEX_BIN_DIR:$APPLE_DEVELOPER_DIR/bin:$APPLE_DEVELOPER_DIR/sbin:$INTEL_DIR/bin/intel64:$INTEL_DIR/bin:$ANDROID_DIR/tools:$TOOLS_DIR:$VISUALVM_DIR/bin:$IDA_DIR:$QT_DIR/bin:/bin:/sbin:/usr/bin:/usr/sbin:$X11_DIR/bin:$ADA_DIR/bin:."
 export MANPATH="$MACPORTS_DIR/man:$MACPORTS_DIR/share/man:$X11_DIR/man:$X11_DIR/share/man:$MANUALLY_INSTALLED_DIR/man:$MANUALLY_INSTALLED_DIR/share/man:$INTEL_DIR/man:$APPLE_DEVELOPER_DIR/share/man:$ALT_X11_DIR/man:$ALT_X11_DIR/share/man:$ADA_DIR/man:/usr/share/man"
 export FPATH="$HOME/.zsh/func:$FPATH"
 export CDPATH="$TOOLS_DIR:$P:$D:$DL:$SB:$NBP:$RP:$HOME"
