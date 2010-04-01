@@ -8,7 +8,7 @@ autoload -U zsh-mime-setup
 autoload -U zsh-mime-handler 
 zsh-mime-setup
 
-zmodload zsh/complist
+zmodload -i zsh/complist
 
 zstyle ':completion:*' use-cache on
 zstyle ':completion:*' users resolve
@@ -24,8 +24,7 @@ zstyle ':completion:*:approximate:*' max-errors 1 numeric
 zstyle ':completion:*' auto-description 'Specify: %d'
 zstyle ':completion:*' verbose true
 zstyle ':completion:*:functions' ignored-patterns '_*'
-zstyle ':completion:*:*:(^rm):*:*files' ignored-patterns \
-'*?.(o|c~|zwc)' '*?~'
+zstyle ':completion:*:*:(^rm):*:*files' ignored-patterns '*?.(o|c~|zwc)' '*?~'
  
 # only java files for javac
 zstyle ':completion:*:javac:*' files '*.java'
