@@ -3,10 +3,12 @@
 ### Info : http://zsh.sourceforge.net/Doc/Release/zsh_15.html
 
 setopt ALIASES 					# Expand aliases.
+unsetopt ALWAYS_TO_END
 setopt APPEND_HISTORY 			# If this is set, zsh sessions will append their history list to the history file, rather than overwrite it.
 setopt AUTO_CD 					# If a command is issued that can't be executed as a normal command, and the command is the name of a directory, perform the cd command to that directory.
 setopt AUTO_LIST				# Automatically list choices on an ambiguous completion.
 setopt AUTO_MENU				# Automatically use menu completion after the second consecutive request for completion, for example by pressing the tab key repeatedly. This option is overridden by MENU_COMPLETE.
+setopt AUTO_NAME_DIRS
 setopt AUTO_PUSHD				# Make cd push the old directory onto the directory stack.
 setopt AUTO_REMOVE_SLASH		# When the last character resulting from a completion is a slash and the next character typed is a word delimiter, a slash, or a character that ends a command (such as a semicolon or an ampersand), remove the slash.
 setopt BANG_HIST				# Perform textual history expansion, csh-style, treating the character `!' specially.
@@ -16,10 +18,12 @@ setopt BG_NICE					# Run all background jobs at a lower priority.
 setopt CDABLE_VARS				# If the argument to a cd command (or an implied cd with the AUTO_CD option set) is not a directory, and does not begin with a slash, try to expand the expression as if it were preceded by a '~' 
 setopt CHASE_LINKS				# Resolve symbolic links to their true values when changing directory. 
 unsetopt CLOBBER				# NO -> Allows `>' redirection to truncate existing files, and `>>' to create files. Otherwise `>!' or `>|' must be used to truncate a file, and `>>!' or `>>|' to create a file.
+setopt COMPLETE_IN_WORD
 setopt CORRECT					# Try to correct the spelling of commands. 
-setopt CORRECT_ALL				# Try to correct the spelling of all arguments in a line.
+#setopt CORRECT_ALL				# Try to correct the spelling of all arguments in a line.
 setopt EXTENDED_GLOB			# Treat the `#', `~' and `^' characters as part of patterns for filename generation, etc.
 setopt EXTENDED_HISTORY			# Save each command's beginning timestamp (in seconds since the epoch) and the duration (in seconds) to the history file.
+unsetopt FLOWCONTROL
 setopt GLOB						# Perform filename generation
 setopt GLOB_COMPLETE			# When the current word has a glob pattern, do not insert all the words resulting from the expansion but generate matches as for completion and cycle through them like MENU_COMPLETE.
 unsetopt GLOB_DOTS				# NO -> Do not require a leading `.' in a filename to be matched explicitly.
@@ -42,6 +46,7 @@ unsetopt LIST_AMBIGUOUS			# This option works when AUTO_LIST or BASH_AUTO_LIST i
 unsetopt LIST_BEEP				# NO -> Beep on an ambiguous completion.
 unsetopt LIST_PACKED			# NO -> Try to make the completion list smaller (occupying less lines) by printing the matches in columns with different widths.
 setopt LIST_TYPES				# When listing files that are possible completions, show the type of each file with a trailing identifying mark.
+setopt LONG_LIST_JOBS
 unsetopt MENU_COMPLETE 			# On an ambiguous completion, instead of listing possibilities or beeping, insert the first match immediately.
 setopt MONITOR					# Allow job control. 
 setopt MULTIOS					# Perform implicit tees or cats when multiple redirections are attempted
@@ -53,4 +58,5 @@ setopt PUSHD_SILENT				# Do not print the directory stack after pushd or popd.
 setopt PUSHD_TO_HOME			# Have pushd with no arguments act like `pushd $HOME'.
 unsetopt RM_STAR_SILENT			# Do not query the user before executing `rm *' or `rm path/*'.
 setopt SHARE_HISTORY			# This option both imports new commands from the history file, and also causes your typed commands to be appended to the history file (the latter is like specifying INC_APPEND_HISTORY). 
-
+setopt TRANSIENT_RPROMPT
+#setopt XTRACE
