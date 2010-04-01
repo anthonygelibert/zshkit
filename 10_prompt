@@ -1,4 +1,4 @@
-setopt prompt_subst
+PS4='+%N:%i:%_>'
 # Right prompt with clock
 RPS1="  %{$fg_bold[black]%}%D{%d/%m/%y %H:%M:%S}%{${reset_color}%}"
 
