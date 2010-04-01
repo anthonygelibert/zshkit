@@ -5,7 +5,7 @@ umask 077
 mesg y
 
 # Watch for login/logout
-watch=all
+watch=()
 
 autoload -Uz zfinit 
 zfinit
@@ -32,15 +32,7 @@ local nc="%{$reset_color%}"
 
 function precmd
 {	
-  	# Display return code when not 0
-  	local return_code="%(?..${nc}!%{${fg_no_bold[red]}%}%?${nc}! )"
-  	# user at host
-  	local user_at_host="%{${fg[magenta]}%}%n ${nc}at %{${host_color}%}%m"
-	# in path
-	local in_path=" in %{$fg[green]%}%~"
-
 	vcs_info;
-  	PS1="${user_at_host}${nc}${in_path}${nc} ${vcs_info_msg_0_}%b
-${return_code}${nc}$(prompt_char) "
-
+  	PS1="%{${fg[magenta]}%}%n ${nc}at %{${host_color}%}%m${nc} in %{$fg[green]%}%~${nc} ${vcs_info_msg_0_}
+%(?..${nc}!%{${fg_no_bold[red]}%}%?${nc}! )${return_code}${nc}$(prompt_char) "
 }
