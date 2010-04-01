@@ -6,8 +6,9 @@ autoload -Uz vcs_info
 
 # Enable git, mercurial and svn
 zstyle ':vcs_info:*' enable git hg svn
+
 # Export only one string
-zstyle ':vcs_info:*' mac-exports 1
+zstyle ':vcs_info:*' max-exports 1
 
 # Paths to git, hg and svn 
 zstyle ':vcs_info:git:*:-all-' command /opt/local/bin/git
