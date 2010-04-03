@@ -2,7 +2,9 @@ typeset -g -A key
 
 bindkey "${key[Home]}" beginning-of-line
 bindkey "${key[End]}" end-of-line
-  
+bindkey -M menuselect '\C-o' accept-and-menu-complete
+bindkey -M listscroll q send-break
+
 # For the delete key of my keyboard
 bindkey "^[[3~" delete-char
 
