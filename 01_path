@@ -31,7 +31,8 @@ export SWAP_DIR="/var/vm/"
 # JOnAS
 export JONAS_ROOT="$HOME/Applications/JOnAS"
 export JONAS_BASE="$HOME/Applications/JOnAS_BASE"
-
+# JRebel
+export JREBEL_HOME="$MY_APPLICATIONS_DIR/ZeroTurnaround/JRebel"
 
 
 # Some usefull paths (cd ~D)
