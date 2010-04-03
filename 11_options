@@ -48,7 +48,7 @@ unsetopt LIST_PACKED			# NO -> Try to make the completion list smaller (occupyin
 setopt LIST_TYPES				# When listing files that are possible completions, show the type of each file with a trailing identifying mark.
 setopt LONG_LIST_JOBS
 unsetopt MENU_COMPLETE 			# On an ambiguous completion, instead of listing possibilities or beeping, insert the first match immediately.
-setopt MONITOR					# Allow job control. 
+#setopt MONITOR					# Allow job control. 
 setopt MULTIOS					# Perform implicit tees or cats when multiple redirections are attempted
 setopt NULL_GLOB				# If a pattern for filename generation has no matches, delete the pattern from the argument list instead of reporting an error.
 setopt PROMPT_SUBST				# If set, parameter expansion, command substitution and arithmetic expansion are performed in prompts.
