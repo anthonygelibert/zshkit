@@ -4,7 +4,7 @@
 export ADA_DIR="/opt/ada-4.4"
 export ALT_X11_DIR="/opt/X11"
 export APPLE_DEVELOPER_DIR="/Developer/usr"
-export INTEL_DIR="/opt/intel/Compiler/11.1/058"
+export INTEL_DIR="/opt/intel/Compiler/11.1/084"
 export LATEX_BIN_DIR="/usr/texbin"
 export MACPORTS_DIR="/opt/local"
 export MANUALLY_INSTALLED_DIR="/usr/local"
