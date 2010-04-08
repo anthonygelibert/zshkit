@@ -22,9 +22,8 @@ case ${HOST%%.*} in
 esac
 
 function prompt_char {
-    git branch >/dev/null 2>/dev/null && echo '±' && return
-    hg root >/dev/null 2>/dev/null && echo '☿' && return
-    echo '○'
+    [ -z "${vcs_info_msg_0_}" ] && echo "
+○"
 }
 
 # No coloration
@@ -33,6 +32,5 @@ local nc="%{$reset_color%}"
 function precmd
 {	
 	vcs_info;
-  	PS1="%{${fg[magenta]}%}%n ${nc}at %{${host_color}%}%m${nc} in %{$fg[green]%}%~${nc} ${vcs_info_msg_0_}
-%(?..${nc}!%{${fg_no_bold[red]}%}%?${nc}! )${return_code}${nc}$(prompt_char) "
+  	PS1="%{${fg[magenta]}%}%n ${nc}at %{${host_color}%}%m${nc} in %{$fg[green]%}%~${nc} ${vcs_info_msg_0_}$(prompt_char) "
 }
