@@ -1,12 +1,6 @@
 # By default, all created elements are rwx______
 umask 077
 
-# Accept message from other users
-mesg y
-
-# Watch for login/logout
-watch=()
-
 autoload -Uz zfinit 
 zfinit
 
@@ -18,13 +12,8 @@ case ${HOST%%.*} in
 	my-Desktop) local host_color="${fg[yellow]}" ;;
 	my-Laptop)  local host_color="${fg[yellow]}" ;;
 	ensi-vpn-*) local host_color="${fg_bold[yellow]}" ;;
-	*)          local host_color="${fg[red]}" ;;
+	*)          local host_color="${fg_bold[red]}" ;;
 esac
-
-function prompt_char {
-    [ -z "${vcs_info_msg_0_}" ] && echo "
-○"
-}
 
 # No coloration
 local nc="%{$reset_color%}"
@@ -32,5 +21,5 @@ local nc="%{$reset_color%}"
 function precmd
 {	
 	vcs_info;
-  	PS1="%{${fg[magenta]}%}%n ${nc}at %{${host_color}%}%m${nc} in %{$fg[green]%}%~${nc} ${vcs_info_msg_0_}$(prompt_char) "
+  	PS1="%{${fg[magenta]}%}%n ${nc}at %{${host_color}%}%m${nc} in %{$fg[green]%}%~${nc} ${vcs_info_msg_0_} "
 }
