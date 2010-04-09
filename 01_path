@@ -1,50 +1,76 @@
-######################
-### SPECIAL FOLDERS
-
+# Ada 4.4 	: http://homepage.mac.com/WebObjects/FileSharing.woa/wa/default?user=awreynolds&templatefn=FileSharing7.html&xmlfn=TKDocument.7.xml&sitefn=RootSite.xml&aff=consumer&cty=US&lang=en
 export ADA_DIR="/opt/ada-4.4"
+# X11 		: http://xquartz.macosforge.org/trac/wiki
 export ALT_X11_DIR="/opt/X11"
+# XCode 	: http://developer.apple.com/technologies/tools/xcode.html
 export APPLE_DEVELOPER_DIR="/Developer/usr"
+# Intel C++ : http://software.intel.com/en-us/intel-compilers
 export INTEL_DIR="/opt/intel/Compiler/11.1/084"
+# LaTeX
 export LATEX_BIN_DIR="/usr/texbin"
+# MacPorts 	: http://www.macports.org
 export MACPORTS_DIR="/opt/local"
+# Manually
 export MANUALLY_INSTALLED_DIR="/usr/local"
+# My Applications
 export MY_APPLICATIONS_DIR="$HOME/Applications"
+# My Projects
 export PROJECTS_DIR="$HOME/Documents/Projects"
+# SandBox
 export SANDBOX_DIR="$HOME/SandBox"
+# Official X11
 export X11_DIR="/usr/X11"
+# Mounted volumes
 export VOLUMES_DIR="/Volumes"
 
+# Android 		: http://developer.android.com/sdk/index.html
 export ANDROID_DIR="$MY_APPLICATIONS_DIR/Android"
+# ASM Framework : http://asm.ow2.org 
 export ASM_DIR="$MY_APPLICATIONS_DIR/ASM-3.2/"
+# Apache Felix 	: http://felix.apache.org/site/index.html
 export FELIX_DIR="$MY_APPLICATIONS_DIR/Felix/"
+# IDA 			: http://www.hex-rays.com/idapro
 export IDA_DIR="$MANUALLY_INSTALLED_DIR/bin/idaadv"
+# QT4
 export QT_DIR="$MACPORTS_DIR/libexec/qt4-mac"
+# VisualVM		: https://visualvm.dev.java.net
 export VISUALVM_DIR="$MY_APPLICATIONS_DIR/VisualVM/"
-
-# Path for some applications
 # Java 1.6 Home on Mac OS X
-export JAVA_HOME="/System/Library/Frameworks/JavaVM.framework/Versions/1.6.0/Home"
-# QT4 lib
+export JAVA_HOME="/Library/Java/Home"
+# QT4 
 export QTDIR="$QT_DIR/lib"
-# Swap folder
+# Swap folder on Mac OS X
 export SWAP_DIR="/var/vm/"
 # JOnAS
-export JONAS_ROOT="$HOME/Applications/JOnAS"
-export JONAS_BASE="$HOME/Applications/JOnAS_BASE"
+export JONAS_ROOT="$MY_APPLICATIONS_DIR/JOnAS"
+export JONAS_BASE="$MY_APPLICATIONS_DIR/JOnAS_BASE"
 # JRebel
 export JREBEL_HOME="$MY_APPLICATIONS_DIR/ZeroTurnaround/JRebel"
-
+# Griffon
+export GRIFFON_HOME="$MACPORTS_DIR/share/java/griffon"
+# Grails
+export GRAILS_HOME="$MACPORTS_DIR/share/java/grails"
 
 # Some usefull paths (cd ~D)
+# My Documents
 export D="$HOME/Documents"
+# My Blog
 export B="$D/Blog"
+# My Downloads
 export DL="$HOME/Downloads"
+# My Projects
 export P="$PROJECTS_DIR"
+# Alias for SandBox
 export SB="$SANDBOX_DIR"
+# This project
 export Z="$PROJECTS_DIR/my_zshkit"
+# NetBeans Projects
 export NBP="$HOME/NetBeansProjects"
+# XCode Projects
 export XC="$HOME/XCode"
+# Eclipse Projects
 export E="$HOME/Workspace"
+# Research Project
 export RP="$NBP/Research_Project"
 
 # PATH
