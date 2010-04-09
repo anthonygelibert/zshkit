@@ -1,7 +1,3 @@
-###########
-### Git
-###########
-
 if [[ -x `which git` ]];
 then
 	alias g='git'
@@ -26,33 +22,5 @@ then
 	function github-go()
 	{
 		open $(github-url)
-	}
-
-	# get the name of the branch we are on
-	function git_prompt_info()
-	{
-		ref=$(git symbolic-ref HEAD 2> /dev/null) || return
-		echo " on %{$fg[magenta]%}${ref#refs/heads/}$(parse_git_dirty)%{$reset_color%}"
-	}
-
-	function parse_git_dirty()
-	{
-		gitstat=$(git status 2>/dev/null | grep '\(# Untracked\|# Changes\|# Changed but not updated:\|# Your branch is ahead\)')
-
-	  	if [[ $(echo ${gitstat} | grep -c "^# Changes to be committed:$") > 0 ]]; then
-			echo -n "%{$fg[green]%}!"
-	  	fi
-
-	  	if [[ $(echo ${gitstat} | grep -c "^\(# Untracked files:\|# Changed but not updated:\)$") > 0 ]]; then
-			echo -n "%{$fg[green]%}?"
-	  	fi
-
-		if [[ $(echo ${gitstat} | grep -c "^# Your branch is ahead") > 0 ]]; then
-			echo -n "%{$fg[green]%}↑"
-	  	fi
-	
-	  	if [[ $(echo ${gitstat} | grep -v '^$' | wc -l | tr -d ' ') == 0 ]]; then
-			echo -n ""
-	  	fi
 	}
 fi
