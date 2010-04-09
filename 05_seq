@@ -1,1 +1,2 @@
+# Use the GNU seq
 alias seq=`which gseq`
