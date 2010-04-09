@@ -9,6 +9,10 @@ zstyle ':vcs_info:*' enable git hg svn
 
 # Export only one string
 zstyle ':vcs_info:*' max-exports 1
+zstyle ':vcs_info:*' check-for-changes true 
+zstyle ':vcs_info:*' use-prompt-escapes true
+zstyle ':vcs_info:*' unstagedstr "?"
+zstyle ':vcs_info:*' stagedstr "!"
 
 # Paths to git, hg and svn 
 zstyle ':vcs_info:git:*:-all-' command /opt/local/bin/git
@@ -16,10 +20,13 @@ zstyle ':vcs_info:hg:*:-all-' command /opt/local/bin/hg
 zstyle ':vcs_info:svn:*:-all-' command /opt/local/bin/svn
 
 # Formats for git, hg and svn
-zstyle ':vcs_info:git:*' formats 'is ${GREEN}%s${BLACK}:${RED}%r%f$(git_prompt_info)
-±%(?..${nc}!%{${fg_no_bold[red]}%}%?${nc}! )${nc}'
-zstyle ':vcs_info:hg:*' formats 'is ${GREEN}%s${BLACK}:${RED}%r%f$(hg_prompt_info)
-☿%(?..${nc}!%{${fg_no_bold[red]}%}%?${nc}! )${nc}'
-zstyle ':vcs_info:svn:*' formats 'is ${GREEN}%s${BLACK}:${RED}%r%f'
-zstyle ':vcs_info:default:*' formats 'fsdfldksfjlk'
+zstyle ':vcs_info:git:*' formats 'is ${GREEN}%s${BLACK}:${RED}%r%f on %{$fg[magenta]%}%b${nc}%u%c
+%(?..${nc}!%{${fg_no_bold[red]}%}%?${nc}! )%{$reset_color%}±'
+zstyle ':vcs_info:hg:*' formats 'is ${GREEN}%s${BLACK}:${RED}%r%f on %{$fg[magenta]%}%b $(hg_prompt_info) 
+%(?..${nc}!%{${fg_no_bold[red]}%}%?${nc}! )%{$reset_color%}☿'
+zstyle ':vcs_info:svn:*' formats 'is ${GREEN}%s${BLACK}:${RED}%r%f
+%(?..${nc}!%{${fg_no_bold[red]}%}%?${nc}! )%{$reset_color%}∫'
 
+# Format when there isn't vcs
+zstyle ':vcs_info:*:*' nvcsformats '
+%(?..${nc}!%{${fg_no_bold[red]}%}%?${nc}! )%{$reset_color%}○'
