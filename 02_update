@@ -1,10 +1,14 @@
-if [[ -x `which git` ]]; then
+if [[ -x `which git` ]]; 
+then
 	mydir=`dirname $0`
-	if [[ $mydir = . ]]; then
+	
+	if [[ $mydir = . ]];
+	then
 		mydir=`pwd`
 	fi
 	
-	function zshkit-update () {
+	function zshkit-update()
+	{
 		pushd $HOME
 		pushd $mydir
 		git pull
