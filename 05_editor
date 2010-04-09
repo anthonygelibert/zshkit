@@ -5,37 +5,48 @@
 export EDITOR
 export CVSEDITOR
 
-function not_run_from_ssh () {
+function not_run_from_ssh ()
+{
 	ps x|grep "${PPID}.*sshd"|grep -v grep
 	echo $?
 }
  
-if [[ -x `which mate` && $(not_run_from_ssh) = 1 ]]; then
-	EDITOR="mate -w"
+
+if [[ -x `which mate` && $(not_run_from_ssh) = 1 ]];
+then
+	export EDITOR="mate -w"
+	
 	# Useful functions for bundle development
-    function reload_textmate(){
+    function reload_textmate()
+	{
       osascript -e 'tell app "TextMate" to reload bundles'
     }
-    function bundle () {
+    
+	function bundle()
+	{
       cd "$HOME/Library/Application Support/TextMate/Bundles/$1.tmbundle"
     }
-    _bundle() {
+
+    _bundle()
+ 	{
       bundle_path="$HOME/Library/Application Support/TextMate/Bundles"
       compadd $(print -l $bundle_path/*.tmbundle(:t:r))
     }
+elif [[ -x `which mvim` && $(not_run_from_ssh) = 1 ]]; then 
+	export EDITOR="mvim -f"
 elif [[ -x `which gvim` ]]; then
-    EDITOR=gvim
-    CVSEDITOR='gvim -f'
+    export EDITOR="gvim"
+    export CVSEDITOR="gvim -f"
 elif [[ -x `which vim` ]]; then
-    EDITOR=vim
+    export EDITOR="vim"
 elif [[ -x `which vi` ]]; then
-    EDITOR=vi  
+    export EDITOR="vi"  
 elif [[ -x `which nano` ]]; then
-	EDITOR=nano
+	export EDITOR="nano"
 elif [[ -x `which pico` ]]; then
-	EDITOR=pico
+	export EDITOR="pico"
 else
-	EDITOR=vi
+	export EDITOR="vi"
 fi
  
 # Set EDITOR as default for plaintext stuff
