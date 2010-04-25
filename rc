@@ -6,20 +6,21 @@ zfinit
 
 autoload -U zmv
 
-# Change hostname color on knowm hosts
-# I put this here, because host doesn't change during a session
+
+# No coloration
+local nc="%{$reset_color%}"
+# Change hostname color on known hosts
 case ${HOST%%.*} in
 	my-Desktop) local host_color="${fg[yellow]}" ;;
+	my-desktop) local host_color="${fg[yellow]}" ;;
 	my-Laptop)  local host_color="${fg[yellow]}" ;;
+	my-laptop)  local host_color="${fg[yellow]}" ;;
 	ensi-vpn-*) local host_color="${fg_bold[yellow]}" ;;
 	*)          local host_color="${fg_bold[red]}" ;;
 esac
 
-# No coloration
-local nc="%{$reset_color%}"
-
 function precmd
 {	
-	vcs_info;
+	vcs_info
   	PS1="%{${fg[magenta]}%}%n ${nc}at %{${host_color}%}%m${nc} in %{$fg[green]%}%~${nc} ${vcs_info_msg_0_} "
 }
