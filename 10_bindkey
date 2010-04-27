@@ -10,3 +10,14 @@ bindkey "^[[3~" delete-char
 
 # Kill the region for later yanking
 bindkey '\C-w' kill-region
+
+# Terminal.app sucks :'(
+if [[ $OSTYPE[1,6] == "darwin" ]]; then
+  bindkey '^[^[[D' backward-word
+  bindkey '^[^[[C' forward-word
+  bindkey '^A' beginning-of-line
+  bindkey '^E' end-of-line
+  bindkey '^[[3~' delete-char
+  bindkey '^[^N' newtab
+  bindkey '^?' backward-delete-char
+fi

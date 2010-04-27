@@ -6,9 +6,9 @@ zfinit
 
 autoload -U zmv
 
-
 # No coloration
 local nc="%{$reset_color%}"
+
 # Change hostname color on known hosts
 case ${HOST%%.*} in
 	my-Desktop) local host_color="${fg[yellow]}" ;;

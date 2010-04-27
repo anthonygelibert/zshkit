@@ -1,11 +1,11 @@
 # Files to ignore during completion
 fignore=(DS_Store $fignore)
- 
+
 autoload -Uz compinit
 compinit
 
-autoload -U zsh-mime-setup 
-autoload -U zsh-mime-handler 
+autoload -U zsh-mime-setup
+autoload -U zsh-mime-handler
 zsh-mime-setup
 
 zmodload zsh/complist
@@ -18,7 +18,7 @@ zstyle ':completion:*' list-packed true # This is tested for each tag valid in t
 zstyle ':completion:*' verbose true # If set, as it is by default, the completion listing is more verbose. In particular many commands show descriptions for options if this style is ‘true’.
 zstyle ':completion:*' completer _complete _prefix _match _approximate _ignored # The strings given as the value of this style provide the names of the completer functions to use.
 
-zstyle ':completion:*' matcher-list 'r:|[._-]=* r:|=*' 'm:{a-zA-Z}={A-Za-z}' 
+zstyle ':completion:*' matcher-list 'r:|[._-]=* r:|=*' 'm:{a-zA-Z}={A-Za-z}'
 zstyle ':completion:*' ignore-parents parent pwd
 zstyle ':completion:*' group-name ''
 zstyle ':completion:*' list-separator '#'
@@ -27,7 +27,7 @@ zstyle ':completion:*' auto-description 'specify: %d'
 
 # Enable menu completion
 zstyle ':completion*:default' menu 'select=1' # In the form ‘select=num’, menu selection will only be started if there are at least num matches
- 
+
 # allow approximate matching
 zstyle ':completion:*:corrections' format '%U%B%d (errors: %e)%b%u'
 zstyle ':completion:*:match:*' original only
@@ -38,9 +38,9 @@ zstyle ':completion::complete:*:functions' ignored-patterns '_*'
 zstyle ':completion::complete:chown:*' ignored-patterns '_*'
 zstyle ':completion:*:prefix:*' add-space true
 zstyle ':completion:*:*:(^rm):*:*files' ignored-patterns '*?.(o|c~|zwc)' '*?~'
- 
+
 # only java files for javac
-zstyle ':completion:*:javac:*' files '*.java' 
+zstyle ':completion:*:javac:*' files '*.java'
 # no binary files for vi or textmate
 zstyle ':completion:*:vi:*' ignored-patterns '*.(o|a|so|aux|dvi|log|swp|fig|bbl|blg|bst|idx|ind|out|toc|class|pdf|ps|pyc)'
 zstyle ':completion:*:mate:*' ignored-patterns '*.(o|a|so|aux|dvi|log|swp|fig|bbl|blg|bst|idx|ind|out|toc|class|pdf|ps|pyc)'
@@ -67,3 +67,13 @@ zstyle ':completion:*:descriptions' format '%U%B%d%b%u'
 zstyle ':completion:*:warnings' format '%BSorry, no matches for: %d%b'
 zstyle ':completion:*:*:kill:*:processes' list-colors "=(#b) #([0-9]#)*=36=31"
 zstyle ':completion:*:windows' menu on=0
+
+# Ignore completion functions for commands you don't have:
+zstyle ':completion:correct:' prompt 'correct to: %e'
+zstyle ':completion::(^approximate*):*:functions' ignored-patterns '_*'
+
+# Caching
+[ -d $HOME/.zsh/cache ] \
+&& zstyle ':completion:*' use-cache yes \
+&& zstyle ':completion::complete:*' cache-path $HOME/.zsh/cache/
+
