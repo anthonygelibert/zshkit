@@ -4,7 +4,28 @@ umask 077
 autoload -Uz zfinit 
 zfinit
 
+autoload -Uz zcalc
 autoload -U zmv
+
+# Global ulimit
+# CPU time
+ulimit -t unlimited
+# File size
+ulimit -f unlimited
+# Data seg size
+ulimit -d unlimited
+# Core file size
+ulimit -c unlimited
+# Address space
+ulimit -v unlimited
+# Locked-in-Memory size
+ulimit -l unlimited
+# Processes
+ulimit -u 256
+# File descriptors
+ulimit -n 256
+# Stack size
+ulimit -s 8192
 
 # No coloration
 local nc="%{$reset_color%}"
