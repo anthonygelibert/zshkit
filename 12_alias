@@ -28,8 +28,7 @@ alias apache2ctl='sudo /opt/local/apache2/bin/apachectl'
 alias cpwd='pwd | xargs echo -n | pbcopy'
 
 # Go to felix dir, clean the cache and start
-alias felix='(cd $FELIX_DIR; rm -rf felix-cache && java -jar bin/felix.jar)'
-
+alias felix='(cd $FELIX_DIR; rm -rf felix-cache && java -ea -jar bin/felix.jar)'
 
 local ASM_DEBUG_ALL_JAR="$ASM_DIR/lib/all/asm-debug-all-3.2.jar"
 function asmifier()
@@ -38,3 +37,10 @@ function asmifier()
         java -classpath "$ASM_DEBUG_ALL_JAR" org.objectweb.asm.util.ASMifierClassVisitor $1
     fi
 }
+
+# Mac OS X DNS Cache shortcuts
+if [[ -x `which dscacheutil` ]]; then
+  alias cleardns="dscacheutil -flushcache"
+  alias showdns="dscacheutil -cachedump -entries Host"
+fi
+
