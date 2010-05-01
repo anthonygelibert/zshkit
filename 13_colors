@@ -1,3 +1,0 @@
-#eval `gdircolors`
-autoload -Uz colors
-colors
