@@ -18,7 +18,7 @@ zstyle ':completion:*' list-packed true # This is tested for each tag valid in t
 zstyle ':completion:*' verbose true # If set, as it is by default, the completion listing is more verbose. In particular many commands show descriptions for options if this style is ‘true’.
 zstyle ':completion:*' completer _complete _prefix _match _approximate _ignored # The strings given as the value of this style provide the names of the completer functions to use.
 
-zstyle ':completion:*' matcher-list 'r:|[._-]=* r:|=*' 'm:{a-zA-Z}={A-Za-z}'
+zstyle ':completion:*' matcher-list 'r:|[._-]=* r:|=*' 'l:|=* r:|=*' 'm:{a-z}={A-Z}'
 zstyle ':completion:*' ignore-parents parent pwd
 zstyle ':completion:*' group-name ''
 zstyle ':completion:*' list-separator '#'
@@ -35,32 +35,43 @@ zstyle ':completion:*:approximate:*' max-errors 2 numeric # This is used by the 
 zstyle ':completion::approximate*:*' prefix-needed false
 zstyle ':completion:*:(^approximate):*' matcher-list 'm:{a-z}={A-Z}'
 zstyle ':completion::complete:*:functions' ignored-patterns '_*'
+zstyle ':completion:*:functions' ignored-patterns '_*'
 zstyle ':completion::complete:chown:*' ignored-patterns '_*'
 zstyle ':completion:*:prefix:*' add-space true
 zstyle ':completion:*:*:(^rm):*:*files' ignored-patterns '*?.(o|c~|zwc)' '*?~'
 
+## offer indexes before parameters in subscripts
+zstyle ':completion:*:*:-subscript-:*' tag-order indexes parameters
+
 # only java files for javac
 zstyle ':completion:*:javac:*' files '*.java'
+
 # no binary files for vi or textmate
 zstyle ':completion:*:vi:*' ignored-patterns '*.(o|a|so|aux|dvi|log|swp|fig|bbl|blg|bst|idx|ind|out|toc|class|pdf|ps|pyc)'
 zstyle ':completion:*:mate:*' ignored-patterns '*.(o|a|so|aux|dvi|log|swp|fig|bbl|blg|bst|idx|ind|out|toc|class|pdf|ps|pyc)'
 zstyle ':completion:*:vim:*' ignored-patterns '*.(o|a|so|aux|dvi|log|swp|fig|bbl|blg|bst|idx|ind|out|toc|class|pdf|ps|pyc)'
 zstyle ':completion:*:gvim:*' ignored-patterns '*.(o|a|so|aux|dvi|log|swp|fig|bbl|blg|bst|idx|ind|out|toc|class|pdf|ps|pyc)'
+
 # no binary files for less
 zstyle ':completion:*:less:*' ignored-patterns '*.(o|a|so|dvi|fig|out|class|pdf|ps|pyc)'
 zstyle ':completion:*:zless:*' ignored-patterns '*.(o|a|so|dvi|fig|out|class|pdf|ps|pyc)'
+
 # pdf for xpdf
 zstyle ':completion:*:xpdf:*' files '*.pdf'
+
 # tar files
 zstyle ':completion:*:tar:*' files '*.tar|*.tgz|*.tz|*.tar.Z|*.tar.bz2|*.tZ|*.tar.gz'
-# latex to the fullest
-# for printing
+
+# latex to the fullest for printing
 zstyle ':completion:*:xdvi:*' files '*.dvi'
 zstyle ':completion:*:dvips:*' files '*.dvi'
+
 # Group relatex matches:
 zstyle ':completion:*:-command-:*:(commands|builtins|reserved-words-aliases)' group-name commands
+
 # Separate man page sections
 zstyle ':completion:*:manuals' seperate-sections true
+
 # Give long completion options in a list. tab to advance.
 zstyle ':completion:*:default' list-prompt '%S%M matches%s'
 zstyle ':completion:*:descriptions' format '%U%B%d%b%u'
@@ -72,8 +83,22 @@ zstyle ':completion:*:windows' menu on=0
 zstyle ':completion:correct:' prompt 'correct to: %e'
 zstyle ':completion::(^approximate*):*:functions' ignored-patterns '_*'
 
+## Determine in which order the names (files) should be listed and completed when using menu completion:
+##   - 'size' to sort them by the size of the file
+##   - 'links' to sort them by the number of links to the file
+##   - 'modification' or 'time' or 'date' to sort them by the last modification time
+##   - 'access' to sort them by the last access time
+##   - 'inode' or 'change' to sort them by the last inode change time
+##   - 'reverse' to sort in decreasing order
+## If the style is set to any other value, or is unset, files will be sorted alphabetically by name.
+zstyle ':completion:*' file-sort name
+
+## don't complete backup files as executables
+zstyle ':completion:*:complete:-command-::commands' ignored-patterns '*\~'
+
 # Caching
 [ -d $HOME/.zsh/cache ] \
 && zstyle ':completion:*' use-cache yes \
 && zstyle ':completion::complete:*' cache-path $HOME/.zsh/cache/
 
+zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
