@@ -6,11 +6,26 @@
 # -e : Print the Access Control List (ACL) associated with the file, if present, in long (-l) output.
 # -t : Sort by time modified (most recently modified first) before sorting the operands by lexicographical order.
 # -t : Reverse the order of the sort to get reverse lexicographical order or the oldest entries first (or largest files last, if combined with sort by size
+# -d : Directories are listed as plain files
+
 alias l='ls'
-alias ls='ls -GFh'
+alias ls='ls -bGFh'
 alias la='ls -a'
 alias ll='ls -l'
 alias le='ll -e'
 alias lla='ls -la'
 alias lm='ls -la | more'
 alias lt='ls -ltr'
+alias lsad='ls -d .*(/)'
+alias lsa='ls -a .*(.)'
+alias lss='ls -l *(s,S,t)'
+alias lsl='ls -l *(@[1,10])'
+alias lsx='ls -l *(*[1,10])'
+alias lsw='ls -ld *(R,W,X.^ND/)'
+alias lsd='ls -d *(/)'
+alias lse='ls -d *(/^F)'
+alias lsbig="ls -flh *(.OL[1,10])"
+alias lssmall="ls -Srl *(.oL[1,10])"
+alias lsnew="ls -rl *(D.om[1,10])"
+alias lsold="ls -rtlh *(D.om[1,10])"
+
