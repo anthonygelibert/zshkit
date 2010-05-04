@@ -1,14 +1,29 @@
 # Files to ignore during completion
 fignore=(DS_Store $fignore)
 
-autoload -Uz compinit
-compinit
+autoload -Uz compinit && compinit
+zmodload zsh/complist
 
 autoload -U zsh-mime-setup
 autoload -U zsh-mime-handler
 zsh-mime-setup
 
-zmodload zsh/complist
+autoload -U url-quote-magic
+zle -N self-insert url-quote-magic
+
+#  use 'zstyle' for getting current settings
+#  press ^Xh (control-x h) for getting tags in context
+#        ^X? (control-x ?) to run complete_debug with trace output
+
+## Determine in which order the names (files) should be listed and completed when using menu completion:
+##   - 'size' to sort them by the size of the file
+##   - 'links' to sort them by the number of links to the file
+##   - 'modification' or 'time' or 'date' to sort them by the last modification time
+##   - 'access' to sort them by the last access time
+##   - 'inode' or 'change' to sort them by the last inode change time
+##   - 'reverse' to sort in decreasing order
+## If the style is set to any other value, or is unset, files will be sorted alphabetically by name.
+zstyle ':completion:*' file-sort name
 
 zstyle ':completion:*' use-cache on # If this is set, the completion caching layer is activated for any completions which use it
 zstyle ':completion:*' use-perl on # Various parts of the function system use awk to extract words from files or command output as this universally available. However, many versions of awk have arbitrary limits on the size of input. If this style is set, perl will be used instead.
@@ -17,21 +32,31 @@ zstyle ':completion:*' list-grouped true # If this style is ‘true’ (the defa
 zstyle ':completion:*' list-packed true # This is tested for each tag valid in the current context as well as the default tag. If it is set to ‘true’, the corresponding matches appear in listings as if the LIST_PACKED option were set.
 zstyle ':completion:*' verbose true # If set, as it is by default, the completion listing is more verbose. In particular many commands show descriptions for options if this style is ‘true’.
 zstyle ':completion:*' completer _complete _prefix _match _approximate _ignored # The strings given as the value of this style provide the names of the completer functions to use.
-
+zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
 zstyle ':completion:*' matcher-list 'r:|[._-]=* r:|=*' 'l:|=* r:|=*' 'm:{a-z}={A-Z}'
 zstyle ':completion:*' ignore-parents parent pwd
 zstyle ':completion:*' group-name ''
 zstyle ':completion:*' list-separator '#'
 zstyle ':completion:*' auto-description 'specify: %d'
 
-
 # Enable menu completion
 zstyle ':completion*:default' menu 'select=1' # In the form ‘select=num’, menu selection will only be started if there are at least num matches
+
+# activate menu
+zstyle ':completion:*:history-words'   list false
+zstyle ':completion:*:history-words'   menu yes
+zstyle ':completion:*:history-words'   remove-all-dups yes
+zstyle ':completion:*:history-words'   stop yes
 
 # allow approximate matching
 zstyle ':completion:*:corrections' format '%U%B%d (errors: %e)%b%u'
 zstyle ':completion:*:match:*' original only
-zstyle ':completion:*:approximate:*' max-errors 2 numeric # This is used by the _approximate and _correct completer functions to determine the maximum number of errors to allow. The completer will try to generate completions by first allowing one error, then two errors, and so on, until either a match or matches were found or the maximum number of errors given by this style has been reached.
+
+# separate matches into groups
+zstyle ':completion:*:matches'         group 'yes'
+
+# allow one error for every three characters typed in approximate completer
+zstyle ':completion:*:approximate:' max-errors 'reply=( $((($#PREFIX+$#SUFFIX)/2 )) numeric )'
 zstyle ':completion::approximate*:*' prefix-needed false
 zstyle ':completion:*:(^approximate):*' matcher-list 'm:{a-z}={A-Z}'
 zstyle ':completion::complete:*:functions' ignored-patterns '_*'
@@ -39,6 +64,10 @@ zstyle ':completion:*:functions' ignored-patterns '_*'
 zstyle ':completion::complete:chown:*' ignored-patterns '_*'
 zstyle ':completion:*:prefix:*' add-space true
 zstyle ':completion:*:*:(^rm):*:*files' ignored-patterns '*?.(o|c~|zwc)' '*?~'
+
+# start menu completion only if it could find no unambiguous initial string
+zstyle ':completion:*:correct:*' insert-unambiguous true
+zstyle ':completion:*:correct:*' original true
 
 ## offer indexes before parameters in subscripts
 zstyle ':completion:*:*:-subscript-:*' tag-order indexes parameters
@@ -83,22 +112,19 @@ zstyle ':completion:*:windows' menu on=0
 zstyle ':completion:correct:' prompt 'correct to: %e'
 zstyle ':completion::(^approximate*):*:functions' ignored-patterns '_*'
 
-## Determine in which order the names (files) should be listed and completed when using menu completion:
-##   - 'size' to sort them by the size of the file
-##   - 'links' to sort them by the number of links to the file
-##   - 'modification' or 'time' or 'date' to sort them by the last modification time
-##   - 'access' to sort them by the last access time
-##   - 'inode' or 'change' to sort them by the last inode change time
-##   - 'reverse' to sort in decreasing order
-## If the style is set to any other value, or is unset, files will be sorted alphabetically by name.
-zstyle ':completion:*' file-sort name
-
-## don't complete backup files as executables
+## Don't complete backup files as executables
 zstyle ':completion:*:complete:-command-::commands' ignored-patterns '*\~'
 
-# Caching
-[ -d $HOME/.zsh/cache ] \
-&& zstyle ':completion:*' use-cache yes \
-&& zstyle ':completion::complete:*' cache-path $HOME/.zsh/cache/
+# Describe options in full
+zstyle ':completion:*:messages' format '%d'
+zstyle ':completion:*:options' auto-description '%d'
+zstyle ':completion:*:options' description 'yes'
 
-zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
+# Caching
+[ -d $HOME/.zsh/cache ] && zstyle ':completion:*' use-cache yes && zstyle ':completion::complete:*' cache-path $HOME/.zsh/cache/
+
+function _cheat() 
+{
+	compadd print -l ${(s. .)$(cheat sheets | tr -d ' ' | tr '\n' ' ' | sed -e 's/AllCheatSheets://')}
+}
+compctl -K _cheat cheat
