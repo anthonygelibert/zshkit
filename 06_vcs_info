@@ -9,10 +9,10 @@ zstyle ':vcs_info:*' enable git hg svn
 
 # Export only one string
 zstyle ':vcs_info:*' max-exports 1
-zstyle ':vcs_info:*' check-for-changes true 
 zstyle ':vcs_info:*' use-prompt-escapes true
 zstyle ':vcs_info:*' unstagedstr "?"
 zstyle ':vcs_info:*' stagedstr "!"
+zstyle ':vcs_info:git:*' check-for-changes true
 
 # Paths to git, hg and svn 
 zstyle ':vcs_info:git:*:-all-' command /opt/local/bin/git
