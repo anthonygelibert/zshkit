@@ -38,7 +38,7 @@ function asmifier()
     fi
 }
 
-# Mac OS X DNS Cache shortcuts
+# Mac OS X DNS Cache shortcuts (http://github.com/JonathanTron/zshkit/blob/master/99_alias)
 if [[ -x `which dscacheutil` ]]; then
   alias cleardns="dscacheutil -flushcache"
   alias showdns="dscacheutil -cachedump -entries Host"
