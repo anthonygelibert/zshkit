@@ -8,14 +8,27 @@
 # -t : Reverse the order of the sort to get reverse lexicographical order or the oldest entries first (or largest files last, if combined with sort by size
 # -d : Directories are listed as plain files
 
-alias l='ls'
-alias ls='ls -bGFh'
-alias la='ls -a'
-alias ll='ls -l'
-alias le='ll -e'
-alias lla='ls -la'
-alias lm='ls -la | more'
-alias lt='ls -ltr'
+# ls*: file listing 
+# 	a(d)  	dot-files / -directories
+# 	s     	setgid/setuid/sticky
+# 	l     	symlinks
+# 	x     	executables
+# 	w     	world-rwe
+# 	d     	directories
+# 	e     	empty directories
+# 	big   	the biggest files
+# 	small   smallest
+# 	new     newest
+# 	old     oldest
+
+alias l="ls"
+alias ls="ls -bGFh"
+alias la="ls -a"
+alias ll="ls -l"
+alias le="ll -e"
+alias lla="ll -a"
+alias lm="lla | more"
+alias lt="ls -ltr"
 alias lsad='ls -d .*(/)'
 alias lsa='ls -a .*(.)'
 alias lss='ls -l *(s,S,t)'
@@ -29,3 +42,23 @@ alias lssmall="ls -Srl *(.oL[1,10])"
 alias lsnew="ls -rl *(D.om[1,10])"
 alias lsold="ls -rtlh *(D.om[1,10])"
 
+# nt: list files newer than reference file by Peter Stephenson
+# You use it as follows:
+#   $ NTREF=/reference/file
+#   $ ls -l *(e:nt:)
+# This lists all the files in the current directory newer than the reference file.
+# You can also specify the reference file inline; note quotes:
+#   $ ls -l *(e:'nt ~/.zshenv':)
+function nt() 
+{
+	if [[ -n $1 ]]; then
+    	local NTREF=${~1}
+  	fi
+  	[[ $REPLY -nt $NTREF ]]
+}
+
+# plap: list all occurrences of program in the current PATH
+function plap()
+{
+ 	[ -z "$1" ] && { echo "Usage: plap <program>" ; return 1 } || ls -l ${^path}/*$1*(*N)
+}
