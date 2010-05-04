@@ -1,23 +1,34 @@
 typeset -g -A key
 
-bindkey "${key[Home]}" beginning-of-line
-bindkey "${key[End]}" end-of-line
+# Press "Ctrl-o" in a menu to select an option and continue 
+# in the menu
 bindkey -M menuselect '\C-o' accept-and-menu-complete
-bindkey -M listscroll q send-break
 
-# For the delete key of my keyboard
-bindkey "^[[3~" delete-char
+# Press "q" in a list to quit
+bindkey -M listscroll q send-break
 
 # Kill the region for later yanking
 bindkey '\C-w' kill-region
 
+# .: rationalize dot -> ... = ../.. {{{1
+function rationalize-dot() 
+{
+	if [[ $LBUFFER = *.. ]]; then
+    	LBUFFER+=/..
+  	else
+    	LBUFFER+=.
+  	fi
+}
+zle -N rationalize-dot
+bindkey . rationalize-dot
+
 # Terminal.app sucks :'(
 if [[ $OSTYPE[1,6] == "darwin" ]]; then
-  bindkey '^[^[[D' backward-word
-  bindkey '^[^[[C' forward-word
-  bindkey '^A' beginning-of-line
-  bindkey '^E' end-of-line
-  bindkey '^[[3~' delete-char
-  bindkey '^[^N' newtab
-  bindkey '^?' backward-delete-char
+	bindkey '^[^[[D' backward-word
+  	bindkey '^[^[[C' forward-word
+  	bindkey '^[[H' beginning-of-line
+  	bindkey '^[[F' end-of-line
+  	bindkey '^[[3~' delete-char
+  	bindkey '^[^N' newtab
+  	bindkey '^?' backward-delete-char
 fi
