@@ -15,6 +15,7 @@ function not_run_from_ssh ()
 if [[ -x `which mate` && $(not_run_from_ssh) = 1 ]];
 then
 	export EDITOR="mate -w"
+	export VISUAL="mate -w"
 	
 	# Useful functions for bundle development
     function reload_textmate()
@@ -34,19 +35,26 @@ then
     }
 elif [[ -x `which mvim` && $(not_run_from_ssh) = 1 ]]; then 
 	export EDITOR="mvim -f"
+	export VISUAL="mvim -f"
 elif [[ -x `which gvim` ]]; then
     export EDITOR="gvim"
+	export VISUAL="gvim -f"
     export CVSEDITOR="gvim -f"
 elif [[ -x `which vim` ]]; then
     export EDITOR="vim"
+	export VISUAL="vim"
 elif [[ -x `which vi` ]]; then
-    export EDITOR="vi"  
+    export EDITOR="vi"
+  	export VISUAL="vi"
 elif [[ -x `which nano` ]]; then
 	export EDITOR="nano"
+	export VISUAL="nano"
 elif [[ -x `which pico` ]]; then
 	export EDITOR="pico"
+	export VISUAL="pico"
 else
 	export EDITOR="vi"
+	export VISUAL="vi"
 fi
  
 # Set EDITOR as default for plaintext stuff
