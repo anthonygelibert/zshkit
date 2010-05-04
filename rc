@@ -7,6 +7,14 @@ zfinit
 autoload -Uz zcalc
 autoload -U zmv
 
+# urlencode: RFC 2396 URL encoding
+function urlencode() 
+{
+	setopt localoptions extendedglob
+  	input=( ${(s::)1} )
+  	print ${(j::)input/(#b)([^A-Za-z0-9_.!~*\'\(\)-])/%$(([##16]#match))}
+}
+
 # Global ulimit
 # CPU time
 ulimit -t unlimited
