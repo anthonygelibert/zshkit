@@ -7,6 +7,16 @@ alias cpu_hogs='ps wwaxr -o pid,stat,%cpu,time,command | head -20'
 alias lssock='sudo lsof -i -P -n'
 alias lsock='lsof -i -P -n'
 
+# List the locked file in trash
+# -----------------------------
+# Comments:
+#   +c 0 			-> Print the complete command name (in fact all the available characters (so on Mac OS X SL, it's 16))
+#   +D $HOME/.Trash -> Filter on the trash and its subfolders
+function locked_in_trash()
+{
+	sudo lsof +c 0 +D $HOME/.Trash | grep ".Trash" | awk '{print $1, " -> ", $9}'
+}
+
 # Processus
 alias stop="kill -TSTP"
 alias int="kill -s INT"
