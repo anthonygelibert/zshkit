@@ -33,14 +33,12 @@ export ASM_DIR="$MY_APPLICATIONS_DIR/ASM-3.2/"
 export FELIX_DIR="$MY_APPLICATIONS_DIR/Felix/"
 # IDA 			: http://www.hex-rays.com/idapro
 export IDA_DIR="$MANUALLY_INSTALLED_DIR/bin/idaadv"
-# QT4
-export QT_DIR="$MACPORTS_DIR/libexec/qt4-mac"
 # VisualVM		: https://visualvm.dev.java.net
 export VISUALVM_DIR="$MY_APPLICATIONS_DIR/VisualVM/"
 # Java 1.6 Home on Mac OS X
 export JAVA_HOME="/Library/Java/Home"
 # QT4 
-export QTDIR="$QT_DIR/lib"
+export QTDIR="/opt/local/libexec/qt4-mac"
 # Swap folder on Mac OS X
 export SWAP_DIR="/var/vm/"
 # JOnAS
