@@ -66,6 +66,8 @@ export SB="$SANDBOX_DIR"
 export Z="$PROJECTS_DIR/my_zshkit"
 # NetBeans Projects
 export NBP="$HOME/NetBeansProjects"
+# IDEA Projects 
+export I="$HOME/IDEA"
 # XCode Projects
 export XC="$HOME/XCode"
 # Eclipse Projects
@@ -79,7 +81,7 @@ typeset -U path cdpath fpath manpath
 export PATH="$MAVEN_BETA/bin:$ALT_X11_DIR/bin:$MANUALLY_INSTALLED_DIR/bin:$MANUALLY_INSTALLED_DIR/sbin:$MACPORTS_DIR/bin:$MACPORTS_DIR/sbin:$LATEX_BIN_DIR:$APPLE_DEVELOPER_DIR/bin:$APPLE_DEVELOPER_DIR/sbin:$INTEL_DIR/bin/intel64:$INTEL_DIR/bin:$ANDROID_DIR/tools:$MY_APPLICATIONS_DIR:$VISUALVM_DIR/bin:$IDA_DIR:$QT_DIR/bin:$JONAS_ROOT/bin:/bin:/sbin:/usr/bin:/usr/sbin:$X11_DIR/bin:$ADA_DIR/bin:."
 export MANPATH="$MACPORTS_DIR/man:$MACPORTS_DIR/share/man:$X11_DIR/man:$X11_DIR/share/man:$MANUALLY_INSTALLED_DIR/man:$MANUALLY_INSTALLED_DIR/share/man:$INTEL_DIR/man:$APPLE_DEVELOPER_DIR/share/man:$ALT_X11_DIR/man:$ALT_X11_DIR/share/man:$ADA_DIR/man:/usr/share/man"
 export FPATH="$HOME/.zsh/func:$FPATH"
-export CDPATH="$MY_APPLICATIONS_DIR:$P:$D:$DL:$SB:$NBP:$RP:$VOLUMES_DIR:$HOME"
+export CDPATH="$MY_APPLICATIONS_DIR:$I:$P:$D:$DL:$SB:$NBP:$RP:$VOLUMES_DIR:$HOME"
 
 
 
