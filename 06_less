@@ -1,5 +1,5 @@
 if [[ -x `which lesspipe.sh` ]]; then
-	export LESS="-R -M --shift 5"                               
-	export LESSOPEN='| /opt/local/bin/lesspipe.sh %s'
-	export LESSCOLOR=1
+    export LESS="-R -M --shift 5"
+    export LESSOPEN='| /opt/local/bin/lesspipe.sh %s'
+    export LESSCOLOR=1
 fi

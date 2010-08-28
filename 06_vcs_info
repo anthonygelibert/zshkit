@@ -11,7 +11,7 @@ zstyle ':vcs_info:*' use-prompt-escapes true
 zstyle ':vcs_info:git:*' unstagedstr "?"
 zstyle ':vcs_info:git:*' stagedstr "!"
 zstyle ':vcs_info:git:*' check-for-changes true
-	
+
 # Paths to git, hg and svn 
 zstyle ':vcs_info:git:*:-all-' command /opt/local/bin/git
 zstyle ':vcs_info:hg:*:-all-'  command /opt/local/bin/hg

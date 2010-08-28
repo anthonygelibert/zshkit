@@ -1,4 +1,4 @@
 function _svn_getVersion()
-{ 
-	svn info | grep "Révision : " | cut -f2 -d' '
+{
+    svn info | grep "Révision : " | cut -f2 -d' '
 }

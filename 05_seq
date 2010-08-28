@@ -1,2 +1,2 @@
 # Use the GNU seq
-alias seq=`which gseq`
+[[ ! -z "`which gseq`" ]] && alias seq=`which gseq`

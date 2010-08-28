@@ -15,19 +15,18 @@ zle -N self-insert url-quote-magic
 #  press ^Xh (control-x h) for getting tags in context
 #        ^X? (control-x ?) to run complete_debug with trace output
 
-## Determine in which order the names (files) should be listed and completed when using menu completion:
-##   - 'size' to sort them by the size of the file
-##   - 'links' to sort them by the number of links to the file
-##   - 'modification' or 'time' or 'date' to sort them by the last modification time
-##   - 'access' to sort them by the last access time
-##   - 'inode' or 'change' to sort them by the last inode change time
-##   - 'reverse' to sort in decreasing order
-## If the style is set to any other value, or is unset, files will be sorted alphabetically by name.
+# Determine in which order the names (files) should be listed and completed when using menu completion:
+#   - 'size' to sort them by the size of the file
+#   - 'links' to sort them by the number of links to the file
+#   - 'modification' or 'time' or 'date' to sort them by the last modification time
+#   - 'access' to sort them by the last access time
+#   - 'inode' or 'change' to sort them by the last inode change time
+#   - 'reverse' to sort in decreasing order
+# If the style is set to any other value, or is unset, files will be sorted alphabetically by name.
 zstyle ':completion:*' file-sort name
 
-zstyle ':completion:*' use-cache on # If this is set, the completion caching layer is activated for any completions which use it
-zstyle ':completion:*' use-perl on # Various parts of the function system use awk to extract words from files or command output as this universally available. However, many versions of awk have arbitrary limits on the size of input. If this style is set, perl will be used instead.
-zstyle ':completion:*' use-ip on # By default, the function _hosts that completes host names strips IP addresses from entries read from host databases such as NIS and ssh files. If this style is true, the corresponding IP addresses can be completed as well.
+zstyle ':completion:*' use-perl true # Various parts of the function system use awk to extract words from files or command output as this universally available. However, many versions of awk have arbitrary limits on the size of input. If this style is set, perl will be used instead.
+zstyle ':completion:*' use-ip true # By default, the function _hosts that completes host names strips IP addresses from entries read from host databases such as NIS and ssh files. If this style is true, the corresponding IP addresses can be completed as well.
 zstyle ':completion:*' list-grouped true # If this style is ‘true’ (the default), the completion system will try to make certain completion listings more compact by grouping matches.
 zstyle ':completion:*' list-packed true # This is tested for each tag valid in the current context as well as the default tag. If it is set to ‘true’, the corresponding matches appear in listings as if the LIST_PACKED option were set.
 zstyle ':completion:*' verbose true # If set, as it is by default, the completion listing is more verbose. In particular many commands show descriptions for options if this style is ‘true’.
@@ -44,16 +43,16 @@ zstyle ':completion*:default' menu 'select=1' # In the form ‘select=num’, me
 
 # activate menu
 zstyle ':completion:*:history-words'   list false
-zstyle ':completion:*:history-words'   menu yes
-zstyle ':completion:*:history-words'   remove-all-dups yes
-zstyle ':completion:*:history-words'   stop yes
+zstyle ':completion:*:history-words'   menu true
+zstyle ':completion:*:history-words'   remove-all-dups true
+zstyle ':completion:*:history-words'   stop true
 
 # allow approximate matching
 zstyle ':completion:*:corrections' format '%U%B%d (errors: %e)%b%u'
 zstyle ':completion:*:match:*' original only
 
 # separate matches into groups
-zstyle ':completion:*:matches'         group 'yes'
+zstyle ':completion:*:matches' group true
 
 # allow one error for every three characters typed in approximate completer
 zstyle ':completion:*:approximate:' max-errors 'reply=( $((($#PREFIX+$#SUFFIX)/2 )) numeric )'
@@ -117,14 +116,8 @@ zstyle ':completion:*:complete:-command-::commands' ignored-patterns '*\~'
 
 # Describe options in full
 zstyle ':completion:*:messages' format '%d'
-zstyle ':completion:*:options' auto-description '%d'
-zstyle ':completion:*:options' description 'yes'
+zstyle ':completion:*:options'  auto-description '%d'
+zstyle ':completion:*:options'  description 'yes'
 
 # Caching
-[ -d $HOME/.zsh/cache ] && zstyle ':completion:*' use-cache yes && zstyle ':completion::complete:*' cache-path $HOME/.zsh/cache/
-
-function _cheat() 
-{
-	compadd print -l ${(s. .)$(cheat sheets | tr -d ' ' | tr '\n' ' ' | sed -e 's/AllCheatSheets://')}
-}
-compctl -K _cheat cheat
+[ -d $HOME/.zsh/cache ] && zstyle ':completion:*' use-cache true && zstyle ':completion::complete:*' cache-path $HOME/.zsh/cache/

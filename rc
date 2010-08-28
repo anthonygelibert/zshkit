@@ -10,9 +10,9 @@ autoload -U zmv
 # urlencode: RFC 2396 URL encoding
 function urlencode() 
 {
-	setopt localoptions extendedglob
-  	input=( ${(s::)1} )
-  	print ${(j::)input/(#b)([^A-Za-z0-9_.!~*\'\(\)-])/%$(([##16]#match))}
+    setopt localoptions extendedglob
+    input=( ${(s::)1} )
+    print ${(j::)input/(#b)([^A-Za-z0-9_.!~*\'\(\)-])/%$(([##16]#match))}
 }
 
 # Global ulimit
@@ -33,23 +33,22 @@ ulimit -u 256
 # File descriptors
 ulimit -n 256
 # Stack size
-ulimit -s 8192
+ulimit -s 16384
 
 # No coloration
 local nc="%{$reset_color%}"
 
 # Change hostname color on known hosts
 case ${HOST%%.*} in
-	my-Desktop) local host_color="${fg[yellow]}" ;;
-	my-desktop) local host_color="${fg[yellow]}" ;;
-	my-Laptop)  local host_color="${fg[yellow]}" ;;
-	my-laptop)  local host_color="${fg[yellow]}" ;;
-	ensi-vpn-*) local host_color="${fg_bold[yellow]}" ;;
-	*)          local host_color="${fg_bold[red]}" ;;
+    my-Desktop) local host_color="${fg[yellow]}" ;;
+    my-desktop) local host_color="${fg[yellow]}" ;;
+    my-Laptop)  local host_color="${fg[yellow]}" ;;
+    my-laptop)  local host_color="${fg[yellow]}" ;;
+    *)          local host_color="${fg_bold[red]}" ;;
 esac
 
 function precmd
-{	
-	vcs_info
-  	PS1="%{${fg[magenta]}%}%n ${nc}at %{${host_color}%}%m${nc} in %{$fg[green]%}%~${nc} ${vcs_info_msg_0_} "
+{
+    vcs_info
+    PS1="%{${fg[magenta]}%}%n ${nc}at %{${host_color}%}%m${nc} in %{$fg[green]%}%~${nc} ${vcs_info_msg_0_} "
 }

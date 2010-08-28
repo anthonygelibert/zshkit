@@ -1,6 +1,3 @@
 # Use my help files
 unalias run-help
 autoload -U run-help
-
-# My help folder
-export HELPDIR="$HOME/.zsh/help"

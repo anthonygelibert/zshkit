@@ -9,17 +9,17 @@
 # -d : Directories are listed as plain files
 
 # ls*: file listing 
-# 	a(d)  	dot-files / -directories
-# 	s     	setgid/setuid/sticky
-# 	l     	symlinks
-# 	x     	executables
-# 	w     	world-rwe
-# 	d     	directories
-# 	e     	empty directories
-# 	big   	the biggest files
-# 	small   smallest
-# 	new     newest
-# 	old     oldest
+#   a(d)    dot-files / -directories
+#   s       setgid/setuid/sticky
+#   l       symlinks
+#   x       executables
+#   w       world-rwe
+#   d       directories
+#   e       empty directories
+#   big     the biggest files
+#   small   smallest
+#   new     newest
+#   old     oldest
 
 alias l="ls"
 alias ls="ls -bGFh"
@@ -51,14 +51,14 @@ alias lsold="ls -rtlh *(D.om[1,10])"
 #   $ ls -l *(e:'nt ~/.zshenv':)
 function nt() 
 {
-	if [[ -n $1 ]]; then
-    	local NTREF=${~1}
-  	fi
-  	[[ $REPLY -nt $NTREF ]]
+    if [[ -n $1 ]]; then
+        local NTREF=${~1}
+    fi
+    [[ $REPLY -nt $NTREF ]]
 }
 
 # plap: list all occurrences of program in the current PATH
 function plap()
 {
- 	[ -z "$1" ] && { echo "Usage: plap <program>" ; return 1 } || ls -l ${^path}/*$1*(*N)
+    [ -z "$1" ] && { echo "Usage: plap <program>" ; return 1 } || ls -l ${^path}/*$1*(*N)
 }
