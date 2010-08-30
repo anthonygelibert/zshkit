@@ -57,5 +57,5 @@ setopt PUSHD_SILENT             # Do not print the directory stack after pushd o
 setopt PUSHD_TO_HOME            # Have pushd with no arguments act like `pushd $HOME'.
 unsetopt RM_STAR_SILENT         # Do not query the user before executing `rm *' or `rm path/*'.
 setopt SHARE_HISTORY            # This option both imports new commands from the history file, and also causes your typed commands to be appended to the history file (the latter is like specifying INC_APPEND_HISTORY). 
-setopt TRANSIENT_RPROMPT        # Right prompt goes away after edit.
+#setopt TRANSIENT_RPROMPT        # Right prompt goes away after edit.
 #setopt XTRACE                  # Display all the actions of the shell
