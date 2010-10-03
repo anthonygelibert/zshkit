@@ -4,4 +4,4 @@ alias ph="port search"
 alias po="port info"
 
 # Update the list, display the outdated, make the update and uninstall the inactives
-alias updateMP='sudo port selfupdate && sudo port outdated && sudo port -p upgrade outdated && sudo port -p uninstall inactive'
+alias updateMP='sudo port -v selfupdate && sudo port outdated && sudo port -v -p upgrade outdated && sudo port -p uninstall inactive'
