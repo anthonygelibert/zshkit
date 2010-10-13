@@ -1,6 +1,6 @@
 typeset -g -A key
 
-# Press "Ctrl-o" in a menu to select an option and continue 
+# Press "Ctrl-o" in a menu to select an option and continue
 # in the menu
 bindkey -M menuselect '\C-o' accept-and-menu-complete
 
@@ -10,8 +10,8 @@ bindkey -M listscroll q send-break
 # Kill the region for later yanking
 bindkey '\C-w' kill-region
 
-# .: rationalize dot -> ... = ../.. 
-function rationalize-dot() 
+# .: rationalize dot -> ... = ../..
+function rationalize-dot()
 {
     if [[ $LBUFFER = *.. ]]; then
         LBUFFER+=/..
@@ -21,6 +21,8 @@ function rationalize-dot()
 }
 zle -N rationalize-dot
 bindkey . rationalize-dot
+
+bindkey "^R" history-incremental-search-backward
 
 # Terminal.app sucks :'(
 if [[ $OSTYPE[1,6] == "darwin" ]]; then

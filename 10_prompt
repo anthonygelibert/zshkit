@@ -1,6 +1,6 @@
 # secondary prompt, printed when the shell need
 # more information to complete a command.
-PS2='\%_> '
+PS2='%_> '
 
 # selection prompt used within a select loop.
 PS3='?# '
