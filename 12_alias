@@ -40,17 +40,11 @@ alias cpwd='pwd | xargs echo -n | pbcopy'
 # Go to felix dir, clean the cache and start
 alias felix='(cd $FELIX_DIR; rm -rf felix-cache && java -ea -jar bin/felix.jar)'
 
-local ASM_DEBUG_ALL_JAR="$ASM_DIR/lib/all/asm-debug-all-3.2.jar"
-function asmifier()
-{
-    if [ $# -eq 1 ]; then
-        java -classpath "$ASM_DEBUG_ALL_JAR" org.objectweb.asm.util.ASMifierClassVisitor $1
-    fi
-}
-
 # Mac OS X DNS Cache shortcuts (http://github.com/JonathanTron/zshkit/blob/master/99_alias)
 if [[ -x `which dscacheutil` ]]; then
     alias cleardns="dscacheutil -flushcache"
     alias showdns="dscacheutil -cachedump -entries Host"
 fi
+
+alias more="more -r"
 
