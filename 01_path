@@ -4,8 +4,6 @@ export ADA_DIR="/opt/ada-4.4"
 export ALT_X11_DIR="/opt/X11"
 # XCode     : http://developer.apple.com/technologies/tools/xcode.html
 export APPLE_DEVELOPER_DIR="/Developer/usr"
-# Intel C++ : http://software.intel.com/en-us/intel-compilers
-export INTEL_DIR="/opt/intel/Compiler/11.1/084"
 # LaTeX
 export LATEX_BIN_DIR="/usr/texbin"
 # MacPorts  : http://www.macports.org
@@ -23,10 +21,6 @@ export X11_DIR="/usr/X11"
 # Mounted volumes
 export VOLUMES_DIR="/Volumes"
 
-# Android       : http://developer.android.com/sdk/index.html
-export ANDROID_DIR="$MY_APPLICATIONS_DIR/Android"
-# ASM Framework : http://asm.ow2.org
-export ASM_DIR="$MY_APPLICATIONS_DIR/ASM-3.2/"
 # Apache Felix  : http://felix.apache.org/site/index.html
 export FELIX_DIR="$MY_APPLICATIONS_DIR/Felix/"
 # IDA           : http://www.hex-rays.com/idapro
@@ -35,19 +29,13 @@ export IDA_DIR="$MANUALLY_INSTALLED_DIR/bin/idaadv"
 export VISUALVM_DIR="$MY_APPLICATIONS_DIR/VisualVM/"
 # Java 1.6 Home on Mac OS X
 export JAVA_HOME="/Library/Java/Home"
-# QT4
-export QTDIR="/opt/local/libexec/qt4-mac"
 # Swap folder on Mac OS X
 export SWAP_DIR="/var/vm/"
-# JOnAS
-export JONAS_ROOT="$MY_APPLICATIONS_DIR/JOnAS"
-export JONAS_BASE="$MY_APPLICATIONS_DIR/JOnAS_BASE"
 # JRebel
 export JREBEL_HOME="$MY_APPLICATIONS_DIR/ZeroTurnaround/JRebel"
-# Griffon
-export GRIFFON_HOME="$MACPORTS_DIR/share/java/griffon"
-# Grails
-export GRAILS_HOME="$MACPORTS_DIR/share/java/grails"
+# Command-line tools from Developer Tools
+export DEVELOPER_TOOLS_COMMAND_LINE="/Developer/Tools"
+
 # My help folder
 export HELPDIR="$HOME/.zsh/help"
 
@@ -62,24 +50,20 @@ export P="$PROJECTS_DIR"
 export SB="$SANDBOX_DIR"
 # This project
 export Z="$PROJECTS_DIR/my_zshkit"
-# NetBeans Projects
-# export NBP="$HOME/NetBeansProjects"
 # IDEA Projects
 export I="$HOME/IDEA"
-# XCode Projects
-# export XC="$HOME/XCode"
-# Eclipse Projects
-# export E="$HOME/Workspace"
-# My PhD
-export PHD="$D/Doctorat/"
+# My WebSite
+export B="$D/Site"
+# My Ph.D.
+export PHD="/Volumes/Doctorat/"
 
 typeset -U path cdpath fpath manpath
 
 # PATH
-export PATH="$ALT_X11_DIR/bin:$MANUALLY_INSTALLED_DIR/bin:$MANUALLY_INSTALLED_DIR/sbin:$MACPORTS_DIR/bin:$MACPORTS_DIR/sbin:$LATEX_BIN_DIR:$APPLE_DEVELOPER_DIR/bin:$APPLE_DEVELOPER_DIR/sbin:$INTEL_DIR/bin/intel64:$INTEL_DIR/bin:$ANDROID_DIR/tools:$MY_APPLICATIONS_DIR:$VISUALVM_DIR/bin:$IDA_DIR:$QT_DIR/bin:$JONAS_ROOT/bin:/bin:/sbin:/usr/bin:/usr/sbin:$X11_DIR/bin:$ADA_DIR/bin:."
-export MANPATH="$MACPORTS_DIR/man:$MACPORTS_DIR/share/man:$X11_DIR/man:$X11_DIR/share/man:$MANUALLY_INSTALLED_DIR/man:$MANUALLY_INSTALLED_DIR/share/man:$INTEL_DIR/man:$APPLE_DEVELOPER_DIR/share/man:$ALT_X11_DIR/man:$ALT_X11_DIR/share/man:$ADA_DIR/man:/usr/share/man"
+export PATH="$ALT_X11_DIR/bin:$MANUALLY_INSTALLED_DIR/bin:$MANUALLY_INSTALLED_DIR/sbin:$MACPORTS_DIR/bin:$MACPORTS_DIR/sbin:$LATEX_BIN_DIR:$APPLE_DEVELOPER_DIR/bin:$APPLE_DEVELOPER_DIR/sbin:$MY_APPLICATIONS_DIR:$VISUALVM_DIR/bin:$IDA_DIR:$DEVELOPER_TOOLS_COMMAND_LINE:/bin:/sbin:/usr/bin:/usr/sbin:$X11_DIR/bin:$ADA_DIR/bin:."
+export MANPATH="$MACPORTS_DIR/man:$MACPORTS_DIR/share/man:$ALT_X11_DIR/share/man:$X11_DIR/man:$X11_DIR/share/man:$MANUALLY_INSTALLED_DIR/man:$MANUALLY_INSTALLED_DIR/share/man:$APPLE_DEVELOPER_DIR/share/man:$ADA_DIR/man:/usr/share/man"
 export FPATH="$HOME/.zsh/func:$FPATH"
-export CDPATH="$MY_APPLICATIONS_DIR:$I:$P:$D:$DL:$PHD:$HOME"
+export CDPATH="$I:$P:$D:$DL:$PHD:$HOME"
 
 
 
