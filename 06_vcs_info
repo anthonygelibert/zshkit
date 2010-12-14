@@ -23,10 +23,13 @@ zstyle ':vcs_info:git:*' formats 'is $fg[green]%s$fg[black]:$fg[red]%r%f on %{$f
 ±'
 zstyle ':vcs_info:hg:*' formats 'is $fg[green]%s$fg[black]:$fg[red]%r%f on %{$fg[magenta]%}%b%f $(hg_prompt_info)%f
 ☿'
-zstyle ':vcs_info:svn:*' formats 'is $fg[green]%s$fg[black]:$fg[red]%r%f on %{$fg[magenta]%}%b%f rev. $fg[blue]$(_svn_getVersion)%f
+zstyle ':vcs_info:svn:*' branchformat '%r'
+zstyle ':vcs_info:svn:*' formats 'is $fg[green]%s$fg[black]:$fg[red]%r%f rev. $fg[blue]$(_svn_getVersion)%f
 ∫'
+
 zstyle ':vcs_info:cvs:*' formats 'is $fg[green]%s$fg[black]:$fg[red]%r%f on %{$fg[magenta]%}%b%f
 ℂ'
+
 # Format when there isn't vcs
 zstyle ':vcs_info:*:*' nvcsformats '
 ○'
