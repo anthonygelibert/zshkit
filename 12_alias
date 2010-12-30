@@ -48,3 +48,13 @@ fi
 
 alias more="more -r"
 
+calc()
+{
+    echo "$*" | bc -l;
+}
+
+interceptIO()
+{
+    strace -ff -e trace=write -e write=1,2 -p $1
+}
+

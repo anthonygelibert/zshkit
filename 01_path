@@ -1,9 +1,9 @@
-# Ada 4.4   : http://homepage.mac.com/WebObjects/FileSharing.woa/wa/default?user=awreynolds&templatefn=FileSharing7.html&xmlfn=TKDocument.7.xml&sitefn=RootSite.xml&aff=consumer&cty=US&lang=en
-export ADA_DIR="/opt/ada-4.4"
 # X11       : http://xquartz.macosforge.org/trac/wiki
 export ALT_X11_DIR="/opt/X11"
 # XCode     : http://developer.apple.com/technologies/tools/xcode.html
 export APPLE_DEVELOPER_DIR="/Developer/usr"
+# XCode 4
+export XCODE4_DIR="/XCode4/usr"
 # LaTeX
 export LATEX_BIN_DIR="/usr/texbin"
 # MacPorts  : http://www.macports.org
@@ -20,9 +20,9 @@ export SANDBOX_DIR="$HOME/SandBox"
 export X11_DIR="/usr/X11"
 # Mounted volumes
 export VOLUMES_DIR="/Volumes"
+# Go
+export GO_DIR="$PROJECTS_DIR/go"
 
-# Apache Felix  : http://felix.apache.org/site/index.html
-export FELIX_DIR="$MY_APPLICATIONS_DIR/Felix/"
 # IDA           : http://www.hex-rays.com/idapro
 export IDA_DIR="$MANUALLY_INSTALLED_DIR/bin/idaadv"
 # VisualVM      : https://visualvm.dev.java.net
@@ -31,10 +31,10 @@ export VISUALVM_DIR="$MY_APPLICATIONS_DIR/VisualVM/"
 export JAVA_HOME="/Library/Java/Home"
 # Swap folder on Mac OS X
 export SWAP_DIR="/var/vm/"
-# JRebel
-export JREBEL_HOME="$MY_APPLICATIONS_DIR/ZeroTurnaround/JRebel"
 # Command-line tools from Developer Tools
 export DEVELOPER_TOOLS_COMMAND_LINE="/Developer/Tools"
+# Command-line tools from XCode4
+export XCODE4_COMMAND_LINE="/XCode4/Tools"
 
 # My help folder
 export HELPDIR="$HOME/.zsh/help"
@@ -59,14 +59,16 @@ export I="$HOME/IDEA"
 export B="$D/Site"
 # My Ph.D.
 export PHD="/Volumes/Doctorat/"
+# XCode
+export X="$HOME/XCode/"
 
 typeset -U path cdpath fpath manpath
 
 # PATH
-export PATH="$ALT_X11_DIR/bin:$MANUALLY_INSTALLED_DIR/bin:$MANUALLY_INSTALLED_DIR/sbin:$MACPORTS_DIR/bin:$MACPORTS_DIR/sbin:$LATEX_BIN_DIR:$APPLE_DEVELOPER_DIR/bin:$APPLE_DEVELOPER_DIR/sbin:$MY_APPLICATIONS_DIR:$VISUALVM_DIR/bin:$IDA_DIR:$DEVELOPER_TOOLS_COMMAND_LINE:/bin:/sbin:/usr/bin:/usr/sbin:$X11_DIR/bin:$MSP430GCC_DIR/bin:."
-export MANPATH="$MACPORTS_DIR/man:$MACPORTS_DIR/share/man:$ALT_X11_DIR/share/man:$X11_DIR/man:$X11_DIR/share/man:$MANUALLY_INSTALLED_DIR/man:$MANUALLY_INSTALLED_DIR/share/man:$APPLE_DEVELOPER_DIR/share/man:$MSP430GCC_DIR/man:/usr/share/man"
+export PATH="$ALT_X11_DIR/bin:$MANUALLY_INSTALLED_DIR/bin:$MANUALLY_INSTALLED_DIR/sbin:$MACPORTS_DIR/bin:$MACPORTS_DIR/sbin:$LATEX_BIN_DIR:$XCODE4_DIR/bin:$XCODE4_DIR/sbin:$APPLE_DEVELOPER_DIR/bin:$APPLE_DEVELOPER_DIR/sbin:$MY_APPLICATIONS_DIR:$VISUALVM_DIR/bin:$IDA_DIR:$XCODE4_COMMAND_LINE:$DEVELOPER_TOOLS_COMMAND_LINE:$GO_DIR/bin:/bin:/sbin:/usr/bin:/usr/sbin:$X11_DIR/bin:$MSP430GCC_DIR/bin:."
+export MANPATH="$MACPORTS_DIR/man:$MACPORTS_DIR/share/man:$ALT_X11_DIR/share/man:$X11_DIR/man:$X11_DIR/share/man:$MANUALLY_INSTALLED_DIR/man:$MANUALLY_INSTALLED_DIR/share/man:$XCODE4_DIR/share/man:$APPLE_DEVELOPER_DIR/share/man:$MSP430GCC_DIR/man:/usr/share/man"
 export FPATH="$HOME/.zsh/func:$FPATH"
-export CDPATH="$I:$P:$D:$DL:$PHD:$HOME"
+export CDPATH="$I:$P:$D:$DL:$X:$PHD:$HOME"
 
 
 
