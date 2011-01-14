@@ -38,7 +38,7 @@ alias apache2ctl='sudo /opt/local/apache2/bin/apachectl'
 alias cpwd='pwd | xargs echo -n | pbcopy'
 
 # Go to felix dir, clean the cache and start
-alias felix='(cd $FELIX_DIR; rm -rf felix-cache && java -ea -jar bin/felix.jar)'
+alias felix='(cd $FELIX_DIR && rm -rf felix-cache && java -ea -jar bin/felix.jar)'
 
 # Mac OS X DNS Cache shortcuts (http://github.com/JonathanTron/zshkit/blob/master/99_alias)
 if [[ -x `which dscacheutil` ]]; then
@@ -48,13 +48,21 @@ fi
 
 alias more="more -r"
 
-calc()
-{
-    echo "$*" | bc -l;
-}
-
 interceptIO()
 {
     strace -ff -e trace=write -e write=1,2 -p $1
 }
 
+dev()
+{
+    MODE="dev"
+    cd $1
+}
+
+normal()
+{
+    MODE="normal"
+    PS1='%{${fg[magenta]}%}%n ${nc}at %{${host_color}%}%m${nc} in %{$fg[green]%}%~${nc}
+%(?..${nc}!%{${fg_no_bold[red]}%}%?${nc}! )%{$reset_color%}○ '
+    cd $1
+}
