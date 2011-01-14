@@ -22,7 +22,8 @@ export X11_DIR="/usr/X11"
 export VOLUMES_DIR="/Volumes"
 # Go
 export GO_DIR="$PROJECTS_DIR/go"
-
+# Felix
+export FELIX_DIR="$MY_APPLICATIONS_DIR/Felix"
 # IDA           : http://www.hex-rays.com/idapro
 export IDA_DIR="$MANUALLY_INSTALLED_DIR/bin/idaadv"
 # VisualVM      : https://visualvm.dev.java.net
@@ -66,7 +67,7 @@ typeset -U path cdpath fpath manpath
 
 # PATH
 export PATH="$ALT_X11_DIR/bin:$MANUALLY_INSTALLED_DIR/bin:$MANUALLY_INSTALLED_DIR/sbin:$MACPORTS_DIR/bin:$MACPORTS_DIR/sbin:$LATEX_BIN_DIR:$XCODE4_DIR/bin:$XCODE4_DIR/sbin:$APPLE_DEVELOPER_DIR/bin:$APPLE_DEVELOPER_DIR/sbin:$MY_APPLICATIONS_DIR:$VISUALVM_DIR/bin:$IDA_DIR:$XCODE4_COMMAND_LINE:$DEVELOPER_TOOLS_COMMAND_LINE:$GO_DIR/bin:/bin:/sbin:/usr/bin:/usr/sbin:$X11_DIR/bin:$MSP430GCC_DIR/bin:."
-export MANPATH="$MACPORTS_DIR/man:$MACPORTS_DIR/share/man:$ALT_X11_DIR/share/man:$X11_DIR/man:$X11_DIR/share/man:$MANUALLY_INSTALLED_DIR/man:$MANUALLY_INSTALLED_DIR/share/man:$XCODE4_DIR/share/man:$APPLE_DEVELOPER_DIR/share/man:$MSP430GCC_DIR/man:/usr/share/man"
+export MANPATH="$MACPORTS_DIR/share/man:$ALT_X11_DIR/share/man:$X11_DIR/share/man:$MANUALLY_INSTALLED_DIR/man:$MANUALLY_INSTALLED_DIR/share/man:$XCODE4_DIR/share/man:$APPLE_DEVELOPER_DIR/share/man:$MSP430GCC_DIR/man:/usr/share/man"
 export FPATH="$HOME/.zsh/func:$FPATH"
 export CDPATH="$I:$P:$D:$DL:$X:$PHD:$HOME"
 
