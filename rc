@@ -1,13 +1,6 @@
 # By default, all created elements are rwx______
 umask 077
 
-#autoload -Uz zfinit
-#zfinit
-
-#autoload -Uz zcalc
-#autoload -U zmv
-
-
 # Global ulimit
 # CPU time
 ulimit -t unlimited
@@ -40,8 +33,13 @@ case ${HOST%%.*} in
     *)          local host_color="${fg_bold[red]}" ;;
 esac
 
+PS1='%{${fg[magenta]}%}%n ${nc}at %{${host_color}%}%m${nc} in %{$fg[green]%}%~${nc}
+%(?..${nc}!%{${fg_no_bold[red]}%}%?${nc}! )%{$reset_color%}○ '
+
 function precmd
 {
-    vcs_info
-    PS1="%{${fg[magenta]}%}%n ${nc}at %{${host_color}%}%m${nc} in %{$fg[green]%}%~${nc} ${vcs_info_msg_0_} "
+    if [[ "$MODE" == "dev" ]]; then
+        vcs_info
+        PS1="%{${fg[magenta]}%}%n ${nc}at %{${host_color}%}%m${nc} in %{$fg[green]%}%~${nc} ${vcs_info_msg_0_} "
+    fi
 }
