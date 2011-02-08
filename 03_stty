@@ -1,4 +1,0 @@
-# Change the speed of the terminal 
-stty speed 115200 > /dev/null
-# <C-s> isn't a stop
-stty stop undef

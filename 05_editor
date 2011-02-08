@@ -2,58 +2,8 @@
 # http://github.com/mattfoster/zshkit/blob/master/05_editor
 # 11/18/09
 
-export EDITOR
-export VISUAL
-
-function not_run_from_ssh ()
-{
-    ps x|grep "${PPID}.*sshd"|grep -v grep
-    echo $?
-}
-
-
-if [[ -x `which mvim` && $(not_run_from_ssh) = 1 ]]; then
-    export EDITOR="mvim -f"
-    export VISUAL="mvim -f"
-elif [[ -x `which mate` && $(not_run_from_ssh) = 1 ]]; then
-    export EDITOR="mate -w"
-    export VISUAL="mate -w"
-
-    # Useful functions for bundle development
-    function reload_textmate()
-    {
-        osascript -e 'tell app "TextMate" to reload bundles'
-    }
-
-    function bundle()
-    {
-        cd "$HOME/Library/Application Support/TextMate/Bundles/$1.tmbundle"
-    }
-
-    function _bundle()
-    {
-        bundle_path="$HOME/Library/Application Support/TextMate/Bundles"
-        compadd $(print -l $bundle_path/*.tmbundle(:t:r))
-    }
-elif [[ -x `which gvim` ]]; then
-    export EDITOR="gvim"
-    export VISUAL="gvim -f"
-elif [[ -x `which vim` ]]; then
-    export EDITOR="vim"
-    export VISUAL="vim"
-elif [[ -x `which vi` ]]; then
-    export EDITOR="vi"
-    export VISUAL="vi"
-elif [[ -x `which nano` ]]; then
-    export EDITOR="nano"
-    export VISUAL="nano"
-elif [[ -x `which pico` ]]; then
-    export EDITOR="pico"
-    export VISUAL="pico"
-else
-    export EDITOR="vi"
-    export VISUAL="vi"
-fi
+export EDITOR="mvim -f --nomru"
+export VISUAL="mvim -f --nomru"
 
 # Set EDITOR as default for plaintext stuff
 for s in txt tex c cc cxx cpp gp m md markdown otl xml; do

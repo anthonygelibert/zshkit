@@ -104,8 +104,15 @@ zstyle ':completion:*:manuals' seperate-sections true
 zstyle ':completion:*:default' list-prompt '%S%M matches%s'
 zstyle ':completion:*:descriptions' format '%U%B%d%b%u'
 zstyle ':completion:*:warnings' format '%BSorry, no matches for: %d%b'
+zstyle ':completion:*:processes' command 'ps -axw'
+zstyle ':completion:*:processes-names' command 'ps -awxho command'
 zstyle ':completion:*:*:kill:*:processes' list-colors "=(#b) #([0-9]#)*=36=31"
 zstyle ':completion:*:windows' menu on=0
+zstyle ':completion:*' hosts $(awk '/^[^#]/ {print $2 $3" "$4" "$5}' /etc/hosts | grep -v ip6- && grep "^#%" /etc/hosts | awk -F% '{print $2}')
+zstyle ':completion:*:scp:*' tag-order \
+zstyle ':completion:*:scp:*' group-order \
+zstyle ':completion:*:ssh:*' tag-order \
+zstyle ':completion:*:ssh:*' group-order \
 
 # Ignore completion functions for commands you don't have:
 zstyle ':completion:correct:' prompt 'correct to: %e'

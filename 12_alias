@@ -47,6 +47,7 @@ if [[ -x `which dscacheutil` ]]; then
 fi
 
 alias more="more -r"
+alias :q="exit"
 
 interceptIO()
 {

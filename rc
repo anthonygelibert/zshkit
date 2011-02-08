@@ -1,5 +1,5 @@
 # By default, all created elements are rwx______
-umask 077
+umask 022
 
 # Global ulimit
 # CPU time

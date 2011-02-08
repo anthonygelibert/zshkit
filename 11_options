@@ -50,6 +50,7 @@ setopt LONG_LIST_JOBS           # List jobs in the long format by default.
 unsetopt MENU_COMPLETE          # On an ambiguous completion, instead of listing possibilities or beeping, insert the first match immediately.
 setopt MULTIOS                  # Perform implicit tees or cats when multiple redirections are attempted
 setopt NULL_GLOB                # If a pattern for filename generation has no matches, delete the pattern from the argument list instead of reporting an error.
+setopt NUMERIC_GLOB_SORT
 setopt PROMPT_SUBST             # If set, parameter expansion, command substitution and arithmetic expansion are performed in prompts.
 setopt PUSHD_IGNORE_DUPS        # Don't push multiple copies of the same directory onto the directory stack.
 setopt PUSHD_MINUS              # Exchanges the meanings of `+' and `-' when used with a number to specify a directory in the stack.
