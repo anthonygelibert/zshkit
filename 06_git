@@ -1,26 +1,5 @@
-if [[ -x `which git` ]];
-    then
-    alias g='git'
-    alias gb='git branch -a -v'
-    alias gc='git commit'
-    alias gd='git diff'
-    alias gf='git fetch'
-    alias gr='git-rebase'
-    alias gst='git status'
-
-    function git-scoreboard()
-    {
-        git log | grep '^Author' | sort | uniq -ci | sort -r
-    }
-
-    function github-url()
-    {
-        git config remote.origin.url | sed -En 's/git(@|:\/\/)github.com(:|\/)(.+)\/(.+).git/https:\/\/github.com\/\3\/\4/p'
-    }
-
-    # Seems to be the best OS X jump-to-github alias from http://tinyurl.com/2mtncf
-    function github-go()
-    {
-        open $(github-url)
-    }
-fi
+function git_prompt_info()
+{
+	local REV=`git rev-parse --short HEAD`
+ 	echo " rev. $fg[blue]$REV"
+}

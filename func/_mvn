@@ -1,6 +1,6 @@
 #compdef mvn 
  
-_wanted maven expl 'maven2' compadd \
+_wanted maven expl 'maven3' compadd \
 pre-clean clean post-clean validate generate-sources \
 process-sources generate-resources process-resources \
 compile process-classes generate-test-sources process-test-sources \

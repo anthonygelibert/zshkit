@@ -1,25 +1,12 @@
-# By default, all created elements are rwx______
-umask 022
-
-# Global ulimit
-# CPU time
-ulimit -t unlimited
-# File size
-ulimit -f unlimited
-# Data seg size
-ulimit -d unlimited
+# ulimit
+# Stack size
+ulimit -s 16384
 # Core file size
 ulimit -c unlimited
-# Address space
-ulimit -v unlimited
-# Locked-in-Memory size
-ulimit -l unlimited
 # Processes
 ulimit -u 256
 # File descriptors
 ulimit -n 256
-# Stack size
-ulimit -s 16384
 
 # No coloration
 local nc="%{$reset_color%}"
@@ -30,6 +17,8 @@ case ${HOST%%.*} in
     my-desktop) local host_color="${fg[yellow]}" ;;
     my-Laptop)  local host_color="${fg[yellow]}" ;;
     my-laptop)  local host_color="${fg[yellow]}" ;;
+	lc0945)     local host_color="${fg[yellow]}" ;;
+	LC0945)     local host_color="${fg[yellow]}" ;;
     *)          local host_color="${fg_bold[red]}" ;;
 esac
 

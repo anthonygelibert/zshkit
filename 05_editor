@@ -1,22 +1,2 @@
-# From Matt Foster
-# http://github.com/mattfoster/zshkit/blob/master/05_editor
-# 11/18/09
-
 export EDITOR="mvim -f --nomru"
 export VISUAL="mvim -f --nomru"
-
-# Set EDITOR as default for plaintext stuff
-for s in txt tex c cc cxx cpp gp m md markdown otl xml; do
-    alias -s $s=$EDITOR
-done
-
-# Abuse the "open" command on OS X
-if [[ $OSTYPE[1,6] == "darwin" ]]; then
-    for s in mp3 wav aac \
-        ogg avi mp4 m4v mov qt mpg mpeg \
-        jpg jpeg png psd bmp gif tif tiff \
-        eps ps pdf html dmg;
-    do
-        alias -s $s=open
-    done
-fi

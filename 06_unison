@@ -1,1 +1,1 @@
-export UNISONLOCALHOSTNAME="`hostname`"
+export UNISONLOCALHOSTNAME="LAPTOP-MacBook_Pro"

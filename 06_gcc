@@ -1,2 +1,0 @@
-# CFLAGS
-export MY_CFLAGS="-O2 -fbranch-target-load-optimize2 -fgcse -fgcse-las -fgcse-lm -fgcse-sm -fpredictive-commoning -frename-registers -fstack-protector -ftracer -ftree-loop-distribution -ftree-vectorize -funswitch-loops -funwind-tables -fvariable-expansion-in-unroller -fvpt -fweb -march=native"

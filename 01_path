@@ -18,24 +18,14 @@ export SANDBOX_DIR="$HOME/SandBox"
 export X11_DIR="/usr/X11"
 # Mounted volumes
 export VOLUMES_DIR="/Volumes"
-# Go
-export GO_DIR="$MY_APPLICATIONS_DIR/go"
-# Felix
-export FELIX_DIR="$MY_APPLICATIONS_DIR/Felix"
-# IDA           : http://www.hex-rays.com/idapro
-export IDA_DIR="$MANUALLY_INSTALLED_DIR/bin/idaadv"
 # VisualVM      : https://visualvm.dev.java.net
 export VISUALVM_DIR="$MY_APPLICATIONS_DIR/VisualVM/"
 # Java 1.6 Home on Mac OS X
-export JAVA_HOME="/Library/Java/Home"
+export JAVA_HOME=`/usr/libexec/java_home`
 # Swap folder on Mac OS X
 export SWAP_DIR="/var/vm/"
 # Command-line tools from Developer Tools
 export DEVELOPER_TOOLS_COMMAND_LINE="/Developer/Tools"
-# NodeJS
-export NODEJS_DIR="$MY_APPLICATIONS_DIR/node"
-# NPM
-export NPM_DIR="$MY_APPLICATIONS_DIR/npm"
 
 # My help folder
 export HELPDIR="$HOME/.zsh/help"
@@ -45,17 +35,17 @@ export MSP430GCC_DIR="/opt/msp430-gcc-4.4.5"
 
 # Some usefull paths (cd ~D)
 # My Documents
-export D="$HOME/Documents"
+export D="$HOME/Documents/"
 # My Downloads
-export DL="$HOME/Downloads"
+export DL="$HOME/Downloads/"
 # My Projects
-export P="$PROJECTS_DIR"
+export P="$PROJECTS_DIR/"
 # Alias for SandBox
-export SB="$SANDBOX_DIR"
+export SB="$SANDBOX_DIR/"
 # This project
 export Z="$PROJECTS_DIR/my_zshkit"
 # IDEA Projects
-export I="$HOME/IDEA"
+export I="$HOME/IDEA/"
 # XCode
 export X="$HOME/XCode/"
 # Eclipse
@@ -64,10 +54,10 @@ export E="$HOME/Workspace/"
 typeset -U path cdpath fpath manpath
 
 # PATH
-export PATH="$NODEJS_DIR/bin:$NPM_DIR/bin:$ALT_X11_DIR/bin:$MANUALLY_INSTALLED_DIR/bin:$MANUALLY_INSTALLED_DIR/sbin:$MACPORTS_DIR/bin:$MACPORTS_DIR/sbin:$LATEX_BIN_DIR:$APPLE_DEVELOPER_DIR/bin:$APPLE_DEVELOPER_DIR/sbin:$MY_APPLICATIONS_DIR:$VISUALVM_DIR/bin:$IDA_DIR:$DEVELOPER_TOOLS_COMMAND_LINE:$GO_DIR/bin:/bin:/sbin:/usr/bin:/usr/sbin:$X11_DIR/bin:$MSP430GCC_DIR/bin:."
-export MANPATH="$NODEJS_DIR/man:$NPM_DIR/man:$MACPORTS_DIR/share/man:$ALT_X11_DIR/share/man:$X11_DIR/share/man:$MANUALLY_INSTALLED_DIR/man:$MANUALLY_INSTALLED_DIR/share/man:$APPLE_DEVELOPER_DIR/share/man:$MSP430GCC_DIR/man:/usr/share/man"
+export PATH="$ALT_X11_DIR/bin:$MANUALLY_INSTALLED_DIR/bin:$MANUALLY_INSTALLED_DIR/sbin:$MACPORTS_DIR/bin:$MACPORTS_DIR/sbin:$LATEX_BIN_DIR:$APPLE_DEVELOPER_DIR/bin:$APPLE_DEVELOPER_DIR/sbin:$MY_APPLICATIONS_DIR:$DEVELOPER_TOOLS_COMMAND_LINE:/bin:/sbin:/usr/bin:/usr/sbin:$X11_DIR/bin:$MSP430GCC_DIR/bin:."
+export MANPATH="$ALT_X11_DIR/share/man:$MANUALLY_INSTALLED_DIR/man:$MANUALLY_INSTALLED_DIR/share/man:$MACPORTS_DIR/share/man:$X11_DIR/share/man:$APPLE_DEVELOPER_DIR/share/man:$MSP430GCC_DIR/man:/usr/share/man"
 export FPATH="$HOME/.zsh/func:$FPATH"
-export CDPATH="$I:$X:$E:$P:$D:$DL:$HOME"
+export CDPATH=".:$HOME:$I:$X:$E:$P:$D:$DL"
 
 
 
