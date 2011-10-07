@@ -104,3 +104,6 @@ alias ln='nocorrect ln'
 
 alias safari="open -a Webkit"
 alias calc="open -a calculator"
+
+alias week='date "+%V"'
+

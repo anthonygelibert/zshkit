@@ -1,3 +1,1 @@
-export LESS="-R -M --shift 5"
-export LESSOPEN='| /opt/local/bin/lesspipe.sh %s'
 export LESSCOLOR=1
