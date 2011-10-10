@@ -78,15 +78,15 @@ interceptIO()
 dev()
 {
     MODE="dev"
-        cd $1
+    cd $1
 }
 # Normal mode
 normal()
 {
     MODE="normal"
-        PS1='%{${fg[magenta]}%}%n ${nc}at %{${host_color}%}%m${nc} in %{$fg[green]%}%~${nc}
+    PS1='%{${fg[magenta]}%}%n ${nc}at %{${host_color}%}%m${nc} in %{$fg[green]%}%~${nc}
     %(?..${nc}!%{${fg_no_bold[red]}%}%?${nc}! )%{$reset_color%}○ '
-        cd $1
+    cd $1
 }
 
 # Get only the header of a webserver

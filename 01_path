@@ -50,6 +50,8 @@ export I="$HOME/IDEA/"
 export X="$HOME/XCode/"
 # Eclipse
 export E="$HOME/Workspace/"
+# Tasks
+export T="$D/Tasks"
 
 typeset -U path cdpath fpath manpath
 

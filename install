@@ -1,9 +1,9 @@
 #!/usr/bin/env zsh
 mydir=`dirname $0`
-if [[ $mydir = . ]]; then
-	mydir=`pwd`
+if [ $mydir = . ]; then
+    mydir=$(pwd)
 fi
-dest=$HOME
+dest="$HOME"
 mkdir -p $HOME/.zsh/
 mkdir -p $HOME/.zsh/cache
 ln -s $mydir/func $HOME/.zsh/func
@@ -12,5 +12,5 @@ ln -s $mydir/help $HOME/.zsh/help
 echo "My Directory: $mydir"
 cp $HOME/.zshenv $HOME/.zshenv.pre_zshkit
 cp $HOME/.zshrc $HOME/.zshrc.pre_zshkit
-echo "[ \"$TERM\" = \"xterm-color\" ] && source $mydir/env" > $HOME/.zshenv
-echo "[ \"$TERM\" = \"xterm-color\" ] && source $mydir/rc" > $HOME/.zshrc
+echo "[ \"\$TERM\" = \"xterm-256color\" ] && source $mydir/env" > $HOME/.zshenv
+echo "[ \"\$TERM\" = \"xterm-256color\" ] && source $mydir/rc" > $HOME/.zshrc
