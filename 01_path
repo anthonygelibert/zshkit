@@ -48,8 +48,8 @@ export Z="$PROJECTS_DIR/my_zshkit"
 export I="$HOME/IDEA/"
 # XCode
 export X="$HOME/XCode/"
-# Eclipse
-export E="$HOME/Workspace/"
+# Eclipse LCIS
+export E="$HOME/LCIS/"
 # Tasks
 export T="$D/Tasks"
 
