@@ -107,3 +107,5 @@ alias calc="open -a calculator"
 
 alias week='date "+%V"'
 
+alias ruby='RUBYOPT=-ropenssl ruby'
+
