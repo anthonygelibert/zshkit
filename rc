@@ -29,6 +29,7 @@ function precmd
 {
     if [[ "$MODE" == "dev" ]]; then
         vcs_info
-        PS1="%{${fg[magenta]}%}%n ${nc}at %{${host_color}%}%m${nc} in %{$fg[green]%}%~${nc} ${vcs_info_msg_0_} "
+PS1="%{${fg[magenta]}%}%n ${nc}at %{${host_color}%}%m${nc} in %{$fg[green]%}%~${nc} ${vcs_info_msg_0_}
+%(?..${nc}!%{${fg_no_bold[red]}%}%?${nc}! )%{$reset_color%}${vcs_info_msg_1_} "
     fi
 }

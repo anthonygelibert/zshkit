@@ -85,7 +85,7 @@ normal()
 {
     MODE="normal"
     PS1='%{${fg[magenta]}%}%n ${nc}at %{${host_color}%}%m${nc} in %{$fg[green]%}%~${nc}
-    %(?..${nc}!%{${fg_no_bold[red]}%}%?${nc}! )%{$reset_color%}○ '
+%(?..${nc}!%{${fg_no_bold[red]}%}%?${nc}! )%{$reset_color%}○ '
     cd $1
 }
 
