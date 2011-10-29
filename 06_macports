@@ -1,9 +1,9 @@
 # Some MacPorts alias
-alias pi="sudo port -v install"
+alias pi="sudo -u macports port -v install"
 alias ph="port search"
 alias po="port info"
 alias pv="port variants"
 alias pc="port contents"
 
 # Update the list, display the outdated, make the update and uninstall the inactives
-alias updateMP='sudo port -v selfupdate && sudo port outdated && sudo port -v -p upgrade outdated && sudo port -u -p uninstall'
+alias updateMP='sudo -u macports port -v selfupdate && port outdated && sudo -u macports port -v -p upgrade outdated && sudo -u macports port -u -p uninstall'
