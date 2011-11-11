@@ -59,7 +59,7 @@ typeset -U path cdpath fpath manpath
 export PATH="$ALT_X11_DIR/bin:$MANUALLY_INSTALLED_DIR/bin:$MANUALLY_INSTALLED_DIR/sbin:$MACPORTS_DIR/bin:$MACPORTS_DIR/sbin:$LATEX_BIN_DIR:$APPLE_DEVELOPER_DIR/bin:$APPLE_DEVELOPER_DIR/sbin:$MY_APPLICATIONS_DIR:$DEVELOPER_TOOLS_COMMAND_LINE:/bin:/sbin:/usr/bin:/usr/sbin:$X11_DIR/bin:$MSP430GCC_DIR/bin:."
 export MANPATH="$ALT_X11_DIR/share/man:$MANUALLY_INSTALLED_DIR/man:$MANUALLY_INSTALLED_DIR/share/man:$MACPORTS_DIR/share/man:$X11_DIR/share/man:$APPLE_DEVELOPER_DIR/share/man:$MSP430GCC_DIR/share/man:/usr/share/man"
 export FPATH="$HOME/.zsh/func:$FPATH"
-export CDPATH=".:$HOME:$I:$X:$E:$P:$D:$DL:$VOLUMES_DIR"
+export CDPATH=".:$HOME:$I:$X:$E/WiSMote:$E/Fuzzing:$P:$D:$DL:$VOLUMES_DIR"
 
 
 
