@@ -13,19 +13,19 @@ export MY_APPLICATIONS_DIR="$HOME/Applications"
 # My Projects
 export PROJECTS_DIR="$HOME/Documents/Projects"
 # SandBox
-export SANDBOX_DIR="$HOME/SandBox"
+export SANDBOX_DIR="$HOME/Documents/SandBox"
 # Official X11
 export X11_DIR="/usr/X11"
 # Mounted volumes
 export VOLUMES_DIR="/Volumes"
-# VisualVM      : https://visualvm.dev.java.net
-export VISUALVM_DIR="$MY_APPLICATIONS_DIR/VisualVM/"
 # Java 1.6 Home on Mac OS X
 export JAVA_HOME=`/usr/libexec/java_home`
 # Swap folder on Mac OS X
 export SWAP_DIR="/var/vm/"
 # Command-line tools from Developer Tools
 export DEVELOPER_TOOLS_COMMAND_LINE="/Developer/Tools"
+# Sonar
+export SONAR="$MY_APPLICATIONS_DIR/sonar-2.11/bin/macosx-universal-64"
 
 # My help folder
 export HELPDIR="$HOME/.zsh/help"
@@ -44,22 +44,16 @@ export P="$PROJECTS_DIR/"
 export SB="$SANDBOX_DIR/"
 # This project
 export Z="$PROJECTS_DIR/my_zshkit"
-# IDEA Projects
-export I="$HOME/IDEA/"
-# XCode
-export X="$HOME/XCode/"
-# Eclipse LCIS
-export E="$HOME/LCIS/"
 # Tasks
-export T="$D/Tasks"
+export T="$VOLUMES_DIR/Pro/94.Tasks"
 
 typeset -U path cdpath fpath manpath
 
 # PATH
-export PATH="$ALT_X11_DIR/bin:$MANUALLY_INSTALLED_DIR/bin:$MANUALLY_INSTALLED_DIR/sbin:$MACPORTS_DIR/bin:$MACPORTS_DIR/sbin:$LATEX_BIN_DIR:$APPLE_DEVELOPER_DIR/bin:$APPLE_DEVELOPER_DIR/sbin:$MY_APPLICATIONS_DIR:$DEVELOPER_TOOLS_COMMAND_LINE:/bin:/sbin:/usr/bin:/usr/sbin:$X11_DIR/bin:$MSP430GCC_DIR/bin:."
-export MANPATH="$ALT_X11_DIR/share/man:$MANUALLY_INSTALLED_DIR/man:$MANUALLY_INSTALLED_DIR/share/man:$MACPORTS_DIR/share/man:$X11_DIR/share/man:$APPLE_DEVELOPER_DIR/share/man:$MSP430GCC_DIR/share/man:/usr/share/man"
-export FPATH="$HOME/.zsh/func:$FPATH"
-export CDPATH=".:$HOME:$I:$X:$E/WiSMote:$E/Fuzzing:$P:$D:$DL:$VOLUMES_DIR"
+export PATH="$LATEX_BIN_DIR:$ALT_X11_DIR/bin:$MANUALLY_INSTALLED_DIR/bin:$MANUALLY_INSTALLED_DIR/sbin:$MACPORTS_DIR/bin:$MACPORTS_DIR/sbin:$APPLE_DEVELOPER_DIR/bin:$APPLE_DEVELOPER_DIR/sbin:$MY_APPLICATIONS_DIR:$DEVELOPER_TOOLS_COMMAND_LINE:/bin:/sbin:/usr/bin:/usr/sbin:/usr/libexec:$X11_DIR/bin:$MSP430GCC_DIR/bin:."
+export MANPATH="$ALT_X11_DIR/share/man:$MANUALLY_INSTALLED_DIR/man:$MANUALLY_INSTALLED_DIR/share/man:$MACPORTS_DIR/share/man:$X11_DIR/share/man:$APPLE_DEVELOPER_DIR/share/man:$MSP430GCC_DIR/share/man:/usr/share/man:/opt/local/etc/zsh/man/"
+export FPATH="$HOME/.zsh/func:$FPATH:/opt/local/etc/zsh/zshrc.d/local-functions"
+export CDPATH=".:$HOME:$P:$D:$DL:$MY_APPLICATIONS_DIR:$VOLUMES_DIR"
 
 
 
