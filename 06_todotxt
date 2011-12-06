@@ -1,0 +1,18 @@
+export TODOTXT_DEFAULT_ACTION=ls
+
+# Some aliases
+alias  t="todo.sh"
+alias ta="todo.sh add"
+alias tp="todo.sh pri"
+alias td="todo.sh do"
+alias tl="todo.sh ls"
+alias te="mvim $T/todo.txt"
+alias tla="todo.sh listpri A"
+alias tlb="todo.sh listpri B"
+alias tlc="todo.sh listpri C"
+alias tld="todo.sh listpri D"
+alias tle="todo.sh listpri E"
+alias tlnoc="todo.sh ls '@Nocosium'"
+alias tldoc="todo.sh ls '@Doctorat'"
+alias tlvac="todo.sh ls '@Vacations'"
+alias tlper="todo.sh ls '@Perso'"
