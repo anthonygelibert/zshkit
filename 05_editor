@@ -1,2 +1,2 @@
 export EDITOR="mvim -f --nomru"
-export VISUAL="mvim -f --nomru"
+export GIT_EDITOR="mvim -f --nomru"
