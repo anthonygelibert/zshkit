@@ -13,7 +13,6 @@ alias lsock='lsof -i -P -n'
 alias netconns='netstat -an -f inet'
 
 # Some alias to ps
-alias pdsa='ps -axww'
 alias psa='ps -alxww'
 alias psj='ps -axjww'
 alias pso='ps -axwwo uid,pid,ppid,pgid,pri,nice,state,time,%cpu,%mem,command'
@@ -111,4 +110,6 @@ alias ruby='RUBYOPT=-ropenssl ruby'
 
 alias anthony='hdiutil attach /Users/tony/Documents/Anthony.sparsebundle'
 alias pro='hdiutil attach /Users/tony/Documents/Pro.sparsebundle'
+
+alias ipfwls="sudo ipfw -atN list"
 
