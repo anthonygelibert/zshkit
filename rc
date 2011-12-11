@@ -1,3 +1,6 @@
+watch=(all)
+WATCHFMT='%n %a at %t %w from %M'
+
 # ulimit
 # Stack size
 ulimit -s 16384
