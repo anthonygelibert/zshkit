@@ -45,7 +45,7 @@ export SB="$SANDBOX_DIR/"
 # This project
 export Z="$PROJECTS_DIR/my_zshkit"
 # Tasks
-export T="$VOLUMES_DIR/Pro/94.Tasks"
+export T="$VOLUMES_DIR/Pro/8.Gestion/Taches"
 
 typeset -U path cdpath fpath manpath
 
