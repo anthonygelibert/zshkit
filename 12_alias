@@ -25,7 +25,7 @@ alias firewall_list="sudo ipfw -atN list"
 # List the locked file in trash
 function locked_in_trash()
 {
-    sudo lsof +c 0 | grep ".Trash" | awk '{print $1, " -> ", $9}'
+    sudo lsof -nPT +c 0 | grep ".Trash" | awk '{print $1, " -> ", $9}'
 }
 
 # Processus
