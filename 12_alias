@@ -120,3 +120,4 @@ alias -g M='|more'
 
 alias anthony='hdiutil attach /Users/tony/Documents/Anthony.sparsebundle'
 alias pro='hdiutil attach /Users/tony/Documents/Pro.sparsebundle'
+alias wiki='hdiutil attach /Users/tony/Documents/Wiki.sparsebundle -owners on'
