@@ -36,7 +36,7 @@ setopt   FUNCTION_ARGZERO       # When executing a shell function or sourcing a 
 setopt   GLOB                   # Perform filename generation
 unsetopt GLOB_ASSIGN            # NO -> If this option is set, filename generation (globbing) is performed on the right hand side of scalar parameter assignments of the form name=pattern (e.g. `param=*'). If the result has more than one word the parameter will become an array with those words as arguments. This option is provided for backwards compatibility only: globbing is always performed on the right hand side of array assignments of the form `name=( value )' (e.g. `param=(*)') and this form is recommended for clarity; with this option set, it is not possible to predict whether the result will be an array or a scalar.
 unsetopt GLOB_COMPLETE          # NO -> When the current word has a glob pattern, do not insert all the words resulting from the expansion but generate matches as for completion and cycle through them like MENU_COMPLETE.
-setopt   GLOB_DOTS              # Do not require a leading `.' in a filename to be matched explicitly.
+unsetopt   GLOB_DOTS              # Do not require a leading `.' in a filename to be matched explicitly.
 unsetopt GLOB_SUBST             # NO -> Treat any characters resulting from parameter substitution as being eligible for file expansion and filename generation, and any characters resulting from command substitution as being eligible for filename generation.
 setopt   HIST_ALLOW_CLOBBER     # Add | to output redirections in the history. This allows history references to clobber files even when CLOBBER is unset.
 setopt   HASH_CMDS              # Note the location of each command the first time it is executed
