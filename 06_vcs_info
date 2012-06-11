@@ -16,6 +16,7 @@ zstyle ':vcs_info:git:*' get-revision true
 # Formats for git, hg and svn
 zstyle ':vcs_info:cvs:*' formats 'is $fg[green]%s$fg[black]:$fg[red]%r%f on %{$fg[magenta]%}%b%f' 'ℂ'
 zstyle ':vcs_info:git:*' formats 'is $fg[green]%s$fg[black]:$fg[red]%r%f on %{$fg[magenta]%}%b%f$(git_prompt_info)%f%u%c' '±'
+zstyle ':vcs_info:git:*' actionformats 'is $fg[green]%s$fg[black]:$fg[red]%r%f on %{$fg[magenta]%}%b $fg[red][%a]%f$(git_prompt_info)%f%u%c' '±'
 zstyle ':vcs_info:hg:*' formats 'is $fg[green]%s$fg[black]:$fg[red]%r%f on %{$fg[magenta]%}%b%f$(hg_prompt_info)%f' '☿'
 zstyle ':vcs_info:hg-git:*' formats 'is $fg[green]%s$fg[black]:$fg[red]%r%f on %{$fg[magenta]%}%b%f$(hg_prompt_info)%f' '☿'
 zstyle ':vcs_info:svn:*' formats 'is $fg[green]%s$fg[black]:$fg[red]%r%f rev. $fg[blue]$(_svn_getVersion)%f' '∫'
