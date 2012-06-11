@@ -19,13 +19,11 @@ export X11_DIR="/usr/X11"
 # Mounted volumes
 export VOLUMES_DIR="/Volumes"
 # Java 1.6 Home on Mac OS X
-export JAVA_HOME="/Library/Java/JavaVirtualMachines/1.6.0_31-b04-411.jdk/Contents/Home"
+export JAVA_HOME="/Library/Java/JavaVirtualMachines/1.7.0.jdk/Contents/Home"
 # Swap folder on Mac OS X
 export SWAP_DIR="/var/vm/"
 # Command-line tools from Developer Tools
 export DEVELOPER_TOOLS_COMMAND_LINE="/Developer/Tools"
-# Sonar
-export SONAR="$MY_APPLICATIONS_DIR/sonar-2.11/bin/macosx-universal-64"
 
 # My help folder
 export HELPDIR="$HOME/.zsh/help"
@@ -41,7 +39,7 @@ export DL="$HOME/Downloads/"
 # My Projects
 export P="$PROJECTS_DIR/"
 # My Pro Projects
-export PP="$VOLUMES_DIR/Pro/1.Nocosium/4.Code"
+export PP="$VOLUMES_DIR/Pro/1.Nocosium/Code"
 # Alias for SandBox
 export SB="$SANDBOX_DIR/"
 # This project
