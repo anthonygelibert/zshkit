@@ -20,7 +20,7 @@ unsetopt BEEP                   # NO -> Beep on error in ZLE.
 setopt   BG_NICE                # Run all background jobs at a lower priority.
 setopt   BRACE_CCL              # Expand expressions in braces which would not otherwise undergo brace expansion to a lexically ordered list of all the characters.
 setopt   CDABLE_VARS            # If the argument to a cd command (or an implied cd with the AUTO_CD option set) is not a directory, and does not begin with a slash, try to expand the expression as if it were preceded by a '~'
-unsetopt CHASE_LINKS            # Resolve symbolic links to their true values when changing directory.
+setopt   CHASE_LINKS            # Resolve symbolic links to their true values when changing directory.
 setopt   CLOBBER                # Allows `>' redirection to truncate existing files, and `>>' to create files. Otherwise `>!' or `>|' must be used to truncate a file, and `>>!' or `>>|' to create a file.
 setopt   COMPLETE_IN_WORD       # If unset, the cursor is moved to the end of the word if completion is started. Otherwise it stays where it is and completion is done from both ends.
 setopt   CORRECT                # Try to correct the spelling of commands.
@@ -36,7 +36,7 @@ setopt   FUNCTION_ARGZERO       # When executing a shell function or sourcing a 
 setopt   GLOB                   # Perform filename generation
 unsetopt GLOB_ASSIGN            # NO -> If this option is set, filename generation (globbing) is performed on the right hand side of scalar parameter assignments of the form name=pattern (e.g. `param=*'). If the result has more than one word the parameter will become an array with those words as arguments. This option is provided for backwards compatibility only: globbing is always performed on the right hand side of array assignments of the form `name=( value )' (e.g. `param=(*)') and this form is recommended for clarity; with this option set, it is not possible to predict whether the result will be an array or a scalar.
 unsetopt GLOB_COMPLETE          # NO -> When the current word has a glob pattern, do not insert all the words resulting from the expansion but generate matches as for completion and cycle through them like MENU_COMPLETE.
-unsetopt   GLOB_DOTS              # Do not require a leading `.' in a filename to be matched explicitly.
+unsetopt GLOB_DOTS              # NO -> Do not require a leading `.' in a filename to be matched explicitly.
 unsetopt GLOB_SUBST             # NO -> Treat any characters resulting from parameter substitution as being eligible for file expansion and filename generation, and any characters resulting from command substitution as being eligible for filename generation.
 setopt   HIST_ALLOW_CLOBBER     # Add | to output redirections in the history. This allows history references to clobber files even when CLOBBER is unset.
 setopt   HASH_CMDS              # Note the location of each command the first time it is executed
@@ -62,7 +62,7 @@ setopt   LIST_TYPES             # When listing files that are possible completio
 setopt   LONG_LIST_JOBS         # List jobs in the long format by default.
 setopt   MAGIC_EQUAL_SUBST      # All unquoted arguments of the form identifier=expression appearing after the command name have file expansion (that is, where expression has a leading `~' or `=') performed on expression as if it were a parameter assignment. The argument is not otherwise treated specially: in other words, it is subsequently treated as a single word, not as an assignment.
 setopt   MARK_DIRS              # Append a trailing / to all directory names resulting from filename generation (globbing).
-unsetopt MENU_COMPLETE          # On an ambiguous completion, instead of listing possibilities or beeping, insert the first match immediately.
+unsetopt MENU_COMPLETE          # NO -> On an ambiguous completion, instead of listing possibilities or beeping, insert the first match immediately.
 setopt   MULTIOS                # Perform implicit tees or cats when multiple redirections are attempted
 setopt   NOMATCH                # If a pattern for filename generation has no matches, print an error, instead of leaving it unchanged in the argument list. This also applies to file expansion of an initial ~ or =.
 setopt   NOHUP
