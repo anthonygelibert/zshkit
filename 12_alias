@@ -1,47 +1,12 @@
-# Memory hogs using top and ps
-alias mem_hogs_top='top -l 1 -o rsize | head -30'
-alias mem_hogs_ps='ps wwaxm -o pid,stat,vsize,rss,time,command | head -20'
-
-# CPU hogs using ps
-alias cpu_hogs='ps wwaxr -o pid,stat,%cpu,time,command | head -20'
-
-# Open sockets using lsof
-alias lssock='sudo lsof -i -P -n'
-alias lsock='lsof -i -P -n'
-
-# Get the list of Network Conns
-alias netconns='netstat -an -f inet'
-
-# Some alias to ps
-alias psa='ps -alxww'
-alias psj='ps -axjww'
-alias pso='ps -axwwo uid,pid,ppid,pgid,pri,nice,state,time,%cpu,%mem,command'
-
-# Firewall
-alias firewall_off="sudo ipfw flush"
-alias firewall_on="sudo ipfw /etc/firewall.conf"
-alias firewall_list="sudo ipfw -atN list"
-
+# vim: syn=zsh
 # List the locked file in trash
 function locked_in_trash()
 {
     sudo lsof -nPT +c 0 | grep ".Trash" | awk '{print $1, " -> ", $9}'
 }
 
-# Processus
-alias stop='kill -TSTP'
-alias int='kill -s INT'
-alias quit='kill -s QUIT'
-
-# IP configurations
-alias ip0_info='ipconfig getpacket en0'
-alias ip1_info='ipconfig getpacket en1'
-
 # Optical Drive information
 alias od_info='drutil info'
-
-# Access Point information
-alias ap_info='/System/Library/PrivateFrameworks/Apple80211.framework/Versions/A/Resources/airport -I'
 
 # Eject a volume
 alias eject='hdiutil eject'
@@ -52,13 +17,6 @@ alias apache2ctl='sudo /opt/local/apache2/bin/apachectl'
 # Copy the working dir to the clipboard
 alias cpwd='pwd | xargs echo -n | pbcopy'
 
-# Go to felix dir, clean the cache and start
-alias felix='(cd $FELIX_DIR && rm -rf felix-cache && java -ea -jar bin/felix.jar)'
-
-# DNS Cache
-alias cleardns="dscacheutil -flushcache"
-alias showdns="dscacheutil -cachedump -entries Host"
-
 # More
 alias more="more -r"
 
@@ -67,11 +25,6 @@ alias diff="colordiff"
 
 # Exit
 alias :q="exit"
-
-interceptIO()
-{
-    strace -ff -e trace=write -e write=1,2 -p $1
-}
 
 # Dev. mode
 dev()
@@ -86,12 +39,6 @@ normal()
     PS1='%{${fg[magenta]}%}%n ${nc}at %{${host_color}%}%m${nc} in %{$fg[green]%}%~${nc}
 %(?..${nc}!%{${fg_no_bold[red]}%}%?${nc}! )%{$reset_color%}○ '
     cd $1
-}
-
-# Get only the header of a webserver
-get-header()
-{
-    wget --server-response --spider $1
 }
 
 # Sometimes the zsh correction behavior is irritating:
@@ -112,9 +59,6 @@ alias week='date "+%V"'
 
 # Correct "ruby"
 alias ruby='RUBYOPT=-ropenssl ruby'
-
-# List ipfw rules
-alias ipfwls="sudo ipfw -atN list"
 
 alias -g M='|more'
 

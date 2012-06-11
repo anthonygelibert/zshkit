@@ -1,0 +1,7 @@
+# vim: syn=zsh
+# Sometimes the zsh correction behavior is irritating:
+alias mkdir='nocorrect mkdir'
+alias mv='nocorrect mv'
+alias cp='nocorrect cp'
+alias touch='nocorrect touch'
+alias ln='nocorrect ln'
