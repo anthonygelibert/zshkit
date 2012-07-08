@@ -24,7 +24,7 @@ setopt   CHASE_LINKS            # Resolve symbolic links to their true values wh
 setopt   CLOBBER                # Allows `>' redirection to truncate existing files, and `>>' to create files. Otherwise `>!' or `>|' must be used to truncate a file, and `>>!' or `>>|' to create a file.
 setopt   COMPLETE_IN_WORD       # If unset, the cursor is moved to the end of the word if completion is started. Otherwise it stays where it is and completion is done from both ends.
 setopt   CORRECT                # Try to correct the spelling of commands.
-setopt   CORRECT_ALL            # Try to correct the spelling of all arguments in a line.
+unsetopt CORRECT_ALL            # NO -> Try to correct the spelling of all arguments in a line.
 unsetopt CSH_JUNKIE_HISTORY     # NO -> A history reference without an event specifier will always refer to the previous command.
 unsetopt CSH_JUNKIE_LOOPS       # NO -> Allow loop bodies to take the form `list; end' instead of `do list; done'.
 unsetopt CSH_JUNKIE_QUOTES      # NO -> Complain if a quoted expression runs off the end of a line; prevent quoted expressions from containing un-escaped newlines.
