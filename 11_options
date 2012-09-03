@@ -22,6 +22,7 @@ setopt   BRACE_CCL              # Expand expressions in braces which would not o
 setopt   CDABLE_VARS            # If the argument to a cd command (or an implied cd with the AUTO_CD option set) is not a directory, and does not begin with a slash, try to expand the expression as if it were preceded by a '~'
 setopt   CHASE_LINKS            # Resolve symbolic links to their true values when changing directory.
 setopt   CLOBBER                # Allows `>' redirection to truncate existing files, and `>>' to create files. Otherwise `>!' or `>|' must be used to truncate a file, and `>>!' or `>>|' to create a file.
+setopt   COMBINING_CHARS        # Assume that the terminal displays combining characters correctly.  The shell cannot determine this by itself, hence the option.  This is highly recommended for MacOS X where file names are stored with accented characters split into basic and combining characters.
 setopt   COMPLETE_IN_WORD       # If unset, the cursor is moved to the end of the word if completion is started. Otherwise it stays where it is and completion is done from both ends.
 setopt   CORRECT                # Try to correct the spelling of commands.
 unsetopt CORRECT_ALL            # NO -> Try to correct the spelling of all arguments in a line.
