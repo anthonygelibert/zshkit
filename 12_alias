@@ -1,4 +1,6 @@
 # vim: syn=zsh
+alias check_assert='pmset -g assertions'
+
 # List the locked file in trash
 function locked_in_trash()
 {
