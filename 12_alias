@@ -46,9 +46,19 @@ normal()
 # Get the current week
 alias week='date "+%V"'
 
-# Correct "ruby"
-alias ruby='RUBYOPT=-ropenssl ruby'
+# M = more
+alias -g M='| more'
 
-alias -g M='|more'
+alias -g S='| sort'
 
-alias -g G='|grep'
+alias -g US='| sort -u'
+
+# G = grep
+alias -g G='| grep'
+
+# C = count lines
+alias -g C='| wc -l'
+
+# CA = cat all
+alias -g CA="2>&1 | gcat -A"
+
