@@ -32,6 +32,8 @@ export MSP430GCC_DIR="/opt/msp430-gcc-4.5.3"
 export GIT_SCRIPTS="$PROJECTS_DIR/git-scripts:$PROJECTS_DIR/git-pull-request"
 # Libexec
 export LIBEXEC="/usr/libexec"
+# VMware tools
+export VMWARE_TOOLS="/Applications/VMware Fusion.app/Contents/Library"
 
 # Some usefull paths (cd ~D)
 # My Documents
@@ -52,7 +54,7 @@ export T="$VOLUMES_DIR/Pro/8.Gestion/Taches"
 typeset -U path cdpath fpath manpath
 
 # PATH
-export PATH="$LIBEXEC:$GIT_SCRIPTS:$LATEX_BIN_DIR:$ALT_X11_DIR/bin:$MANUALLY_INSTALLED_DIR/bin:$MANUALLY_INSTALLED_DIR/sbin:$MACPORTS_DIR/bin:$MACPORTS_DIR/sbin:$APPLE_DEVELOPER_DIR/bin:$APPLE_DEVELOPER_DIR/sbin:$MY_APPLICATIONS_DIR:$DEVELOPER_TOOLS_COMMAND_LINE:/bin:/sbin:/usr/bin:/usr/sbin:/usr/libexec:$X11_DIR/bin:$MSP430GCC_DIR/bin:."
+export PATH="$VMWARE_TOOLS:$LIBEXEC:$GIT_SCRIPTS:$LATEX_BIN_DIR:$ALT_X11_DIR/bin:$MANUALLY_INSTALLED_DIR/bin:$MANUALLY_INSTALLED_DIR/sbin:$MACPORTS_DIR/bin:$MACPORTS_DIR/sbin:$APPLE_DEVELOPER_DIR/bin:$APPLE_DEVELOPER_DIR/sbin:$MY_APPLICATIONS_DIR:$DEVELOPER_TOOLS_COMMAND_LINE:/bin:/sbin:/usr/bin:/usr/sbin:/usr/libexec:$X11_DIR/bin:$MSP430GCC_DIR/bin:."
 export MANPATH="$ALT_X11_DIR/share/man:$MANUALLY_INSTALLED_DIR/man:$MANUALLY_INSTALLED_DIR/share/man:$MACPORTS_DIR/share/man:$X11_DIR/share/man:$APPLE_DEVELOPER_DIR/share/man:$MSP430GCC_DIR/share/man:/usr/share/man:/opt/local/etc/zsh/man/"
 export FPATH="$HOME/.zsh/func:$FPATH:/opt/local/etc/zsh/zshrc.d/local-functions"
 export CDPATH=".:$HOME:$P:$PP:$D:$DL:$MY_APPLICATIONS_DIR:$VOLUMES_DIR"
