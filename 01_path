@@ -43,13 +43,11 @@ export DL="$HOME/Downloads/"
 # My Projects
 export P="$PROJECTS_DIR/"
 # My Pro Projects
-export PP="$VOLUMES_DIR/Pro/1.Nocosium/Code"
+export PP="$VOLUMES_DIR/Pro/Code"
 # Alias for SandBox
 export SB="$SANDBOX_DIR/"
 # This project
 export Z="$PROJECTS_DIR/my_zshkit"
-# Tasks
-export T="$VOLUMES_DIR/Pro/8.Gestion/Taches"
 
 typeset -U path cdpath fpath manpath
 
