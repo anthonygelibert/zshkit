@@ -1,6 +1,3 @@
-watch=(all)
-WATCHFMT='%n %a at %t %w from %M'
-
 autoload zmv
 
 # ulimit
