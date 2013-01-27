@@ -4,6 +4,8 @@ fignore=(.o \~ .bak .junk .DS_Store $fignore)
 autoload -Uz compinit && compinit
 zmodload zsh/complist
 
+compdef _git g=git
+
 autoload -U zsh-mime-setup
 autoload -U zsh-mime-handler
 zsh-mime-setup
