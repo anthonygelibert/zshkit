@@ -19,7 +19,7 @@ export X11_DIR="/usr/X11"
 # Mounted volumes
 export VOLUMES_DIR="/Volumes"
 # Java 1.7 Home on Mac OS X
-export JAVA_HOME="/Library/Java/JavaVirtualMachines/jdk1.7.0_15.jdk/Contents/Home"
+export JAVA_HOME="/Library/Java/JavaVirtualMachines/jdk1.7.0_17.jdk/Contents/Home"
 # Swap folder on Mac OS X
 export SWAP_DIR="/var/vm/"
 # Command-line tools from Developer Tools
