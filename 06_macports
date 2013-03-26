@@ -2,7 +2,6 @@
 alias pi="sudo port -v install"
 alias ph="port search"
 alias po="port info"
-alias pv="port variants"
 alias pc="port contents"
 
 # Update the list, display the outdated, make the update and uninstall the inactives
