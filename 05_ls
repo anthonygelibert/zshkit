@@ -8,7 +8,7 @@
 # -t : Reverse the order of the sort to get reverse lexicographical order or the oldest entries first (or largest files last, if combined with sort by size
 # -d : Directories are listed as plain files
 
-# ls*: file listing 
+# ls*: file listing
 #   a(d)    dot-files / -directories
 #   s       setgid/setuid/sticky
 #   l       symlinks
@@ -26,6 +26,7 @@ alias ls="ls -bGFh"
 alias la="ls -a"
 alias ll="ls -l"
 alias le="ll -e"
+alias l@="ll -@"
 alias lla="ll -a"
 alias lm="lla | more"
 alias lt="ls -ltr"
@@ -49,7 +50,7 @@ alias lsold="ls -rtlh *(D.om[1,10])"
 # This lists all the files in the current directory newer than the reference file.
 # You can also specify the reference file inline; note quotes:
 #   $ ls -l *(e:'nt ~/.zshenv':)
-function nt() 
+function nt()
 {
     if [[ -n $1 ]]; then
         local NTREF=${~1}
