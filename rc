@@ -15,10 +15,8 @@ local nc="%{$reset_color%}"
 
 # Change hostname color on known hosts
 case ${HOST%%.*} in
-    my-Desktop) local host_color="${fg[yellow]}" ;;
-    my-desktop) local host_color="${fg[yellow]}" ;;
-    my-Laptop)  local host_color="${fg[yellow]}" ;;
-    my-laptop)  local host_color="${fg[yellow]}" ;;
+    Laptop)  local host_color="${fg[yellow]}" ;;
+    laptop)  local host_color="${fg[yellow]}" ;;
 	lc0945)     local host_color="${fg[yellow]}" ;;
 	LC0945)     local host_color="${fg[yellow]}" ;;
     *)          local host_color="${fg_bold[red]}" ;;
