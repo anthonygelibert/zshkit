@@ -7,14 +7,8 @@ function locked_in_trash()
     sudo lsof -nPT +c 0 | grep ".Trash" | awk '{print $1, " -> ", $9}'
 }
 
-# Optical Drive information
-alias od_info='drutil info'
-
 # Eject a volume
 alias eject='hdiutil eject'
-
-# Apache
-alias apache2ctl='sudo /opt/local/apache2/bin/apachectl'
 
 # Copy the working dir to the clipboard
 alias cpwd='pwd | xargs echo -n | pbcopy'
@@ -27,21 +21,6 @@ alias diff="colordiff"
 
 # Exit
 alias :q="exit"
-
-# Dev. mode
-dev()
-{
-    MODE="dev"
-    cd $1
-}
-# Normal mode
-normal()
-{
-    MODE="normal"
-    PS1='%{${fg[magenta]}%}%n ${nc}at %{${host_color}%}%m${nc} in %{$fg[green]%}%~${nc}
-%(?..${nc}!%{${fg_no_bold[red]}%}%?${nc}! )%{$reset_color%}○ '
-    cd $1
-}
 
 # Get the current week
 alias week='date "+%V"'

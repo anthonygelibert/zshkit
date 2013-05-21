@@ -10,26 +10,4 @@ ulimit -u 256
 # File descriptors
 ulimit -n 256
 
-# No coloration
-local nc="%{$reset_color%}"
-
-# Change hostname color on known hosts
-case ${HOST%%.*} in
-    Laptop)  local host_color="${fg[yellow]}" ;;
-    laptop)  local host_color="${fg[yellow]}" ;;
-	lc0945)     local host_color="${fg[yellow]}" ;;
-	LC0945)     local host_color="${fg[yellow]}" ;;
-    *)          local host_color="${fg_bold[red]}" ;;
-esac
-
-PS1='%{${fg[magenta]}%}%n ${nc}at %{${host_color}%}%m${nc} in %{$fg[green]%}%~${nc}
-%(?..${nc}!%{${fg_no_bold[red]}%}%?${nc}! )%{$reset_color%}○ '
-
-function precmd
-{
-    if [[ "$MODE" == "dev" ]]; then
-        vcs_info
-PS1="%{${fg[magenta]}%}%n ${nc}at %{${host_color}%}%m${nc} in %{$fg[green]%}%~${nc} ${vcs_info_msg_0_}
-%(?..${nc}!%{${fg_no_bold[red]}%}%?${nc}! )%{$reset_color%}${vcs_info_msg_1_} "
-    fi
-}
+source ~/Documents/Projects/liquidprompt/liquidprompt
