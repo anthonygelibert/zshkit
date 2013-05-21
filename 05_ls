@@ -1,26 +1,3 @@
-# -G : Enable colorized output
-# -F : Display a slash (`/') immediately after each pathname that is a directory, an asterisk (`*') after each that is executable, an at sign (`@') after each symbolic link, an equals sign (`=') after each socket, a percent sign (`%') after each whiteout, and a vertical bar (`|') after each that is a FIFO.
-# -h : When used with the -l option, use unit suffixes: Byte, Kilobyte, Megabyte, Gigabyte, Terabyte and Petabyte in order to reduce the number of digits to three or less using base 2 for sizes.
-# -a : Include directory entries whose names begin with a dot (.).
-# -l : List in long format.
-# -e : Print the Access Control List (ACL) associated with the file, if present, in long (-l) output.
-# -t : Sort by time modified (most recently modified first) before sorting the operands by lexicographical order.
-# -t : Reverse the order of the sort to get reverse lexicographical order or the oldest entries first (or largest files last, if combined with sort by size
-# -d : Directories are listed as plain files
-
-# ls*: file listing
-#   a(d)    dot-files / -directories
-#   s       setgid/setuid/sticky
-#   l       symlinks
-#   x       executables
-#   w       world-rwe
-#   d       directories
-#   e       empty directories
-#   big     the biggest files
-#   small   smallest
-#   new     newest
-#   old     oldest
-
 alias l="ls"
 alias ls="ls -bGFh"
 alias la="ls -a"
@@ -42,21 +19,6 @@ alias lsbig="ls -flh *(.OL[1,10])"
 alias lssmall="ls -Srl *(.oL[1,10])"
 alias lsnew="ls -rl *(D.om[1,10])"
 alias lsold="ls -rtlh *(D.om[1,10])"
-
-# nt: list files newer than reference file by Peter Stephenson
-# You use it as follows:
-#   $ NTREF=/reference/file
-#   $ ls -l *(e:nt:)
-# This lists all the files in the current directory newer than the reference file.
-# You can also specify the reference file inline; note quotes:
-#   $ ls -l *(e:'nt ~/.zshenv':)
-function nt()
-{
-    if [[ -n $1 ]]; then
-        local NTREF=${~1}
-    fi
-    [[ $REPLY -nt $NTREF ]]
-}
 
 # plap: list all occurrences of program in the current PATH
 function plap()
