@@ -1,3 +1,4 @@
+# vim: ft=zsh
 DIRSTACKSIZE=8
 
 alias fd=pushd

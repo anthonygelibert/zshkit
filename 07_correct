@@ -1,4 +1,5 @@
-# vim: syn=zsh
+# vim: ft=zsh
+
 # Sometimes the zsh correction behavior is irritating:
 alias mkdir='nocorrect mkdir'
 alias mv='nocorrect mv'

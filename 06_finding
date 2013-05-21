@@ -1,11 +1,13 @@
+# vim: ft=zsh
+
 # Search here using SpotLight
-function mdhere() 
+function mdhere()
 {
 	mdfind -onlyin . $*
 }
 
 # Search globally by name, using SpotLight
-function mdloc() 
+function mdloc()
 {
 	mdfind "kMDItemFSName == '$*'wc"
 }

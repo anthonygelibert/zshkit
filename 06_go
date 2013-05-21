@@ -1,3 +1,5 @@
+# vim: ft=zsh
+
 # gc
 prefixes=(5 6 8)
 for p in $prefixes; do

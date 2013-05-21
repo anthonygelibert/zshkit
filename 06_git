@@ -1,5 +1,0 @@
-function git_prompt_info()
-{
-	local REV=`git rev-parse --short HEAD`
- 	echo " rev. $fg[blue]$REV"
-}

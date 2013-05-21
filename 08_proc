@@ -1,3 +1,4 @@
+# vim: ft=zsh
 # Some alias to ps
 alias psa='ps -alxww'
 alias psj='ps -axjww'

@@ -1,3 +1,5 @@
+# vim: ft=zsh
+
 # Files to ignore during completion
 fignore=(.o \~ .bak .junk .DS_Store $fignore)
 

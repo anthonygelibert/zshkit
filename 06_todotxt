@@ -1,3 +1,5 @@
+# vim: ft=zsh
+
 export TODOTXT_DEFAULT_ACTION=ls
 
 # Some aliases

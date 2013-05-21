@@ -1,3 +1,5 @@
+# vim: ft=zsh
+
 # X11       : http://xquartz.macosforge.org/trac/wiki
 export ALT_X11_DIR="/opt/X11"
 # XCode     : http://developer.apple.com/technologies/tools/xcode.html
