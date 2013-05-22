@@ -11,7 +11,7 @@ setopt   APPEND_HISTORY         # If this is set, zsh sessions will append their
 setopt   AUTO_CD                # If a command is issued that can't be executed as a normal command, and the command is the name of a directory, perform the cd command to that directory.
 setopt   AUTO_LIST              # Automatically list choices on an ambiguous completion.
 setopt   AUTO_MENU              # Automatically use menu completion after the second consecutive request for completion, for example by pressing the tab key repeatedly. This option is overridden by MENU_COMPLETE.
-setopt   AUTO_NAME_DIRS         # Any parameter that is set to the absolute name of a directory immediately becomes a name for that directory in the usual form ~param.
+unsetopt   AUTO_NAME_DIRS         # Any parameter that is set to the absolute name of a directory immediately becomes a name for that directory in the usual form ~param.
 setopt   AUTO_PARAM_KEYS        # If a parameter name was completed and the next character typed is one of those that have to come directly after the name (like }, :, etc.), they are placed there automatically.
 setopt   AUTO_PUSHD             # Make cd push the old directory onto the directory stack.
 setopt   AUTO_REMOVE_SLASH      # When the last character resulting from a completion is a slash and the next character typed is a word delimiter, a slash, or a character that ends a command (such as a semicolon or an ampersand), remove the slash.
