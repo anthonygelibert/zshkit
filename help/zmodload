@@ -35,7 +35,7 @@ zmodload -R modalias ...
               effect.
 
               The named module is searched for in the same way  a  com-
-              mand  is,  using $module_path instead of $path.  However,
+              mand  is,  using $module path instead of $path.  However,
               the path search is performed even when  the  module  name
               contains  a  `/', which it usually does.  There is no way
               to prevent the path search.
@@ -47,7 +47,7 @@ zmodload -R modalias ...
 
               With -u, zmodload unloads modules.  The same name must be
               given that was given when the module was loaded,  but  it
-              is  not necessary for the module to exist in the filesys-
+              is not necessary for the module to exist in the file sys-
               tem.  The -i option suppresses the error if the module is
               already unloaded (or was never loaded).
 

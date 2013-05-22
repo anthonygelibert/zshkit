@@ -12,7 +12,7 @@ zcompile -t file [ name ... ]
        has the name `file.zwc' and will be placed in the same directory
        as the file.  The shell will load the compiled file  instead  of
        the  normal  function  file when the function is autoloaded; see
-       the section `Autoloading Functions' in zshfunc(1) for a descrip-
+       the section `Autoloading Functions' in zshmisc(1) for a descrip-
        tion  of  how  autoloaded functions are searched.  The extension
        .zwc stands for `zsh word code'.
 
@@ -33,7 +33,7 @@ zcompile -t file [ name ... ]
        file.  If both -c and -a are given, names of both defined  func-
        tions  and  functions  marked  for autoloading may be given.  In
        either case, the functions in files written with the  -c  or  -a
-       option  will  be  autoloaded  as if the KSH_AUTOLOAD option were
+       option  will  be  autoloaded  as if the KSH AUTOLOAD option were
        unset.
 
        The reason for handling loaded and not-yet-loaded functions with
@@ -86,14 +86,14 @@ zcompile -t file [ name ... ]
        -k
        -z     These options are used when the  compiled  file  contains
               functions which are to be autoloaded. If -z is given, the
-              function will be autoloaded as if the KSH_AUTOLOAD option
+              function will be autoloaded as if the KSH AUTOLOAD option
               is  not  set,  even if it is set at the time the compiled
               file is read, while if the -k is given, the function will
-              be  loaded as if KSH_AUTOLOAD is set.  These options also
+              be  loaded as if KSH AUTOLOAD is set.  These options also
               take precedence over any -k or -z  options  specified  to
               the  autoload  builtin.  If  neither  of these options is
               given, the function will be loaded as determined  by  the
-              setting  of  the KSH_AUTOLOAD option at the time the com-
+              setting  of  the KSH AUTOLOAD option at the time the com-
               piled file is read.
 
               These options may also appear as many times as  necessary

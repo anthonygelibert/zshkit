@@ -1,4 +1,4 @@
-set [ {+|-}options | {+|-}o [ option_name ] ] ... [ {+|-}A [ name ] ] [
+set [ {+|-}options | {+|-}o [ option name ] ] ... [ {+|-}A [ name ] ] [
 arg ... ]
        Set  the options for the shell and/or set the positional parame-
        ters, or declare and set an array.  If the -s option  is  given,
@@ -21,7 +21,7 @@ arg ... ]
        fied, all arrays are printed without their values.
 
        The  behaviour  of arguments after -A name or +A name depends on
-       whether the option KSH_ARRAYS is set.  If it  is  not  set,  all
+       whether the option KSH ARRAYS is set.  If it  is  not  set,  all
        arguments  following  name  are treated as values for the array,
        regardless of their form.  If the option is set,  normal  option
        processing  continues  at that point; only regular arguments are
@@ -29,7 +29,7 @@ arg ... ]
 
               set -A array -x -- foo
 
-       sets array to `-x -- foo' if KSH_ARRAYS is not set, but sets the
+       sets array to `-x -- foo' if KSH ARRAYS is not set, but sets the
        array to foo and turns on the option `-x' if it is set.
 
        If  the  -A  flag is not present, but there are arguments beyond

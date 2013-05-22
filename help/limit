@@ -76,3 +76,7 @@ limit [ -hs ] [ resource [ limit ] ] ...
        nm     megabytes or minutes
        [mm:]ss
               minutes and seconds
+
+       The  limit  command  is  not  made available by default when the
+       shell starts in a mode emulating another shell.  It can be  made
+       available with the command `zmodload -F zsh/rlimits b:limit'.

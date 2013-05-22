@@ -1,25 +1,26 @@
 read [ -rszpqAclneE ] [ -t [ num ] ] [ -k [ num ] ] [ -d delim ]
  [ -u n ] [ name[?prompt] ] [ name ...  ]
-       Read  one  line and break it into fields using the characters in
-       $IFS as separators, except as noted below.  The first  field  is
+       Read one line and break it into fields using the  characters  in
+       $IFS  as  separators, except as noted below.  The first field is
        assigned to the first name, the second field to the second name,
-       etc., with leftover fields assigned to the last name.   If  name
-       is  omitted then REPLY is used for scalars and reply for arrays.
+       etc.,  with  leftover fields assigned to the last name.  If name
+       is omitted then REPLY is used for scalars and reply for  arrays.
 
-       -r     Raw mode: a `\' at the end of a  line  does  not  signify
+       -r     Raw  mode:  a  `\'  at the end of a line does not signify
               line continuation and backslashes in the line don't quote
               the following character and are not removed.
 
-       -s     Don't echo back characters if reading from the  terminal.
+       -s     Don't  echo back characters if reading from the terminal.
               Currently does not work with the -q option.
 
        -q     Read only one character from the terminal and set name to
-              `y' if this character was `y' or `Y' and  to  `n'  other-
-              wise.   With this flag set the return status is zero only
-              if the character was `y' or `Y'.  Note that  this  always
-              reads  from  the terminal, even if used with the -p or -u
-              or -z flags or with redirected input.   This  option  may
-              also be used within zle widgets.
+              `y'  if  this  character was `y' or `Y' and to `n' other-
+              wise.  With this flag set the return status is zero  only
+              if the character was `y' or `Y'.  This option may be used
+              with a timeout; if the read times out, or encounters  end
+              of  file,  status  2 is returned.  Input is read from the
+              terminal unless one of -u or -p is present.  This  option
+              may also be used within zle widgets.
 
        -k [ num ]
               Read  only  one (or num) characters.  All are assigned to
@@ -94,9 +95,11 @@ read [ -rszpqAclneE ] [ -t [ num ] ] [ -k [ num ] ] [ -d delim ]
               availability  of  the  first character is tested, so that
               e.g. `read -t -k 2' can still block on the second charac-
               ter.   Use  two  instances of `read -t -k' if this is not
-              what is wanted.  If the first argument  contains  a  `?',
-              the  remainder  of this word is used as a prompt on stan-
-              dard error when the shell is interactive.
+              what is wanted.
+
+       If the first argument contains a `?', the remainder of this word
+       is used as a prompt on standard error when the shell is interac-
+       tive.
 
        The value (exit status) of read is  1  when  an  end-of-file  is
        encountered,  or when -c or -l is present and the command is not
