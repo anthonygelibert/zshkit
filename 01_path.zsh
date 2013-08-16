@@ -52,8 +52,8 @@ export Z="$PROJECTS_DIR/my_zshkit"
 typeset -U path cdpath fpath manpath
 
 # PATH
-export PATH="$VMWARE_TOOLS:$LIBEXEC:$GIT_SCRIPTS:$LATEX_BIN_DIR:$ALT_X11_DIR/bin:$MANUALLY_INSTALLED_DIR/bin:$MANUALLY_INSTALLED_DIR/sbin:$MACPORTS_DIR/bin:$MACPORTS_DIR/sbin:$APPLE_DEVELOPER_DIR/bin:$APPLE_DEVELOPER_DIR/sbin:$MY_APPLICATIONS_DIR:$DEVELOPER_TOOLS_COMMAND_LINE:/bin:/sbin:/usr/bin:/usr/sbin:/usr/libexec:$X11_DIR/bin:."
-export MANPATH="$ALT_X11_DIR/share/man:$MANUALLY_INSTALLED_DIR/man:$MANUALLY_INSTALLED_DIR/share/man:$MACPORTS_DIR/share/man:$X11_DIR/share/man:$APPLE_DEVELOPER_DIR/share/man:$MSP430GCC_DIR/share/man:/usr/share/man:/opt/local/etc/zsh/man/"
+export PATH="$VMWARE_TOOLS:$LIBEXEC:$GIT_SCRIPTS:$LATEX_BIN_DIR:$ALT_X11_DIR/bin:$MACPORTS_DIR/bin:$MACPORTS_DIR/sbin:$MANUALLY_INSTALLED_DIR/bin:$MANUALLY_INSTALLED_DIR/sbin:$APPLE_DEVELOPER_DIR/bin:$APPLE_DEVELOPER_DIR/sbin:$MY_APPLICATIONS_DIR:$DEVELOPER_TOOLS_COMMAND_LINE:/bin:/sbin:/usr/bin:/usr/sbin:/usr/libexec:$X11_DIR/bin:."
+export MANPATH="$ALT_X11_DIR/share/man:$MACPORTS_DIR/share/man:$MANUALLY_INSTALLED_DIR/man:$MANUALLY_INSTALLED_DIR/share/man:$X11_DIR/share/man:$APPLE_DEVELOPER_DIR/share/man:/usr/share/man:/opt/local/etc/zsh/man/"
 export FPATH="$HOME/.zsh/func:$FPATH:/opt/local/etc/zsh/zshrc.d/local-functions"
 export CDPATH=".:$HOME:$P:$C:$D:$DL:$MY_APPLICATIONS_DIR:$VOLUMES_DIR"
 
