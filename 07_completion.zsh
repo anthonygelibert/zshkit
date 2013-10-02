@@ -124,7 +124,7 @@ zstyle ':completion:*:scp:*' tag-order \
 zstyle ':completion:*:scp:*' group-order \
 zstyle ':completion:*:ssh:*' tag-order \
 zstyle ':completion:*:ssh:*' group-order \
-
+zstyle ':completion:*:*:git:*' script /opt/local/share/git-core/contrib/completion/git-completion.zsh
 # disable named-directories autocompletion
 zstyle ':completion:*:cd:*' tag-order local-directories directory-stack path-directories
 
