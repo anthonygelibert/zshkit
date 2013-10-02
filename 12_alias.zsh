@@ -4,7 +4,7 @@ alias check_assert='pmset -g assertions'
 # List the locked file in trash
 function locked_in_trash()
 {
-    sudo lsof -nPT +c 0 | grep ".Trash" | awk '{print $1, " -> ", $9}'
+    sudo lsof -nPT +c 0 | grep "/.Trash" | awk '{print $1, " -> ", $9}' | grep -v mds
 }
 
 # Eject a volume
