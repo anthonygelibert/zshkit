@@ -1,13 +1,6 @@
 autoload zmv
 
-# ulimit
-# Stack size
-ulimit -s 16384
 # Core file size
 ulimit -c unlimited
-# Processes
-ulimit -u 256
-# File descriptors
-ulimit -n 256
 
 source ~/Documents/Projects/liquidprompt/liquidprompt
