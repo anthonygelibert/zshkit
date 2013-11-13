@@ -7,9 +7,6 @@ function locked_in_trash()
     sudo lsof -nPT +c 0 | grep "/.Trash" | awk '{print $1, " -> ", $9}' | grep -v mds
 }
 
-# Eject a volume
-alias eject='hdiutil eject'
-
 # Copy the working dir to the clipboard
 alias cpwd='pwd | xargs echo -n | pbcopy'
 
@@ -28,16 +25,6 @@ alias week='date "+%V"'
 # M = more
 alias -g M='| more'
 
-alias -g S='| sort'
-
-alias -g US='| sort -u'
-
 # G = grep
 alias -g G='| grep'
-
-# C = count lines
-alias -g C='| wc -l'
-
-# CA = cat all
-alias -g CA="2>&1 | gcat -A"
 
