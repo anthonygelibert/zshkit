@@ -12,7 +12,7 @@ setopt   AUTO_CD                # If a command is issued that can't be executed 
 setopt   AUTO_CONTINUE
 setopt   AUTO_LIST              # Automatically list choices on an ambiguous completion.
 setopt   AUTO_MENU              # Automatically use menu completion after the second consecutive request for completion, for example by pressing the tab key repeatedly. This option is overridden by MENU_COMPLETE.
-setopt   AUTO_NAME_DIRS         # Any parameter that is set to the absolute name of a directory immediately becomes a name for that directory in the usual form ~param.
+unsetopt   AUTO_NAME_DIRS         # Any parameter that is set to the absolute name of a directory immediately becomes a name for that directory in the usual form ~param.
 setopt   AUTO_PARAM_KEYS        # If a parameter name was completed and the next character typed is one of those that have to come directly after the name (like }, :, etc.), they are placed there automatically.
 setopt   AUTO_PARAM_SLASH
 setopt   AUTO_PUSHD             # Make cd push the old directory onto the directory stack.
@@ -111,4 +111,3 @@ setopt   UNSET                  # Treat unset parameters as if they were empty w
 unsetopt VERBOSE
 #setopt  WARN_CREATE_GLOBAL
 #setopt  XTRACE                 # NO -> Display all the actions of the shell
-setopt   ZLE
