@@ -5,8 +5,3 @@ alias mem_hogs_ps='ps wwaxm -o pid,stat,vsize,rss,time,command | head -20'
 
 # CPU hogs using ps
 alias cpu_hogs='ps wwaxr -o pid,stat,%cpu,time,command | head -20'
-
-interceptIO()
-{
-    strace -ff -e trace=write -e write=1,2 -p $1
-}
