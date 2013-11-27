@@ -12,7 +12,7 @@ setopt   AUTO_CD                # If a command is issued that can't be executed 
 setopt   AUTO_CONTINUE          # With this option set, stopped jobs that are removed from the job table with the disown builtin command are automatically sent a CONT signal to make them running.
 setopt   AUTO_LIST              # Automatically list choices on an ambiguous completion.
 setopt   AUTO_MENU              # Automatically use menu completion after the second consecutive request for completion, for example by pressing the tab key repeatedly. This option is overridden by MENU_COMPLETE.
-unsetopt AUTO_NAME_DIRS         # NO -> Any parameter that is set to the absolute name of a directory immediately becomes a name for that directory in the usual form ~param.
+setopt   AUTO_NAME_DIRS         # Any parameter that is set to the absolute name of a directory immediately becomes a name for that directory in the usual form ~param.
 setopt   AUTO_PARAM_KEYS        # If a parameter name was completed and the next character typed is one of those that have to come directly after the name (like }, :, etc.), they are placed there automatically.
 setopt   AUTO_PARAM_SLASH       # If a parameter is completed whose content is the name of a directory, then add a trailing slash instead of a space.
 setopt   AUTO_PUSHD             # Make cd push the old directory onto the directory stack.
@@ -108,6 +108,6 @@ unsetopt SINGLE_LINE_ZLE        # NO -> Use single-line command line editing ins
 unsetopt SUN_KEYBOARD_HACK      # NO -> If a line ends with a back-quote, and there are an odd number of back-quotes on the line, ignore the trailing back-quote. This is useful on some keyboards where the return key is too small, and the back-quote key lies annoyingly close to it.
 #setopt  TRANSIENT_RPROMPT      # Right prompt goes away after edit.
 setopt   UNSET                  # Treat unset parameters as if they were empty when substituting. Otherwise they are treated as an error.
-unsetopt VERBOSE                # NO -> Print shell input lines as they are read.
+#setopt VERBOSE                # Print shell input lines as they are read.
 #setopt  WARN_CREATE_GLOBAL     # Print a warning message when a global parameter is created in a function by an assignment.
-#setopt  XTRACE                 # NO -> Display all the actions of the shell
+#setopt  XTRACE                 # Display all the actions of the shell
