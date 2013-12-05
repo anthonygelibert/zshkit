@@ -1,5 +1,5 @@
 # vim: ft=zsh
 
-export LESSOPEN='| /opt/local/bin/lesspipe.sh %s'
-export LESS=-R
+lesspipe.sh > /dev/null
+export LESS="-R"
 export LESSCOLOR=1
