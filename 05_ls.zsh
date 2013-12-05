@@ -1,7 +1,7 @@
 # vim: ft=zsh
 
 alias l="ls"
-alias ls="ls -bGFh"
+alias ls="ls -bFh --color"
 alias la="ls -a"
 alias ll="ls -l"
 alias le="ll -e"
