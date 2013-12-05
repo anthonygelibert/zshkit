@@ -14,7 +14,7 @@ alias cpwd='pwd | xargs echo -n | pbcopy'
 alias more="more -r"
 
 # Diff
-alias diff="colordiff"
+[ $(command -v "colordiff") ] && alias diff="colordiff"
 
 # Exit
 alias :q="exit"
@@ -28,3 +28,6 @@ alias -g M='| more'
 # G = grep
 alias -g G='| grep'
 
+[ $(command -v "gsed") ] && alias sed="gsed"
+
+[ $(command -v "gtimeout") ] && alias timeout="gtimeout"
