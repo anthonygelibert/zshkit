@@ -8,7 +8,7 @@ PS2='%_> '
 PS3='?# '
 
 # the execution trace prompt (setopt xtrace). default: '+%N:%i>'
-export PS4='+%N:%i:%_>'
+export PS4='%B[%*]%b [%L] (%N:%i) %_ '
 
 # Right prompt with clock
 export RPS1="%{$fg_bold[black]%}%D{%d/%m/%y %H:%M:%S}%{${reset_color}%}"
