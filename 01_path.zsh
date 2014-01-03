@@ -17,7 +17,7 @@ export SANDBOX_DIR="${HOME}/Documents/SandBox"
 # Mounted volumes
 export VOLUMES_DIR="/Volumes"
 # Java 1.7 Home on Mac OS X
-export JAVA_HOME="/Library/Java/JavaVirtualMachines/jdk1.7.0_60.jdk/Contents/Home"
+export JAVA_HOME="/Library/Java/JavaVirtualMachines/jdk1.7.0_45.jdk/Contents/Home"
 # Swap folder on Mac OS X
 export SWAP_DIR="/var/vm/"
 # My help folder
