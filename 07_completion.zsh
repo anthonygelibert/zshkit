@@ -40,6 +40,8 @@ zstyle ':completion:*' ignore-parents parent pwd
 zstyle ':completion:*' group-name ''
 zstyle ':completion:*' list-separator '#'
 zstyle ':completion:*' auto-description 'specify: %d'
+zstyle ':completion:*' rehash yes
+
 
 
 ## case-insensitive (all),partial-word and then substring completion
@@ -84,7 +86,10 @@ zstyle ':completion:*:correct:*' original true
 zstyle ':completion:*:*:-subscript-:*' tag-order indexes parameters
 
 # only java files for javac
-zstyle ':completion:*:javac:*' files '*.java'
+zstyle ':completion:*:javac:*' file-patterns '*.java'
+
+# djvu2pdf
+zstyle ':completion:*:djvu2pdf:*' file-patterns '*.djvu'
 
 # no binary files for vi or textmate
 zstyle ':completion:*:vi:*' ignored-patterns '*.(o|a|so|aux|dvi|log|swp|fig|bbl|blg|bst|idx|ind|out|toc|class|pdf|ps|pyc)'
@@ -97,14 +102,14 @@ zstyle ':completion:*:less:*' ignored-patterns '*.(o|a|so|dvi|fig|out|class|pdf|
 zstyle ':completion:*:zless:*' ignored-patterns '*.(o|a|so|dvi|fig|out|class|pdf|ps|pyc)'
 
 # pdf for xpdf
-zstyle ':completion:*:xpdf:*' files '*.pdf'
+zstyle ':completion:*:xpdf:*' file-patterns '*.pdf'
 
 # tar files
-zstyle ':completion:*:tar:*' files '*.tar|*.tgz|*.tz|*.tar.Z|*.tar.bz2|*.tZ|*.tar.gz'
+zstyle ':completion:*:tar:*' file-patterns '*.tar|*.tgz|*.tz|*.tar.Z|*.tar.bz2|*.tZ|*.tar.gz'
 
 # latex to the fullest for printing
-zstyle ':completion:*:xdvi:*' files '*.dvi'
-zstyle ':completion:*:dvips:*' files '*.dvi'
+zstyle ':completion:*:xdvi:*' file-patterns '*.dvi'
+zstyle ':completion:*:dvips:*' file-patterns '*.dvi'
 
 # Group relatex matches:
 zstyle ':completion:*:-command-:*:(commands|builtins|reserved-words-aliases)' group-name commands
