@@ -91,6 +91,10 @@ zstyle ':completion:*:javac:*' file-patterns '*.java'
 # djvu2pdf
 zstyle ':completion:*:djvu2pdf:*' file-patterns '*.djvu'
 
+# lua/luajit
+zstyle ':completion:*:lua:*' file-patterns '*.lua'
+zstyle ':completion:*:luajit:*' file-patterns '*.lua'
+
 # no binary files for vi or textmate
 zstyle ':completion:*:vi:*' ignored-patterns '*.(o|a|so|aux|dvi|log|swp|fig|bbl|blg|bst|idx|ind|out|toc|class|pdf|ps|pyc)'
 zstyle ':completion:*:mate:*' ignored-patterns '*.(o|a|so|aux|dvi|log|swp|fig|bbl|blg|bst|idx|ind|out|toc|class|pdf|ps|pyc)'
