@@ -16,8 +16,8 @@ export PROJECTS_DIR="${HOME}/Documents/Projects"
 export SANDBOX_DIR="${HOME}/Documents/SandBox"
 # Mounted volumes
 export VOLUMES_DIR="/Volumes"
-# Java 1.7 Home on Mac OS X
-export JAVA_HOME="/Library/Java/JavaVirtualMachines/jdk1.7.0_51.jdk/Contents/Home"
+# Java 1.8 Home on Mac OS X
+export JAVA_HOME="/Library/Java/JavaVirtualMachines/jdk1.8.0.jdk/Contents/Home"
 # My help folder
 export HELPDIR="${HOME}/.zsh/help"
 # Git Scripts
