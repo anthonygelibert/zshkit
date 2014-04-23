@@ -17,7 +17,7 @@ export SANDBOX_DIR="${HOME}/Documents/SandBox"
 # Mounted volumes
 export VOLUMES_DIR="/Volumes"
 # Java 1.8 Home on Mac OS X
-export JAVA_HOME="/Library/Java/JavaVirtualMachines/jdk1.8.0.jdk/Contents/Home"
+export JAVA_HOME="/Library/Java/JavaVirtualMachines/jdk1.8.0_05.jdk/Contents/Home"
 # My help folder
 export HELPDIR="${HOME}/.zsh/help"
 # Git Scripts
