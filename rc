@@ -1,8 +1,4 @@
 # vim: ft=zsh
-
 autoload zmv
-
-# Core file size
-ulimit -c unlimited
 
 source ~/Documents/Projects/liquidprompt/liquidprompt
