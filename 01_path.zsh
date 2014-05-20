@@ -28,6 +28,8 @@ export LIBEXEC="/usr/libexec"
 export VMWARE_TOOLS="/Applications/VMware Fusion.app/Contents/Library"
 # MacPorts Coreutils
 export MP_COREUTILS="${MACPORTS_DIR}/libexec/gnubin/"
+# Cabal
+export CABAL_DIR="${HOME}/.cabal"
 
 # Some usefull paths (cd ~D)
 # My Documents
@@ -45,7 +47,7 @@ export Z="${PROJECTS_DIR}/my_zshkit"
 typeset -U path cdpath fpath manpath
 
 # PATH
-export PATH="${MP_COREUTILS}:${VMWARE_TOOLS}:${LIBEXEC}:${GIT_SCRIPTS}:${LATEX_BIN_DIR}:${ALT_X11_DIR}/bin:${MACPORTS_DIR}/bin:${MACPORTS_DIR}/sbin:${MANUALLY_INSTALLED_DIR}/bin:${MY_APPLICATIONS_DIR}:/bin:/sbin:/usr/bin:/usr/sbin:/usr/libexec:."
+export PATH="${MP_COREUTILS}:${VMWARE_TOOLS}:${LIBEXEC}:${GIT_SCRIPTS}:${LATEX_BIN_DIR}:${ALT_X11_DIR}/bin:${CABAL_DIR}/bin:${MACPORTS_DIR}/bin:${MACPORTS_DIR}/sbin:${MANUALLY_INSTALLED_DIR}/bin:${MY_APPLICATIONS_DIR}:/bin:/sbin:/usr/bin:/usr/sbin:/usr/libexec:."
 export MANPATH="${MP_COREUTILS}/man:${JAVA_HOME}/man:${ALT_X11_DIR}/share/man:${MACPORTS_DIR}/share/man:${MANUALLY_INSTALLED_DIR}/man:${MANUALLY_INSTALLED_DIR}/share/man:/usr/share/man:/opt/local/etc/zsh/man/"
 export FPATH="${HOME}/.zsh/func:${FPATH}:/opt/local/etc/zsh/zshrc.d/local-functions"
 export CDPATH=".:${HOME}:${P}:${C}:${D}:${VOLUMES_DIR}"
