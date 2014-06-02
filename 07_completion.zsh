@@ -92,7 +92,7 @@ zstyle ':completion:*:javac:*' file-patterns '*.java'
 zstyle ':completion:*:djvu2pdf:*' file-patterns '*.djvu'
 
 # wine 
-zstyle ':completion:*:wine:*' files-patterns '*.exe'
+zstyle ':completion:*:wine:*' file-patterns '*.exe'
 
 # lua/luajit
 zstyle ':completion:*:lua:*' file-patterns '*.lua'
