@@ -91,6 +91,9 @@ zstyle ':completion:*:javac:*' file-patterns '*.java'
 # djvu2pdf
 zstyle ':completion:*:djvu2pdf:*' file-patterns '*.djvu'
 
+# wine 
+zstyle ':completion:*:wine:*' files-patterns '*.exe'
+
 # lua/luajit
 zstyle ':completion:*:lua:*' file-patterns '*.lua'
 zstyle ':completion:*:luajit:*' file-patterns '*.lua'
