@@ -17,7 +17,7 @@ export SANDBOX_DIR="${HOME}/Documents/SandBox"
 # Mounted volumes
 export VOLUMES_DIR="/Volumes"
 # Java 1.8 Home on Mac OS X
-export JAVA_HOME="/Library/Java/JavaVirtualMachines/jdk1.8.0_05.jdk/Contents/Home"
+export JAVA_HOME="/Library/Java/JavaVirtualMachines/jdk1.8.0_11.jdk/Contents/Home"
 # My help folder
 export HELPDIR="${HOME}/.zsh/help"
 # Git Scripts
@@ -27,9 +27,11 @@ export LIBEXEC="/usr/libexec"
 # VMware tools
 export VMWARE_TOOLS="/Applications/VMware Fusion.app/Contents/Library"
 # MacPorts Coreutils
-export MP_COREUTILS="${MACPORTS_DIR}/libexec/gnubin/"
-# Cabal
-export CABAL_DIR="${HOME}/.cabal"
+export MP_COREUTILS="${MACPORTS_DIR}/libexec/gnubin"
+# Grails
+export GRAILS_DIR="${MY_APPLICATIONS_DIR}/grails-2.4.0"
+# Neo4J
+export NEO4J_DIR="${MY_APPLICATIONS_DIR}/neo4j-community-2.1.2"
 
 # Some usefull paths (cd ~D)
 # My Documents
@@ -39,18 +41,14 @@ export DL="${HOME}/Downloads/"
 # My Projects
 export P="${PROJECTS_DIR}/"
 # My Pro Projects
-export PRO="${VOLUMES_DIR}/Pro"
-export C="${PRO}/Code"
+export C="${D}/Code"
 # This project
 export Z="${PROJECTS_DIR}/my_zshkit"
 
 typeset -U path cdpath fpath manpath
 
 # PATH
-export PATH="${MP_COREUTILS}:${VMWARE_TOOLS}:${LIBEXEC}:${GIT_SCRIPTS}:${LATEX_BIN_DIR}:${ALT_X11_DIR}/bin:${CABAL_DIR}/bin:${MACPORTS_DIR}/bin:${MACPORTS_DIR}/sbin:${MANUALLY_INSTALLED_DIR}/bin:${MY_APPLICATIONS_DIR}:/bin:/sbin:/usr/bin:/usr/sbin:/usr/libexec:."
+export PATH="${MP_COREUTILS}:${VMWARE_TOOLS}:${LIBEXEC}:${GIT_SCRIPTS}:${GRAILS_DIR}/bin:${NEO4J_DIR}/bin:${LATEX_BIN_DIR}:${ALT_X11_DIR}/bin:${MACPORTS_DIR}/bin:${MACPORTS_DIR}/sbin:${MANUALLY_INSTALLED_DIR}/bin:${MY_APPLICATIONS_DIR}:/bin:/sbin:/usr/bin:/usr/sbin:/usr/libexec:."
 export MANPATH="${MP_COREUTILS}/man:${JAVA_HOME}/man:${ALT_X11_DIR}/share/man:${MACPORTS_DIR}/share/man:${MANUALLY_INSTALLED_DIR}/man:${MANUALLY_INSTALLED_DIR}/share/man:/usr/share/man:/opt/local/etc/zsh/man/"
 export FPATH="${HOME}/.zsh/func:${FPATH}:/opt/local/etc/zsh/zshrc.d/local-functions"
 export CDPATH=".:${HOME}:${P}:${C}:${D}:${VOLUMES_DIR}"
-
-
-
