@@ -11,9 +11,9 @@ export MANUALLY_INSTALLED_DIR="/usr/local"
 # My Applications
 export MY_APPLICATIONS_DIR="${HOME}/Applications"
 # My Projects
-export PROJECTS_DIR="${HOME}/Documents/Projects"
+export PROJECTS_DIR="${HOME}/Documents/Personnel"
 # SandBox
-export SANDBOX_DIR="${HOME}/Documents/SandBox"
+export SANDBOX_DIR="${HOME}/Documents/BacASable"
 # Mounted volumes
 export VOLUMES_DIR="/Volumes"
 # Java 1.8 Home on Mac OS X

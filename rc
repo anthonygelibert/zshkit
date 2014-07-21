@@ -1,4 +1,4 @@
 # vim: ft=zsh
 autoload zmv
 
-source ~/Documents/Projects/liquidprompt/liquidprompt
+source ${HOME}/Documents/Personnel/liquidprompt/liquidprompt
