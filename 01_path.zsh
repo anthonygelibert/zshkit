@@ -21,7 +21,7 @@ export JAVA_HOME="/Library/Java/JavaVirtualMachines/jdk1.8.0_11.jdk/Contents/Hom
 # My help folder
 export HELPDIR="${HOME}/.zsh/help"
 # Git Scripts
-export GIT_SCRIPTS="${PROJECTS_DIR}/git-scripts:${PROJECTS_DIR}/git-pull-request"
+export GIT_SCRIPTS="${MY_APPLICATIONS_DIR}/git-scripts:${MY_APPLICATIONS_DIR}/git-pull-request"
 # Libexec
 export LIBEXEC="/usr/libexec"
 # VMware tools
@@ -29,7 +29,7 @@ export VMWARE_TOOLS="/Applications/VMware Fusion.app/Contents/Library"
 # MacPorts Coreutils
 export MP_COREUTILS="${MACPORTS_DIR}/libexec/gnubin"
 # Grails
-export GRAILS_DIR="${MY_APPLICATIONS_DIR}/grails-2.4.0"
+export GRAILS_DIR="${MY_APPLICATIONS_DIR}/grails-2.4.2"
 # Neo4J
 export NEO4J_DIR="${MY_APPLICATIONS_DIR}/neo4j-community-2.1.2"
 
@@ -51,4 +51,4 @@ typeset -U path cdpath fpath manpath
 export PATH="${MP_COREUTILS}:${VMWARE_TOOLS}:${LIBEXEC}:${GIT_SCRIPTS}:${GRAILS_DIR}/bin:${NEO4J_DIR}/bin:${LATEX_BIN_DIR}:${ALT_X11_DIR}/bin:${MACPORTS_DIR}/bin:${MACPORTS_DIR}/sbin:${MANUALLY_INSTALLED_DIR}/bin:${MY_APPLICATIONS_DIR}:/bin:/sbin:/usr/bin:/usr/sbin:/usr/libexec:."
 export MANPATH="${MP_COREUTILS}/man:${JAVA_HOME}/man:${ALT_X11_DIR}/share/man:${MACPORTS_DIR}/share/man:${MANUALLY_INSTALLED_DIR}/man:${MANUALLY_INSTALLED_DIR}/share/man:/usr/share/man:/opt/local/etc/zsh/man/"
 export FPATH="${HOME}/.zsh/func:${FPATH}:/opt/local/etc/zsh/zshrc.d/local-functions"
-export CDPATH=".:${HOME}:${P}:${C}:${D}:${VOLUMES_DIR}"
+export CDPATH=".:${HOME}:${P}:${C}:${D}:${MY_APPLICATIONS_DIR}:${VOLUMES_DIR}"
