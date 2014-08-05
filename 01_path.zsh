@@ -29,7 +29,7 @@ export VMWARE_TOOLS="/Applications/VMware Fusion.app/Contents/Library"
 # MacPorts Coreutils
 export MP_COREUTILS="${MACPORTS_DIR}/libexec/gnubin"
 # Grails
-export GRAILS_DIR="${MY_APPLICATIONS_DIR}/grails-2.4.2"
+export GRAILS_HOME="${MY_APPLICATIONS_DIR}/grails-2.4.3"
 # Neo4J
 export NEO4J_DIR="${MY_APPLICATIONS_DIR}/neo4j-community-2.1.2"
 
@@ -41,7 +41,7 @@ export DL="${HOME}/Downloads/"
 # My Projects
 export P="${PROJECTS_DIR}/"
 # My Pro Projects
-export C="${D}/Code"
+export C="${D}/Nocosium"
 # This project
 export Z="${PROJECTS_DIR}/my_zshkit"
 
