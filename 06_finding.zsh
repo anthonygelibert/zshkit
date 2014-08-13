@@ -17,9 +17,3 @@ function mdcontent()
 {
 	mdfind -interpret "$@";
 }
-
-# This function opens a search on google US
-function google()
-{
-	python -c "import sys, webbrowser, urllib;   webbrowser.open('http://www.google.com/search?' + urllib.urlencode({'q': ' '.join(sys.argv[1:]) }))" $@
-}
