@@ -52,3 +52,6 @@ export PATH="${MP_COREUTILS}:${VMWARE_TOOLS}:${LIBEXEC}:${GIT_SCRIPTS}:${GRAILS_
 export MANPATH="${MP_COREUTILS}/man:${JAVA_HOME}/man:${ALT_X11_DIR}/share/man:${MACPORTS_DIR}/share/man:${MANUALLY_INSTALLED_DIR}/man:${MANUALLY_INSTALLED_DIR}/share/man:/usr/share/man:/opt/local/etc/zsh/man/"
 export FPATH="${HOME}/.zsh/func:${FPATH}:/opt/local/etc/zsh/zshrc.d/local-functions"
 export CDPATH=".:${HOME}:${P}:${C}:${D}:${MY_APPLICATIONS_DIR}:${VOLUMES_DIR}"
+
+# XDG
+export XDG_CONFIG_HOME="$HOME/.config"
