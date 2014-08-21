@@ -10,9 +10,6 @@ function locked_in_trash()
 # Copy the working dir to the clipboard
 alias cpwd='pwd | xargs echo -n | pbcopy'
 
-# More
-alias more="more -r"
-
 # Diff
 [ $(command -v "colordiff") ] && alias diff="colordiff"
 
@@ -41,4 +38,3 @@ alias upProj='for i in */; do\
                  (hg pull 2> /dev/null && hg up || echo -ne "\x1b[31mWe don'\''t seem to be in a mercurial repository.\n\x1b[0m" && return 1) ||\
                  (( [ ! -z "`LC_ALL=C svn info 2> /dev/null | grep "Path"`" ] && svn up) || echo -ne "\x1b[31mWe don'\''t seem to be in an SVN repository.\n\x1b[0m")))
               done'
-

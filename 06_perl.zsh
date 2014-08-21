@@ -1,1 +1,1 @@
-export PERL5LIB="$PERL5LIB:/opt/local/lib/perl5/vendor_perl/5.16.3/"
+export PERL5LIB="$PERL5LIB:/opt/local/lib/perl5/vendor_perl/5.16.3/:/opt/local/lib/perl5/vendor_perl/5.16.1/"

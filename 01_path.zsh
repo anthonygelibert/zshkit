@@ -17,13 +17,9 @@ export SANDBOX_DIR="${HOME}/Documents/BacASable"
 # Mounted volumes
 export VOLUMES_DIR="/Volumes"
 # Java 1.8 Home on Mac OS X
-export JAVA_HOME="/Library/Java/JavaVirtualMachines/jdk1.8.0_11.jdk/Contents/Home"
-# My help folder
-export HELPDIR="${HOME}/.zsh/help"
+export JAVA_HOME="/Library/Java/JavaVirtualMachines/jdk1.8.0_20.jdk/Contents/Home"
 # Git Scripts
 export GIT_SCRIPTS="${MY_APPLICATIONS_DIR}/git-scripts:${MY_APPLICATIONS_DIR}/git-pull-request"
-# Libexec
-export LIBEXEC="/usr/libexec"
 # VMware tools
 export VMWARE_TOOLS="/Applications/VMware Fusion.app/Contents/Library"
 # MacPorts Coreutils
@@ -32,6 +28,8 @@ export MP_COREUTILS="${MACPORTS_DIR}/libexec/gnubin"
 export GRAILS_HOME="${MY_APPLICATIONS_DIR}/grails-2.4.3"
 # Neo4J
 export NEO4J_DIR="${MY_APPLICATIONS_DIR}/neo4j-community-2.1.2"
+# XDG
+export XDG_CONFIG_HOME="$HOME/.config"
 
 # Some usefull paths (cd ~D)
 # My Documents
@@ -42,16 +40,15 @@ export DL="${HOME}/Downloads/"
 export P="${PROJECTS_DIR}/"
 # My Pro Projects
 export C="${D}/Nocosium"
+# My Apps shortcut
+export A="${MY_APPLICATIONS_DIR}"
 # This project
 export Z="${PROJECTS_DIR}/my_zshkit"
 
 typeset -U path cdpath fpath manpath
 
 # PATH
-export PATH="${MP_COREUTILS}:${VMWARE_TOOLS}:${LIBEXEC}:${GIT_SCRIPTS}:${GRAILS_DIR}/bin:${NEO4J_DIR}/bin:${LATEX_BIN_DIR}:${ALT_X11_DIR}/bin:${MACPORTS_DIR}/bin:${MACPORTS_DIR}/sbin:${MANUALLY_INSTALLED_DIR}/bin:${MY_APPLICATIONS_DIR}:/bin:/sbin:/usr/bin:/usr/sbin:/usr/libexec:."
+export PATH="${MP_COREUTILS}:${VMWARE_TOOLS}:${GIT_SCRIPTS}:${GRAILS_HOME}/bin:${NEO4J_DIR}/bin:${LATEX_BIN_DIR}:${ALT_X11_DIR}/bin:${MACPORTS_DIR}/bin:${MACPORTS_DIR}/sbin:${MY_APPLICATIONS_DIR}:${MANUALLY_INSTALLED_DIR}/bin:/bin:/sbin:/usr/bin:/usr/sbin:/usr/libexec:."
 export MANPATH="${MP_COREUTILS}/man:${JAVA_HOME}/man:${ALT_X11_DIR}/share/man:${MACPORTS_DIR}/share/man:${MANUALLY_INSTALLED_DIR}/man:${MANUALLY_INSTALLED_DIR}/share/man:/usr/share/man:/opt/local/etc/zsh/man/"
-export FPATH="${HOME}/.zsh/func:${FPATH}:/opt/local/etc/zsh/zshrc.d/local-functions"
-export CDPATH=".:${HOME}:${P}:${C}:${D}:${MY_APPLICATIONS_DIR}:${VOLUMES_DIR}"
-
-# XDG
-export XDG_CONFIG_HOME="$HOME/.config"
+# TODO export FPATH="${FPATH}:/opt/local/etc/zsh/zshrc.d/local-functions"
+export CDPATH=".:${HOME}:${P}:${C}:${D}:${A}:${VOLUMES_DIR}"

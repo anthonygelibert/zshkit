@@ -6,8 +6,6 @@ fignore=(.o \~ .bak .junk .DS_Store $fignore)
 autoload -Uz compinit && compinit
 zmodload zsh/complist
 
-compdef _git g=git
-
 autoload -U zsh-mime-setup
 autoload -U zsh-mime-handler
 zsh-mime-setup
@@ -27,7 +25,7 @@ zle -N self-insert url-quote-magic
 #   - 'inode' or 'change' to sort them by the last inode change time
 #   - 'reverse' to sort in decreasing order
 # If the style is set to any other value, or is unset, files will be sorted alphabetically by name.
-zstyle ':completion:*' file-sort name
+zstyle ':completion:*' file-sort access
 
 zstyle ':completion:*' use-perl true # Various parts of the function system use awk to extract words from files or command output as this universally available. However, many versions of awk have arbitrary limits on the size of input. If this style is set, perl will be used instead.
 zstyle ':completion:*' use-ip true # By default, the function _hosts that completes host names strips IP addresses from entries read from host databases such as NIS and ssh files. If this style is true, the corresponding IP addresses can be completed as well.
@@ -42,9 +40,7 @@ zstyle ':completion:*' list-separator '#'
 zstyle ':completion:*' auto-description 'specify: %d'
 zstyle ':completion:*' rehash yes
 
-
-
-## case-insensitive (all),partial-word and then substring completion
+# case-insensitive (all),partial-word and then substring completion
 if [ "x$CASE_SENSITIVE" = "xtrue" ]; then
   zstyle ':completion:*' matcher-list 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
   unset CASE_SENSITIVE
@@ -71,12 +67,10 @@ zstyle ':completion:*:matches' group true
 # allow one error for every three characters typed in approximate completer
 zstyle ':completion:*:approximate:' max-errors 'reply=( $((($#PREFIX+$#SUFFIX)/2 )) numeric )'
 zstyle ':completion::approximate*:*' prefix-needed false
-zstyle ':completion:*:(^approximate):*' matcher-list 'm:{a-z}={A-Z}'
+zstyle ':completion:*:(^approximate):*'    matcher-list 'm:{a-z}={A-Z}'
 zstyle ':completion::complete:*:functions' ignored-patterns '_*'
-zstyle ':completion:*:functions' ignored-patterns '_*'
-zstyle ':completion::complete:chown:*' ignored-patterns '_*'
+zstyle ':completion:*:functions'           ignored-patterns '_*'
 zstyle ':completion:*:prefix:*' add-space true
-zstyle ':completion:*:*:(^rm):*:*files' ignored-patterns '*?.(o|c~|zwc)' '*?~'
 
 # start menu completion only if it could find no unambiguous initial string
 zstyle ':completion:*:correct:*' insert-unambiguous true
@@ -84,39 +78,6 @@ zstyle ':completion:*:correct:*' original true
 
 ## offer indexes before parameters in subscripts
 zstyle ':completion:*:*:-subscript-:*' tag-order indexes parameters
-
-# only java files for javac
-zstyle ':completion:*:javac:*' file-patterns '*.java'
-
-# djvu2pdf
-zstyle ':completion:*:djvu2pdf:*' file-patterns '*.djvu'
-
-# wine
-zstyle ':completion:*:wine:*' file-patterns '*.exe'
-
-# lua/luajit
-zstyle ':completion:*:lua:*' file-patterns '*.lua'
-zstyle ':completion:*:luajit:*' file-patterns '*.lua'
-
-# no binary files for vi or textmate
-zstyle ':completion:*:vi:*' ignored-patterns '*.(o|a|so|aux|dvi|log|swp|fig|bbl|blg|bst|idx|ind|out|toc|class|pdf|ps|pyc)'
-zstyle ':completion:*:mate:*' ignored-patterns '*.(o|a|so|aux|dvi|log|swp|fig|bbl|blg|bst|idx|ind|out|toc|class|pdf|ps|pyc)'
-zstyle ':completion:*:vim:*' ignored-patterns '*.(o|a|so|aux|dvi|log|swp|fig|bbl|blg|bst|idx|ind|out|toc|class|pdf|ps|pyc)'
-zstyle ':completion:*:gvim:*' ignored-patterns '*.(o|a|so|aux|dvi|log|swp|fig|bbl|blg|bst|idx|ind|out|toc|class|pdf|ps|pyc)'
-
-# no binary files for less
-zstyle ':completion:*:less:*' ignored-patterns '*.(o|a|so|dvi|fig|out|class|pdf|ps|pyc)'
-zstyle ':completion:*:zless:*' ignored-patterns '*.(o|a|so|dvi|fig|out|class|pdf|ps|pyc)'
-
-# pdf for xpdf
-zstyle ':completion:*:xpdf:*' file-patterns '*.pdf'
-
-# tar files
-zstyle ':completion:*:tar:*' file-patterns '*.tar|*.tgz|*.tz|*.tar.Z|*.tar.bz2|*.tZ|*.tar.gz'
-
-# latex to the fullest for printing
-zstyle ':completion:*:xdvi:*' file-patterns '*.dvi'
-zstyle ':completion:*:dvips:*' file-patterns '*.dvi'
 
 # Group relatex matches:
 zstyle ':completion:*:-command-:*:(commands|builtins|reserved-words-aliases)' group-name commands
@@ -131,41 +92,78 @@ zstyle ':completion:*:warnings' format '%BSorry, no matches for: %d%b'
 zstyle ':completion:*:*:kill:*:processes' list-colors "=(#b) #([0-9]#)*=36=31"
 zstyle ':completion:*:*:*:*:processes' command "ps -o pid,user,comm -w -w"
 zstyle ':completion:*:windows' menu on=0
-zstyle ':completion:*' hosts $(awk '/^[^#]/ {print $2 $3" "$4" "$5}' /etc/hosts | grep -v ip6- && grep "^#%" /etc/hosts | awk -F% '{print $2}')
 zstyle ':completion:*:scp:*' tag-order \
 zstyle ':completion:*:scp:*' group-order \
 zstyle ':completion:*:ssh:*' tag-order \
 zstyle ':completion:*:ssh:*' group-order \
-zstyle ':completion:*:*:git:*' script /opt/local/share/git-core/contrib/completion/git-completion.zsh
-# disable named-directories autocompletion
-zstyle ':completion:*:cd:*' tag-order local-directories directory-stack path-directories
 
 # Ignore completion functions for commands you don't have:
-zstyle ':completion:correct:' prompt 'correct to: %e'
-zstyle ':completion::(^approximate*):*:functions' ignored-patterns '_*'
-
-## Don't complete backup files as executables
-zstyle ':completion:*:complete:-command-::commands' ignored-patterns '*\~'
+zstyle ':completion:correct:'   prompt 'correct to: %e'
 
 # Describe options in full
 zstyle ':completion:*:messages' format '%d'
 zstyle ':completion:*:options'  auto-description '%d'
 zstyle ':completion:*:options'  description 'yes'
 
-# Prevent CVS files/directories from being completed
-zstyle ':completion:*:(all-|)files' ignored-patterns '(|*/)CVS'
-zstyle ':completion:*:cd:*' ignored-patterns '(*/)#CVS'
+###########
+# BY APPS #
+###########
 
-# use /etc/hosts and known_hosts for hostname completion
+# chown
+zstyle ':completion::complete:chown:*' ignored-patterns '_*'
+
+# Git
+zstyle ':completion:*:*:git:*' script /opt/local/share/git/contrib/completion/git-completion.zsh
+
+# Only java files for javac
+zstyle ':completion:*:javac:*'    file-patterns '*.java'
+
+# DJVU files for djvu2pdf
+zstyle ':completion:*:djvu2pdf:*' file-patterns '*.djvu'
+
+# EXE files for Wine
+zstyle ':completion:*:wine:*'     file-patterns '*.exe'
+
+# LUA files for lua and luajit.
+zstyle ':completion:*:lua:*'      file-patterns '*.lua'
+zstyle ':completion:*:luajit:*'   file-patterns '*.lua'
+
+# No binary files for editors and pagers
+zstyle ':completion:*:vim:*'   ignored-patterns '*.(o|a|so|dvi|fig|out|class|pdf|ps|pyc)'
+zstyle ':completion:*:mvim:*'  ignored-patterns '*.(o|a|so|dvi|fig|out|class|pdf|ps|pyc)'
+zstyle ':completion:*:atom:*'  ignored-patterns '*.(o|a|so|dvi|fig|out|class|pdf|ps|pyc)'
+zstyle ':completion:*:less:*'  ignored-patterns '*.(o|a|so|dvi|fig|out|class|pdf|ps|pyc)'
+zstyle ':completion:*:zless:*' ignored-patterns '*.(o|a|so|dvi|fig|out|class|pdf|ps|pyc)'
+zstyle ':completion:*:more:*'  ignored-patterns '*.(o|a|so|dvi|fig|out|class|pdf|ps|pyc)'
+zstyle ':completion:*:most:*'  ignored-patterns '*.(o|a|so|dvi|fig|out|class|pdf|ps|pyc)'
+
+# PDF files only for xpdf
+zstyle ':completion:*:xpdf:*'  file-patterns '*.pdf'
+
+# TAR files only for tar
+zstyle ':completion:*:tar:*'   file-patterns '*.tar|*.tgz|*.tz|*.tar.Z|*.tar.bz2|*.tZ|*.tar.gz'
+
+# DVI files for dvi commands
+zstyle ':completion:*:xdvi:*'  file-patterns '*.dvi'
+zstyle ':completion:*:dvips:*' file-patterns '*.dvi'
+
+#########
+# HOSTS #
+#########
+
+# Use /etc/hosts and known_hosts for hostname completion
 [ -r /etc/ssh/ssh_known_hosts ] && _global_ssh_hosts=(${${${${(f)"$(</etc/ssh/ssh_known_hosts)"}:#[\|]*}%%\ *}%%,*}) || _ssh_hosts=()
 [ -r ~/.ssh/known_hosts ] && _ssh_hosts=(${${${${(f)"$(<$HOME/.ssh/known_hosts)"}:#[\|]*}%%\ *}%%,*}) || _ssh_hosts=()
 hosts=(
   "$_global_ssh_hosts[@]"
   "$_ssh_hosts[@]"
-  "$HOST"
   localhost
 )
 zstyle ':completion:*:hosts' hosts $hosts
+
+#########
+# USERS #
+#########
 
 # Don't complete uninteresting users
 zstyle ':completion:*:*:*:users' ignored-patterns \
@@ -179,7 +177,6 @@ zstyle ':completion:*:*:*:users' ignored-patterns \
 
 # ... unless we really want to.
 zstyle '*' single-ignored show
-
 
 # Caching
 [ -d $HOME/.zsh/cache ] && zstyle ':completion:*' use-cache true && zstyle ':completion::complete:*' cache-path $HOME/.zsh/cache/
