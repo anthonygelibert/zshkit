@@ -32,9 +32,14 @@ alias mem_hogs_ps='ps wwaxm -o pid,stat,vsize,rss,time,command | head -20'
 # CPU hogs using ps
 alias cpu_hogs='ps wwaxr -o pid,stat,%cpu,time,command | head -20'
 
-alias upProj='for i in */; do\
-                (cd "$i" &&
-                ((git up 2> /dev/null) ||\
-                 (hg pull 2> /dev/null && hg up || echo -ne "\x1b[31mWe don'\''t seem to be in a mercurial repository.\n\x1b[0m" && return 1) ||\
-                 (( [ ! -z "`LC_ALL=C svn info 2> /dev/null | grep "Path"`" ] && svn up) || echo -ne "\x1b[31mWe don'\''t seem to be in an SVN repository.\n\x1b[0m")))
-              done'
+function upProj() {
+    for i in */; do
+        (
+            cd $i
+            [ -d .git ] && git up && exit 0
+            [ -d .hg  ] && hg pull && hg up && exit 0
+            [ -d .svn ] && svn update && exit 0
+            echo "No VCS used..."
+        )
+    done
+}
