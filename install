@@ -1,4 +1,5 @@
 #!/usr/bin/env zsh
+
 mydir=`dirname $0`
 if [ $mydir = . ]; then
     mydir=$(pwd)

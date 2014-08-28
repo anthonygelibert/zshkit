@@ -1,19 +1,16 @@
 # vim: ft=zsh
 
 # Search here using SpotLight
-function mdhere()
-{
+function mdhere() {
 	mdfind -onlyin . $*
 }
 
 # Search globally by name, using SpotLight
-function mdloc()
-{
+function mdloc() {
 	mdfind "kMDItemFSName == '$*'wc"
 }
 
 # Search globally by name and content, using SpotLight
-function mdcontent()
-{
+function mdcontent() {
 	mdfind -interpret "$@";
 }
