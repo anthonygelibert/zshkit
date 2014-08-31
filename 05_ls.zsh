@@ -23,7 +23,6 @@ alias lsnew="ls -rl *(D.om[1,10])"
 alias lsold="ls -rtlh *(D.om[1,10])"
 
 # plap: list all occurrences of program in the current PATH
-function plap()
-{
+function plap() {
     [ -z "$1" ] && { echo "Usage: plap <program>" ; return 1 } || ls -l ${^path}/*$1*(*N)
 }

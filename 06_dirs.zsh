@@ -7,8 +7,7 @@ alias sd=popd
 # d: jump between directories
 # Copyright 2005 Nikolai Weibull <nikolai@bitwi.se>
 # notice: option AUTO_PUSHD has to be set
-function d()
-{
+function d() {
     emulate -L zsh
     autoload -U colors
     local color=$fg_bold[blue]
