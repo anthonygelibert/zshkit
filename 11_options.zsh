@@ -32,7 +32,7 @@ unsetopt CHASE_LINKS            # NO -> Resolve symbolic links to their true val
 setopt   CHECK_JOBS             # Report the status of background and suspended jobs before exiting a shell with job control; a second attempt to exit the shell will succeed. NO_CHECK_JOBS is best used only in combination with NO_HUP, else such jobs will be killed automatically.
 setopt   CLOBBER                # Allows `>' redirection to truncate existing files, and `>>' to create files. Otherwise `>!' or `>|' must be used to truncate a file, and `>>!' or `>>|' to create a file.
 setopt   COMBINING_CHARS        # Assume that the terminal displays combining characters correctly.  The shell cannot determine this by itself, hence the option.  This is highly recommended for MacOS X where file names are stored with accented characters split into basic and combining characters.
-unsetopt   COMPLETE_ALIASES       # Prevents aliases on the command line from being internally substituted before completion is attempted.
+unsetopt COMPLETE_ALIASES       # Prevents aliases on the command line from being internally substituted before completion is attempted.
 setopt   COMPLETE_IN_WORD       # If unset, the cursor is moved to the end of the word if completion is started. Otherwise it stays where it is and completion is done from both ends.
 setopt   CORRECT                # Try to correct the spelling of commands.
 unsetopt CORRECT_ALL            # NO -> Try to correct the spelling of all arguments in a line.
@@ -106,8 +106,8 @@ unsetopt SH_FILE_EXPANSION      # NO -> Perform filename expansion (e.g., ~ expa
 setopt   SHORT_LOOPS            # Allow the short forms of for, select, if, and function constructs.
 unsetopt SINGLE_LINE_ZLE        # NO -> Use single-line command line editing instead of multi-line.
 unsetopt SUN_KEYBOARD_HACK      # NO -> If a line ends with a back-quote, and there are an odd number of back-quotes on the line, ignore the trailing back-quote. This is useful on some keyboards where the return key is too small, and the back-quote key lies annoyingly close to it.
-#setopt  TRANSIENT_RPROMPT      # Right prompt goes away after edit.
+#setopt   TRANSIENT_RPROMPT      # Right prompt goes away after edit.
 setopt   UNSET                  # Treat unset parameters as if they were empty when substituting. Otherwise they are treated as an error.
-#setopt VERBOSE                # Print shell input lines as they are read.
-#setopt  WARN_CREATE_GLOBAL     # Print a warning message when a global parameter is created in a function by an assignment.
-#setopt  XTRACE                 # Display all the actions of the shell
+#setopt   VERBOSE                # Print shell input lines as they are read.
+#setopt   WARN_CREATE_GLOBAL     # Print a warning message when a global parameter is created in a function by an assignment.
+#setopt   XTRACE                 # Display all the actions of the shell
