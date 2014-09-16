@@ -23,7 +23,6 @@ alias ap_info='/System/Library/PrivateFrameworks/Apple80211.framework/Versions/A
 alias cleardns="sudo killall -HUP mDNSResponder"
 
 # Get only the header of a webserver
-function get-header()
-{
+function get-header() {
     wget --server-response --spider $1
 }
