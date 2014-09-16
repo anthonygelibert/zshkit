@@ -13,11 +13,17 @@ alias :q="exit"
 # Get the current week
 alias week='date "+%V"'
 
-# M = more
-alias -g M='| more'
-
-# G = grep
+alias -g H='| head'
+alias -g M='| most'
 alias -g G='| grep'
+alias -g L='| less'
+alias -g T='| tail'
+alias -g NE='2> /dev/null'
+alias -g NUL='> /dev/null 2>&1'
+
+alias dud='du -d 1 -h'
+alias duf='du -sh *'
+
 
 # Memory and CPU hogs using top and ps
 alias mem_hogs_top='top -l 1 -o rsize | head -30'
