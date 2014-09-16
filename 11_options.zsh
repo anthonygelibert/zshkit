@@ -57,7 +57,7 @@ setopt   HASH_LIST_ALL          # Whenever a command completion is attempted, ma
 setopt   HIST_ALLOW_CLOBBER     # Add '|' to output redirections in the history.
 unsetopt HIST_BEEP              # NO -> Beep when an attempt is made to access a history entry which isn't there.
 setopt   HIST_EXPIRE_DUPS_FIRST # If the internal history needs to be trimmed to add the current command line, setting this option will cause the oldest history event that has a duplicate to be lost before losing a unique event from the list.
-setopt   HIST_FCNTL_LOCK        # When writing out the history file, by default zsh uses ad-hoc file locking to avoid known problems with locking on some operating systems.
+#setopt   HIST_FCNTL_LOCK        # When writing out the history file, by default zsh uses ad-hoc file locking to avoid known problems with locking on some operating systems.
 setopt   HIST_FIND_NO_DUPS      # When searching for history entries in the line editor, do not display duplicates of a line previously found, even if the duplicates are not contiguous.
 setopt   HIST_IGNORE_ALL_DUPS   # If a new command line being added to the history list duplicates an older one, the older command is removed from the list (even if it is not the previous event).
 setopt   HIST_IGNORE_DUPS       # Do not enter command lines into the history list if they are duplicates of the previous event.
