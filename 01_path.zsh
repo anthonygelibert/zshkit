@@ -27,7 +27,7 @@ export MP_COREUTILS="${MACPORTS_DIR}/libexec/gnubin"
 # Grails
 export GRAILS_HOME="${MY_APPLICATIONS_DIR}/grails-2.4.3"
 # Neo4J
-export NEO4J_DIR="${MY_APPLICATIONS_DIR}/neo4j-community-2.1.2"
+export NEO4J_DIR="${MY_APPLICATIONS_DIR}/neo4j-community-2.1.4"
 # XDG
 export XDG_CONFIG_HOME="$HOME/.config"
 
@@ -50,5 +50,5 @@ typeset -U path cdpath fpath manpath
 # PATH
 export PATH="${MP_COREUTILS}:${VMWARE_TOOLS}:${GIT_SCRIPTS}:${GRAILS_HOME}/bin:${NEO4J_DIR}/bin:${LATEX_BIN_DIR}:${ALT_X11_DIR}/bin:${MACPORTS_DIR}/bin:${MACPORTS_DIR}/sbin:${MY_APPLICATIONS_DIR}:${MANUALLY_INSTALLED_DIR}/bin:/bin:/sbin:/usr/bin:/usr/sbin:/usr/libexec:."
 export MANPATH="${MP_COREUTILS}/man:${JAVA_HOME}/man:${ALT_X11_DIR}/share/man:${MACPORTS_DIR}/share/man:${MANUALLY_INSTALLED_DIR}/man:${MANUALLY_INSTALLED_DIR}/share/man:/usr/share/man:/opt/local/etc/zsh/man/"
-# TODO export FPATH="${FPATH}:/opt/local/etc/zsh/zshrc.d/local-functions"
+export FPATH="${FPATH}:/opt/local/share/zsh/site-functions/:/opt/local/etc/zsh/zshrc.d/local-functions"
 export CDPATH=".:${HOME}:${P}:${C}:${D}:${A}:${VOLUMES_DIR}"
