@@ -7,6 +7,8 @@ alias cpwd='pwd | xargs echo -n | pbcopy'
 # Diff
 [ $(command -v "colordiff") ] && alias diff="colordiff"
 
+alias mac_console="sudo /Applications/Utilities/Console.app/Contents/MacOS/Console"
+
 # Exit
 alias :q="exit"
 
