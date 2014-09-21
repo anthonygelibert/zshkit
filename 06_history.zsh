@@ -1,8 +1,8 @@
 # vim: ft=zsh
 
 export HISTFILE=~/.zsh_history
-export HISTSIZE=10000
-export SAVEHIST=10000
+export HISTSIZE=1000
+export SAVEHIST=1000
 
 # Grep the history with 'h'
 function h() {
