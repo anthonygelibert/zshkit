@@ -44,7 +44,7 @@ function upProj() {
             [ -d .git ] && git up && exit 0
             [ -d .hg  ] && hg pull && hg up && exit 0
             [ -d .svn ] && svn update && exit 0
-            echo "No VCS used..."
+            echo "\x1b[31mNo VCS used...\x1b[0m"
         )
     done
 }
