@@ -1,7 +1,8 @@
 # vim: ft=zsh
 
+# Don't remember "ls" calls
+alias ls=" ls -bFh --color"
 alias l="ls"
-alias ls="ls -bFh --color"
 alias la="ls -a"
 alias ll="ls -l"
 alias le="/bin/ls -bFGhle"

@@ -1,6 +1,9 @@
 # vim: ft=zsh
 DIRSTACKSIZE=8
 
+# Don't remember "cd" calls
+alias cd=" cd"
+
 alias fd=pushd
 alias sd=popd
 

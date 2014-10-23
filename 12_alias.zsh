@@ -10,7 +10,7 @@ alias cpwd='pwd | xargs echo -n | pbcopy'
 alias mac_console="sudo /Applications/Utilities/Console.app/Contents/MacOS/Console"
 
 # Exit
-alias :q="exit"
+alias :q=" exit"
 
 # Get the current week
 alias week='date "+%V"'
