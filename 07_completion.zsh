@@ -25,7 +25,7 @@ zle -N self-insert url-quote-magic
 #   - 'inode' or 'change' to sort them by the last inode change time
 #   - 'reverse' to sort in decreasing order
 # If the style is set to any other value, or is unset, files will be sorted alphabetically by name.
-zstyle ':completion:*' file-sort access
+#zstyle ':completion:*' file-sort access
 
 zstyle ':completion:*' use-perl true # Various parts of the function system use awk to extract words from files or command output as this universally available. However, many versions of awk have arbitrary limits on the size of input. If this style is set, perl will be used instead.
 zstyle ':completion:*' use-ip true # By default, the function _hosts that completes host names strips IP addresses from entries read from host databases such as NIS and ssh files. If this style is true, the corresponding IP addresses can be completed as well.
