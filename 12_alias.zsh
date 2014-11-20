@@ -40,11 +40,20 @@ function locked_in_trash() {
 function upProj() {
     for i in */; do
         (
-            cd $i
+            cd "$i"
             [ -d .git ] && git up && exit 0
             [ -d .hg  ] && hg pull && hg up && exit 0
             [ -d .svn ] && svn update && exit 0
             echo "\x1b[31mNo VCS used...\x1b[0m"
+        )
+    done
+}
+
+function upProjs() {
+    for i in "$@"; do
+        (
+            cd $i
+            upProj
         )
     done
 }
