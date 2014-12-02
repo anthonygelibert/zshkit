@@ -20,7 +20,7 @@ alias ip1_info='ipconfig getpacket en1'
 alias ap_info='/System/Library/PrivateFrameworks/Apple80211.framework/Versions/A/Resources/airport -I'
 
 # DNS Cache
-alias cleardns="sudo killall -HUP mDNSResponder"
+alias cleardns="sudo discoveryutil udnsflushcaches"
 
 # Get only the header of a webserver
 function get-header() {
