@@ -32,6 +32,9 @@ alias mem_hogs_top='top -l 1 -o rsize | head -30'
 alias mem_hogs_ps='ps wwaxm -o pid,stat,vsize,rss,time,command | head -20'
 alias cpu_hogs='ps wwaxr -o pid,stat,%cpu,time,command | head -20'
 
+alias grep='grep -E --colour=auto'
+
+
 # List the locked file in trash
 function locked_in_trash() {
     sudo lsof -nPT +c 0 | grep "/.Trash" | awk '{print $1, " -> ", $9}' | grep -v mds
