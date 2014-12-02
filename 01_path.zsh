@@ -44,6 +44,8 @@ export C="${D}/Nocosium"
 export A="${MY_APPLICATIONS_DIR}"
 # This project
 export Z="${PROJECTS_DIR}/my_zshkit"
+# Nocosium
+export N="${D}/Nocosium"
 
 typeset -U path cdpath fpath manpath
 
