@@ -18,7 +18,7 @@ setopt   AUTO_PARAM_SLASH       # If a parameter is completed whose content is t
 setopt   AUTO_PUSHD             # Make cd push the old directory onto the directory stack.
 setopt   AUTO_REMOVE_SLASH      # When the last character resulting from a completion is a slash and the next character typed is a word delimiter, a slash, or a character that ends a command (such as a semicolon or an ampersand), remove the slash.
 setopt   BAD_PATTERN            # If a pattern for filename generation is badly formed, print an error. If this option is unset, the pattern will be left unchanged.
-unsetopt BANG_HIST              # NO -> Perform textual history expansion, csh-style, treating the character `!' specially.
+setopt   BANG_HIST              # Perform textual history expansion, csh-style, treating the character `!' specially.
 unsetopt BASH_AUTO_LIST         # NO -> On an ambiguous completion, automatically list choices when the completion function is called twice in succession.
 unsetopt BEEP                   # NO -> Beep on error in ZLE.
 setopt   BG_NICE                # Run all background jobs at a lower priority.
@@ -27,17 +27,17 @@ setopt   C_BASES                # Output hexadecimal numbers in the standard C f
 unsetopt CASE_GLOB              # NO -> Make globbing (filename generation) sensitive to case.
 unsetopt CASE_MATCH             # NO -> Make regular expressions using the zsh/regex module (including matches with =~) sensitive to case.
 setopt   CDABLE_VARS            # If the argument to a cd command (or an implied cd with the AUTO_CD option set) is not a directory, and does not begin with a slash, try to expand the expression as if it were preceded by a '~'
-unsetopt CHASE_DOTS             # NO -> When changing to a directory containing a path segment '..' which would otherwise be treated as canceling the previous segment in the path (in other words, 'foo/..' would be removed from the path, or if '..' is the first part of the path, the last part of $PWD would be deleted), instead resolve the path to the physical directory.
+setopt   CHASE_DOTS             # When changing to a directory containing a path segment '..' which would otherwise be treated as canceling the previous segment in the path (in other words, 'foo/..' would be removed from the path, or if '..' is the first part of the path, the last part of $PWD would be deleted), instead resolve the path to the physical directory.
 unsetopt CHASE_LINKS            # NO -> Resolve symbolic links to their true values when changing directory.
 setopt   CHECK_JOBS             # Report the status of background and suspended jobs before exiting a shell with job control; a second attempt to exit the shell will succeed. NO_CHECK_JOBS is best used only in combination with NO_HUP, else such jobs will be killed automatically.
 setopt   CLOBBER                # Allows `>' redirection to truncate existing files, and `>>' to create files. Otherwise `>!' or `>|' must be used to truncate a file, and `>>!' or `>>|' to create a file.
 setopt   COMBINING_CHARS        # Assume that the terminal displays combining characters correctly.  The shell cannot determine this by itself, hence the option.  This is highly recommended for MacOS X where file names are stored with accented characters split into basic and combining characters.
-unsetopt COMPLETE_ALIASES       # Prevents aliases on the command line from being internally substituted before completion is attempted.
+unsetopt COMPLETE_ALIASES       # NO -> Prevents aliases on the command line from being internally substituted before completion is attempted.
 setopt   COMPLETE_IN_WORD       # If unset, the cursor is moved to the end of the word if completion is started. Otherwise it stays where it is and completion is done from both ends.
 setopt   CORRECT                # Try to correct the spelling of commands.
 unsetopt CORRECT_ALL            # NO -> Try to correct the spelling of all arguments in a line.
-unsetopt CSH_JUNKIE_HISTORY     # NO -> A history reference without an event specifier will always refer to the previous command.
-unsetopt CSH_JUNKIE_LOOPS       # NO -> Allow loop bodies to take the form `list; end' instead of `do list; done'.
+setopt   CSH_JUNKIE_HISTORY     # A history reference without an event specifier will always refer to the previous command.
+setopt   CSH_JUNKIE_LOOPS       # Allow loop bodies to take the form `list; end' instead of `do list; done'.
 unsetopt CSH_JUNKIE_QUOTES      # NO -> Complain if a quoted expression runs off the end of a line; prevent quoted expressions from containing un-escaped newlines.
 unsetopt CSH_NULL_GLOB          # NO -> If a pattern for filename generation has no matches, delete the pattern from the argument list; do not report an error unless all the patterns in a command have no matches. Overrides NULL_GLOB.
 setopt   EQUALS                 # Perform = filename expansion. (See the section 'Filename Expansion'.)
@@ -57,7 +57,7 @@ setopt   HASH_LIST_ALL          # Whenever a command completion is attempted, ma
 setopt   HIST_ALLOW_CLOBBER     # Add '|' to output redirections in the history.
 unsetopt HIST_BEEP              # NO -> Beep when an attempt is made to access a history entry which isn't there.
 setopt   HIST_EXPIRE_DUPS_FIRST # If the internal history needs to be trimmed to add the current command line, setting this option will cause the oldest history event that has a duplicate to be lost before losing a unique event from the list.
-#setopt   HIST_FCNTL_LOCK        # When writing out the history file, by default zsh uses ad-hoc file locking to avoid known problems with locking on some operating systems.
+unsetopt HIST_FCNTL_LOCK        # NO -> When writing out the history file, by default zsh uses ad-hoc file locking to avoid known problems with locking on some operating systems.
 setopt   HIST_FIND_NO_DUPS      # When searching for history entries in the line editor, do not display duplicates of a line previously found, even if the duplicates are not contiguous.
 setopt   HIST_IGNORE_ALL_DUPS   # If a new command line being added to the history list duplicates an older one, the older command is removed from the list (even if it is not the previous event).
 setopt   HIST_IGNORE_DUPS       # Do not enter command lines into the history list if they are duplicates of the previous event.
@@ -106,8 +106,8 @@ unsetopt SH_FILE_EXPANSION      # NO -> Perform filename expansion (e.g., ~ expa
 setopt   SHORT_LOOPS            # Allow the short forms of for, select, if, and function constructs.
 unsetopt SINGLE_LINE_ZLE        # NO -> Use single-line command line editing instead of multi-line.
 unsetopt SUN_KEYBOARD_HACK      # NO -> If a line ends with a back-quote, and there are an odd number of back-quotes on the line, ignore the trailing back-quote. This is useful on some keyboards where the return key is too small, and the back-quote key lies annoyingly close to it.
-#setopt   TRANSIENT_RPROMPT      # Right prompt goes away after edit.
+unsetopt TRANSIENT_RPROMPT      # NO -> Right prompt goes away after edit.
 setopt   UNSET                  # Treat unset parameters as if they were empty when substituting. Otherwise they are treated as an error.
-#setopt   VERBOSE                # Print shell input lines as they are read.
-#setopt   WARN_CREATE_GLOBAL     # Print a warning message when a global parameter is created in a function by an assignment.
-#setopt   XTRACE                 # Display all the actions of the shell
+unsetopt VERBOSE                # NO -> Print shell input lines as they are read.
+unsetopt WARN_CREATE_GLOBAL     # NO -> Print a warning message when a global parameter is created in a function by an assignment.
+unsetopt XTRACE                 # NO -> Display all the actions of the shell
