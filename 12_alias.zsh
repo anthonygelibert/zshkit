@@ -1,11 +1,12 @@
 # vim: ft=zsh
-alias check_assert='pmset -g assertions'
+
+[[ $(command -v pmset) ]] && alias check_assert='pmset -g assertions'
 
 # Copy the working dir to the clipboard
-alias cpwd='pwd | xargs echo -n | pbcopy'
+[[ $(command -v pbcopy) ]] && alias cpwd='pwd | xargs echo -n | pbcopy'
 
 # Diff
-[ $(command -v "colordiff") ] && alias diff="colordiff"
+[[ $(command -v colordiff) ]] && alias diff="colordiff"
 
 alias mac_console="sudo /Applications/Utilities/Console.app/Contents/MacOS/Console"
 

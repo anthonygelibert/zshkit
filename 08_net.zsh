@@ -1,16 +1,20 @@
 # vim: ft=zsh
 
-# Open sockets using lsof
-alias lssock='sudo lsof -i -P -n'
-alias lsock='lsof -i -P -n'
+if [[ $(command -v lsof) ]]; then
+    # Open sockets using lsof
+    alias lssock='sudo lsof -i -P -n'
+    alias lsock='lsof -i -P -n'
+fi
 
 # Get the list of Network Conns
 alias netconns='netstat -an -f inet'
 
-# Firewall
-alias firewall_off="sudo ipfw flush"
-alias firewall_on="sudo ipfw /etc/firewall.conf"
-alias firewall_list="sudo ipfw -atN list"
+if [[ $(command -v ipfw) ]]; then
+    # Firewall
+    alias firewall_off="sudo ipfw flush"
+    alias firewall_on="sudo ipfw /etc/firewall.conf"
+    alias firewall_list="sudo ipfw -atN list"
+fi
 
 # IP configurations
 alias ip0_info='ipconfig getpacket en0'

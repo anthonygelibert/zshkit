@@ -39,6 +39,8 @@ zstyle ':completion:*' group-name ''
 zstyle ':completion:*' list-separator '#'
 zstyle ':completion:*' auto-description 'specify: %d'
 zstyle ':completion:*' rehash yes
+zstyle ':completion:*' expand 'yes'
+zstyle ':completion:*' squeeze-slashes 'yes'
 
 # case-insensitive (all),partial-word and then substring completion
 if [ "x$CASE_SENSITIVE" = "xtrue" ]; then

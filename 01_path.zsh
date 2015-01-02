@@ -29,7 +29,7 @@ export GRAILS_HOME="${MY_APPLICATIONS_DIR}/grails-2.4.4"
 # Neo4J
 export NEO4J_DIR="${MY_APPLICATIONS_DIR}/neo4j-community-2.1.4"
 # XDG
-export XDG_CONFIG_HOME="$HOME/.config"
+export XDG_CONFIG_HOME="${HOME}/.config"
 
 # Some usefull paths (cd ~D)
 # My Documents

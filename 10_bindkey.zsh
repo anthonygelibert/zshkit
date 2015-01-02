@@ -13,8 +13,7 @@ bindkey -M listscroll q send-break
 bindkey '\C-w' kill-region
 
 # .: rationalize dot -> ... = ../..
-function rationalize-dot()
-{
+function rationalize-dot() {
     if [[ $LBUFFER = *.. ]]; then
         LBUFFER+=/..
     else
