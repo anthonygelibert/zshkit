@@ -1,5 +1,9 @@
 # vim: ft=zsh
 
+#  use 'zstyle' for getting current settings
+#  press ^Xh (control-x h) for getting tags in context
+#        ^X? (control-x ?) to run complete_debug with trace output
+
 # Files to ignore during completion
 fignore=(.o \~ .bak .junk .DS_Store $fignore)
 
@@ -12,20 +16,6 @@ zsh-mime-setup
 
 autoload -U url-quote-magic
 zle -N self-insert url-quote-magic
-
-#  use 'zstyle' for getting current settings
-#  press ^Xh (control-x h) for getting tags in context
-#        ^X? (control-x ?) to run complete_debug with trace output
-
-# Determine in which order the names (files) should be listed and completed when using menu completion:
-#   - 'size' to sort them by the size of the file
-#   - 'links' to sort them by the number of links to the file
-#   - 'modification' or 'time' or 'date' to sort them by the last modification time
-#   - 'access' to sort them by the last access time
-#   - 'inode' or 'change' to sort them by the last inode change time
-#   - 'reverse' to sort in decreasing order
-# If the style is set to any other value, or is unset, files will be sorted alphabetically by name.
-#zstyle ':completion:*' file-sort access
 
 zstyle ':completion:*' use-perl true # Various parts of the function system use awk to extract words from files or command output as this universally available. However, many versions of awk have arbitrary limits on the size of input. If this style is set, perl will be used instead.
 zstyle ':completion:*' use-ip true # By default, the function _hosts that completes host names strips IP addresses from entries read from host databases such as NIS and ssh files. If this style is true, the corresponding IP addresses can be completed as well.
@@ -169,13 +159,14 @@ zstyle ':completion:*:hosts' hosts $hosts
 
 # Don't complete uninteresting users
 zstyle ':completion:*:*:*:users' ignored-patterns \
-        adm amanda apache avahi beaglidx bin cacti canna clamav daemon \
-        dbus distcache dovecot fax ftp games gdm gkrellmd gopher \
-        hacluster haldaemon halt hsqldb ident junkbust ldap lp mail \
-        mailman mailnull mldonkey mysql nagios \
-        named netdump news nfsnobody nobody nscd ntp nut nx openvpn \
-        operator pcap postfix postgres privoxy pulse pvm quagga radvd \
-        rpc rpcuser rpm shutdown squid sshd sync uucp vcsa xfs
+        adm amanda apache at avahi avahi-autoipd beaglidx bin cacti canna \
+        clamav daemon dbus distcache dnsmasq dovecot fax ftp games gdm \
+        gkrellmd gopher hacluster haldaemon halt hsqldb ident junkbust kdm \
+        ldap lp mail mailman mailnull man messagebus  mldonkey mysql nagios \
+        named netdump news nfsnobody nobody nscd ntp nut nx obsrun openvpn \
+        operator pcap polkitd postfix postgres privoxy pulse pvm quagga radvd \
+        rpc rpcuser rpm rtkit scard shutdown squid sshd statd svn sync tftp \
+        usbmux uucp vcsa wwwrun xfs '_*'
 
 # ... unless we really want to.
 zstyle '*' single-ignored show

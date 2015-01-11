@@ -52,5 +52,5 @@ typeset -U path cdpath fpath manpath
 # PATH
 export PATH="${MP_COREUTILS}:${VMWARE_TOOLS}:${GIT_SCRIPTS}:${GRAILS_HOME}/bin:${NEO4J_DIR}/bin:${JAVA_HOME}/bin:${LATEX_BIN_DIR}:${ALT_X11_DIR}/bin:${MACPORTS_DIR}/bin:${MACPORTS_DIR}/sbin:${MY_APPLICATIONS_DIR}:${MANUALLY_INSTALLED_DIR}/bin:/bin:/sbin:/usr/bin:/usr/sbin:/usr/libexec:."
 export MANPATH="${MP_COREUTILS}/man:${JAVA_HOME}/man:${ALT_X11_DIR}/share/man:${MACPORTS_DIR}/share/man:${MANUALLY_INSTALLED_DIR}/man:${MANUALLY_INSTALLED_DIR}/share/man:/usr/share/man:/opt/local/etc/zsh/man/"
-export FPATH="${FPATH}:/opt/local/share/zsh/site-functions/:/opt/local/etc/zsh/zshrc.d/local-functions"
+export FPATH="${FPATH}:/opt/local/share/zsh/site-functions/:/opt/local/etc/zsh/zshrc.d/local-functions:$Z/functions"
 export CDPATH=".:${HOME}:${P}:${C}:${D}:${A}:${VOLUMES_DIR}"
