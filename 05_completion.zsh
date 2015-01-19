@@ -84,10 +84,6 @@ zstyle ':completion:*:warnings' format '%BSorry, no matches for: %d%b'
 zstyle ':completion:*:*:kill:*:processes' list-colors "=(#b) #([0-9]#)*=36=31"
 zstyle ':completion:*:*:*:*:processes' command "ps -o pid,user,comm -w -w"
 zstyle ':completion:*:windows' menu on=0
-zstyle ':completion:*:scp:*' tag-order \
-zstyle ':completion:*:scp:*' group-order \
-zstyle ':completion:*:ssh:*' tag-order \
-zstyle ':completion:*:ssh:*' group-order \
 
 # Ignore completion functions for commands you don't have:
 zstyle ':completion:correct:'   prompt 'correct to: %e'
