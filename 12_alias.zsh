@@ -27,12 +27,6 @@ alias -g NUL='> /dev/null 2>&1'
 alias dud='du -d 1 -h'
 alias duf='du -sh *'
 
-# because typing 'cd' is A LOT of work!!
-alias ..='cd ../'
-alias ...='cd ../../'
-alias ....='cd ../../../'
-alias .....='cd ../../../../'
-
 # Memory and CPU hogs using top and ps
 alias mem_hogs_top='top -l 1 -o rsize | head -30'
 alias mem_hogs_ps='ps wwaxm -o pid,stat,vsize,rss,time,command | head -20'
