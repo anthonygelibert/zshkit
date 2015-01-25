@@ -1,0 +1,1 @@
+export ACKRC="~/.config/ackrc"
