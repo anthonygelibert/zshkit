@@ -3,6 +3,9 @@
 alias _='sudo '
 alias please='sudo'
 
+alias unsudo='sudo -k'
+alias thanks='sudo -k'
+
 function sudo-command-line() {
     [[ -z $BUFFER ]] && zle up-history
     [[ $BUFFER != sudo\ * ]] && BUFFER="sudo $BUFFER"
