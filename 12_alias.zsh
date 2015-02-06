@@ -42,6 +42,24 @@ if [[ $(command -v lsof) ]]; then
     }
 fi
 
+function cleanProj() {
+    for i in */; do
+        (
+            cd "$i"
+            [ -d .git ] && git agc && git prune && git agc && exit 0
+        )
+    done
+}
+
+function cleanProjs() {
+    for i in "$@"; do
+        (
+            cd "$i"
+            cleanProj
+        )
+    done
+}
+
 function upProj() {
     for i in */; do
         (
@@ -57,7 +75,7 @@ function upProj() {
 function upProjs() {
     for i in "$@"; do
         (
-            cd $i
+            cd "$i"
             upProj
         )
     done
