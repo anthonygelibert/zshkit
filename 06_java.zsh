@@ -10,5 +10,3 @@ export JAVA_OPTS="-d64 \
 -XX:+UnlockExperimentalVMOptions \
 -XX:+UseRTMLocking \
 -XX:+UseRTMDeopt"
-
-alias java="java ${JAVA_OPTS}"
