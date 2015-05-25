@@ -38,7 +38,7 @@ alias grep='grep -E --colour=auto --exclude-dir={.bzr,.cvs,.git,.hg,.svn}'
 # List the locked file in trash
 if [[ $(command -v lsof) ]]; then
     function locked_in_trash() {
-        sudo lsof -nPT +c 0 | grep "/.Trash" | awk '{print $1, " -> ", $9}' | grep -v mds
+        sudo lsof -nPT +c 0 | grep "/.Trash" | grep -v mds | awk '{print $1, " -> ", $9}'
     }
 fi
 
@@ -46,7 +46,7 @@ function cleanProj() {
     for i in */; do
         (
             cd "$i"
-            [ -d .git ] && git agc && git prune && git agc && exit 0
+            [ -d .git ] && git agc && exit 0
         )
     done
 }
