@@ -2,3 +2,4 @@
 # vim: ft=zsh
 
 source ${HOME}/Documents/Personnel/liquidprompt/liquidprompt
+source ${HOME}/.iterm2_shell_integration.zsh
