@@ -25,10 +25,10 @@ export GIT_SCRIPTS="${MY_APPLICATIONS_DIR}/git-scripts:${MY_APPLICATIONS_DIR}/gi
 export VMWARE_TOOLS="/Applications/VMware Fusion.app/Contents/Library"
 # MacPorts Coreutils
 export MP_COREUTILS="${MACPORTS_DIR}/libexec/gnubin"
-# Grails
-export GRAILS_HOME="${MY_APPLICATIONS_DIR}/grails-2.4.4"
 # Neo4J
-export NEO4J_DIR="${MY_APPLICATIONS_DIR}/neo4j-community-2.1.4"
+export NEO4J_DIR="${MY_APPLICATIONS_DIR}/neo4j-community-2.2.5"
+# ARM-Linux
+export ARM_LINUX_DIR="/usr/local/linaro/arm-linux-gnueabihf"
 # XDG
 export XDG_CONFIG_HOME="${HOME}/.config"
 
