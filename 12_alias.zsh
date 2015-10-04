@@ -34,6 +34,7 @@ alias cpu_hogs='ps wwaxr -o pid,stat,%cpu,time,command | head -20'
 
 alias grep='grep -E --colour=auto --exclude-dir={.bzr,.cvs,.git,.hg,.svn}'
 
+alias disassemble='llvm-objdump -disassemble -r -x86-asm-syntax=intel'
 
 # List the locked file in trash
 if [[ $(command -v lsof) ]]; then
