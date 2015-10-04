@@ -1,2 +1,2 @@
-export GOPATH="$P/go"
+export GOPATH="${P}go"
 export PATH="$PATH:$GOPATH/bin"
