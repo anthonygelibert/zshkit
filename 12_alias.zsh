@@ -17,7 +17,9 @@ alias :q=" exit"
 alias week='date "+%V"'
 
 alias -g H='| head'
+
 [[ $(command -v most) ]] && alias -g M='| most'
+
 alias -g G='| grep'
 alias -g L='| less'
 alias -g T='| tail'
@@ -35,6 +37,8 @@ alias cpu_hogs='ps wwaxr -o pid,stat,%cpu,time,command | head -20'
 alias grep='grep -E --colour=auto --exclude-dir={.bzr,.cvs,.git,.hg,.svn}'
 
 alias disassemble='llvm-objdump -disassemble -r -x86-asm-syntax=intel'
+
+alias git='LC_ALL=C git'
 
 # List the locked file in trash
 if [[ $(command -v lsof) ]]; then
