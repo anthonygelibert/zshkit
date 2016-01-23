@@ -38,8 +38,6 @@ alias grep='grep -E --colour=auto --exclude-dir={.bzr,.cvs,.git,.hg,.svn}'
 
 alias disassemble='llvm-objdump -disassemble -r -x86-asm-syntax=intel'
 
-alias git='LC_ALL=C git'
-
 # List the locked file in trash
 if [[ $(command -v lsof) ]]; then
     function locked_in_trash() {
