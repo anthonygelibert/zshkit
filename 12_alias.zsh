@@ -43,6 +43,10 @@ if [[ $(command -v lsof) ]]; then
     function locked_in_trash() {
         sudo lsof -nPT +c 0 | grep "/.Trash" | grep -v mds | awk '{print $1, " -> ", $9}'
     }
+
+    function locked_in() {
+        sudo lsof -nPT +c 0 | grep -E --colour=auto --exclude-dir={.bzr,.cvs,.git,.hg,.svn} $1 | grep -E --colour=auto --exclude-dir={.bzr,.cvs,.git,.hg,.svn} -v mds | awk '{print $1, " -> ", $9}'
+    }
 fi
 
 function cleanProj() {
