@@ -2,8 +2,6 @@
 
 # X11       : http://xquartz.macosforge.org/trac/wiki
 export ALT_X11_DIR="/opt/X11"
-# LaTeX
-export LATEX_BIN_DIR="/usr/texbin"
 # MacPorts  : http://www.macports.org
 export MACPORTS_DIR="/opt/local"
 # Manually
@@ -17,7 +15,7 @@ export SANDBOX_DIR="${HOME}/Documents/BacASable"
 # Mounted volumes
 export VOLUMES_DIR="/Volumes"
 # Java 1.8 Home on Mac OS X
-export JAVA_VERSION="1.8.0_72"
+export JAVA_VERSION="1.8.0_74"
 export JAVA_HOME="/Library/Java/JavaVirtualMachines/jdk${JAVA_VERSION}.jdk/Contents/Home"
 # Git Scripts
 export GIT_SCRIPTS="${MY_APPLICATIONS_DIR}/git-scripts:${MY_APPLICATIONS_DIR}/git-pull-request"
@@ -39,20 +37,16 @@ export D="${HOME}/Documents/"
 export DL="${HOME}/Downloads/"
 # My Projects
 export P="${PROJECTS_DIR}/"
-# My Pro Projects
-export C="${D}/Nocosium"
 # My Apps shortcut
 export A="${MY_APPLICATIONS_DIR}"
 # This project
 export Z="${PROJECTS_DIR}/my_zshkit"
-# Nocosium
-export N="${D}/Nocosium"
 
 typeset -U path cdpath fpath manpath
 
 # PATH
-export          PATH="${MP_COREUTILS}:${VMWARE_TOOLS}:${GIT_SCRIPTS}:${NEO4J_DIR}/bin:${JAVA_HOME}/bin:${LATEX_BIN_DIR}:${ALT_X11_DIR}/bin:${MACPORTS_DIR}/bin:${MACPORTS_DIR}/sbin:${MY_APPLICATIONS_DIR}:${MANUALLY_INSTALLED_DIR}/bin:${ARM_LINUX_DIR}/bin:/usr/libexec:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin:/usr/local/MacGPG2/bin:/Library/TeX/texbin"
-export INTERNAL_PATH="${MP_COREUTILS}:${VMWARE_TOOLS}:${GIT_SCRIPTS}:${NEO4J_DIR}/bin:${JAVA_HOME}/bin:${LATEX_BIN_DIR}:${ALT_X11_DIR}/bin:${MACPORTS_DIR}/bin:${MACPORTS_DIR}/sbin:${MY_APPLICATIONS_DIR}:${MANUALLY_INSTALLED_DIR}/bin:${ARM_LINUX_DIR}/bin:/usr/libexec/"
+export          PATH="${MP_COREUTILS}:${VMWARE_TOOLS}:${GIT_SCRIPTS}:${NEO4J_DIR}/bin:${JAVA_HOME}/bin:${ALT_X11_DIR}/bin:${MACPORTS_DIR}/bin:${MACPORTS_DIR}/sbin:${MY_APPLICATIONS_DIR}:${MANUALLY_INSTALLED_DIR}/bin:${ARM_LINUX_DIR}/bin:/usr/libexec:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin:/usr/local/MacGPG2/bin:/Library/TeX/texbin"
+export INTERNAL_PATH="${MP_COREUTILS}:${VMWARE_TOOLS}:${GIT_SCRIPTS}:${NEO4J_DIR}/bin:${JAVA_HOME}/bin:${ALT_X11_DIR}/bin:${MACPORTS_DIR}/bin:${MACPORTS_DIR}/sbin:${MY_APPLICATIONS_DIR}:${MANUALLY_INSTALLED_DIR}/bin:${ARM_LINUX_DIR}/bin:/usr/libexec/"
 export MANPATH="${MP_COREUTILS}/man:${JAVA_HOME}/man:${ALT_X11_DIR}/share/man:${MACPORTS_DIR}/share/man:${MANUALLY_INSTALLED_DIR}/man:${MANUALLY_INSTALLED_DIR}/share/man:${ARM_LINUX_DIR}/share/man:/usr/share/man:/opt/local/etc/zsh/man/"
 export FPATH="${FPATH}:/opt/local/share/zsh/site-functions/:/opt/local/etc/zsh/zshrc.d/local-functions:$Z/functions"
-export CDPATH=".:${HOME}:${P}:${C}:${D}:${A}:${VOLUMES_DIR}"
+export CDPATH=".:${HOME}:${P}:${D}:${A}:${VOLUMES_DIR}"
