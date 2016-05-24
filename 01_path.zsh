@@ -15,7 +15,7 @@ export SANDBOX_DIR="${HOME}/Documents/BacASable"
 # Mounted volumes
 export VOLUMES_DIR="/Volumes"
 # Java 1.8 Home on Mac OS X
-export JAVA_VERSION="1.8.0_74"
+export JAVA_VERSION="1.8.0_92"
 export JAVA_HOME="/Library/Java/JavaVirtualMachines/jdk${JAVA_VERSION}.jdk/Contents/Home"
 # Git Scripts
 export GIT_SCRIPTS="${MY_APPLICATIONS_DIR}/git-scripts:${MY_APPLICATIONS_DIR}/git-pull-request"
@@ -25,8 +25,6 @@ export VMWARE_TOOLS="/Applications/VMware Fusion.app/Contents/Library"
 export MP_COREUTILS="${MACPORTS_DIR}/libexec/gnubin"
 # Neo4J
 export NEO4J_DIR="${MY_APPLICATIONS_DIR}/neo4j-community-2.2.5"
-# ARM-Linux
-export ARM_LINUX_DIR="/usr/local/linaro/arm-linux-gnueabihf"
 # XDG
 export XDG_CONFIG_HOME="${HOME}/.config"
 
@@ -41,12 +39,14 @@ export P="${PROJECTS_DIR}/"
 export A="${MY_APPLICATIONS_DIR}"
 # This project
 export Z="${PROJECTS_DIR}/my_zshkit"
+# Kodino projects
+export K="${D}/Kodino"
 
 typeset -U path cdpath fpath manpath
 
 # PATH
-export          PATH="${MP_COREUTILS}:${VMWARE_TOOLS}:${GIT_SCRIPTS}:${NEO4J_DIR}/bin:${JAVA_HOME}/bin:${ALT_X11_DIR}/bin:${MACPORTS_DIR}/bin:${MACPORTS_DIR}/sbin:${MY_APPLICATIONS_DIR}:${MANUALLY_INSTALLED_DIR}/bin:${ARM_LINUX_DIR}/bin:/usr/libexec:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin:/usr/local/MacGPG2/bin:/Library/TeX/texbin"
-export INTERNAL_PATH="${MP_COREUTILS}:${VMWARE_TOOLS}:${GIT_SCRIPTS}:${NEO4J_DIR}/bin:${JAVA_HOME}/bin:${ALT_X11_DIR}/bin:${MACPORTS_DIR}/bin:${MACPORTS_DIR}/sbin:${MY_APPLICATIONS_DIR}:${MANUALLY_INSTALLED_DIR}/bin:${ARM_LINUX_DIR}/bin:/usr/libexec/"
-export MANPATH="${MP_COREUTILS}/man:${JAVA_HOME}/man:${ALT_X11_DIR}/share/man:${MACPORTS_DIR}/share/man:${MANUALLY_INSTALLED_DIR}/man:${MANUALLY_INSTALLED_DIR}/share/man:${ARM_LINUX_DIR}/share/man:/usr/share/man:/opt/local/etc/zsh/man/"
+export          PATH="${MP_COREUTILS}:${VMWARE_TOOLS}:${GIT_SCRIPTS}:${NEO4J_DIR}/bin:${JAVA_HOME}/bin:${ALT_X11_DIR}/bin:${MACPORTS_DIR}/bin:${MACPORTS_DIR}/sbin:${MY_APPLICATIONS_DIR}:${MANUALLY_INSTALLED_DIR}/bin:/usr/libexec:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin:/usr/local/MacGPG2/bin:/Library/TeX/texbin"
+export INTERNAL_PATH="${MP_COREUTILS}:${VMWARE_TOOLS}:${GIT_SCRIPTS}:${NEO4J_DIR}/bin:${JAVA_HOME}/bin:${ALT_X11_DIR}/bin:${MACPORTS_DIR}/bin:${MACPORTS_DIR}/sbin:${MY_APPLICATIONS_DIR}:${MANUALLY_INSTALLED_DIR}/bin:/usr/libexec/"
+export MANPATH="${MP_COREUTILS}/man:${JAVA_HOME}/man:${ALT_X11_DIR}/share/man:${MACPORTS_DIR}/share/man:${MANUALLY_INSTALLED_DIR}/man:${MANUALLY_INSTALLED_DIR}/share/man:/usr/share/man:/opt/local/etc/zsh/man/"
 export FPATH="${FPATH}:/opt/local/share/zsh/site-functions/:/opt/local/etc/zsh/zshrc.d/local-functions:$Z/functions"
-export CDPATH=".:${HOME}:${P}:${D}:${A}:${VOLUMES_DIR}"
+export CDPATH=".:${HOME}:${P}:${D}:${A}:${K}:${VOLUMES_DIR}"
