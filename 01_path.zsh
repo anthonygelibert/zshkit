@@ -45,8 +45,8 @@ export K="${D}/Kodino"
 typeset -U path cdpath fpath manpath
 
 # PATH
-export          PATH="${MP_COREUTILS}:${VMWARE_TOOLS}:${GIT_SCRIPTS}:${NEO4J_DIR}/bin:${JAVA_HOME}/bin:${ALT_X11_DIR}/bin:${MACPORTS_DIR}/bin:${MACPORTS_DIR}/sbin:${MY_APPLICATIONS_DIR}:${MANUALLY_INSTALLED_DIR}/bin:/usr/libexec:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin:/usr/local/MacGPG2/bin:/Library/TeX/texbin"
-export INTERNAL_PATH="${MP_COREUTILS}:${VMWARE_TOOLS}:${GIT_SCRIPTS}:${NEO4J_DIR}/bin:${JAVA_HOME}/bin:${ALT_X11_DIR}/bin:${MACPORTS_DIR}/bin:${MACPORTS_DIR}/sbin:${MY_APPLICATIONS_DIR}:${MANUALLY_INSTALLED_DIR}/bin:/usr/libexec/"
-export MANPATH="${MP_COREUTILS}/man:${JAVA_HOME}/man:${ALT_X11_DIR}/share/man:${MACPORTS_DIR}/share/man:${MANUALLY_INSTALLED_DIR}/man:${MANUALLY_INSTALLED_DIR}/share/man:/usr/share/man:/opt/local/etc/zsh/man/"
-export FPATH="${FPATH}:/opt/local/share/zsh/site-functions/:/opt/local/etc/zsh/zshrc.d/local-functions:$Z/functions"
+export          PATH="${MY_APPLICATIONS_DIR}/ofexport2/bin:${MP_COREUTILS}:${VMWARE_TOOLS}:${GIT_SCRIPTS}:${NEO4J_DIR}/bin:${JAVA_HOME}/bin:${ALT_X11_DIR}/bin:${MACPORTS_DIR}/bin:${MACPORTS_DIR}/sbin:${MY_APPLICATIONS_DIR}:${MANUALLY_INSTALLED_DIR}/bin:/usr/libexec:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin:/usr/local/MacGPG2/bin:/Library/TeX/texbin"
+export INTERNAL_PATH="${MY_APPLICATIONS_DIR}/ofexport2/bin:${MP_COREUTILS}:${VMWARE_TOOLS}:${GIT_SCRIPTS}:${NEO4J_DIR}/bin:${JAVA_HOME}/bin:${ALT_X11_DIR}/bin:${MACPORTS_DIR}/bin:${MACPORTS_DIR}/sbin:${MY_APPLICATIONS_DIR}:${MANUALLY_INSTALLED_DIR}/bin:/usr/libexec/"
+export MANPATH="${MP_COREUTILS}/man:${JAVA_HOME}/man:${ALT_X11_DIR}/share/man:${MACPORTS_DIR}/share/man:${MANUALLY_INSTALLED_DIR}/man:${MANUALLY_INSTALLED_DIR}/share/man:${MACPORTS_DIR}/etc/zsh/man/:/usr/share/man"
+export FPATH="${FPATH}:${MACPORTS_DIR}/share/zsh/site-functions/:${MACPORTS_DIR}/etc/zsh/zshrc.d/local-functions/darwin:${MACPORTS_DIR}/etc/zsh/zshrc.d/local-functions/general:$Z/functions"
 export CDPATH=".:${HOME}:${P}:${D}:${A}:${K}:${VOLUMES_DIR}"
