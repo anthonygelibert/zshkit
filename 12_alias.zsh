@@ -21,6 +21,7 @@ alias -g H='| head'
 [[ $(command -v most) ]] && alias -g M='| most'
 
 alias -g G='| grep'
+alias -g GN='| grep -v'
 alias -g L='| less'
 alias -g T='| tail'
 alias -g NE='2> /dev/null'
