@@ -10,6 +10,8 @@ export MANUALLY_INSTALLED_DIR="/usr/local"
 export MY_APPLICATIONS_DIR="${HOME}/Applications"
 # My Projects
 export PROJECTS_DIR="${HOME}/Documents/Personnel"
+# Their Projects
+export THEIR_PROJECTS_DIR="${HOME}/Documents/Others"
 # SandBox
 export SANDBOX_DIR="${HOME}/Documents/BacASable"
 # Mounted volumes
@@ -35,6 +37,8 @@ export D="${HOME}/Documents/"
 export DL="${HOME}/Downloads/"
 # My Projects
 export P="${PROJECTS_DIR}/"
+# Their projects
+export T="${THEIR_PROJECTS_DIR}/"
 # My Apps shortcut
 export A="${MY_APPLICATIONS_DIR}"
 # This project
@@ -49,4 +53,4 @@ export          PATH="${MY_APPLICATIONS_DIR}/ofexport2/bin:${MP_COREUTILS}:${VMW
 export INTERNAL_PATH="${MY_APPLICATIONS_DIR}/ofexport2/bin:${MP_COREUTILS}:${VMWARE_TOOLS}:${GIT_SCRIPTS}:${NEO4J_DIR}/bin:${JAVA_HOME}/bin:${ALT_X11_DIR}/bin:${MACPORTS_DIR}/bin:${MACPORTS_DIR}/sbin:${MY_APPLICATIONS_DIR}:${MANUALLY_INSTALLED_DIR}/bin:/usr/libexec/"
 export MANPATH="${MP_COREUTILS}/man:${JAVA_HOME}/man:${ALT_X11_DIR}/share/man:${MACPORTS_DIR}/share/man:${MANUALLY_INSTALLED_DIR}/man:${MANUALLY_INSTALLED_DIR}/share/man:${MACPORTS_DIR}/etc/zsh/man/:/usr/share/man"
 export FPATH="${FPATH}:${MACPORTS_DIR}/share/zsh/site-functions/:${MACPORTS_DIR}/etc/zsh/zshrc.d/local-functions/darwin:${MACPORTS_DIR}/etc/zsh/zshrc.d/local-functions/general:$Z/functions"
-export CDPATH=".:${HOME}:${P}:${D}:${A}:${K}:${VOLUMES_DIR}"
+export CDPATH=".:${HOME}:${P}:${D}:${A}:${K}:${T}:${VOLUMES_DIR}"
