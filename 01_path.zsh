@@ -23,8 +23,6 @@ export JAVA_HOME="/Library/Java/JavaVirtualMachines/jdk${JAVA_VERSION}.jdk/Conte
 export GIT_SCRIPTS="${MY_APPLICATIONS_DIR}/git-scripts:${MY_APPLICATIONS_DIR}/git-pull-request:${MY_APPLICATIONS_DIR}/git-extra-commands/bin"
 # VMware tools
 export VMWARE_TOOLS="/Applications/VMware Fusion.app/Contents/Library"
-# Haskell Platform
-export HASKELL="$HOME/Library/Haskell"
 # MacPorts Coreutils
 export MP_COREUTILS="${MACPORTS_DIR}/libexec/gnubin"
 # XDG
