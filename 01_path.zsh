@@ -20,7 +20,7 @@ export VOLUMES_DIR="/Volumes"
 export JAVA_VERSION="1.8.0_131"
 export JAVA_HOME="/Library/Java/JavaVirtualMachines/jdk${JAVA_VERSION}.jdk/Contents/Home"
 # Git Scripts
-export GIT_SCRIPTS="${MY_APPLICATIONS_DIR}/git-scripts:${MY_APPLICATIONS_DIR}/git-pull-request"
+export GIT_SCRIPTS="${MY_APPLICATIONS_DIR}/git-scripts:${MY_APPLICATIONS_DIR}/git-pull-request:${MY_APPLICATIONS_DIR}/git-extra-commands/bin"
 # VMware tools
 export VMWARE_TOOLS="/Applications/VMware Fusion.app/Contents/Library"
 # Haskell Platform
