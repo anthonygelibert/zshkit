@@ -8,6 +8,8 @@
 # Diff
 [[ $(command -v colordiff) ]] && alias diff="colordiff"
 
+[[ $(command -v sshfs) ]] && alias sshfs="sshfs -oauto_cache,reconnect,defer_permissions,noappledouble,nolocalcaches,no_readahead"
+
 alias mac_console="sudo /Applications/Utilities/Console.app/Contents/MacOS/Console"
 
 # Exit
@@ -38,6 +40,9 @@ alias cpu_hogs='ps wwaxr -o pid,stat,%cpu,time,command | head -20'
 alias grep='grep -E --colour=auto --exclude-dir={.bzr,.cvs,.git,.hg,.svn}'
 
 alias disassemble='llvm-objdump -disassemble -r -x86-asm-syntax=intel'
+
+#alias disableMAO='mv /Users/tony/Library/Mail/Bundles/MailActOn.mailbundle ~/Downloads'
+#alias enableMAO='mv ~/Downloads/MailActOn.mailbundle /Users/tony/Library/Mail/Bundles/'
 
 # List the locked file in trash
 if [[ $(command -v lsof) ]]; then
