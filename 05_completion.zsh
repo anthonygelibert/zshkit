@@ -135,6 +135,9 @@ zstyle ':completion:*:tar:*'   file-patterns '*.tar|*.tgz|*.tz|*.tar.Z|*.tar.bz2
 zstyle ':completion:*:xdvi:*'  file-patterns '*.dvi'
 zstyle ':completion:*:dvips:*' file-patterns '*.dvi'
 
+# Clean LaTeX
+zstyle ':completion:*:cleanLatex.sh:*'  file-patterns '*.tex'
+
 #########
 # HOSTS #
 #########
