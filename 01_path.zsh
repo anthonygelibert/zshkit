@@ -27,6 +27,9 @@ export VMWARE_TOOLS="/Applications/VMware Fusion.app/Contents/Library"
 export MP_COREUTILS="${MACPORTS_DIR}/libexec/gnubin"
 # XDG
 export XDG_CONFIG_HOME="${HOME}/.config"
+# CUDA
+export CUDA_VERSION="8.0"
+export CUDA_HOME="/Developer/NVIDIA/CUDA-${CUDA_VERSION}"
 
 # Some usefull paths (cd ~D)
 # My Documents
