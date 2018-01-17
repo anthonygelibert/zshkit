@@ -44,6 +44,10 @@ alias disassemble='llvm-objdump -disassemble -r -x86-asm-syntax=intel'
 #alias disableMAO='mv /Users/tony/Library/Mail/Bundles/MailActOn.mailbundle ~/Downloads'
 #alias enableMAO='mv ~/Downloads/MailActOn.mailbundle /Users/tony/Library/Mail/Bundles/'
 
+function aZ() {
+    sudo addZero.sh "$1"
+}
+
 # List the locked file in trash
 if [[ $(command -v lsof) ]]; then
     function locked_in_trash() {
