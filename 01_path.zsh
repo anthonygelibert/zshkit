@@ -18,7 +18,8 @@ export SANDBOX_DIR="${HOME}/Documents/BacASable"
 export VOLUMES_DIR="/Volumes"
 # Java 1.8 Home on Mac OS X
 #export JAVA_VERSION="1.8.0_144"
-export JAVA_VERSION="9.0.4"
+#export JAVA_VERSION="9.0.4"
+export JAVA_VERSION="10"
 export JAVA_HOME="/Library/Java/JavaVirtualMachines/jdk-${JAVA_VERSION}.jdk/Contents/Home"
 # Git Scripts
 export GIT_SCRIPTS="${MY_APPLICATIONS_DIR}/git-scripts:${MY_APPLICATIONS_DIR}/git-pull-request:${MY_APPLICATIONS_DIR}/git-extra-commands/bin"
