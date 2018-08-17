@@ -1,4 +1,4 @@
-export JAVA_OPTS="-d64 \
+export CUSTOM_JAVA_OPTS="-d64 \
 -ea \
 -Xms1024m \
 -Xmx2048m \
