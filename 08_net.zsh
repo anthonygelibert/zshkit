@@ -28,5 +28,5 @@ alias cleardns="sudo discoveryutil udnsflushcaches"
 
 # Get only the header of a webserver
 function get-header() {
-    wget --server-response --spider $1
+    wget --server-response --spider "$1"
 }
