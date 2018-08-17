@@ -1,4 +1,6 @@
 #!/usr/bin/env zsh
 #vim: ft=zsh
+export PATH="$INTERNAL_PATH:$PATH:."
+unset INTERNAL_PATH
 source ${HOME}/Documents/Personnel/liquidprompt/liquidprompt
 source ${HOME}/.iterm2_shell_integration.zsh
