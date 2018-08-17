@@ -5,7 +5,7 @@
 #        ^X? (control-x ?) to run complete_debug with trace output
 
 # Files to ignore during completion
-fignore=(.o \~ .bak .junk .DS_Store $fignore)
+fignore=(.o .pyc \~ .bak .junk .DS_Store $fignore)
 
 autoload -Uz compinit && compinit
 zmodload zsh/complist
@@ -142,12 +142,14 @@ zstyle ':completion:*:cleanLatex.sh:*'  file-patterns '*.tex'
 # HOSTS #
 #########
 
-# Use /etc/hosts and known_hosts for hostname completion
+# Use /etc/hosts, known_hosts and SSH config for hostname completion
 [ -r /etc/ssh/ssh_known_hosts ] && _global_ssh_hosts=(${${${${(f)"$(</etc/ssh/ssh_known_hosts)"}:#[\|]*}%%\ *}%%,*}) || _ssh_hosts=()
 [ -r ~/.ssh/known_hosts ] && _ssh_hosts=(${${${${(f)"$(<$HOME/.ssh/known_hosts)"}:#[\|]*}%%\ *}%%,*}) || _ssh_hosts=()
+[ -r ~/.ssh/config ] && _ssh_config_hosts=(${(s: :)${(ps:\t:)${(f)"$(<$HOME/.ssh/config|grep 'Host')"}#Host}#Hostname}) || _ssh_config_hosts=()
 hosts=(
   "$_global_ssh_hosts[@]"
   "$_ssh_hosts[@]"
+  "$_ssh_config_hosts[@]"
   localhost
 )
 zstyle ':completion:*:hosts' hosts $hosts
