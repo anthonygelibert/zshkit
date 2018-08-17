@@ -92,7 +92,7 @@ setopt   PATH_DIRS              # Perform a path search even on command names wi
 setopt   POSIX_BUILTINS         # When this option is set the command builtin can be used to execute shell builtin commands. Parameter assignments specified before shell functions and special builtins are kept after the command completes unless the special builtin is prefixed with the command builtin. Special builtins are ., :, break, continue, declare, eval, exit, export, integer, local, readonly, return, set, shift, source, times, trap and unset.
 setopt   POSIX_CD               # Modifies the behaviour of cd, chdir and pushd commands to make them more compatible with the POSIX standard.
 setopt   POSIX_JOBS             # This option makes job control more compliant with the POSIX standard.
-unsetopt   PROMPT_SUBST           # If set, parameter expansion, command substitution and arithmetic expansion are performed in prompts.
+unsetopt PROMPT_SUBST           # If set, parameter expansion, command substitution and arithmetic expansion are performed in prompts.
 unsetopt PRINT_EXIT_VALUE       # NO -> Print the exit value of programs with non-zero exit status.
 setopt   PUSHD_IGNORE_DUPS      # Don't push multiple copies of the same directory onto the directory stack.
 setopt   PUSHD_MINUS            # Exchanges the meanings of `+' and `-' when used with a number to specify a directory in the stack.
