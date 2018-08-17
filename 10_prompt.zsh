@@ -11,4 +11,4 @@ PS3='?# '
 export PS4='%B[%*]%b [%L] (%N:%i) %_ '
 
 # Right prompt with clock: I disable it, it's now a feature of iTerm
-export RPS1="%{$fg_bold[black]%}%D{%d/%m/%y %H:%M:%S}%{${reset_color}%}"
+# export RPS1="%{$fg_bold[black]%}%D{%d/%m/%y %H:%M:%S}%{${reset_color}%}"
