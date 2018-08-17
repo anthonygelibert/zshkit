@@ -18,16 +18,16 @@ alias :q=" exit"
 # Get the current week
 alias week='date "+%V"'
 
-alias -g H='| head'
-
-[[ $(command -v most) ]] && alias -g M='| most'
-
+alias -g C='| cut'
 alias -g G='| grep'
 alias -g GN='| grep -v'
+alias -g H='| head'
 alias -g L='| less'
-alias -g T='| tail'
+alias -g M='| most'
 alias -g NE='2> /dev/null'
 alias -g NUL='> /dev/null 2>&1'
+alias -g T='| tail'
+alias -g X='| xargs'
 
 alias dud='du -d 1 -h'
 alias duf='du -sh *'
