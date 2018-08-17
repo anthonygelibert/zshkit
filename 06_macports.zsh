@@ -3,6 +3,7 @@
 # Some MacPorts alias
 if [[ $(command -v port) ]]; then
     alias pi="sudo port -v install"
+    alias pu="sudo port -v uninstall"
     function ph() {
         port search --name --line "$1" | gawk -F $'\t' '{printf("%-44s %-12s %-s\n", $1,  $2,  $4)}'
     }
