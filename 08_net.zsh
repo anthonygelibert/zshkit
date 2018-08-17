@@ -9,13 +9,6 @@ fi
 # Get the list of Network Conns
 alias netconns='netstat -an -f inet'
 
-if [[ $(command -v ipfw) ]]; then
-    # Firewall
-    alias firewall_off="sudo ipfw flush"
-    alias firewall_on="sudo ipfw /etc/firewall.conf"
-    alias firewall_list="sudo ipfw -atN list"
-fi
-
 # IP configurations
 alias ip0_info='ipconfig getpacket en0'
 alias ip1_info='ipconfig getpacket en1'
