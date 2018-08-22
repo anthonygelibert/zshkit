@@ -138,6 +138,9 @@ zstyle ':completion:*:dvips:*' file-patterns '*.dvi'
 # Clean LaTeX
 zstyle ':completion:*:cleanLatex.sh:*'  file-patterns '*.tex'
 
+# Code Insiders is Code
+compdef code-insiders='code'
+
 #########
 # HOSTS #
 #########
