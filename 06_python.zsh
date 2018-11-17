@@ -1,5 +1,6 @@
 # vim: ft=zsh
 
+export PYTHONPATH="$C/Recherche/AQiT/Code/aqit-map"
 export PYTHONSTARTUP="${XDG_CONFIG_HOME}/python/pythonrc"
 export WORKON_HOME="${P}/pyvenvs/"
 export IPYTHONDIR="${XDG_CONFIG_HOME}/python/ipython"
