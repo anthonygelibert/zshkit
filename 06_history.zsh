@@ -1,8 +1,8 @@
 # vim: ft=zsh
 
 export HISTFILE=~/.zsh_history
-export HISTSIZE=50000
-export SAVEHIST=50000
+export HISTSIZE=100000
+export SAVEHIST=100000
 
 if [ "$HIST_STAMPS" = "mm/dd/yyyy" ]
 then
