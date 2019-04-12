@@ -1,6 +1,8 @@
 # vim: ft=zsh
 
-export LANG="fr_FR.utf-8"
-export LANGUAGE="fr_FR.utf-8"
-export LC_ALL="fr_FR.utf-8"
-export LC_CTYPE="fr_FR.utf-8"
+# Spécifier fr par défaut
+LANG="fr_FR.UTF-8"
+# Préférer l'anglais à la langue par défaut si la traduction fr n'existe pas
+LANGUAGE="fr_FR:en_US"
+# Mais garder un tri par défaut
+LC_COLLATE="C"
