@@ -99,5 +99,5 @@ function upProjs() {
 }
 
 
-alias last_MacGPG='grep "GPG Suite" <(curl -silent https://releases.gpgtools.org/nightlies/) | sed -e "s/^.*\(GPG Suite 20[1-2][0-9].[0-9]* ([0-9]*[a-z]*)\).*/\1/g"'
+alias last_MacGPG='grep "GPG Suite" <(curl -silent https://releases.gpgtools.org/nightlies/) | sed -e "s/^.*\(GPG Suite 20[1-2][0-9].[0-9]* ([0-9]*[a-z]*)\).*/\1/g" | tail -1'
 
