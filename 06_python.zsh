@@ -5,11 +5,11 @@ export PYTHONSTARTUP="${XDG_CONFIG_HOME}/python/pythonrc"
 export WORKON_HOME="${P}/pyvenvs/"
 export IPYTHONDIR="${XDG_CONFIG_HOME}/python/ipython"
 
-export VIRTUALENVWRAPPER_PYTHON='/opt/local/bin/python3.7'
-export VIRTUALENVWRAPPER_VIRTUALENV='/opt/local/bin/virtualenv-3.7'
-export VIRTUALENVWRAPPER_VIRTUALENV_CLONE='/opt/local/bin/virtualenv-clone-3.7'
-export VIRTUALENVWRAPPER_SCRIPT='/opt/local/bin/virtualenvwrapper.sh-3.7'
-source /opt/local/bin/virtualenvwrapper_lazy.sh-3.7
+export VIRTUALENVWRAPPER_PYTHON='/opt/local/bin/python3.8'
+export VIRTUALENVWRAPPER_VIRTUALENV='/opt/local/bin/virtualenv-3.8'
+export VIRTUALENVWRAPPER_VIRTUALENV_CLONE='/opt/local/bin/virtualenv-clone-3.8'
+export VIRTUALENVWRAPPER_SCRIPT='/opt/local/bin/virtualenvwrapper.sh-3.8'
+source /opt/local/bin/virtualenvwrapper_lazy.sh-3.8
 
 function python_dev() {
     export PYTHONUNBUFFERED="enable"
