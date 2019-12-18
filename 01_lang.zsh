@@ -1,8 +1,12 @@
 # vim: ft=zsh
 
-# Spécifier fr par défaut
-LANG="fr_FR.UTF-8"
-# Préférer l'anglais à la langue par défaut si la traduction fr n'existe pas
-LANGUAGE="fr_FR:en_US"
-# Mais garder un tri par défaut
-LC_COLLATE="C"
+export LANG="fr_FR.UTF-8"
+export LANGUAGE="fr_FR.UTF-8"
+export LC_COLLATE="fr_FR.UTF-8"
+export LC_CTYPE="fr_FR.UTF-8"
+export LC_MESSAGES="fr_FR.UTF-8"
+export LC_MONETARY="fr_FR.UTF-8"
+export LC_NUMERIC="fr_FR.UTF-8"
+export LC_TIME="fr_FR.UTF-8"
+export LC_ALL="fr_FR.UTF-8"
+export LESSCHARSET="utf-8"
