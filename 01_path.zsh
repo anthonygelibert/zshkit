@@ -19,8 +19,6 @@ export JAVA_VERSION="12.0.2"
 export JAVA_HOME="/Library/Java/JavaVirtualMachines/jdk-${JAVA_VERSION}.jdk/Contents/Home"
 # Git Scripts
 export GIT_SCRIPTS="${MY_APPLICATIONS_DIR}/git-scripts:${MY_APPLICATIONS_DIR}/git-pull-request"
-# VMware tools
-export VMWARE_TOOLS="/Applications/VMware Fusion.app/Contents/Library"
 # MacPorts Coreutils
 export MP_COREUTILS="${MACPORTS_DIR}/libexec/gnubin"
 # XDG
