@@ -19,6 +19,7 @@ setopt   AUTO_PUSHD             # Make cd push the old directory onto the direct
 setopt   AUTO_REMOVE_SLASH      # When the last character resulting from a completion is a slash and the next character typed is a word delimiter, a slash, or a character that ends a command (such as a semicolon or an ampersand), remove the slash.
 setopt   BAD_PATTERN            # If a pattern for filename generation is badly formed, print an error. If this option is unset, the pattern will be left unchanged.
 setopt   BANG_HIST              # Perform textual history expansion, csh-style, treating the character `!' specially.
+setopt   BARE_GLOB_QUAL
 unsetopt BASH_AUTO_LIST         # NO -> On an ambiguous completion, automatically list choices when the completion function is called twice in succession.
 unsetopt BEEP                   # NO -> Beep on error in ZLE.
 setopt   BG_NICE                # Run all background jobs at a lower priority.
@@ -33,7 +34,7 @@ setopt   CHECK_JOBS             # Report the status of background and suspended 
 setopt   CHECK_RUNNING_JOBS     # Check for both running and suspended jobs when CHECK_JOBS is enabled.
 setopt   CLOBBER                # Allows `>' redirection to truncate existing files, and `>>' to create files. Otherwise `>!' or `>|' must be used to truncate a file, and `>>!' or `>>|' to create a file.
 setopt   COMBINING_CHARS        # Assume that the terminal displays combining characters correctly.  The shell cannot determine this by itself, hence the option.  This is highly recommended for MacOS X where file names are stored with accented characters split into basic and combining characters.
-unsetopt COMPLETE_ALIASES       # NO -> Prevents aliases on the command line from being internally substituted before completion is attempted.
+setopt   COMPLETE_ALIASES       # NO -> Prevents aliases on the command line from being internally substituted before completion is attempted.
 unsetopt COMPLETE_IN_WORD       # If unset, the cursor is moved to the end of the word if completion is started. Otherwise it stays where it is and completion is done from both ends.
 setopt   CORRECT                # Try to correct the spelling of commands.
 unsetopt CORRECT_ALL            # NO -> Try to correct the spelling of all arguments in a line.
@@ -50,6 +51,7 @@ setopt   GLOB                   # Perform filename generation
 unsetopt GLOB_ASSIGN            # NO -> If this option is set, filename generation (globbing) is performed on the right hand side of scalar parameter assignments of the form name=pattern (e.g. `param=*'). If the result has more than one word the parameter will become an array with those words as arguments. This option is provided for backwards compatibility only: globbing is always performed on the right hand side of array assignments of the form `name=( value )' (e.g. `param=(*)') and this form is recommended for clarity; with this option set, it is not possible to predict whether the result will be an array or a scalar.
 unsetopt GLOB_COMPLETE          # NO -> When the current word has a glob pattern, do not insert all the words resulting from the expansion but generate matches as for completion and cycle through them like MENU_COMPLETE.
 unsetopt GLOB_DOTS              # NO -> Do not require a leading `.' in a filename to be matched explicitly.
+setopt   GLOB_STAR_SHORT
 unsetopt GLOB_SUBST             # NO -> Treat any characters resulting from parameter substitution as being eligible for file expansion and filename generation, and any characters resulting from command substitution as being eligible for filename generation.
 setopt   HIST_ALLOW_CLOBBER     # Add | to output redirections in the history. This allows history references to clobber files even when CLOBBER is unset.
 setopt   HASH_CMDS              # Note the location of each command the first time it is executed
@@ -71,8 +73,9 @@ setopt   HIST_SAVE_NO_DUPS      # When writing out the history file, older comma
 setopt   HIST_VERIFY            # Whenever the user enters a line with history expansion, don't execute the line directly; instead, perform history expansion and reload the line into the editing buffer.
 unsetopt HUP                    # NO -> Send the HUP signal to running jobs when the shell exits.
 unsetopt IGNORE_BRACES          # NO -> Do not perform brace expansion.
+unsetopt IGNORE_CLOSE_BRACES
 setopt   IGNORE_EOF             # Do not exit on end-of-file. Require the use of exit or logout instead.
-setopt   INC_APPEND_HISTORY     # This options works like APPEND_HISTORY except that new history lines are added to the $HISTFILE incrementally (as soon as they are entered), rather than waiting until the shell exits.
+unsetopt INC_APPEND_HISTORY     # This options works like APPEND_HISTORY except that new history lines are added to the $HISTFILE incrementally (as soon as they are entered), rather than waiting until the shell exits.
 setopt   INTERACTIVE_COMMENTS   # Allow comments even in interactive shells.
 setopt   LIST_AMBIGUOUS         # This option works when AUTO_LIST or BASH_AUTO_LIST is also set.
 unsetopt LIST_BEEP              # NO -> Beep on an ambiguous completion.
