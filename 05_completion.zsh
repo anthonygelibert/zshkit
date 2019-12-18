@@ -5,15 +5,21 @@
 #        ^X? (control-x ?) to run complete_debug with trace output
 
 # Files to ignore during completion
-autoload -Uz compinit && compinit
+autoload -Uz compinit
+if [ $(date +'%j') != $(/usr/bin/stat -f '%Sm' -t '%j' ${ZDOTDIR:-$HOME}/.zcompdump) ]; then
+  compinit;
+else
+  compinit -C;
+fi
+
 zmodload zsh/complist
 
 autoload -U zsh-mime-setup
 autoload -U zsh-mime-handler
 zsh-mime-setup
 
-autoload -U url-quote-magic
-zle -N self-insert url-quote-magic
+# autoload -U url-quote-magic
+# zle -N self-insert url-quote-magic
 
 zstyle ':completion:*' use-perl true # Various parts of the function system use awk to extract words from files or command output as this universally available. However, many versions of awk have arbitrary limits on the size of input. If this style is set, perl will be used instead.
 zstyle ':completion:*' use-ip true # By default, the function _hosts that completes host names strips IP addresses from entries read from host databases such as NIS and ssh files. If this style is true, the corresponding IP addresses can be completed as well.
