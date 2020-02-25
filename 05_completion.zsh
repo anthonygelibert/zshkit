@@ -18,9 +18,6 @@ autoload -U zsh-mime-setup
 autoload -U zsh-mime-handler
 zsh-mime-setup
 
-# autoload -U url-quote-magic
-# zle -N self-insert url-quote-magic
-
 zstyle ':completion:*' use-perl true # Various parts of the function system use awk to extract words from files or command output as this universally available. However, many versions of awk have arbitrary limits on the size of input. If this style is set, perl will be used instead.
 zstyle ':completion:*' use-ip true # By default, the function _hosts that completes host names strips IP addresses from entries read from host databases such as NIS and ssh files. If this style is true, the corresponding IP addresses can be completed as well.
 zstyle ':completion:*' list-grouped true # If this style is ‘true’ (the default), the completion system will try to make certain completion listings more compact by grouping matches.
