@@ -28,6 +28,7 @@ setopt   C_BASES                # Output hexadecimal numbers in the standard C f
 unsetopt CASE_GLOB              # NO -> Make globbing (filename generation) sensitive to case.
 unsetopt CASE_MATCH             # NO -> Make regular expressions using the zsh/regex module (including matches with =~) sensitive to case.
 setopt   CDABLE_VARS            # If the argument to a cd command (or an implied cd with the AUTO_CD option set) is not a directory, and does not begin with a slash, try to expand the expression as if it were preceded by a '~'
+setopt   CD_SILENT
 setopt   CHASE_DOTS             # When changing to a directory containing a path segment '..' which would otherwise be treated as canceling the previous segment in the path (in other words, 'foo/..' would be removed from the path, or if '..' is the first part of the path, the last part of $PWD would be deleted), instead resolve the path to the physical directory.
 unsetopt CHASE_LINKS            # NO -> Resolve symbolic links to their true values when changing directory.
 setopt   CHECK_JOBS             # Report the status of background and suspended jobs before exiting a shell with job control; a second attempt to exit the shell will succeed. NO_CHECK_JOBS is best used only in combination with NO_HUP, else such jobs will be killed automatically.
