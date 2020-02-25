@@ -159,7 +159,7 @@ compdef code-insiders='code'
 #  "$_ssh_config_hosts[@]"
 #  localhost
 #)
-zstyle ':completion:*:hosts' hosts $hosts
+#zstyle ':completion:*:hosts' hosts $hosts
 
 #########
 # USERS #
