@@ -31,6 +31,4 @@ function python_mem_debug() {
     export PYTHONMALLOC="pymalloc_debug"
 }
 
-alias pylint-quick='pylint --reports=n --include-ids=y'
-compdef _pylint-quick pylint-quick='pylint --reports=n --include-ids=y'
 alias serve_me='python -m http.server'
