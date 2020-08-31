@@ -1,6 +1,5 @@
 # vim: ft=zsh
 
-export PYTHONPATH="$AQITMAP:$AQITMAP/2-train_and_infer:$AQITMAP/3-analyze"
 export PYTHONSTARTUP="${XDG_CONFIG_HOME}/python/pythonrc"
 export WORKON_HOME="${P}/pyvenvs/"
 export IPYTHONDIR="${XDG_CONFIG_HOME}/python/ipython"
