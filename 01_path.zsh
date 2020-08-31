@@ -35,19 +35,14 @@ export DL="${HOME}/Downloads"
 export P="${PROJECTS_DIR}"
 # Their projects
 export O="${THEIR_PROJECTS_DIR}"
-# My Apps shortcut
-export A="${MY_APPLICATIONS_DIR}"
 # This project
 export Z="${PROJECTS_DIR}/my_zshkit"
 # Corporate
 export C="${D}/CarbonBee"
-export CODE="${C}/Recherche/AQiT/Code"
-export ETUDE="${C}/Etude"
-export AQITMAP="${CODE}/aqit-map"
 
 typeset -U path cdpath fpath manpath
 
-export PATH="${HOME}/.local/bin:${HOME}/.iterm2:${AQITMAP}:${MP_COREUTILS}:${GIT_SCRIPTS}:${JAVA_HOME}/bin:${MACPORTS_DIR}/bin:${MACPORTS_DIR}/sbin:${MY_APPLICATIONS_DIR}:${MANUALLY_INSTALLED_DIR}/bin:/usr/libexec:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin:/usr/local/MacGPG2/bin:/Library/TeX/texbin:."
+export PATH="${HOME}/.local/bin:${HOME}/.iterm2:${MP_COREUTILS}:${GIT_SCRIPTS}:${JAVA_HOME}/bin:${MACPORTS_DIR}/bin:${MACPORTS_DIR}/sbin:${MY_APPLICATIONS_DIR}:${MANUALLY_INSTALLED_DIR}/bin:/usr/libexec:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin:/usr/local/MacGPG2/bin:/Library/TeX/texbin:."
 export MANPATH="${MP_COREUTILS}/man:${JAVA_HOME}/man:${MACPORTS_DIR}/share/man:${MANUALLY_INSTALLED_DIR}/man:${MANUALLY_INSTALLED_DIR}/share/man:${MACPORTS_DIR}/etc/zsh/man/:/usr/share/man"
-export FPATH="${FPATH}:${MACPORTS_DIR}/share/zsh/site-functions/:${MACPORTS_DIR}/etc/zsh/zshrc.d/local-functions/general:$Z/functions"
-export CDPATH=".:${HOME}:${P}:${D}:${C}:${CODE}:${ETUDE}"
+export FPATH="${FPATH}:${MACPORTS_DIR}/share/zsh/site-functions/:${MACPORTS_DIR}/etc/zsh/zshrc.d/local-functions/general:${Z}/functions"
+export CDPATH=".:${HOME}:${P}:${D}:${C}"
