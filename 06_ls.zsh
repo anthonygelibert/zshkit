@@ -1,27 +1,27 @@
 # vim: ft=zsh
 
-# Don't remember "ls" calls
-alias ls=" ls -bFh --color"
-alias l="ls"
-alias la="ls -a"
-alias ll="ls -l"
+# Don't remember "exa" calls
+alias ls=" exa -bFh --color auto"
+alias l="exa"
+alias la="exa -a"
+alias ll="exa -l"
 alias le="/bin/ls -bFGhle"
 alias l@="/bin/ls -bFGhl@"
 alias lla="ll -a"
 alias lm="lla | more"
-alias lt="ls -ltr"
-alias lsad='ls -d .*(/)'
-alias lsa='ls -a .*(.)'
-alias lss='ls -l *(s,S,t)'
-alias lsl='ls -l *(@[1,10])'
-alias lsx='ls -l *(*[1,10])'
-alias lsw='ls -ld *(R,W,X.^ND/)'
-alias lsd='ls -d *(/)'
-alias lse='ls -d *(/^F)'
-alias lsbig="ls -flh *(.OL[1,10])"
-alias lssmall="ls -Srl *(.oL[1,10])"
-alias lsnew="ls -rl *(D.om[1,10])"
-alias lsold="ls -rtlh *(D.om[1,10])"
+alias lt="exa -ltr"
+alias lsad='exa -d .*(/)'
+alias lsa='exa -a .*(.)'
+alias lss='exa -l *(s,S,t)'
+alias lsl='exa -l *(@[1,10])'
+alias lsx='exa -l *(*[1,10])'
+alias lsw='exa -ld *(R,W,X.^ND/)'
+alias lsd='exa -d *(/)'
+alias lse='exa -d *(/^F)'
+alias lsbig="exa -flh *(.OL[1,10])"
+alias lssmall="exa -Srl *(.oL[1,10])"
+alias lsnew="exa -rl *(D.om[1,10])"
+alias lsold="exa -rtlh *(D.om[1,10])"
 
 # plap: list all occurrences of program in the current PATH
 function plap() {
