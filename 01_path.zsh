@@ -42,7 +42,7 @@ export C="${D}/CarbonBee"
 
 typeset -U path cdpath fpath manpath
 
-export PATH="${HOME}/.local/bin:${HOME}/.iterm2:${MP_COREUTILS}:${GIT_SCRIPTS}:${JAVA_HOME}/bin:${MACPORTS_DIR}/bin:${MACPORTS_DIR}/sbin:${MY_APPLICATIONS_DIR}:${MANUALLY_INSTALLED_DIR}/bin:/usr/libexec:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin:/usr/local/MacGPG2/bin:/Library/TeX/texbin:."
+export PATH="${HOME}/Library/Caches/com.github.rikvdkleij.intellij-haskell/lts-15/bin:${HOME}/Library/Python/3.8/bin:${HOME}/.local/bin:${HOME}/.iterm2:${MP_COREUTILS}:${GIT_SCRIPTS}:${JAVA_HOME}/bin:${MACPORTS_DIR}/bin:${MACPORTS_DIR}/sbin:${MY_APPLICATIONS_DIR}:${MANUALLY_INSTALLED_DIR}/bin:/usr/libexec:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin:/usr/local/MacGPG2/bin:/Library/TeX/texbin:."
 export MANPATH="${MP_COREUTILS}/man:${JAVA_HOME}/man:${MACPORTS_DIR}/share/man:${MANUALLY_INSTALLED_DIR}/man:${MANUALLY_INSTALLED_DIR}/share/man:${MACPORTS_DIR}/etc/zsh/man/:/usr/share/man"
 export FPATH="${FPATH}:${MACPORTS_DIR}/share/zsh/site-functions/:${MACPORTS_DIR}/etc/zsh/zshrc.d/local-functions/general:${Z}/functions"
 export CDPATH=".:${HOME}:${P}:${D}:${C}"
