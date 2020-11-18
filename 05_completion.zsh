@@ -150,13 +150,13 @@ compdef code-insiders='code'
 #[ -r /etc/ssh/ssh_known_hosts ] && _global_ssh_hosts=(${${${${(f)"$(</etc/ssh/ssh_known_hosts)"}:#[\|]*}%%\ *}%%,*}) || _ssh_hosts=()
 #[ -r ~/.ssh/known_hosts ] && _ssh_hosts=(${${${${(f)"$(<$HOME/.ssh/known_hosts)"}:#[\|]*}%%\ *}%%,*}) || _ssh_hosts=()
 #[ -r ~/.ssh/config ] && _ssh_config_hosts=(${(s: :)${(ps:\t:)${(f)"$(<$HOME/.ssh/config|grep 'Host')"}#Host}#Hostname}) || _ssh_config_hosts=()
-#hosts=(
+hosts=(
 #  "$_global_ssh_hosts[@]"
-#  "$_ssh_hosts[@]"
-#  "$_ssh_config_hosts[@]"
-#  localhost
-#)
-#zstyle ':completion:*:hosts' hosts $hosts
+  "$_ssh_hosts[@]"
+  "$_ssh_config_hosts[@]"
+  localhost
+)
+zstyle ':completion:*:hosts' hosts $hosts
 
 #########
 # USERS #
