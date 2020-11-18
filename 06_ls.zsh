@@ -1,12 +1,12 @@
 # vim: ft=zsh
 
 # Don't remember "exa" calls
-alias ls=" exa -bFh --color auto"
-alias l="exa"
-alias la="exa -a"
-alias ll="exa -l"
+alias ls=" exa -bgF --color auto"
+alias l="ls"
+alias la="ls -a"
+alias ll="ls -l"
 alias le="/bin/ls -bFGhle"
-alias l@="/bin/ls -bFGhl@"
+alias l@="ll -@"
 alias lla="ll -a"
 alias lm="lla | more"
 alias lt="exa -ltr"
