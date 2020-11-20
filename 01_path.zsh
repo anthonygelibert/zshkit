@@ -15,7 +15,7 @@ export SANDBOX_DIR="${HOME}/Documents/BacASable"
 # Mounted volumes
 export VOLUMES_DIR="/Volumes"
 # Java 14 Home on Mac OS X
-export JAVA_VERSION="15"
+export JAVA_VERSION="15.0.1"
 export JAVA_HOME="/Library/Java/JavaVirtualMachines/jdk-${JAVA_VERSION}.jdk/Contents/Home"
 # Git Scripts
 export GIT_SCRIPTS="${MY_APPLICATIONS_DIR}/git-scripts:${MY_APPLICATIONS_DIR}/git-pull-request"
