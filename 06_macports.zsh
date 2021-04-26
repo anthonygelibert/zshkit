@@ -14,6 +14,6 @@ if [[ $(command -v port) ]]; then
     alias paclean=" sudo port -pf clean --all all"
 
     # Update the list, display the outdated, make the update and uninstall the inactives
-    alias supMP="(sudo port -v selfupdate || sudo port -v sync) && port outdated && sudo port -p upgrade outdated && sudo port -u -p uninstall"
-    alias upMP="sudo port -v sync && port outdated && sudo port -p upgrade outdated && sudo port -u -p uninstall"
+    alias supMP="(sudo port -v selfupdate || sudo port -v sync) && port outdated && sudo port -p upgrade outdated && sudo port -u -p uninstall && sudo port uninstall leaves && sudo port uninstall leaves && sudo port uninstall leaves"
+    alias upMP="sudo port -v sync && port outdated && sudo port -p upgrade outdated && sudo port -u -p uninstall && sudo port uninstall leaves && sudo port uninstall leaves && sudo port uninstall leaves"
 fi
