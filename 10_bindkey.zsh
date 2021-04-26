@@ -36,7 +36,7 @@ if [[ $OSTYPE[1,6] == "darwin" ]]; then
     bindkey "^[[4~" end-of-line
     bindkey "^[[5~" up-line-or-history
 
-    bindkey '^[^N' newtab
+#    bindkey '^[^N' newtab
     bindkey '^?' backward-delete-char
     bindkey "^H" backward-delete-char
 
