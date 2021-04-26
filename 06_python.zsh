@@ -31,4 +31,3 @@ function python_mem_debug() {
 }
 
 alias serve_me='python -m http.server'
-alias pip='pip --use-feature=2020-resolver'
