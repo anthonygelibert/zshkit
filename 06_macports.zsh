@@ -1,5 +1,9 @@
 # vim: ft=zsh
 
+# MacPorts Installer addition on 2020-11-14_at_14:31:08: adding an appropriate DISPLAY variable for use with MacPorts.
+export DISPLAY=:0
+# Finished adapting your DISPLAY environment variable for use with MacPorts.
+
 # Some MacPorts alias
 if [[ $(command -v port) ]]; then
     alias pi="sudo port -v install"
