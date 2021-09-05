@@ -1,6 +1,7 @@
 # vim: ft=zsh
 
 export HISTFILE=~/.zsh_history
+export HIST_STAMPS="dd.mm.yyyy"
 export HISTSIZE=100000
 export SAVEHIST=100000
 
