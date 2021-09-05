@@ -39,6 +39,7 @@ function cleanProj() {
     for i in */; do
         (
             cd "$i"
+            echo "$i"
             [ -d .git ] && git agc && exit 0
         )
     done
@@ -48,6 +49,7 @@ function cleanProjs() {
     for i in "$@"; do
         (
             cd "$i"
+            echo "$i"
             cleanProj
         )
     done
@@ -57,6 +59,7 @@ function upProj() {
     for i in */; do
         (
             cd "$i"
+            echo "$i"
             [ -d .git ] && git up && exit 0
             [ -d .hg  ] && hg pull && hg up && exit 0
             [ -d .svn ] && svn update && exit 0
@@ -69,6 +72,7 @@ function upProjs() {
     for i in "$@"; do
         (
             cd "$i"
+            echo "$i"
             upProj
         )
     done
