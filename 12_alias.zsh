@@ -1,5 +1,6 @@
 # vim: ft=zsh
 
+alias cat="bat --theme=zenburn --style=auto"
 alias cpwd='pwd | xargs echo -n | pbcopy'
 
 alias diff="colordiff"
@@ -24,7 +25,7 @@ alias mem_hogs_ps='ps wwaxm -o pid,stat,vsize,rss,time,command | head -20'
 alias cpu_hogs='ps wwaxr -o pid,stat,%cpu,time,command | head -20'
 
 function aZ() {
-    sudo addZero.sh "$1"
+    sudo ~/Applications/addZero.sh "$1"
 }
 
 function locked_in_trash() {
@@ -61,7 +62,7 @@ function upProj() {
             cd "$i"
             echo "$i"
             [ -d .git ] && git up && exit 0
-            [ -d .hg  ] && hg pull && hg up && exit 0
+            [ -d .hg ] && hg pull && hg up && exit 0
             [ -d .svn ] && svn update && exit 0
             echo "\x1b[31mNo VCS used...\x1b[0m"
         )
@@ -77,6 +78,5 @@ function upProjs() {
         )
     done
 }
-
 
 alias last_MacGPG='grep "GPG Suite" <(curl -silent https://releases.gpgtools.org/nightlies/) | sed -e "s/^.*\(GPG Suite 20[1-2][0-9].[0-9]* ([0-9]*[a-z]*)\).*/\1/g" | tail -1'

@@ -4,9 +4,6 @@ DIRSTACKSIZE=8
 # Don't remember "cd" calls
 alias cd=" cd"
 
-alias fd=pushd
-alias sd=popd
-
 # d: jump between directories
 # Copyright 2005 Nikolai Weibull <nikolai@bitwi.se>
 # notice: option AUTO_PUSHD has to be set

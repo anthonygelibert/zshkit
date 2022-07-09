@@ -177,4 +177,4 @@ zstyle ':completion:*:*:*:users' ignored-patterns \
 zstyle '*' single-ignored show
 
 # Caching
-[ -d $HOME/.zsh/cache ] && zstyle ':completion:*' use-cache true && zstyle ':completion::complete:*' cache-path $HOME/.zcompcache/
+zstyle ':completion:*' use-cache true && zstyle ':completion::complete:*' cache-path $HOME/.zcompcache/
