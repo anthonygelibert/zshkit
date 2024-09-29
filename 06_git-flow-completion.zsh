@@ -1,1 +1,0 @@
-/Users/tony/Applications/git-flow-completion/git-flow-completion.plugin.zsh

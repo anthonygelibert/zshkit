@@ -1,7 +1,6 @@
 # vim: ft=zsh
 
-
-export PS1=' '
+export PS1='☕️ '
 # secondary prompt, printed when the shell need
 # more information to complete a command.
 PS2='%_> '

@@ -10,11 +10,12 @@ export MY_APPLICATIONS_DIR="${HOME}/Applications"
 export PROJECTS_DIR="${HOME}/Documents/Personnel"
 # Mounted volumes
 export VOLUMES_DIR="/Volumes"
-# Java 18 Home on Mac OS X
-export JAVA_VERSION="18.0.1"
-export JAVA_HOME="/Library/Java/JavaVirtualMachines/jdk-${JAVA_VERSION}.jdk/Contents/Home"
+# Java 21 Home on Mac OS X
+export JAVA_VERSION="graalvm-jdk-22+36.1"
+export JAVA_HOME="/Library/Java/JavaVirtualMachines/${JAVA_VERSION}/Contents/Home"
 
-export DIFF_SO_FANCY="${MY_APPLICATIONS_DIR}/diff-so-fancy"
+export IDEA_HOME="/Applications/IntelliJ IDEA.app/Contents/MacOS"
+
 # MacPorts Coreutils
 export MP_COREUTILS="${MACPORTS_DIR}/libexec/gnubin"
 # XDG
@@ -36,7 +37,7 @@ export C="${D}/CarbonBee"
 
 typeset -U path cdpath fpath manpath
 
-export PATH="/Users/tony/.local/bin:${HOME}/.ghcup/bin:${MY_APPLICATIONS_DIR}:${DIFF_SO_FANCY}:${HOME}/.iterm2:${MP_COREUTILS}:${JAVA_HOME}/bin:${MACPORTS_DIR}/bin:${MACPORTS_DIR}/sbin:${MANUALLY_INSTALLED_DIR}/bin:/usr/libexec:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/MacGPG2/bin:/Library/TeX/texbin:."
+export PATH="${IDEA_HOME}:${MY_APPLICATIONS_DIR}:${MP_COREUTILS}:${JAVA_HOME}/bin:${MACPORTS_DIR}/bin:${MACPORTS_DIR}/sbin:${MANUALLY_INSTALLED_DIR}/bin:${MANUALLY_INSTALLED_DIR}/sbin:/usr/libexec:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/MacGPG2/bin:/Library/TeX/texbin:."
 export MANPATH="${MP_COREUTILS}/man:${JAVA_HOME}/man:${MACPORTS_DIR}/share/man:${MANUALLY_INSTALLED_DIR}/man:${MANUALLY_INSTALLED_DIR}/share/man:${MACPORTS_DIR}/etc/zsh/man/:/usr/share/man"
 export FPATH="${FPATH}:${MACPORTS_DIR}/share/zsh/site-functions/:${MACPORTS_DIR}/etc/zsh/zshrc.d/local-functions/general:${MACPORTS_DIR}/etc/zsh/zshrc.d/local-functions/opt:/opt/local/etc/zsh/zshrc.d/local-functions/darwin:/opt/local/share/git/contrib/completion:${Z}/functions"
 export CDPATH=".:${HOME}:${P}:${D}:${C}"
