@@ -165,4 +165,5 @@ zstyle ':completion:*:*:*:users' ignored-patterns \
 zstyle '*' single-ignored show
 
 # Caching
-zstyle ':completion:*' use-cache true && zstyle ':completion::complete:*' cache-path $HOME/.zcompcache/
+zstyle ':completion:*' use-cache true
+zstyle ':completion::complete:*' cache-path ${XDG_CACHE_HOME}/zsh
