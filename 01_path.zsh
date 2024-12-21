@@ -20,6 +20,7 @@ export IDEA_HOME="/Applications/IntelliJ IDEA.app/Contents/MacOS"
 export MP_COREUTILS="${MACPORTS_DIR}/libexec/gnubin"
 # XDG
 export XDG_CONFIG_HOME="${HOME}/.config"
+export XDG_CACHE_HOME="${HOME}/.cache"
 
 # Some usefull paths (cd ~D)
 # My Documents
