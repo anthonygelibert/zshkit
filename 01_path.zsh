@@ -11,7 +11,7 @@ export PROJECTS_DIR="${HOME}/Documents/Personnel"
 # Mounted volumes
 export VOLUMES_DIR="/Volumes"
 # Java 21 Home on Mac OS X
-export JAVA_VERSION="graalvm-jdk-22+36.1"
+export JAVA_VERSION="graalvm-jdk-23.0.1+11.1"
 export JAVA_HOME="/Library/Java/JavaVirtualMachines/${JAVA_VERSION}/Contents/Home"
 
 export IDEA_HOME="/Applications/IntelliJ IDEA.app/Contents/MacOS"
