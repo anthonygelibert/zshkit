@@ -1,7 +1,7 @@
 # vim: ft=zsh
 
-alias cat="bat --style=auto "
-alias bat="bat --style=auto "
+alias bat="bat --style=auto --theme=ansi "
+alias -g cat="bat "
 
 alias cpwd='pwd | xargs echo -n | pbcopy'
 
@@ -25,6 +25,8 @@ alias -g X='| xargs '
 alias mem_hogs_top='top -l 1 -o rsize | head -30'
 alias mem_hogs_ps='ps wwaxm -o pid,stat,vsize,rss,time,command | head -20'
 alias cpu_hogs='ps wwaxr -o pid,stat,%cpu,time,command | head -20'
+
+alias create_ramdisk='diskutil erasevolume APFS "RAMDisk" `hdiutil attach -nomount ram://8388608`'
 
 function aZ() {
     noglob sudo ~/Applications/addZero.sh "$1"
@@ -82,3 +84,7 @@ function upProjs() {
 }
 
 alias last_MacGPG='grep "GPG Suite" <(curl -silent https://releases.gpgtools.org/nightlies/) | sed -e "s/^.*\(GPG Suite 20[1-2][0-9].[0-9]* ([0-9]*[a-z]*)\).*/\1/g" | tail -1'
+
+# Show/hide hidden files in the Finder
+alias showfiles="defaults write com.apple.finder AppleShowAllFiles -bool true && killall Finder"
+alias hidefiles="defaults write com.apple.finder AppleShowAllFiles -bool false && killall Finder"
