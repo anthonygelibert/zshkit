@@ -2,21 +2,10 @@
 
 export HISTFILE=~/.zsh_history
 export HIST_STAMPS="dd.mm.yyyy"
-export HISTSIZE=100000
-export SAVEHIST=100000
+export HISTSIZE=1000000
+export SAVEHIST=10000
 
-if [ "$HIST_STAMPS" = "mm/dd/yyyy" ]
-then
-    alias history='fc -fl 1'
-elif [ "$HIST_STAMPS" = "dd.mm.yyyy" ]
-then
-    alias history='fc -El 1'
-elif [ "$HIST_STAMPS" = "yyyy-mm-dd" ]
-then
-    alias history='fc -il 1'
-else
-    alias history='fc -l 1'
-fi
+alias history='fc -El 1'
 
 # Grep the history with 'h'
 function h() {
