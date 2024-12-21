@@ -1,6 +1,7 @@
 # vim: ft=zsh
 
 export MD_FLAVOR="markdown\
++header_attributes\
 +gfm_auto_identifiers\
 +citations\
 +footnotes\
@@ -27,6 +28,10 @@ export MD_FLAVOR="markdown\
 +backtick_code_blocks\
 +inline_notes\
 +mark\
++line_blocks\
++fancy_lists\
++startnum\
++intraword_underscores\
 +emoji"
 
 export PANDOC_PARAM="-F pandoc-crossref -F mermaid-filter -M autoSectionLabels \
