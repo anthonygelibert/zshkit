@@ -1,5 +1,3 @@
-# vim: ft=zsh
-
 export LANG="fr_FR.UTF-8"
 export LANGUAGE="fr_FR.UTF-8"
 export LC_COLLATE="fr_FR.UTF-8"

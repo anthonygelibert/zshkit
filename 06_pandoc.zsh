@@ -1,5 +1,3 @@
-# vim: ft=zsh
-
 export MD_FLAVOR="markdown\
 +header_attributes\
 +gfm_auto_identifiers\
@@ -32,9 +30,12 @@ export MD_FLAVOR="markdown\
 +fancy_lists\
 +startnum\
 +intraword_underscores\
-+emoji"
++emoji\
++rebase_relative_paths\
++abbreviations"
 
-export PANDOC_PARAM="-F pandoc-crossref -F mermaid-filter -M autoSectionLabels \
+export PANDOC_PARAM="-F pandoc-crossref -F mermaid-filter -F wikilink-filter.py \
+-M autoSectionLabels \
 --citeproc \
 --pdf-engine=lualatex \
 --embed-resources --standalone \

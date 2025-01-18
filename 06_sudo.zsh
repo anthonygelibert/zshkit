@@ -1,10 +1,8 @@
-# vim: ft=zsh
+alias _="sudo "
+alias please="sudo "
 
-alias _='sudo '
-alias please='sudo '
-
-alias unsudo='sudo -k'
-alias thanks='sudo -k'
+alias unsudo="sudo -k"
+alias thanks="sudo -k"
 
 function sudo-command-line() {
     [[ -z $BUFFER ]] && zle up-history

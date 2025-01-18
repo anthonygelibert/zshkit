@@ -1,30 +1,28 @@
-# vim: ft=zsh
-
 alias bat="bat --style=auto --theme=ansi "
 alias -g cat="bat "
 
-alias cpwd='pwd | xargs echo -n | pbcopy'
+alias cpwd="pwd | xargs echo -n | pbcopy"
 
 alias diff="colordiff "
-alias -g grep='grep -E --colour=auto --exclude-dir={.bzr,.cvs,.git,.hg,.svn} '
+alias -g grep="grep -E --colour=auto --exclude-dir={.bzr,.cvs,.git,.hg,.svn} "
 
 alias :q=" exit"
 alias week='date "+%V"'
 
-alias -g C='| cut '
-alias -g G='| grep '
-alias -g GN='| grep -v '
-alias -g H='| head '
-alias -g L='| less '
-alias -g M='| most '
-alias -g NE='2> /dev/null'
-alias -g NUL='> /dev/null 2>&1'
-alias -g T='| tail '
-alias -g X='| xargs '
+alias -g C="| cut "
+alias -g G="| grep "
+alias -g GN="| grep -v "
+alias -g H="| head "
+alias -g L="| less "
+alias -g M="| most "
+alias -g NE="2> /dev/null"
+alias -g NUL="> /dev/null 2>&1"
+alias -g T="| tail "
+alias -g X="| xargs "
 
-alias mem_hogs_top='top -l 1 -o rsize | head -30'
-alias mem_hogs_ps='ps wwaxm -o pid,stat,vsize,rss,time,command | head -20'
-alias cpu_hogs='ps wwaxr -o pid,stat,%cpu,time,command | head -20'
+alias mem_hogs_top="top -l 1 -o rsize | head -30"
+alias mem_hogs_ps="ps wwaxm -o pid,stat,vsize,rss,time,command | head -20"
+alias cpu_hogs="ps wwaxr -o pid,stat,%cpu,time,command | head -20"
 
 alias create_ramdisk='diskutil erasevolume APFS "RAMDisk" `hdiutil attach -nomount ram://8388608`'
 

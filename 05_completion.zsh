@@ -1,5 +1,3 @@
-# vim: ft=zsh
-
 #  use 'zstyle' for getting current settings
 #  press ^Xh (control-x h) for getting tags in context
 #        ^X? (control-x ?) to run complete_debug with trace output

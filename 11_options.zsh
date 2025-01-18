@@ -1,9 +1,4 @@
-# vim: ft=zsh
-
-###################
-### ZSH OPTIONS
-### Info : http://zsh.sourceforge.net/Doc/Release/Options.html
-
+# Info : http://zsh.sourceforge.net/Doc/Release/Options.html
 setopt ALIASES                # Expand aliases.
 unsetopt ALL_EXPORT           # NO -> All parameters subsequently defined are automatically exported.
 unsetopt ALWAYS_TO_END        # NO -> If a completion with the cursor in the word was started and it results in only one match, the cursor is placed at the end of the word.

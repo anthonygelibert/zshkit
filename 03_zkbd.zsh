@@ -1,3 +1,1 @@
-# vim: ft=zsh
-
-source $Z/default_zkbd
+source ${Z}/default_zkbd

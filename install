@@ -1,7 +1,6 @@
 #!/usr/bin/env zsh
-# vim: ft=zsh
 
-mydir=`dirname $0`
+mydir=$(dirname $0)
 if [ $mydir = . ]; then
     mydir=$(pwd)
 fi
@@ -14,5 +13,5 @@ ln -s $mydir/help $HOME/.zsh/help
 echo "My Directory: $mydir"
 cp $HOME/.zshenv $HOME/.zshenv.pre_zshkit
 cp $HOME/.zshrc $HOME/.zshrc.pre_zshkit
-echo "[ \"\$TERM\" = \"xterm-256color\" ] && source $mydir/env" > $HOME/.zshenv
-echo "[ \"\$TERM\" = \"xterm-256color\" ] && source $mydir/rc" > $HOME/.zshrc
+echo "[ \"\$TERM\" = \"xterm-256color\" ] && source $mydir/env" >$HOME/.zshenv
+echo "[ \"\$TERM\" = \"xterm-256color\" ] && source $mydir/rc" >$HOME/.zshrc

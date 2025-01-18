@@ -1,5 +1,3 @@
-# vim: ft=zsh
-
 typeset -g -A key
 
 # Press "Ctrl-o" in a menu to select an option and continue

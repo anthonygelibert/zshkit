@@ -1,5 +1,3 @@
-# vim: ft=zsh
-
 # Open manpage with Preview.app
 # Uses ps2pdf conversion because it's faster
 function man2pdf() {

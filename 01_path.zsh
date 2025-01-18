@@ -1,5 +1,3 @@
-# vim: ft=zsh
-
 # MacPorts: http://www.macports.org
 export MACPORTS_DIR="/opt/local"
 # Manually
@@ -10,10 +8,10 @@ export MY_APPLICATIONS_DIR="${HOME}/Applications"
 export PROJECTS_DIR="${HOME}/Documents/Personnel"
 # Mounted volumes
 export VOLUMES_DIR="/Volumes"
-# Java 21 Home on Mac OS X
+# GraalJVM 23
 export JAVA_VERSION="graalvm-jdk-23.0.1+11.1"
 export JAVA_HOME="/Library/Java/JavaVirtualMachines/${JAVA_VERSION}/Contents/Home"
-
+# IDEA home
 export IDEA_HOME="/Applications/IntelliJ IDEA.app/Contents/MacOS"
 
 # MacPorts Coreutils
