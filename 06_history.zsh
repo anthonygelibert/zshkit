@@ -1,4 +1,4 @@
-export HISTFILE="${HOME}/.zsh_history"
+export HISTFILE="${XDG_STATE_HOME}/zsh/history"
 export HIST_STAMPS="dd.mm.yyyy"
 export HISTSIZE=1000000
 export SAVEHIST=10000

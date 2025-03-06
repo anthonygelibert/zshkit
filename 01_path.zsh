@@ -19,6 +19,20 @@ export MP_COREUTILS="${MACPORTS_DIR}/libexec/gnubin"
 # XDG
 export XDG_CONFIG_HOME="${HOME}/.config"
 export XDG_CACHE_HOME="${HOME}/.cache"
+export XDG_DATA_HOME="${HOME}/.local/share"
+export XDG_STATE_HOME="${HOME}/.local/state"
+
+export DOCKER_CONFIG="${XDG_CONFIG_HOME}/docker"
+
+export KERAS_HOME="${XDG_STATE_HOME}/keras"
+
+export NPM_CONFIG_INIT_MODULE="${XDG_CONFIG_HOME}/npm/config/npm-init.js"
+export NPM_CONFIG_CACHE="${XDG_CACHE_HOME}/npm"
+export NPM_CONFIG_TMP="${XDG_RUNTIME_DIR}/npm"
+
+export SQLITE_HISTORY="${XDG_DATA_HOME}/sqlite/sqlite_history"
+
+export MAVEN_REPOSITORY="${XDG_DATA_HOME}/maven/repository"
 
 # Some usefull paths (cd ~D)
 # My Documents

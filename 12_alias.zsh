@@ -26,6 +26,10 @@ alias cpu_hogs="ps wwaxr -o pid,stat,%cpu,time,command | head -20"
 
 alias create_ramdisk='diskutil erasevolume APFS "RAMDisk" `hdiutil attach -nomount ram://8388608`'
 
+# To respect XDG
+alias wget="wget --hsts-file=$XDG_DATA_HOME/wget-hsts"
+alias mvn="mvn -gs $XDG_CONFIG_HOME/maven/settings.xml"
+
 function aZ() {
     noglob sudo ~/Applications/addZero.sh "$1"
 }

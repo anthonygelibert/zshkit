@@ -4,7 +4,7 @@
 
 # Files to ignore during completion
 autoload -Uz compinit
-compinit
+compinit -d "$XDG_CACHE_HOME"/zsh/zcompdump-"$ZSH_VERSION"
 
 zmodload zsh/complist
 
@@ -164,4 +164,4 @@ zstyle '*' single-ignored show
 
 # Caching
 zstyle ':completion:*' use-cache true
-zstyle ':completion::complete:*' cache-path ${XDG_CACHE_HOME}/zsh
+zstyle ':completion:*' cache-path "${XDG_CACHE_HOME}/zsh/zshcompcache"
