@@ -4,7 +4,7 @@ unsetopt ALL_EXPORT           # NO -> All parameters subsequently defined are au
 unsetopt ALWAYS_TO_END        # NO -> If a completion with the cursor in the word was started and it results in only one match, the cursor is placed at the end of the word.
 setopt APPEND_HISTORY         # If this is set, zsh sessions will append their history list to the history file, rather than overwrite it.
 setopt AUTO_CD                # If a command is issued that can't be executed as a normal command, and the command is the name of a directory, perform the cd command to that directory.
-setopt AUTO_CONTINUE          # With this option set, stopped jobs that are removed from the job table with the disown builtin command are automatically sent a CONT signal to make them running.
+unsetopt AUTO_CONTINUE        # NO -> With this option set, stopped jobs that are removed from the job table with the disown builtin command are automatically sent a CONT signal to make them running.
 setopt AUTO_LIST              # Automatically list choices on an ambiguous completion.
 setopt AUTO_MENU              # Automatically use menu completion after the second consecutive request for completion, for example by pressing the tab key repeatedly. This option is overridden by MENU_COMPLETE.
 setopt AUTO_NAME_DIRS         # Any parameter that is set to the absolute name of a directory immediately becomes a name for that directory in the usual form ~param.
@@ -13,7 +13,7 @@ setopt AUTO_PARAM_SLASH       # If a parameter is completed whose content is the
 setopt AUTO_PUSHD             # Make cd push the old directory onto the directory stack.
 setopt AUTO_REMOVE_SLASH      # When the last character resulting from a completion is a slash and the next character typed is a word delimiter, a slash, or a character that ends a command (such as a semicolon or an ampersand), remove the slash.
 setopt BAD_PATTERN            # If a pattern for filename generation is badly formed, print an error. If this option is unset, the pattern will be left unchanged.
-setopt BANG_HIST              # Perform textual history expansion, csh-style, treating the character `!' specially.
+unsetopt BANG_HIST            # NO -> Perform textual history expansion, csh-style, treating the character `!' specially.
 setopt BARE_GLOB_QUAL         # In a glob pattern, treat a trailing set of parentheses as a qualifier list, if it contains no ‘|’, ‘(’ or (if special) ‘~’ characters. See Filename Generation.
 unsetopt BASH_AUTO_LIST       # NO -> On an ambiguous completion, automatically list choices when the completion function is called twice in succession.
 unsetopt BEEP                 # NO -> Beep on error in ZLE.
@@ -56,7 +56,6 @@ setopt HIST_ALLOW_CLOBBER     # Add | to output redirections in the history. Thi
 setopt HASH_CMDS              # Note the location of each command the first time it is executed
 setopt HASH_DIRS              # Whenever a command name is hashed, hash the directory containing it, as well as all directories that occur earlier in the path.
 setopt HASH_LIST_ALL          # Whenever a command completion is attempted, make sure the entire command path is hashed first. This makes the first completion slower.
-setopt HIST_ALLOW_CLOBBER     # Add '|' to output redirections in the history.
 unsetopt HIST_BEEP            # NO -> Beep when an attempt is made to access a history entry which isn't there.
 setopt HIST_EXPIRE_DUPS_FIRST # If the internal history needs to be trimmed to add the current command line, setting this option will cause the oldest history event that has a duplicate to be lost before losing a unique event from the list.
 setopt HIST_FCNTL_LOCK        # When writing out the history file, by default zsh uses ad-hoc file locking to avoid known problems with locking on some operating systems.
@@ -74,7 +73,7 @@ unsetopt HUP                  # NO -> Send the HUP signal to running jobs when t
 unsetopt IGNORE_BRACES        # NO -> Do not perform brace expansion.
 unsetopt IGNORE_CLOSE_BRACES
 setopt IGNORE_EOF           # Do not exit on end-of-file. Require the use of exit or logout instead.
-unsetopt INC_APPEND_HISTORY # This options works like APPEND_HISTORY except that new history lines are added to the $HISTFILE incrementally (as soon as they are entered), rather than waiting until the shell exits.
+setopt INC_APPEND_HISTORY   # This options works like APPEND_HISTORY except that new history lines are added to the $HISTFILE incrementally (as soon as they are entered), rather than waiting until the shell exits.
 setopt INTERACTIVE_COMMENTS # Allow comments even in interactive shells.
 setopt LIST_AMBIGUOUS       # This option works when AUTO_LIST or BASH_AUTO_LIST is also set.
 unsetopt LIST_BEEP          # NO -> Beep on an ambiguous completion.
@@ -85,11 +84,11 @@ setopt LONG_LIST_JOBS       # List jobs in the long format by default.
 setopt MAGIC_EQUAL_SUBST    # All unquoted arguments of the form identifier=expression appearing after the command name have file expansion (that is, where expression has a leading `~' or `=') performed on expression as if it were a parameter assignment. The argument is not otherwise treated specially: in other words, it is subsequently treated as a single word, not as an assignment.
 unsetopt MAIL_WARNING       # NO -> Print a warning message if a mail file has been accessed since the shell last checked.
 setopt MARK_DIRS            # Append a trailing / to all directory names resulting from filename generation (globbing).
-setopt MENU_COMPLETE        # On an ambiguous completion, instead of listing possibilities or beeping, insert the first match immediately.
+unsetopt MENU_COMPLETE      # NO -> On an ambiguous completion, instead of listing possibilities or beeping, insert the first match immediately.
 setopt MONITOR              # Allow job control.
 setopt MULTIOS              # Perform implicit tees or cats when multiple redirections are attempted
 unsetopt MULTI_FUNC_DEF     # NO -> Allow definitions of multiple functions at once in the form ‘fn1 fn2...()’; if the option is not set, this causes a parse error.
-setopt NOMATCH              # If a pattern for filename generation has no matches, print an error, instead of leaving it unchanged in the argument list. This also applies to file expansion of an initial ~ or =.
+unsetopt NOMATCH            # NO -> If a pattern for filename generation has no matches, print an error, instead of leaving it unchanged in the argument list. This also applies to file expansion of an initial ~ or =.
 setopt NO_HUP               #
 setopt NOTIFY               # Report the status of background jobs immediately, rather than waiting until just before printing a prompt.
 unsetopt NULL_GLOB          # NO -> If a pattern for filename generation has no matches, delete the pattern from the argument list instead of reporting an error.
@@ -101,6 +100,8 @@ setopt POSIX_BUILTINS       # When this option is set the command builtin can be
 setopt POSIX_CD             # Modifies the behaviour of cd, chdir and pushd commands to make them more compatible with the POSIX standard.
 setopt POSIX_JOBS           # This option makes job control more compliant with the POSIX standard.
 setopt PROMPT_PERCENT       # If set, ‘%’ is treated specially in prompt expansion.
+setopt PROMPT_CR
+setopt PROMPT_SP
 unsetopt PROMPT_SUBST       # NO -> If set, parameter expansion, command substitution and arithmetic expansion are performed in prompts.
 setopt PRINT_EIGHT_BIT      # Print eight bit characters literally in completion lists, etc.
 unsetopt PRINT_EXIT_VALUE   # NO -> Print the exit value of programs with non-zero exit status.
@@ -109,7 +110,8 @@ setopt PUSHD_SILENT         # Do not print the directory stack after pushd or po
 setopt PUSHD_TO_HOME        # Have pushd with no arguments act like `pushd $HOME'.
 setopt RC_EXPAND_PARAM      # Array expansions of the form foo${xx}bar, where the parameter xx is set to (a b c), are substituted with fooabar foobbar foocbar instead of the default fooa b cbar.
 unsetopt RC_QUOTES          # NO -> Allow the character sequence '' to signify a single quote within singly quoted strings.
-setopt RM_STAR_SILENT       # Do not query the user before executing `rm *' or `rm path/*'.
+unsetopt RM_STAR_SILENT
+setopt RM_STAR_WAIT         # Query the user before executing `rm *' or `rm path/*'.
 setopt SHARE_HISTORY        # This option both imports new commands from the history file, and also causes your typed commands to be appended to the history file (the latter is like specifying INC_APPEND_HISTORY).
 unsetopt SH_FILE_EXPANSION  # NO -> Perform filename expansion (e.g., ~ expansion) before parameter expansion, command substitution, arithmetic expansion and brace expansion. If this option is unset, it is performed after brace expansion, so things like ~$USERNAME and ~{pfalstad,rc} will work.
 setopt SHORT_LOOPS          # Allow the short forms of for, select, if, and function constructs.

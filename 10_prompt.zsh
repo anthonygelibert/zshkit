@@ -1,4 +1,8 @@
-export PS1=' ☕️ '
+export PS1='☕️  '
+if [[ ("${TERMINAL_EMULATOR}" = "JetBrains-JediTerm") ]]; then
+    source ".venv/bin/activate"
+fi
+
 # secondary prompt, printed when the shell need
 # more information to complete a command.
 export PS2='%_> '

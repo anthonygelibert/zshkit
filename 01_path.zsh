@@ -1,3 +1,5 @@
+[[ -o interactive ]] || return
+
 # MacPorts: http://www.macports.org
 export MACPORTS_DIR="/opt/local"
 # Manually
@@ -9,7 +11,7 @@ export PROJECTS_DIR="${HOME}/Documents/Personnel"
 # Mounted volumes
 export VOLUMES_DIR="/Volumes"
 # GraalJVM 23
-export JAVA_VERSION="graalvm-jdk-23.0.1+11.1"
+export JAVA_VERSION="jdk-25.jdk"
 export JAVA_HOME="/Library/Java/JavaVirtualMachines/${JAVA_VERSION}/Contents/Home"
 # IDEA home
 export IDEA_HOME="/Applications/IntelliJ IDEA.app/Contents/MacOS"
@@ -50,7 +52,8 @@ export C="${D}/CarbonBee"
 
 typeset -U path cdpath fpath manpath
 
-export PATH="${IDEA_HOME}:${MY_APPLICATIONS_DIR}:${MP_COREUTILS}:${JAVA_HOME}/bin:${MACPORTS_DIR}/bin:${MACPORTS_DIR}/sbin:${MANUALLY_INSTALLED_DIR}/bin:${MANUALLY_INSTALLED_DIR}/sbin:/usr/libexec:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/MacGPG2/bin:/Library/TeX/texbin:."
+export PATH="${IDEA_HOME}:${MY_APPLICATIONS_DIR}:${MP_COREUTILS}:${JAVA_HOME}/bin:${MACPORTS_DIR}/bin:${MACPORTS_DIR}/sbin:${MANUALLY_INSTALLED_DIR}/bin:${MANUALLY_INSTALLED_DIR}/sbin:${HOME}/.local/bin:/usr/libexec:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/MacGPG2/bin:/Library/TeX/texbin:."
 export MANPATH="${MP_COREUTILS}/man:${JAVA_HOME}/man:${MACPORTS_DIR}/share/man:/usr/share/man"
-export FPATH="${FPATH}:/opt/local/share/git/contrib/completion:${Z}/functions"
+#export FPATH="${FPATH}:/opt/local/share/git/contrib/completion:${Z}/functions"
+export FPATH="/usr/local/share/zsh/site-functions:/opt/local/share/zsh/site-functions:/opt/local/share/zsh/5.9/functions:/opt/local/share/git/contrib/completion:${Z}/functions"
 export CDPATH=".:${HOME}:${P}:${D}:${C}"

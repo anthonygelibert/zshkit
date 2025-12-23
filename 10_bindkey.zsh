@@ -1,7 +1,14 @@
 typeset -g -A key
 
-# Press "Ctrl-o" in a menu to select an option and continue
-# in the menu
+# ——— Paramètres généraux ———
+# Délimiteurs "ingénieur" : les caractères ci-dessous NE font PAS partie d’un mot
+# (impacts: backward-word, forward-word, etc.)
+export WORDCHARS="*?[]~=&;!#$%^(){}<>"
+
+# history-beginning-search (↑/↓ recherche par préfixe)
+autoload -Uz history-beginning-search-backward history-beginning-search-forward
+
+# Press "Ctrl-o" in a menu to select an option and continue in the menu
 bindkey -M menuselect '\C-o' accept-and-menu-complete
 
 # Press "q" in a list to quit
@@ -21,7 +28,14 @@ function rationalize-dot() {
 zle -N rationalize-dot
 bindkey . rationalize-dot
 
-bindkey "^R" history-incremental-search-backward
+# Historique :
+# ↑/↓ : history-beginning-search (par préfixe)
+bindkey '^[[A' history-beginning-search-backward
+bindkey '^[[B' history-beginning-search-forward
+# Ctrl-R : recherche incrémentale inverse
+bindkey '^R' history-incremental-pattern-search-backward
+# Ctrl-S : (souvent bloqué par flow control ; vous avez NO_FLOW_CONTROL) recherche vers l'avant
+bindkey '^S' history-incremental-pattern-search-forward
 
 # Terminal.app sucks :'(
 bindkey '^[^[[D' backward-word
@@ -33,6 +47,5 @@ bindkey '^[[3~' delete-char
 bindkey "^[[4~" end-of-line
 bindkey "^[[5~" up-line-or-history
 
-#    bindkey '^[^N' newtab
 bindkey '^?' backward-delete-char
 bindkey "^H" backward-delete-char

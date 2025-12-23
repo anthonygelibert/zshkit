@@ -4,8 +4,16 @@
 # http://disq.us/p/f55b78
 setopt noglobalrcs
 
-local mydir=$(dirname $0)
+# Répertoire de ce fichier (fiable pour fichiers sourcés en Zsh)
+#    ${(%):-%N} → chemin du fichier sourcé courant ; :A → absolu ; :h → dirname
+local script=${(%):-%N}
+local mydir=${${script:A}:h}
 
-for f in $mydir/??_*.zsh; do
-    source $f
+# Charger tous les NN_*.zsh du répertoire, s’ils existent
+#    (N) nullglob, (on) tri “ordinal” (lexicographique), (.) fichiers normaux
+local f
+for f in "$mydir"/??_*.zsh(Non.); do
+  # Sécurité: ne pas se re-sourcer soi-même, même si le nom matche
+  [[ $f == "$script" ]] && continue
+  source -- "$f"
 done

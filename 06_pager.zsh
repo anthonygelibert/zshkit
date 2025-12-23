@@ -1,5 +1,5 @@
 export LESSOPEN="| /opt/local/bin/lesspipe.sh %s"
-export LESS="-R -M --shift 5"
-export LESSCHARSET="utf-8"
-export PAGER="most"
-export MOST_SWITCHES="-s"
+export PAGER="less"
+export LESS='-FRSX'       # rapide, no-wrap, quitte si une page, respecte couleurs (-R si besoin)
+export MANPAGER='less -R'
+export BAT_PAGER='less -FR'

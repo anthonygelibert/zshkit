@@ -4,7 +4,16 @@
 
 # Files to ignore during completion
 autoload -Uz compinit
-compinit -d "$XDG_CACHE_HOME"/zsh/zcompdump-"$ZSH_VERSION"
+
+# Cache dédié et compilé
+_ZCACHEDIR="${XDG_CACHE_HOME:-$HOME/.cache}/zsh"
+mkdir -p "$_ZCACHEDIR"
+compinit -C -d "$_ZCACHEDIR/zcompdump-$ZSH_VERSION"
+
+# Compile le zcompdump si non compilé (1x/jour)
+if [[ -s "$_ZCACHEDIR/zcompdump-$ZSH_VERSION" && ( ! -s "$_ZCACHEDIR/zcompdump-$ZSH_VERSION.zwc" || "$_ZCACHEDIR/zcompdump-$ZSH_VERSION" -nt "$_ZCACHEDIR/zcompdump-$ZSH_VERSION.zwc" ) ]]; then
+  zcompile "$_ZCACHEDIR/zcompdump-$ZSH_VERSION"
+fi
 
 zmodload zsh/complist
 
@@ -12,7 +21,6 @@ autoload -U zsh-mime-setup
 autoload -U zsh-mime-handler
 zsh-mime-setup
 
-zstyle ':completion:*' use-perl true                                            # Various parts of the function system use awk to extract words from files or command output as this universally available. However, many versions of awk have arbitrary limits on the size of input. If this style is set, perl will be used instead.
 zstyle ':completion:*' use-ip true                                              # By default, the function _hosts that completes host names strips IP addresses from entries read from host databases such as NIS and ssh files. If this style is true, the corresponding IP addresses can be completed as well.
 zstyle ':completion:*' list-grouped true                                        # If this style is ‘true’ (the default), the completion system will try to make certain completion listings more compact by grouping matches.
 zstyle ':completion:*' list-packed true                                         # This is tested for each tag valid in the current context as well as the default tag. If it is set to ‘true’, the corresponding matches appear in listings as if the LIST_PACKED option were set.
@@ -164,4 +172,4 @@ zstyle '*' single-ignored show
 
 # Caching
 zstyle ':completion:*' use-cache true
-zstyle ':completion:*' cache-path "${XDG_CACHE_HOME}/zsh/zshcompcache"
+zstyle ':completion:*' cache-path "$_ZCACHEDIR/compcache"
