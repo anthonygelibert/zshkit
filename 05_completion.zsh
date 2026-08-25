@@ -101,56 +101,13 @@ zstyle ':completion:*:*:git:*' script /opt/local/share/git/contrib/completion/gi
 # Only java files for javac
 zstyle ':completion:*:javac:*' file-patterns '*.java'
 
-# DJVU files for djvu2pdf
-zstyle ':completion:*:djvu2pdf:*' file-patterns '*.djvu'
-
-# EXE files for Wine
-zstyle ':completion:*:wine:*' file-patterns '*.exe'
-
-# LUA files for lua and luajit.
-zstyle ':completion:*:lua:*' file-patterns '*.lua'
-zstyle ':completion:*:luajit:*' file-patterns '*.lua'
-
 # No binary files for editors and pagers
 zstyle ':completion:*:vim:*' ignored-patterns '*.(o|a|so|dvi|fig|out|class|pdf|ps|pyc)'
-zstyle ':completion:*:mvim:*' ignored-patterns '*.(o|a|so|dvi|fig|out|class|pdf|ps|pyc)'
-zstyle ':completion:*:atom:*' ignored-patterns '*.(o|a|so|dvi|fig|out|class|pdf|ps|pyc)'
 zstyle ':completion:*:less:*' ignored-patterns '*.(o|a|so|dvi|fig|out|class|pdf|ps|pyc)'
-zstyle ':completion:*:zless:*' ignored-patterns '*.(o|a|so|dvi|fig|out|class|pdf|ps|pyc)'
 zstyle ':completion:*:more:*' ignored-patterns '*.(o|a|so|dvi|fig|out|class|pdf|ps|pyc)'
-zstyle ':completion:*:most:*' ignored-patterns '*.(o|a|so|dvi|fig|out|class|pdf|ps|pyc)'
-
-# PDF files only for xpdf
-zstyle ':completion:*:xpdf:*' file-patterns '*.pdf'
 
 # TAR files only for tar
 zstyle ':completion:*:tar:*' file-patterns '*.tar|*.tgz|*.tz|*.tar.Z|*.tar.bz2|*.tZ|*.tar.gz'
-
-# DVI files for dvi commands
-zstyle ':completion:*:xdvi:*' file-patterns '*.dvi'
-zstyle ':completion:*:dvips:*' file-patterns '*.dvi'
-
-# Clean LaTeX
-zstyle ':completion:*:cleanLatex.sh:*' file-patterns '*.tex'
-
-# Code Insiders is Code
-compdef code-insiders='code'
-
-#########
-# HOSTS #
-#########
-
-# Use /etc/hosts, known_hosts and SSH config for hostname completion
-#[ -r /etc/ssh/ssh_known_hosts ] && _global_ssh_hosts=(${${${${(f)"$(</etc/ssh/ssh_known_hosts)"}:#[\|]*}%%\ *}%%,*}) || _ssh_hosts=()
-#[ -r ~/.ssh/known_hosts ] && _ssh_hosts=(${${${${(f)"$(<$HOME/.ssh/known_hosts)"}:#[\|]*}%%\ *}%%,*}) || _ssh_hosts=()
-#[ -r ~/.ssh/config ] && _ssh_config_hosts=(${(s: :)${(ps:\t:)${(f)"$(<$HOME/.ssh/config|grep 'Host')"}#Host}#Hostname}) || _ssh_config_hosts=()
-hosts=(
-  #  "$_global_ssh_hosts[@]"
-  "$_ssh_hosts[@]"
-  "$_ssh_config_hosts[@]"
-  localhost
-)
-zstyle ':completion:*:hosts' hosts $hosts
 
 #########
 # USERS #

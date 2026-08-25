@@ -3,7 +3,6 @@ alias -g cat="bat "
 
 alias cpwd="pwd | xargs echo -n | pbcopy"
 
-alias diff="colordiff "
 alias -g grep="grep -E --colour=auto --exclude-dir={.bzr,.cvs,.git,.hg,.svn} "
 
 alias :q=" exit"
@@ -14,7 +13,6 @@ alias -g G="| grep "
 alias -g GN="| grep -v "
 alias -g H="| head "
 alias -g L="| less "
-alias -g M="| most "
 alias -g NE="2> /dev/null"
 alias -g NUL="> /dev/null 2>&1"
 alias -g T="| tail "
@@ -29,10 +27,6 @@ alias create_ramdisk='diskutil erasevolume APFS "RAMDisk" `hdiutil attach -nomou
 # To respect XDG
 alias wget="wget --hsts-file=$XDG_DATA_HOME/wget-hsts"
 alias mvn="mvn -gs $XDG_CONFIG_HOME/maven/settings.xml"
-
-function aZ() {
-    noglob sudo ~/Applications/addZero.sh "$1"
-}
 
 function locked_in_trash() {
     sudo lsof -nPT +c 0 | grep "/.Trash" | grep -v mds | awk '{print $1, " -> ", $9}'

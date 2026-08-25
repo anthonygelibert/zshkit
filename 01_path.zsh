@@ -1,5 +1,3 @@
-[[ -o interactive ]] || return
-
 # MacPorts: http://www.macports.org
 export MACPORTS_DIR="/opt/local"
 # Manually
@@ -30,11 +28,8 @@ export KERAS_HOME="${XDG_STATE_HOME}/keras"
 
 export NPM_CONFIG_INIT_MODULE="${XDG_CONFIG_HOME}/npm/config/npm-init.js"
 export NPM_CONFIG_CACHE="${XDG_CACHE_HOME}/npm"
-export NPM_CONFIG_TMP="${XDG_RUNTIME_DIR}/npm"
 
 export SQLITE_HISTORY="${XDG_DATA_HOME}/sqlite/sqlite_history"
-
-export MAVEN_REPOSITORY="${XDG_DATA_HOME}/maven/repository"
 
 # Some usefull paths (cd ~D)
 # My Documents
