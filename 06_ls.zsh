@@ -1,5 +1,3 @@
-export EZA_CONFIG_DIR="${XDG_CONFIG_HOME:-$HOME/.config}/eza/${TERRE_BRAISE_MODE}"
-
 alias l='eza -1 --group --header --git --icons --classify --color auto '
 alias ls='eza -1 --group --header --git --icons --classify --color auto '
 alias ll='eza -lg --time-style long-iso --group --header --git --icons --classify --color auto'

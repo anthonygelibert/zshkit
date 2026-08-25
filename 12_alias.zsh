@@ -1,4 +1,3 @@
-alias bat="bat --style=auto --theme=ansi "
 alias cat="bat "
 
 alias cpwd="pwd | xargs echo -n | pbcopy"
