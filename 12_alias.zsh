@@ -1,9 +1,9 @@
 alias bat="bat --style=auto --theme=ansi "
-alias -g cat="bat "
+alias cat="bat "
 
 alias cpwd="pwd | xargs echo -n | pbcopy"
 
-alias -g grep="grep -E --colour=auto --exclude-dir={.bzr,.cvs,.git,.hg,.svn} "
+alias grep="grep -E --colour=auto --exclude-dir={.bzr,.cvs,.git,.hg,.svn} "
 
 alias :q=" exit"
 alias week='date "+%V"'
@@ -36,44 +36,68 @@ function locked_in() {
     sudo lsof -nPT +c 0 | grep -E --colour=auto --exclude-dir={.bzr,.cvs,.git,.hg,.svn} $1 | grep -E --colour=auto --exclude-dir={.bzr,.cvs,.git,.hg,.svn} -v mds | awk '{print $1, " -> ", $9}'
 }
 
-function cleanProj() {
-    for i in */; do
-        (
-            cd "$i"
-            echo "$i"
-            [ -d .git ] && git agc && exit 0
-        )
+cleanProj() {
+    local project
+
+    for project in *(/N); do
+        [[ -e "$project/.git" ]] || continue
+
+        print -r -- "$project"
+        command git -C "$project" gc
     done
 }
 
-function cleanProjs() {
-    for i in "$@"; do
+cleanProjs() {
+    local root
+
+    for root in "$@"; do
+        if [[ ! -d "$root" ]]; then
+            print -u2 -- "Répertoire introuvable : $root"
+            continue
+        fi
+
         (
-            cd "$i"
-            echo "$i"
+            cd -- "$root" || exit 1
             cleanProj
         )
     done
 }
 
-function upProj() {
-    for i in */; do
-        (
-            cd "$i"
-            echo "$i"
-            [ -d .git ] && git up && exit 0
-            [ -d .hg ] && hg pull && hg up && exit 0
-            [ -d .svn ] && svn update && exit 0
-            echo "\x1b[31mNo VCS used...\x1b[0m"
-        )
+upProj() {
+    local project
+
+    for project in *(/N); do
+        print -r -- "$project"
+
+        if [[ -e "$project/.git" ]]; then
+            command git -C "$project" up
+        elif [[ -d "$project/.hg" ]]; then
+            (
+                cd -- "$project" || exit 1
+                command hg pull && command hg up
+            )
+        elif [[ -d "$project/.svn" ]]; then
+            (
+                cd -- "$project" || exit 1
+                command svn update
+            )
+        else
+            print -P -- '%F{red}No VCS used...%f'
+        fi
     done
 }
 
-function upProjs() {
-    for i in "$@"; do
+upProjs() {
+    local root
+
+    for root in "$@"; do
+        if [[ ! -d "$root" ]]; then
+            print -u2 -- "Répertoire introuvable : $root"
+            continue
+        fi
+
         (
-            cd "$i"
-            echo "$i"
+            cd -- "$root" || exit 1
             upProj
         )
     done

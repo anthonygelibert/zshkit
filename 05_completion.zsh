@@ -5,21 +5,38 @@
 # Files to ignore during completion
 autoload -Uz compinit
 
-# Cache dédié et compilé
-_ZCACHEDIR="${XDG_CACHE_HOME:-$HOME/.cache}/zsh"
-mkdir -p "$_ZCACHEDIR"
-compinit -C -d "$_ZCACHEDIR/zcompdump-$ZSH_VERSION"
+zmodload zsh/complist
+zmodload zsh/stat
+zmodload zsh/datetime
 
-# Compile le zcompdump si non compilé (1x/jour)
-if [[ -s "$_ZCACHEDIR/zcompdump-$ZSH_VERSION" && ( ! -s "$_ZCACHEDIR/zcompdump-$ZSH_VERSION.zwc" || "$_ZCACHEDIR/zcompdump-$ZSH_VERSION" -nt "$_ZCACHEDIR/zcompdump-$ZSH_VERSION.zwc" ) ]]; then
-  zcompile "$_ZCACHEDIR/zcompdump-$ZSH_VERSION"
+_ZCACHEDIR="${XDG_CACHE_HOME:-$HOME/.cache}/zsh"
+_ZCOMPDUMP="${_ZCACHEDIR}/zcompdump-${ZSH_VERSION}"
+
+mkdir -p "$_ZCACHEDIR"
+
+typeset -A _zcompdump_stat
+typeset -i _zcompdump_mtime=0
+
+if [[ -s "$_ZCOMPDUMP" ]]; then
+    zstat -H _zcompdump_stat +mtime -- "$_ZCOMPDUMP"
+    _zcompdump_mtime=$_zcompdump_stat[mtime]
 fi
 
-zmodload zsh/complist
+# Rescan complet une fois par jour, chargement rapide sinon.
+if [[ ! -s "$_ZCOMPDUMP" ]] ||
+   (( EPOCHSECONDS - _zcompdump_mtime > 86400 )); then
+    compinit -d "$_ZCOMPDUMP"
+else
+    compinit -C -d "$_ZCOMPDUMP"
+fi
 
-autoload -U zsh-mime-setup
-autoload -U zsh-mime-handler
-zsh-mime-setup
+if [[ -s "$_ZCOMPDUMP" &&
+      ( ! -s "${_ZCOMPDUMP}.zwc" ||
+        "$_ZCOMPDUMP" -nt "${_ZCOMPDUMP}.zwc" ) ]]; then
+    zcompile "$_ZCOMPDUMP"
+fi
+
+unset _zcompdump_stat _zcompdump_mtime
 
 zstyle ':completion:*' use-ip true                                              # By default, the function _hosts that completes host names strips IP addresses from entries read from host databases such as NIS and ssh files. If this style is true, the corresponding IP addresses can be completed as well.
 zstyle ':completion:*' list-grouped true                                        # If this style is ‘true’ (the default), the completion system will try to make certain completion listings more compact by grouping matches.
@@ -70,7 +87,7 @@ zstyle ':completion:*:*:-subscript-:*' tag-order indexes parameters
 zstyle ':completion:*:-command-:*:(commands|builtins|reserved-words-aliases)' group-name commands
 
 # Separate man page sections
-zstyle ':completion:*:manuals' seperate-sections true
+zstyle ':completion:*:manuals' separate-sections true
 
 # Give long completion options in a list. tab to advance.
 zstyle ':completion:*:default' list-prompt '%S%M matches%s'

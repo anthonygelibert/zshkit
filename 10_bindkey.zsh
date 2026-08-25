@@ -32,8 +32,8 @@ bindkey . rationalize-dot
 # ↑/↓ : history-beginning-search (par préfixe)
 bindkey '^[[A' history-beginning-search-backward
 bindkey '^[[B' history-beginning-search-forward
-# Ctrl-R : recherche incrémentale inverse
-bindkey '^R' history-incremental-pattern-search-backward
+# Ctrl-R : recherche incrémentale inverse (enlevé pour fzf)
+#bindkey '^R' history-incremental-pattern-search-backward
 # Ctrl-S : (souvent bloqué par flow control ; vous avez NO_FLOW_CONTROL) recherche vers l'avant
 bindkey '^S' history-incremental-pattern-search-forward
 

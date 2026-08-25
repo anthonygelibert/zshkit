@@ -1,6 +1,6 @@
 export HISTFILE="${XDG_STATE_HOME}/zsh/history"
+export SAVEHIST=1000000
 export HISTSIZE=1000000
-export SAVEHIST=10000
 
 alias history="fc -El 1"
 

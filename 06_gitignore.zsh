@@ -1,22 +1,50 @@
+zmodload zsh/datetime
+
 gi() {
-  command -v curl >/dev/null || { print -r -- "curl requis" >&2; return 127; }
-  if [[ -z "$*" ]]; then
-    print -r -- "Usage: gi <lang1,lang2,...>" >&2; return 2
-  fi
-  curl -fsSL --compressed "https://www.gitignore.io/api/$*"
+    if (( $# == 0 )); then
+        print -u2 -- 'Usage: gi <lang1> [lang2...]'
+        return 2
+    fi
+
+    local templates="${(j:,:)@}"
+
+    command curl -fsSL --compressed \
+        "https://www.toptal.com/developers/gitignore/api/${templates}"
 }
 
 _gitignoreio_get_command_list() {
-  local cache="${XDG_CACHE_HOME}/zsh/gi.list"
-  mkdir -p "${cache:h}"
-  if [[ ! -s "$cache" || $((EPOCHSECONDS - $(stat -f %m "$cache" 2>/dev/null || echo 0))) -gt 86400 ]]; then
-    curl -fsSL --compressed https://www.gitignore.io/api/list | tr ',' '\n' >| "$cache" || return
-  fi
-  cat "$cache"
+    local cache="${XDG_CACHE_HOME}/zsh/gi.list"
+    local tmp="${cache}.tmp.$$"
+    local list
+    local -i mtime=0
+
+    mkdir -p "${cache:h}"
+
+    if [[ -s "$cache" ]]; then
+        mtime=$(command stat -f %m "$cache" 2>/dev/null)
+    fi
+
+    if [[ ! -s "$cache" ]] ||
+       (( EPOCHSECONDS - mtime > 86400 )); then
+        list=$(
+            command curl -fsSL --compressed \
+                'https://www.toptal.com/developers/gitignore/api/list'
+        ) || return
+
+        print -r -- "${list//,/$'\n'}" >| "$tmp" || return
+
+        command mv -f -- "$tmp" "$cache"
+    fi
+
+    command cat -- "$cache"
 }
 
 _gitignoreio() {
-  compset -P '*,'
-  compadd -S '' -- $(_gitignoreio_get_command_list)
+    local output
+
+    compset -P '*,'
+    output=$(_gitignoreio_get_command_list) || return
+    compadd -S '' -- ${(f)output}
 }
+
 compdef _gitignoreio gi

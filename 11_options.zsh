@@ -30,7 +30,7 @@ setopt CHECK_JOBS             # Report the status of background and suspended jo
 setopt CHECK_RUNNING_JOBS     # Check for both running and suspended jobs when CHECK_JOBS is enabled.
 setopt CLOBBER                # Allows `>' redirection to truncate existing files, and `>>' to create files. Otherwise `>!' or `>|' must be used to truncate a file, and `>>!' or `>>|' to create a file.
 setopt COMBINING_CHARS        # Assume that the terminal displays combining characters correctly.  The shell cannot determine this by itself, hence the option.  This is highly recommended for MacOS X where file names are stored with accented characters split into basic and combining characters.
-setopt COMPLETE_ALIASES       # NO -> Prevents aliases on the command line from being internally substituted before completion is attempted.
+unsetopt COMPLETE_ALIASES     # NO -> Prevents aliases on the command line from being internally substituted before completion is attempted.
 unsetopt COMPLETE_IN_WORD     # If unset, the cursor is moved to the end of the word if completion is started. Otherwise it stays where it is and completion is done from both ends.
 setopt CORRECT                # Try to correct the spelling of commands.
 unsetopt CORRECT_ALL          # NO -> Try to correct the spelling of all arguments in a line.
@@ -73,7 +73,7 @@ unsetopt HUP                  # NO -> Send the HUP signal to running jobs when t
 unsetopt IGNORE_BRACES        # NO -> Do not perform brace expansion.
 unsetopt IGNORE_CLOSE_BRACES
 setopt IGNORE_EOF           # Do not exit on end-of-file. Require the use of exit or logout instead.
-setopt INC_APPEND_HISTORY   # This options works like APPEND_HISTORY except that new history lines are added to the $HISTFILE incrementally (as soon as they are entered), rather than waiting until the shell exits.
+unsetopt INC_APPEND_HISTORY   # This options works like APPEND_HISTORY except that new history lines are added to the $HISTFILE incrementally (as soon as they are entered), rather than waiting until the shell exits.
 setopt INTERACTIVE_COMMENTS # Allow comments even in interactive shells.
 setopt LIST_AMBIGUOUS       # This option works when AUTO_LIST or BASH_AUTO_LIST is also set.
 unsetopt LIST_BEEP          # NO -> Beep on an ambiguous completion.
@@ -87,7 +87,7 @@ setopt MARK_DIRS            # Append a trailing / to all directory names resulti
 unsetopt MENU_COMPLETE      # NO -> On an ambiguous completion, instead of listing possibilities or beeping, insert the first match immediately.
 setopt MONITOR              # Allow job control.
 setopt MULTIOS              # Perform implicit tees or cats when multiple redirections are attempted
-unsetopt MULTI_FUNC_DEF     # NO -> Allow definitions of multiple functions at once in the form ‘fn1 fn2...()’; if the option is not set, this causes a parse error.
+setopt MULTI_FUNC_DEF       # Allow definitions of multiple functions at once in the form ‘fn1 fn2...()’; if the option is not set, this causes a parse error.
 unsetopt NOMATCH            # NO -> If a pattern for filename generation has no matches, print an error, instead of leaving it unchanged in the argument list. This also applies to file expansion of an initial ~ or =.
 setopt NO_HUP               #
 setopt NOTIFY               # Report the status of background jobs immediately, rather than waiting until just before printing a prompt.

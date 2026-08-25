@@ -1,5 +1,7 @@
 # MacPorts: http://www.macports.org
 export MACPORTS_DIR="/opt/local"
+# Homebrew: https://brew.sh
+export HOMEBREW_DIR="/opt/homebrew"
 # Manually
 export MANUALLY_INSTALLED_DIR="/usr/local"
 # My Applications
@@ -8,11 +10,12 @@ export MY_APPLICATIONS_DIR="${HOME}/Applications"
 export PROJECTS_DIR="${HOME}/Documents/Personnel"
 # Mounted volumes
 export VOLUMES_DIR="/Volumes"
-# GraalJVM 23
-export JAVA_VERSION="jdk-25.jdk"
+# JDK 26
+export JAVA_VERSION="jdk-26.jdk"
 export JAVA_HOME="/Library/Java/JavaVirtualMachines/${JAVA_VERSION}/Contents/Home"
 # IDEA home
 export IDEA_HOME="/Applications/IntelliJ IDEA.app/Contents/MacOS"
+export PYCHARM_HOME="/Applications/PyCharm.app/Contents/MacOS"
 
 # MacPorts Coreutils
 export MP_COREUTILS="${MACPORTS_DIR}/libexec/gnubin"
@@ -47,8 +50,18 @@ export C="${D}/CarbonBee"
 
 typeset -U path cdpath fpath manpath
 
-export PATH="${IDEA_HOME}:${MY_APPLICATIONS_DIR}:${MP_COREUTILS}:${JAVA_HOME}/bin:${MACPORTS_DIR}/bin:${MACPORTS_DIR}/sbin:${MANUALLY_INSTALLED_DIR}/bin:${MANUALLY_INSTALLED_DIR}/sbin:${HOME}/.local/bin:/usr/libexec:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/MacGPG2/bin:/Library/TeX/texbin:."
+export PATH="${IDEA_HOME}:${PYCHARM_HOME}:${MY_APPLICATIONS_DIR}:${MP_COREUTILS}:${JAVA_HOME}/bin:${MACPORTS_DIR}/bin:${MACPORTS_DIR}/sbin:${MANUALLY_INSTALLED_DIR}/bin:${MANUALLY_INSTALLED_DIR}/sbin:${HOME}/.local/bin:${HOMEBREW_DIR}/bin:${HOMEBREW_DIR}/sbin:/usr/libexec:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/MacGPG2/bin:/Library/TeX/texbin:."
 export MANPATH="${MP_COREUTILS}/man:${JAVA_HOME}/man:${MACPORTS_DIR}/share/man:/usr/share/man"
-#export FPATH="${FPATH}:/opt/local/share/git/contrib/completion:${Z}/functions"
-export FPATH="/usr/local/share/zsh/site-functions:/opt/local/share/zsh/site-functions:/opt/local/share/zsh/5.9/functions:/opt/local/share/git/contrib/completion:${Z}/functions"
+
+fpath=(
+    "${Z}/functions"
+    "${MACPORTS_DIR}/share/zsh/site-functions"
+    "${MACPORTS_DIR}/share/zsh/${ZSH_VERSION}/functions"
+    "${MACPORTS_DIR}/share/git/contrib/completion"
+    "${HOMEBREW_DIR}/share/zsh/site-functions"
+    /usr/local/share/zsh/site-functions
+    $fpath
+)
+export FPATH
+
 export CDPATH=".:${HOME}:${P}:${D}:${C}"
