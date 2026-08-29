@@ -1,7 +1,14 @@
-alias l='eza -1 --group --header --git --icons --classify --color auto '
-alias ls='eza -1 --group --header --git --icons --classify --color auto '
-alias ll='eza -lg --time-style long-iso --group --header --git --icons --classify --color auto'
-alias lla='eza -lga --time-style long-iso --group --header --git --icons --classify --color auto'
-alias la='eza -la --time-style long-iso --group --header --git --icons --classify --color auto'
-alias lt='eza -T --level=2 --group --header --git --icons --classify --color auto'
-alias l@='eza -@ -lg --time-style long-iso --group --header --git --icons --classify --color auto'
+# Base interactive: compact grid with terminal-only decoration.
+alias ls='eza --icons=auto --classify=auto --hyperlink=auto --group-directories-first'
+
+# Common views.
+alias l='ls --oneline'
+alias ll='ls --long --header --git --smart-group --time-style=long-iso'
+alias la='ls --all'
+alias lla='ll --all'
+
+# Specialized views.
+alias lt='ls --tree --level=2 --git-ignore'
+alias l@='ll --extended'
+alias lr='ll --sort=newest --reverse'
+alias ld='ls --only-dirs'
