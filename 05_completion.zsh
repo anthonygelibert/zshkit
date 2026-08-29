@@ -22,10 +22,11 @@ if [[ -s "$_ZCOMPDUMP" ]]; then
     _zcompdump_mtime=$_zcompdump_stat[mtime]
 fi
 
-# Rescan complet une fois par jour, chargement rapide sinon.
+# Audit complet au plus une fois par jour.
 if [[ ! -s "$_ZCOMPDUMP" ]] ||
    (( EPOCHSECONDS - _zcompdump_mtime > 86400 )); then
     compinit -d "$_ZCOMPDUMP"
+    touch "$_ZCOMPDUMP"
 else
     compinit -C -d "$_ZCOMPDUMP"
 fi
@@ -40,7 +41,6 @@ unset _zcompdump_stat _zcompdump_mtime
 
 zstyle ':completion:*' use-ip true                                              # By default, the function _hosts that completes host names strips IP addresses from entries read from host databases such as NIS and ssh files. If this style is true, the corresponding IP addresses can be completed as well.
 zstyle ':completion:*' list-grouped true                                        # If this style is ‘true’ (the default), the completion system will try to make certain completion listings more compact by grouping matches.
-zstyle ':completion:*' list-packed true                                         # This is tested for each tag valid in the current context as well as the default tag. If it is set to ‘true’, the corresponding matches appear in listings as if the LIST_PACKED option were set.
 zstyle ':completion:*' verbose true                                             # If set, as it is by default, the completion listing is more verbose. In particular many commands show descriptions for options if this style is ‘true’.
 zstyle ':completion:*' completer _complete _prefix _match _approximate _ignored # The strings given as the value of this style provide the names of the completer functions to use.
 zstyle ':completion:*' ignore-parents parent pwd
