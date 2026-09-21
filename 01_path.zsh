@@ -50,7 +50,37 @@ export C="${D}/CarbonBee"
 
 typeset -U path cdpath fpath manpath
 
-export PATH="${IDEA_HOME}:${PYCHARM_HOME}:${MY_APPLICATIONS_DIR}:${MP_COREUTILS}:${JAVA_HOME}/bin:${MACPORTS_DIR}/bin:${MACPORTS_DIR}/sbin:${MANUALLY_INSTALLED_DIR}/bin:${MANUALLY_INSTALLED_DIR}/sbin:${HOME}/.local/bin:${HOMEBREW_DIR}/bin:${HOMEBREW_DIR}/sbin:/usr/libexec:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/MacGPG2/bin:/Library/TeX/texbin:."
+# Garder les ajouts du parent en tête (environnement virtuel, outils de l'IDE),
+# puis remettre les chemins du kit dans notre ordre, notamment MacPorts avant
+# Homebrew. Réappliquer ce fichier ne doit ni accumuler ni perdre des chemins.
+typeset -a _zshkit_path=(
+    "$IDEA_HOME"
+    "$PYCHARM_HOME"
+    "$MY_APPLICATIONS_DIR"
+    "$MP_COREUTILS"
+    "$JAVA_HOME/bin"
+    "$MACPORTS_DIR/bin"
+    "$MACPORTS_DIR/sbin"
+    "$MANUALLY_INSTALLED_DIR/bin"
+    "$MANUALLY_INSTALLED_DIR/sbin"
+    "$HOME/.local/bin"
+    "$HOMEBREW_DIR/bin"
+    "$HOMEBREW_DIR/sbin"
+    /usr/libexec
+    /usr/bin
+    /bin
+    /usr/sbin
+    /sbin
+    /usr/local/MacGPG2/bin
+    /Library/TeX/texbin
+    .
+)
+# Un élément vide désigne aussi le dossier courant : ne le garder qu'une fois,
+# sous la forme explicite ".", volontairement placée à la fin.
+path=("${(@)path:#}")
+path=("${(@)path:|_zshkit_path}" "${_zshkit_path[@]}")
+unset _zshkit_path
+export PATH
 export MANPATH="${MP_COREUTILS}/man:${JAVA_HOME}/man:${MACPORTS_DIR}/share/man:/usr/share/man"
 
 fpath=(
