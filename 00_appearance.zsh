@@ -37,7 +37,7 @@ else
 fi
 
 export EZA_CONFIG_DIR="${XDG_CONFIG_HOME:-$HOME/.config}/eza/${_terre_braise_mode}"
-export FZF_DEFAULT_OPTS="${FZF_DEFAULT_OPTS:+$FZF_DEFAULT_OPTS }--style=full --border=rounded --color=${_terre_braise_fzf_colors}"
+export FZF_DEFAULT_OPTS="--style=full --border=rounded --color=${_terre_braise_fzf_colors}"
 export BAT_STYLE='auto'
 export BAT_THEME='ansi'
 
