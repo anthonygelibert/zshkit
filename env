@@ -1,19 +1,16 @@
 #!/usr/bin/env zsh
 # vim: ft=zsh
 
-# http://disq.us/p/f55b78
-setopt noglobalrcs
-
-# Répertoire de ce fichier (fiable pour fichiers sourcés en Zsh)
-#    ${(%):-%N} → chemin du fichier sourcé courant ; :A → absolu ; :h → dirname
+# Trouver le kit même lorsqu'il est chargé depuis un autre répertoire.
 local script=${(%):-%N}
 local mydir=${${script:A}:h}
 
-# Charger tous les NN_*.zsh du répertoire, s’ils existent
-#    (N) nullglob, (on) tri “ordinal” (lexicographique), (.) fichiers normaux
+# Respecter l'ordre du kit ; les exports communs sont déjà chargés par
+# .zshenv et .zprofile. Les rejouer ici modifierait inutilement l'environnement.
 local f
 for f in "$mydir"/??_*.zsh(Non.); do
-  # Sécurité: ne pas se re-sourcer soi-même, même si le nom matche
-  [[ $f == "$script" ]] && continue
+  case ${f:t} in
+    01_lang.zsh|01_path.zsh) continue ;;
+  esac
   source -- "$f"
 done
