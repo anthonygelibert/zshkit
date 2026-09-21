@@ -1,4 +1,4 @@
-alias cat="bat "
+alias cat="bat"
 
 alias cpwd="pwd | xargs echo -n | pbcopy"
 
