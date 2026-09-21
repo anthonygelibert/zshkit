@@ -1,6 +1,9 @@
 typeset -g -A key
 
 # ——— Paramètres généraux ———
+# Le kit utilise explicitement les raccourcis Emacs, sans dépendre de $EDITOR.
+bindkey -e
+
 # Délimiteurs "ingénieur" : les caractères ci-dessous NE font PAS partie d’un mot
 # (impacts: backward-word, forward-word, etc.)
 export WORDCHARS="*?[]~=&;!#$%^(){}<>"
