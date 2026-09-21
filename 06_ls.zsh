@@ -1,5 +1,5 @@
 # Base interactive: compact grid with terminal-only decoration.
-alias ls='eza --icons=auto --classify=auto --hyperlink=auto --group-directories-first'
+alias ls='eza --icons=auto --classify=auto --group-directories-first'
 
 # Common views.
 alias l='ls --oneline'
