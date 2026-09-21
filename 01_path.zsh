@@ -11,7 +11,7 @@ export PROJECTS_DIR="${HOME}/Documents/Personnel"
 # Mounted volumes
 export VOLUMES_DIR="/Volumes"
 # JDK 26
-export JAVA_VERSION="jdk-26.jdk"
+export JAVA_VERSION="jdk-27.jdk"
 export JAVA_HOME="/Library/Java/JavaVirtualMachines/${JAVA_VERSION}/Contents/Home"
 # IDEA home
 export IDEA_HOME="/Applications/IntelliJ IDEA.app/Contents/MacOS"
