@@ -35,7 +35,7 @@ function locked_in() {
     sudo lsof -nPT +c 0 | grep -E --colour=auto --exclude-dir={.bzr,.cvs,.git,.hg,.svn} $1 | grep -E --colour=auto --exclude-dir={.bzr,.cvs,.git,.hg,.svn} -v mds | awk '{print $1, " -> ", $9}'
 }
 
-cleanProj() {
+function cleanProj() {
     local project
 
     for project in *(/N); do
@@ -46,7 +46,7 @@ cleanProj() {
     done
 }
 
-cleanProjs() {
+function cleanProjs() {
     local root
 
     for root in "$@"; do
@@ -62,7 +62,7 @@ cleanProjs() {
     done
 }
 
-upProj() {
+function upProj() {
     local project
 
     for project in *(/N); do
@@ -86,7 +86,7 @@ upProj() {
     done
 }
 
-upProjs() {
+function upProjs() {
     local root
 
     for root in "$@"; do
